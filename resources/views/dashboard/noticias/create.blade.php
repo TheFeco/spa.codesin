@@ -1,0 +1,188 @@
+@extends('dashboard.master')
+@section('header')
+<div class="breadcrumb">
+    <h1>Noticias</h1>
+    <ul>
+        <li>Editar Noticia</li>
+    </ul>
+</div>
+@stop
+@section('content')
+<form method="POST" action="{{ route('admin.noticias.store') }}" enctype="multipart/form-data">
+    @csrf
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card md-3">
+                <div class="card-body"></div>
+                <div class="card-title">Banner Area</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
+                            <label for="">banner el tamaño debe ser 1440px X 451px </label>
+                            <input type="file" name="banner" id="banner" data-default-file="{{ old('banner') ? old('banner') : '' }}" data-max-file-size-preview="2M" >
+                            {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
+                        </div>
+                        
+                        <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
+                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
+                            <input type="file" class="form-control" name="bannerMobile" id="bannerMobile" data-default-file="{{ old('bannerMobile') ? old('bannerMobile') : '' }}" data-max-file-size-preview="2M">
+                            {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="card-title">Formulario para editar</div>
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3 {{ $errors->has('title') ? 'has-error' : ''}}" >
+                                <label for="title">Titulo de la publicación</label>
+                                <input class="form-control form-control-rounded" id="title" name="title" type="text" value="{{ old('title')}}" />
+                                {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
+                            </div>
+                            <div class="col-md-12 form-group mb-3 {{ $errors->has('body') ? 'has-error' : ''}}">
+                                <label for="title">Contenido de la publicació</label>
+                                <textarea class="textarea form-control form-control-rounded" name="body" aria-label="With textarea" style="height: 113px;">{{ old('body')}}</textarea>
+                                {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="card-title"></div>
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3">
+                            <label for="picker2">fecha de publicación </label>
+                            <input class="form-control" id="picker2" placeholder="dd-mm-yyyy" name="published_at" data-value="{{ old('published_at')}}" />
+                        </div>
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('excerpt') ? 'has-error' : ''}}">
+                            <label for="excerpt">Extracto publicación</label>
+                            <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="10"  >{{ old('excerpt')}}</textarea>
+                            {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
+                        </div>
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
+                            <label for="urlvideo">Url de video de youtube</label>
+                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo')}}" />
+                            {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
+                        </div>
+                        {{-- <div class="col-md-12 form-group mb-3 {{ $errors->has('tags') ? 'has-error' : ''}}">
+                            <label for="picker1">Seleccione una etiqueta {{ old('category_id')}}</label>
+                            <select class="form-control form-control-rounded select2" name="tags"  data-placeholder="Seleccionar un tag">
+                                @foreach ($tags as $tag)
+                                    <option value="{{$tag->id}}" {{ old('category_id', $post->tag_id) == $tag->id ? 'selected' : ''}}>{{$tag->name}}</option>
+                                @endforeach
+                            </select>
+                            {!! $errors->first('tags', '<span class="help-block">:message</span>') !!}
+                        </div> --}}
+                        <input type="hidden" name="category_id" value="2">
+                        <div class="col-md-12 form-group mb-3">
+                            <div class="dropzone" id="my-dropzone"></div>
+                        </div>
+                        <input type="hidden" name="tags" value="1" >
+                        <div class="col-md-12">
+                            <button type="submit" id="submit-all" class="btn btn-primary">Crear noticia</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@stop
+
+@push('style')
+    <link href="{{asset('dashboard/css/plugins/pickadate/classic.css')}}" rel="stylesheet" />
+    <link href="{{asset('dashboard/css/plugins/pickadate/classic.date.css')}}" rel="stylesheet" />
+    <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
+    <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/plugins/select2.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
+@endpush
+@push('script')
+    <script src="{{asset('dashboard/js/plugins/pickadate/picker.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/pickadate/picker.date.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dropzone.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/select2.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dropify.min.js')}}"></script>
+
+    
+    <script>
+         
+        $('#picker2, #picker3').pickadate({
+            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            weekdaysShort: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            today: 'Hoy',
+            clear: 'Limpiar',
+            close: 'Cerrar',
+            formatSubmit: 'yyyy/mm/dd'
+        });
+        // Summernote
+        $('.textarea').summernote({
+            height: 300,   //set editable area's height
+        });
+        Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('.dropzone', {
+            url:'admin.noticias.store',
+            autoProcessQueue:false,
+            paramName: 'photo',
+            acceptedFile:'image/*',
+            maxFilesize: 2,
+            headers: {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+            },
+            dictDefaultMessage: 'Arrastra las todos aquí para subirlas',
+            init: function() {
+            var submitButton = document.querySelector("#submit-all")
+                //imageUpload = this; // closure
+
+            submitButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+            });
+
+            // You might want to show the submit button only when 
+            // files are dropped here:
+            this.on("addedfile", function() {
+              // Show submit button here and/or inform user to click it.
+            });
+
+        }
+        });
+
+        myDropzone.on('error', function(file, res){
+            console.log(res);
+            var msn = res.errors.photo[0];
+            $('.dz-error-message:last > span').text(msn);
+        });
+
+       
+
+        $('#banner').dropify({
+            messages: {
+                'default': 'Arrastra y suelta un archivo aquí o haz clic',
+                'replace': 'Arrastra y suelta o haz clic para reemplazar',
+                'remove':  'Remover',
+                'error':   'Ooops, sucedió algo malo.'
+            }
+        });
+        $('#bannerMobile').dropify({
+            messages: {
+                'default': 'Arrastra y suelta un archivo aquí o haz clic',
+                'replace': 'Arrastra y suelta o haz clic para reemplazar',
+                'remove':  'Remover',
+                'error':   'Ooops, sucedió algo malo.'
+            }
+        });
+        
+    </script>
+@endpush

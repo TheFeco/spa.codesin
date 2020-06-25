@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Post;
+
+class EstrategiasController extends Controller
+{
+    //
+    public function index(){
+        {
+            
+            // $post = Post::Published()->where('category_id', 2)->get();
+            
+            // if( request()->wantsJson() )
+            // {
+            //     return $post;
+            // }
+            // return view('posts.show', compact('post'));
+
+        }
+
+        abort(404);
+       
+    }
+    public function show(Post $post){
+        {
+            $post->load('photos');
+
+            $proyectos = Post::Published()->where('category_id', 3)->get();
+            if( request()->wantsJson() )
+            {
+                return ['post'=>$post, 'proyectos' =>$proyectos];
+            }
+
+        }
+
+        abort(404);
+       
+    }
+}

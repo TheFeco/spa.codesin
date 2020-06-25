@@ -1,0 +1,176 @@
+<div class="side-content-wrap">
+    <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+        <ul class="navigation-left">
+            {{-- <li class="nav-item {{ setActiveRoute('dashboard') }}"  ><a class="nav-item-hold" href="{{route('dashboard')}}" ><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
+                <div class="triangle"></div>
+            </li> --}}
+            @can('view', new App\User)
+            <li class="nav-item nav-item {{ request()->is('admin/users*') ? 'active' : ''}}" data-item="users"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-user-friends"></i><span class="nav-text">Usuarios</span></a>
+                <div class="triangle"></div>
+            </li>
+            @else
+            <li class="nav-item {{ request()->is('admin/users*') ? 'active' : ''}}"  ><a class="nav-item-hold" href="{{route('admin.users.edit', auth()->user())}}" ><i class="nav-icon fas fa-user-friends"></i><span class="nav-text">Perfil</span></a>
+                <div class="triangle"></div>
+            </li>
+            @endcan
+            <li class="nav-item nav-item {{ request()->is('admin/paginas*') ? 'active' : ''}}" data-item="paginas"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-window-restore"></i><span class="nav-text">Paginas</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/noticias*') ? 'active' : ''}}" data-item="noticias"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-newspaper"></i><span class="nav-text">Noticias</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/proyectos*') ? 'active' : ''}}" data-item="proyectos"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-tasks"></i><span class="nav-text">Proyectos</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/staff*') ? 'active' : ''}}" data-item="staff"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-user-friends"></i><span class="nav-text">Staff</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/testimonios*') ? 'active' : ''}}" data-item="testimonios"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-comments"></i><span class="nav-text">Testimonios</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item {{ request()->is('admin/contenidos*') ? 'active' : ''}}" data-item="contenidos"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-photo-video"></i><span class="nav-text">Contenido interes</span></a>
+                <div class="triangle"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+        <!-- Submenu Dashboards-->
+        <ul class="childNav" data-parent="paginas">
+            {{-- <li class="nav-item"><a href="{{route('admin.posts.index')}}"><i class="nav-icon i-Add-File"></i><span class="item-name">ver todosPost</span></a></li> --}}
+            <li class="nav-item">
+                    <a href="{{route('admin.paginas.edit', 'home')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Principal</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.paginas.edit', 'quienes-somos')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">¿Quiénes somos?</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.paginas.edit', 'que-hacemos')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">¿Qué hacemos?</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.paginas.edit', 'comunicacion')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Comunicación</span></a>
+            </li>
+        </li>
+        </ul>
+        <ul class="childNav" data-parent="noticias">
+            <li class="nav-item"><a href="{{route('admin.noticias.index')}}"><i class="nav-icon i-ID-3"></i><span class="item-name">ver todas las noticias</span></a></li>
+            <li class="nav-item">
+            @if (request()->is('admin/noticias/*'))
+                <a href="{{route('admin.noticias.index', '#create-noticias')}}"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear una noticia</span></a>
+            @else
+                <a href="#" data-toggle="modal" data-target="#noticias"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear una noticia</span></a>
+            @endif
+            </li>
+        </ul>
+        <ul class="childNav" data-parent="proyectos">
+            <li class="nav-item"><a href="{{route('admin.proyectos.index')}}"><i class="nav-icon i-ID-3"></i><span class="item-name">ver todos los proyectos</span></a></li>
+            <li class="nav-item">
+            @if (request()->is('admin/proyectos/*'))
+                <a href="{{route('admin.proyectos.index', '#create-proyectos')}}"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear un proyecto</span></a>
+            @else
+                <a href="#" data-toggle="modal" data-target="#proyectos"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear un proyecto</span></a>
+            @endif
+            </li>
+        </ul>
+        <ul class="childNav" data-parent="staff">
+            <li class="nav-item"><a href="{{route('admin.staff.index')}}"><i class="nav-icon fas fa-user-circle"></i><span class="item-name">ver todo el staff</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.staff.create')}}"><i class="nav-icon i-Add-User"></i><span class="item-name">Nuevo Personal</span></a></li>
+        </ul>
+        <ul class="childNav" data-parent="testimonios">
+            <li class="nav-item"><a href="{{route('admin.testimonios.index')}}"><i class="nav-icon fas fa-user-circle"></i><span class="item-name">ver testimonios</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.testimonios.create')}}"><i class="nav-icon i-Add-User"></i><span class="item-name">Crear testimonio</span></a></li>
+        </ul>
+        <ul class="childNav" data-parent="contenidos">
+            <li class="nav-item"><a href="{{route('admin.contenidos.index')}}"><i class="nav-icon i-Video"></i><span class="item-name">ver contenidos</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.contenidos.create')}}"><i class="nav-icon i-File-Video"></i><span class="item-name">Crear contenido</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.estrategias.index')}}"><i class="nav-icon i-Gears"></i><span class="item-name">ver estrategias</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.politicas.index')}}"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="item-name">ver Políticas publicas </span></a></li>
+
+        </ul>
+        <ul class="childNav" data-parent="users">
+            <li class="nav-item"><a href="{{route('admin.users.index')}}"><i class="nav-icon fas fa-user-circle"></i><span class="item-name">ver todos usuarios</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.users.create')}}"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear un usuario</span></a></li>
+        </ul>
+    </div>
+    <div class="sidebar-overlay"></div>
+</div>
+{{-- modal --}}
+<div class="modal fade" id="noticias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Titulo de la publicación</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('admin.noticias.store', '#create-noticias') }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('titleModal') ? 'has-error' : ''}}" >
+                            <label for="titleModal"></label>
+                            <input class="form-control form-control-rounded" id="title" name="titleModal" type="text" value="{{ old('titleModal')}}" required/>
+                            {!! $errors->first('titleModal', '<span class="help-block">:message</span>') !!}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- modal --}}
+<div class="modal fade" id="proyectos" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Titulo del proyecto</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('admin.proyectos.store', '#create-proyectos') }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('titleProjectModal') ? 'has-error' : ''}}" >
+                            <label for="titleProjectModal"></label>
+                            <input class="form-control form-control-rounded" id="title" name="titleProjectModal" type="text" value="{{ old('titleProjectModal')}}" required/>
+                            {!! $errors->first('titleProjectModal', '<span class="help-block">:message</span>') !!}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- modal --}}
+<div class="modal fade" id="politicas" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Titulo del politica</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('admin.politicas.store', '#create-politica') }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('titlepoliticaModal') ? 'has-error' : ''}}" >
+                            <label for="titlepoliticaModal"></label>
+                            <input class="form-control form-control-rounded" id="title" name="titlepoliticaModal" type="text" value="{{ old('titlepoliticaModal')}}" required/>
+                            {!! $errors->first('titlepoliticaModal', '<span class="help-block">:message</span>') !!}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary ml-2" type="submit">Crear politica</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+/* Large Screen :1920px. */
+@media (min-width: 1400px) and (max-width: 1920px) {
+  body{ background: palegreen;}
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .icon-img{ width: 180px; height: 180px; }
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  body{ background: peru;}
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .icons { margin-right: 7%;}
+  .parte2 .icons { margin-right: 0%; }
+  .icons:last-child{ margin-left: -12%;}
+  .parte2 .icons:last-child{ margin-left: 0%;}
+  .icon-img{ width: 120px !important; height: 120px !important; }
+  .icon-img img {margin: 25px 0 0 0; width: 50%;  height: auto;}
+  .icon-text{ width: 120px !important; }
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  body{ background: royalblue;}
+  .msm , .mlg{ margin: 32px 32px 44px 32px;}
+  .menu-area ul li a {
+    font-size: 12px;
+    margin: 30.58px 5px;
+  }
+  .icons{
+    margin-top: 40px;
+    margin-right: 0px;
+    text-align: -webkit-center;
+  }
+  .icons:first-child{
+    margin-left: 9%;
+  }
+  .small-icons .icons { margin-left: 0; }
+  .icons:last-child{
+    margin-right: 0px;
+  }
+  .icons .icon-img{
+    width: 98px;
+    height: 98px;
+  }
+  .icons .icon-img img{
+    margin: 29px 29px 29px 29px;
+    width: 40px;
+    height: 40px;
+  }
+  .icons .icon-text{
+    margin-top: 16px;
+    width: 98px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .small{
+    text-align: -webkit-center;
+  }
+  .about-img{margin-top: 0px; height: 224px; margin-bottom: 40px; margin-right: -35px;}
+  .about-img img { height: auto; width: 100%;}
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  body{ background: salmon;}
+  .msm, .mlg{ margin: 32px 32px 44px 32px;}
+  header{ height: 64px; line-height: 64px; vertical-align: middle; }
+  .logo{  width: 120px; height: 22px; margin-top: 21px; margin-left: 16px; overflow: hidden; top: -4px }
+  .logo img{ position: relative; top: -7px; }
+  .footer-logo { width: 126px; height: 37px; top: 48px; margin: 0 auto; }
+  .footer-social{ text-align: center; float: none; }
+  .footer-social img { width: 24px; height: 24px; }
+  .footer-section{ margin-bottom: 24px; }
+  .contenedor{ margin-top: 40px; }
+  .contenedor > * h1{ padding-top:40px; }
+  .contenedor > * h2{ padding-top:40px; }
+  .contenedor > * p{  margin: 15px; margin-top: 32px; }
+  .contenedor .modelo-contenido{ font-size: 100%; text-align: center; margin: 32px 5px 0 5px; color: #626262; }
+  .icons{ margin-top: 40px; margin-right: 0px; }
+  .icons.mobile{ margin-left: 15%; }
+  .icons:first-child{ margin-left: 0px; }
+  .icons:nth-last-child(2) { margin-left: 16%; }
+  .icons:last-child{ margin-right: 0px; }
+  .icons .icon-img{ width: 80px; height: 80px; }
+  .icons .icon-img img{ margin: 20px 20px 20px 20px; width: 40px; height: 40px; }
+  .icons .icon-text{ margin-top: 16px; width: 90px; font-size: 12px; font-weight: 700; }
+  .small{ text-align: -webkit-center; text-align: -moz-center; text-align: -o-center; text-align: -ms-center;   padding-bottom: 48px; }
+  .home-noticias-area .titulo{ margin-bottom: 32px; }
+  .home-noticias-area .titulo h3{ font-size: 1.5em; font-weight: 700; color: #4A4A4A; }
+  .noticias-contenido { margin-bottom: 24px;}
+  .noticias-img { margin-bottom: 16px; width: 360px; height: 180px; overflow: hidden;}
+  .noticias-img img { width: 100%; height: 180px; }
+  .home-noticias-area .noticias-text { position: relative; height: 128px; margin: 0 16px 0 16px;}
+  .home-noticias-area .vertodos { margin-top: 64px; margin-bottom: 64px; text-align: center; font-weight: 700;  }
+
+  .about-area {padding: 80px 0; }
+  .about-area h2 { font-size: 18px; }
+  .about-content h2{ text-align: center; margin-top: 0px; margin-bottom: 40px; }
+  .about-img{margin-top: 0px; height: 224px; margin-bottom: 40px; margin-right: -35px;}
+  .titulo-staff{ font-size: 18px; font-weight: 700;}
+  .titulo-zonas{ height: 40px; line-height: 40px; margin-bottom: 16px; }
+  .que-hacemos .about-area { margin-top: 40px; padding: 0;}
+  .pp-area .noticias-text { height: 128px; }
+  .pp-area .map-area { width: 100%; height: 337px; }
+  .inversiones-img {margin: 0 -15px 0 -15px; height: 220px; padding: 0;}
+  .inversiones-area h2 { font-size: 20px; }
+  .inversiones-content { margin-bottom: 24px; }
+  .inversiones-content h2{  margin-top: 32px; margin-bottom: 24px; }
+  .card-box { width: 156px; height: 315px;}
+  .card-box-constainer { margin: 0 8px 0 8px;}
+  .card-box-title { font-size: 14px;}
+  .card-box span { font-size: 22px; }
+  .card-box strong { font-size: 14px; }
+  .card-box .small { font-size: 11px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .small { padding-bottom: 0px; }
+  .card-noticias-img-top{ height: 180px;}
+  .card-noticias-body { height: 128px;}
+  .testimonio-owl { text-align: center !important;}
+  .testimonio-thumb { height: 85px; width: 85px; margin: auto; padding-bottom: 5px; position: relative;}
+  .testimonio-contenido h4{ font-size: 18px; font-weight: bold; text-align: center; margin-top: 32px;}
+  .testimonio-contenido p { display: block;  margin-bottom: 15px; font-size: 16px; }
+  .card-staff { margin-bottom: 25px; }
+
+}
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ 
+}
+ 
