@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <ul class="header-login">
-                            <li><a href="login"><i class="fa fa-key"></i>Login</a></li>
+                            <li><a href="/login"><i class="fa fa-key"></i>Login</a></li>
                             <li><a href="signup.html"><i class="fa fa-key"></i>gestori</a></li>
                         </ul>
                     </div>
@@ -28,7 +28,22 @@
                                     <li><router-link :to="{name: 'que-hacemos'}" >¿Qué hacemos?</router-link></li>
                                     <li><router-link :to="{name: 'sinaloa'}" >Sinaloa en Números</router-link></li>
                                     <li><router-link :to="{name: 'comunicacion'}" >Comunicación</router-link></li>
-                                    <li><a href="http://www.codesin.mx" target="_blank">Transparencia</a></li>
+                                    <li><a :href="transparencia" target="_blank">Transparencia</a></li>
+                                    <!-- <li>
+                                        <div class="header-search">
+                                            <form class="">
+                                                <div class="search-field -border-light h-ml2">
+                                                    <div class="search-field__input">
+                                                        <input id="term" name="term" class="js-term search-field__input-field" type="search" placeholder="Search">
+                                                    </div>
+                                                </div>
+                                                <button class="search-field__button" type="submit">
+                                                    <i class="fa fa-search"><span class="e-icon__alt">Search</span></i>
+                                                </button>
+                                            </form>
+                                        </div>  
+                                        
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
@@ -39,6 +54,13 @@
                             </a>
                             <nav class="mainMenu">
                                 <ul>
+                                    <li>
+                                        <form class="searchFom" action="" style="margin:auto;max-width:300px; height: 40px">
+                                            <button type="submit"><i class="fa fa-search"></i></button>
+                                            <input type="text" placeholder="Search.." name="search2">
+                                        
+                                        </form>
+                                    </li>
                                     <li>
                                         <router-link :to="{name: 'quienes-somos'}" >¿Quiénes somos?</router-link>
                                     </li>
@@ -52,12 +74,12 @@
                                         <router-link :to="{name: 'comunicacion'}">Comunicación</router-link>
                                     </li>
                                     <li>
-                                        <a href="http://www.codesin.mx" target="_blank">Transparencia</a>
+                                        <a :href="transparencia" target="_blank">Transparencia</a>
                                     </li>
                                     <li>
-                                        <a href="http://facebook.com" class="facebook"><img v-bind:src="'../img/icons/Facebook.svg'" alt=""></a>
-                                        <a href="http://twitter.com" class="facebook"> <img v-bind:src="'../img/icons/Youtube.svg'" alt=""></a>
-                                        <a href="http://twitter.com" class="facebook"> <img v-bind:src="'../img/icons/Twitter.svg'" alt=""></a>
+                                        <a v-bind:href="facebook" target="_blank" class="facebook"><img v-bind:src="'../img/icons/Facebook.svg'" alt=""></a>
+                                        <a v-bind:href="youtube"  target="_blank" class="facebook"> <img v-bind:src="'../img/icons/Youtube.svg'" alt=""></a>
+                                        <a v-bind:href="twitter"  target="_blank" class="facebook"> <img v-bind:src="'../img/icons/Twitter.svg'" alt=""></a>
                                     </li>
                                 </ul>
                             </nav>
@@ -70,6 +92,11 @@
 </template>
 <script>
 export default {
+    data() {
+        return {
+            transparencia : 'http://codesin.transparenciasinaloa.gob.mx/obligaciones-de-transparencia-del-consejo-para-el-desarrollo-economico-del-estado-de-sinaloa-codesin/',
+        }
+    },
     mounted() {
         // /*mobile menu*/
         $('.menuBtn').click(function() {

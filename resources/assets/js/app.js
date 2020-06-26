@@ -33,7 +33,11 @@ Vue.component('carousel',carousel);
 Vue.mixin({
     data() {
         return {
-            loading: false
+            loading: false,
+            facebook: "http://www.facebook.com/pages/Codesin-Sinaloa/218834188212830?fref=ts",
+            twitter : "http://twitter.com/codesin",
+            youtube: "https://www.youtube.com/user/Cod351n/videos"
+
         }
     },
     methods: {

@@ -60,9 +60,9 @@
                                 <div class="single-widget">
                                     <div class="footer-social">
                                         <ul>			
-                                            <li><a href="http://facebook.com" class="social-icon"><img src="../img/icons/Facebook.svg" alt=""></a></li>
-                                            <li><a href="http://twitter.com" class="social-icon"><img src="../img/icons/Youtube.svg" alt=""></a></li>
-                                            <li><a href="http://twitter.com" class="social-icon"><img src="../img/icons/Twitter.svg" alt=""></a></li>
+                                            <li><a v-bind:href="facebook" class="social-icon"><img src="../img/icons/Facebook.svg" alt=""></a></li>
+                                            <li><a v-bind:href="youtube"  class="social-icon"><img src="../img/icons/Youtube.svg" alt=""></a></li>
+                                            <li><a v-bind:href="twitter"  class="social-icon"><img src="../img/icons/Twitter.svg" alt=""></a></li>
                                         </ul>    
                                     </div>
                                 </div>

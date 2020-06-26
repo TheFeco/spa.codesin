@@ -3,6 +3,7 @@
   body{ background: palegreen;}
   .cards { grid-template-columns: repeat(3, 1fr); }
   .icon-img{ width: 180px; height: 180px; }
+  .search-field, .search-field.-size-s { font-size: 13px;}
 
 }
 
@@ -103,6 +104,7 @@
   .about-img{margin-top: 0px; height: 224px; margin-bottom: 40px; margin-right: -35px;}
   .titulo-staff{ font-size: 18px; font-weight: 700;}
   .titulo-zonas{ height: 40px; line-height: 40px; margin-bottom: 16px; }
+  .titulo-zonas h2 { font-size: 16px;}
   .que-hacemos .about-area { margin-top: 40px; padding: 0;}
   .pp-area .noticias-text { height: 128px; }
   .pp-area .map-area { width: 100%; height: 337px; }
@@ -121,7 +123,7 @@
   .card-noticias-img-top{ height: 180px;}
   .card-noticias-body { height: 128px;}
   .testimonio-owl { text-align: center !important;}
-  .testimonio-thumb { height: 85px; width: 85px; margin: auto; padding-bottom: 5px; position: relative;}
+  .testimonio-thumb { height: 160px; width: 160px; margin: auto;  position: relative;}
   .testimonio-contenido h4{ font-size: 18px; font-weight: bold; text-align: center; margin-top: 32px;}
   .testimonio-contenido p { display: block;  margin-bottom: 15px; font-size: 16px; }
   .card-staff { margin-bottom: 25px; }

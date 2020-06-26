@@ -248,6 +248,7 @@ header{
   -webkit-transform: scale(0);
           transform: scale(0);
 }
+/**/
 .main-menu-area ol, ul {
 	list-style: none;
 }
@@ -270,6 +271,7 @@ header{
   -webkit-transition: all 400ms 510ms;
   transition: all 400ms 510ms;
   opacity: 0;
+  border-bottom: 1px solid #949494;
 }
 .mainMenu li:nth-child(odd) {
   -webkit-transform: translateX(30%);
@@ -282,12 +284,44 @@ header{
 .mainMenu li:last-child {
   -webkit-transform: none;
           transform: none;
+  border-bottom: none;
 }
 .mainMenu a {
   color: #19b698;
   display: inline-block;
   font-size: 18px;
 }
+/**/
+form.searchFom input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+form.searchFom button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+form.searchFom button:hover {
+  background: #0b7dda;
+}
+
+form.searchFom::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/**/
+.facebook { width: 32px;  height: 32px;  margin-right: 16px;}
 /* 3 .Footer css */
 footer{
   background: #E3E3E3;
@@ -531,7 +565,7 @@ hr{
 }
 .titulo-staff{ color: #868686; font-size: 28px; font-weight: 700;}
 .titulo-zonas{ background: #FDF2E5; height: 48px; line-height: 48px; }
-.titulo-zonas h2 { font-size: 18px; color:#EF7D00 }
+.titulo-zonas h2 { font-size: 18px; color:#EF7D00; font-weight: bold; }
 .testimonio-titulo h3{ font-size: 32px; color: #4A4A4A; font-weight: 700; }
 .testimonio-thumb { height: 260px; width: 260px; border-radius: 50%; overflow: hidden; margin-left: auto; }
 .testimonio-contenido h4{ font-size: 22px; font-weight: 700; color: #4A4A4A; }

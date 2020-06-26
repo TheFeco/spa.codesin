@@ -4052,7 +4052,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('carousel', __WEBPACK_IMPO
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.mixin({
     data: function data() {
         return {
-            loading: false
+            loading: false,
+            facebook: "http://www.facebook.com/pages/Codesin-Sinaloa/218834188212830?fref=ts",
+            twitter: "http://twitter.com/codesin",
+            youtube: "https://www.youtube.com/user/Cod351n/videos"
+
         };
     },
 
@@ -57945,8 +57949,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            transparencia: 'http://codesin.transparenciasinaloa.gob.mx/obligaciones-de-transparencia-del-consejo-para-el-desarrollo-economico-del-estado-de-sinaloa-codesin/'
+        };
+    },
     mounted: function mounted() {
         // /*mobile menu*/
         $('.menuBtn').click(function () {
@@ -58055,7 +58086,13 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _vm._m(1)
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: _vm.transparencia, target: "_blank" } },
+                      [_vm._v("Transparencia")]
+                    )
+                  ])
                 ])
               ])
             ]),
@@ -58063,10 +58100,12 @@ var render = function() {
             _c("div", { staticClass: "mobile-menu-area  visible-xs" }, [
               _c("label", { staticClass: "labelMenu" }, [_vm._v("Menú")]),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("nav", { staticClass: "mainMenu" }, [
                 _c("ul", [
+                  _vm._m(2),
+                  _vm._v(" "),
                   _c(
                     "li",
                     [
@@ -58115,14 +58154,20 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _vm._m(3),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: _vm.transparencia, target: "_blank" } },
+                      [_vm._v("Transparencia")]
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("li", [
                     _c(
                       "a",
                       {
                         staticClass: "facebook",
-                        attrs: { href: "http://facebook.com" }
+                        attrs: { href: _vm.facebook, target: "_blank" }
                       },
                       [
                         _c("img", {
@@ -58135,7 +58180,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "facebook",
-                        attrs: { href: "http://twitter.com" }
+                        attrs: { href: _vm.youtube, target: "_blank" }
                       },
                       [
                         _c("img", {
@@ -58148,7 +58193,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "facebook",
-                        attrs: { href: "http://twitter.com" }
+                        attrs: { href: _vm.twitter, target: "_blank" }
                       },
                       [
                         _c("img", {
@@ -58177,7 +58222,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-xs-12" }, [
             _c("ul", { staticClass: "header-login" }, [
               _c("li", [
-                _c("a", { attrs: { href: "login" } }, [
+                _c("a", { attrs: { href: "/login" } }, [
                   _c("i", { staticClass: "fa fa-key" }),
                   _vm._v("Login")
                 ])
@@ -58199,16 +58244,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "http://www.codesin.mx", target: "_blank" } }, [
-        _vm._v("Transparencia")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("a", { staticClass: "menuBtn", attrs: { href: "#" } }, [
       _c("span", { staticClass: "lines" })
     ])
@@ -58218,9 +58253,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "http://www.codesin.mx", target: "_blank" } }, [
-        _vm._v("Transparencia")
-      ])
+      _c(
+        "form",
+        {
+          staticClass: "searchFom",
+          staticStyle: { margin: "auto", "max-width": "300px", height: "40px" },
+          attrs: { action: "" }
+        },
+        [
+          _c("button", { attrs: { type: "submit" } }, [
+            _c("i", { staticClass: "fa fa-search" })
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", placeholder: "Search..", name: "search2" }
+          })
+        ]
+      )
     ])
   }
 ]
@@ -59069,27 +59118,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {};
     },
-    ready: function ready() {
-        console.log('test');
-    },
-
-    methods: {
-        reload: function reload() {
-            console.log('cambio');
-        }
-    },
-    mounted: function mounted() {
-        /*------------------------------------
-            Video Player
-        --------------------------------------*/
-
-        $('.image-popup').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-        });
-    },
 
     updated: function updated() {
         this.$nextTick(function () {
@@ -59581,7 +59609,7 @@ var render = function() {
           "div",
           {
             key: index,
-            staticClass: "col-sm-12 col-xs-12",
+            staticClass: "col-sm-6 col-xs-6",
             class: {
               "col-md-12": _vm.zonas.length == 1,
               "col-md-6": _vm.zonas.length == 2,

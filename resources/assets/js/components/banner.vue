@@ -18,27 +18,6 @@ export default {
         return {
         }
     },
-    ready () {
-        console.log('test');
-    },
-    methods: {
-        reload: function(){
-            console.log('cambio');
-        }
-    },
-    mounted() {
-        /*------------------------------------
-            Video Player
-        --------------------------------------*/
-        
-        
-        $('.image-popup').magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled:true
-            }
-        });
-    },
     updated: function () {
     this.$nextTick(function () {
          $('.video-popup').magnificPopup({
