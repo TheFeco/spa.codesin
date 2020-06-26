@@ -21,12 +21,8 @@ class PagesController extends Controller
         $pageinfo = Post::findOrFail(1);
         $noticias = Post::published()->where('category_id',2)->take(3)->get();
         
-        if( request()->wantsJson() )
-        {
-            return [ 'pageinfo' => $pageinfo, 'noticias'=>$noticias ];
-        }
 
-        return view('welcome',compact('posts'));
+        return [ 'pageinfo' => $pageinfo, 'noticias'=>$noticias ];
     }
 
     public function quienesSomos(){

@@ -12,8 +12,6 @@
                 </div>
             </div>
         </div>
-        
-
         <div class="main-menu-area">
             <div class="container">
                 <div class="row">
@@ -34,7 +32,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div class="mobile-menu-area visible-sm visible-xs">
+                        <div class="mobile-menu-area  visible-xs">
                             <label class="labelMenu" >Menú</label>
                             <a href="#" class="menuBtn">
                                 <span class="lines"></span>

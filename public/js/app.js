@@ -53133,21 +53133,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			items: 5
 		};
 	},
+	created: function created() {
+		this.getdata();
+	},
 
-	methods: {},
+	methods: {
+		getdata: function getdata() {
+			var _this = this;
+
+			fetch("/api/home").then(function (res) {
+				return res.json();
+			}).then(function (json) {
+				_this.pageInfo = json.pageinfo;
+				_this.noticias = json.noticias;
+				_this.img = _this.smallScreen(_this.pageInfo.urlBanner, _this.pageInfo.urlBannerMobile);
+				$('#lock').addClass('hidden');
+			});
+		}
+	},
 	mounted: function mounted() {
-		var _this = this;
 
 		$('#lock').removeClass('hidden');
-		axios.get('/api/home').then(function (res) {
-			_this.pageInfo = res.data.pageinfo;
-			_this.noticias = res.data.noticias;
-			// this.$load = false;
-			_this.img = _this.smallScreen(_this.pageInfo.urlBanner, _this.pageInfo.urlBannerMobile);
-			$('#lock').addClass('hidden');
-		}).catch(function (err) {
-			console.log(err);
-		});
+		// axios.get('/api/home')
+		// .then((res) => {
+		// 	this.pageInfo = res.data.pageinfo;
+		// 	this.noticias = res.data.noticias;
+		// 	// this.$load = false;
+		// 	this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
+		// 	$('#lock').addClass('hidden');
+		// })
+		// .catch((err) =>{
+		// 	console.log(err);
+		// });
 
 		$('body').popover({
 			selector: '[data-toggle="popover"]',
@@ -53166,19 +53183,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		$('.home-noticias-area,.main-menu-are').click(function (e) {
 			$('.popover').popover('hide');
 		});
-	},
-
-	watch: {
-		'$route': function $route() {
-			var _this2 = this;
-
-			axios.get('/api/home').then(function (res) {
-				_this2.imgSrc = res.slider;
-				_this2.noticias = res.noticias;
-			}).catch(function (err) {
-				console.log(err);
-			});
-		}
 	}
 });
 
@@ -53466,7 +53470,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-xs-12" }, [
-        _c("div", { staticClass: "header mt-80" }, [
+        _c("div", { staticClass: "subtitle f28 mt-80 text-center" }, [
           _vm._v("Plataforma de competitividad para impulsar el Estado")
         ])
       ])
@@ -54005,11 +54009,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             zonaSur: []
         };
     },
+    created: function created() {
+        this.init();
+    },
 
     methods: {
         init: function init() {
             var _this = this;
 
+            $('#lock').removeClass('hidden');
             axios.get('/api/quienes-somos').then(function (res) {
                 _this.pageInfo = res.data.pageinfo;
                 _this.testimonios = res.data.testimonios;
@@ -54027,15 +54035,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     },
-    mounted: function mounted() {
-
-        $('#lock').removeClass('hidden');
-        this.init();
-        if (this.testimonios.length > 0) {
+    mounted: function mounted() {},
+    updated: function updated() {
+        this.$nextTick(function () {
             $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
             $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
-        }
-        $('[data-toggle="popover"]').popover('hidde');
+        });
     }
 });
 
@@ -57940,8 +57945,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -58057,110 +58060,106 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mobile-menu-area visible-sm visible-xs" },
-              [
-                _c("label", { staticClass: "labelMenu" }, [_vm._v("Menú")]),
-                _vm._v(" "),
-                _vm._m(2),
-                _vm._v(" "),
-                _c("nav", { staticClass: "mainMenu" }, [
-                  _c("ul", [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "quienes-somos" } } },
-                          [_vm._v("¿Quiénes somos?")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "que-hacemos" } } },
-                          [_vm._v("¿Qué hacemos?")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "sinaloa" } } },
-                          [_vm._v("Sinaloa en Números")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "comunicacion" } } },
-                          [_vm._v("Comunicación")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("li", [
+            _c("div", { staticClass: "mobile-menu-area  visible-xs" }, [
+              _c("label", { staticClass: "labelMenu" }, [_vm._v("Menú")]),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _c("nav", { staticClass: "mainMenu" }, [
+                _c("ul", [
+                  _c(
+                    "li",
+                    [
                       _c(
-                        "a",
-                        {
-                          staticClass: "facebook",
-                          attrs: { href: "http://facebook.com" }
-                        },
-                        [
-                          _c("img", {
-                            attrs: { src: "../img/icons/Facebook.svg", alt: "" }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "facebook",
-                          attrs: { href: "http://twitter.com" }
-                        },
-                        [
-                          _c("img", {
-                            attrs: { src: "../img/icons/Youtube.svg", alt: "" }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "facebook",
-                          attrs: { href: "http://twitter.com" }
-                        },
-                        [
-                          _c("img", {
-                            attrs: { src: "../img/icons/Twitter.svg", alt: "" }
-                          })
-                        ]
+                        "router-link",
+                        { attrs: { to: { name: "quienes-somos" } } },
+                        [_vm._v("¿Quiénes somos?")]
                       )
-                    ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "que-hacemos" } } },
+                        [_vm._v("¿Qué hacemos?")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "sinaloa" } } },
+                        [_vm._v("Sinaloa en Números")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "comunicacion" } } },
+                        [_vm._v("Comunicación")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "facebook",
+                        attrs: { href: "http://facebook.com" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "../img/icons/Facebook.svg", alt: "" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "facebook",
+                        attrs: { href: "http://twitter.com" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "../img/icons/Youtube.svg", alt: "" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "facebook",
+                        attrs: { href: "http://twitter.com" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "../img/icons/Twitter.svg", alt: "" }
+                        })
+                      ]
+                    )
                   ])
                 ])
-              ]
-            )
+              ])
+            ])
           ])
         ])
       ])
@@ -59083,30 +59082,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         /*------------------------------------
             Video Player
         --------------------------------------*/
-        $('.video-popup').magnificPopup({
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            zoom: {
-                enabled: true
-            },
-            iframe: {
-                patterns: {
-                    youtube_short: {
-                        index: 'https://youtu.be/',
-                        id: 'youtu.be/',
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
-                    },
-                    youtube: {
-                        index: 'youtube.com/',
-                        id: 'v=',
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
-                    }
-                },
-                srcAction: 'iframe_src'
-            }
-        });
 
         $('.image-popup').magnificPopup({
             type: 'image',
@@ -59116,10 +59091,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
     },
 
-    watch: {
-        carousel: function carousel(value) {
-            this.slides = value;
-        }
+    updated: function updated() {
+        this.$nextTick(function () {
+            $('.video-popup').magnificPopup({
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                zoom: {
+                    enabled: true
+                },
+                iframe: {
+                    patterns: {
+                        youtube_short: {
+                            index: 'https://youtu.be/',
+                            id: 'youtu.be/',
+                            src: '//www.youtube.com/embed/%id%?autoplay=1'
+                        },
+                        youtube: {
+                            index: 'youtube.com/',
+                            id: 'v=',
+                            src: '//www.youtube.com/embed/%id%?autoplay=1'
+                        }
+                    },
+                    srcAction: 'iframe_src'
+                }
+            });
+        });
     }
 });
 
@@ -59144,7 +59142,10 @@ var render = function() {
               _c("div", { staticClass: "video-icon video-hover" }, [
                 _c(
                   "a",
-                  { staticClass: "image-popup", attrs: { href: _vm.img } },
+                  {
+                    staticClass: "video-popup",
+                    attrs: { href: _vm.page.urlvideo }
+                  },
                   [_c("i", { staticClass: "fa fa-play" })]
                 )
               ])

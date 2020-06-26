@@ -99,6 +99,9 @@ a:active, a:hover {
 .title.f32{ font-size: 2rem; letter-spacing: 1px;}
 .title.f44{ font-size: 2.75rem; letter-spacing: 0.92px;}
 
+.subtitle { font-family: "Open Sans"; color: #868686; font-weight: bold;}
+.subtitle.f28 {font-size: 1.75rem;  letter-spacing: 0.8px;}
+
 /*line-height*/
 .lh-32{line-height: 1.625rem !important;}
 .lh-38{line-height: 38px;}
@@ -790,7 +793,7 @@ width: 100%;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 25px;
   border-radius: 0.25rem;
 }
 

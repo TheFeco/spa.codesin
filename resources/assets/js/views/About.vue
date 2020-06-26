@@ -127,9 +127,12 @@ export default {
             zonaSur:  [],
         }
     },
+    created() {
+        this.init();
+    },
     methods: {
         init: function(){
-            
+             $('#lock').removeClass('hidden');
             axios.get('/api/quienes-somos')
 			.then((res) => {
 				this.pageInfo = res.data.pageinfo;
@@ -151,14 +154,12 @@ export default {
     },
     mounted() {
         
-         $('#lock').removeClass('hidden');
-         this.init(); 
-        if(this.testimonios.length > 0){
-        $( ".owl-prev").html('<i class="fa fa-chevron-left"></i>');
-        $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
-        }
-        $('[data-toggle="popover"]').popover('hidde');
-        
+    },
+    updated() {
+        this.$nextTick(function(){
+            $( ".owl-prev").html('<i class="fa fa-chevron-left"></i>');
+            $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
+        })
     },
 }
 </script>

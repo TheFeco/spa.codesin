@@ -84,7 +84,7 @@
 			<!-- titulo Plataforma de competitividad -->
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="header mt-80">Plataforma de competitividad para impulsar el Estado</div>
+					<div class="subtitle f28 mt-80 text-center">Plataforma de competitividad para impulsar el Estado</div>
 				</div>
 			</div>
 			<!-- icons Plataforma de competitividad -->
@@ -276,6 +276,7 @@
 </template>
 <script>
     export default {
+		
 		data(){
 			return{
 				pageInfo: [],
@@ -285,23 +286,36 @@
 				items: 5,
 			}
 		},
+		created(){
+			this.getdata();
+		},
 		 methods: {
-			
+			getdata(){
+				fetch("/api/home")
+				.then(res => res.json())
+				.then(json => {
+					this.pageInfo = json.pageinfo;
+					this.noticias = json.noticias;
+					this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
+					$('#lock').addClass('hidden');
+				});
+			}
 		
 		},
         mounted() {
+			
 			$('#lock').removeClass('hidden');
-			axios.get('/api/home')
-			.then((res) => {
-				this.pageInfo = res.data.pageinfo;
-				this.noticias = res.data.noticias;
-				// this.$load = false;
-				this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
-				$('#lock').addClass('hidden');
-			})
-			.catch((err) =>{
-				console.log(err);
-			});
+			// axios.get('/api/home')
+			// .then((res) => {
+			// 	this.pageInfo = res.data.pageinfo;
+			// 	this.noticias = res.data.noticias;
+			// 	// this.$load = false;
+			// 	this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
+			// 	$('#lock').addClass('hidden');
+			// })
+			// .catch((err) =>{
+			// 	console.log(err);
+			// });
 
 			$('body').popover({
 				selector: '[data-toggle="popover"]',
@@ -320,18 +334,6 @@
 			$('.home-noticias-area,.main-menu-are').click(function (e) {
 				$('.popover').popover('hide');
 			});
-		},
-		watch:{
-			'$route'(){
-				axios.get('/api/home')
-				.then((res) => {
-					this.imgSrc = res.slider;
-					this.noticias = res.noticias;
-				})
-				.catch((err) =>{
-					console.log(err);
-				});
-			}
 		}
     }
 </script>
