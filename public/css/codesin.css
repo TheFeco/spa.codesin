@@ -57,14 +57,20 @@ a:active, a:hover {
 .mb-24 { margin-bottom: 1.5rem !important;}
 .mb-54 { margin-bottom: 54px !important;}
 .mb-60 { margin-bottom: 60px !important;}
+.mb-64 { margin-bottom: 64px !important;}
 .mb-8 { margin-bottom: 5rem !important;}
+.mb-160 { margin-bottom: 10rem !important;}
 
 
 .mt-10 { margin-top: 10px !important;}
 .mt-16 { margin-top: 16px !important;}
 .mt-24 { margin-top: 24px !important;}
+.mt-32 { margin-top: 32px !important;}
+.mt-40 { margin-top: 40px !important;}
 .mt-54 { margin-top: 54px !important;}
 .mt-80 { margin-top: 80px !important;}
+
+.mr-80 { margin-right: 5rem !important;}
 
 
 /***************************
@@ -95,6 +101,10 @@ a:active, a:hover {
 .msm { margin: 80px 250px 80px 250px; }
 
 .title { color: #4A4A4A; font-weight: bold; line-height: 38px; }
+.title.f16 { font-size: 1rem; line-height: normal;}
+.title.f18 { font-size: 1.125rem; line-height: normal;}
+.title.f20 { font-size: 1.25rem; line-height: normal;}
+.title.f24 { font-size: 1.5rem; line-height: normal;}
 .title.f28{ font-size: 1.75rem; letter-spacing: 0.8px;}
 .title.f32{ font-size: 2rem; letter-spacing: 1px;}
 .title.f44{ font-size: 2.75rem; letter-spacing: 0.92px;}
@@ -109,8 +119,9 @@ a:active, a:hover {
 
 .contenedor-text{ color:#626262; font-family: "Open Sans"; }
 .contenedor-text.default{letter-spacing: 0; line-height: 26px; }
-.contenedor-text.t20{letter-spacing: 0; line-height: 30px; font-size: 20px; }
-.contenedor-text.t32{ line-height: 2rem; letter-spacing: 0; font-size: 32px; }
+.contenedor-text.t18{letter-spacing: 0; line-height: 26px; font-size: 1.125rem; }
+.contenedor-text.t20{letter-spacing: 0; line-height: 30px; font-size: 1.25rem; }
+.contenedor-text.t32{ line-height: 2rem; letter-spacing: 0; font-size: 2rem; }
 
 /* 2. Header CSS */
 header{
@@ -612,57 +623,41 @@ hr{
 /* pagina nocticias */
 /* .noticias-detalle-area{ background: aqua;} */
 
-.map-area { width: 640px; height: 727px;  margin: auto;}
+.map-area { width: 40rem; height: 45.438rem;  margin: auto;}
 .map-area .line { height: 4px; width: 100%;}
 
-.zonas { width: 25%; position: absolute; height: 5%;}
+.zonas { width: 24.031rem; position: absolute; height: 5%;}
 .zonas h3 { font-size: 1.5em; font-weight: 700;  color: #4A4A4A; }
 .zonas .proyectos { font-size: 1.25em; color: #4A4A4A; margin-bottom: 26px; }
-.zonas a { font-weight: 700; color: #007D80; }
+.zonas a { font-weight: 700; color: #007D80;  font-size: 1rem;}
 .line { height: 5px; margin: 10px 0 10px 0 }
 .zonas.norte{ 
   left: 41%;
   right: 0;
-  top: 2%;
+  top: 0%;
   bottom: 0;}
 .zonas.centro{
   position: absolute;
   top: 39%;
   bottom: 0;
   right: 0;
-  left: 55%;
+  left: 57%;
 }
 .zonas.centro-norte{
-  top: 41%;
+  top: 40%;
   bottom: 0;
-  left: 15%;
+  left: -2%;
   right: 0;
 }
 .zonas.sur{
   top: 79%;
   bottom: 0;
-  left: 37%;
+  left: 25%;
   right: 0;
 }
-.inversiones-area h2 {
-  font-size: 32px;
-  color: #4A4A4A;
-  font-weight: 700;
-}
+.inversiones-content { max-height: 380px;}
 
-.inversiones-content h2{ 
-  margin-top: 88px;
-  margin-bottom: 32px;
-}
-.inversiones-content > p{
-  color: #626262;
-  margin-bottom: 16px;
-  text-align: left;
-  line-height: 1.2;
-}
-.inversiones-content > a{
-  font-size: 20px;
-  font-weight: 700;
+.inversiones-content a{
   color: #007D80;
 }
 .inversiones-img{
@@ -683,8 +678,6 @@ hr{
 .amarillo-bc { border-color: #FFAA00; }
 .naranja-bc { border-color: #E74011; }
 .azul-bc { border-color: #5C9CEE; }
-/* .card-box { width: 260px; height: 313px; border: 1px solid #000;  position: relative; display: flex;} */
-/* .card-box-constainer { color: #4A4A4A; margin: 0 16px 0 16px;   } */
 .card-box-icon { width: 32px; height: 32px; margin: 24px 0 16px 16px;}
 .card-box-title { font-size: 1rem; font-weight: bold; }
 .card-box span { font-size: 1.75rem; font-weight: bold;  }
@@ -753,6 +746,7 @@ hr{
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-bottom: 25px;
 }
 .card-noticias-img-top {
   width: 100%;
@@ -858,5 +852,4 @@ width: 100%;
 .card-staff-text {  margin-bottom: 2rem; color: #626262; font-size: 14px; }
 .card-staff-text:last-child { margin-bottom: 0; }
 .owl-carousel .owl-item img { height: 100%; }
-.map-area { width: 400px; height: 481px; }
 .proyectos-list{ margin-bottom: 33px;}

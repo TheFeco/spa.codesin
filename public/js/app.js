@@ -53244,20 +53244,34 @@ var render = function() {
               [_vm._m(1), _vm._v(" "), _vm._m(2)]
             ),
             _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
+            _c(
+              "div",
+              {
+                staticClass: "icons col-md-2 col-sm-2 col-xs-4",
+                attrs: {
+                  "data-container": "body",
+                  title: "",
+                  "data-toggle": "popover",
+                  "data-placement": "bottom",
+                  "data-content": _vm.msg,
+                  "data-original-title": "Bioeconomía"
+                }
+              },
+              [_vm._m(3), _vm._v(" "), _vm._m(4)]
+            ),
             _vm._v(" "),
             _vm._m(5),
             _vm._v(" "),
-            _vm._m(6)
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7)
           ])
         ]),
         _vm._v(" "),
-        _vm._m(7),
+        _vm._m(8),
         _vm._v(" "),
         _c("div", { staticClass: "hidden-sm hidden-xs" }, [
-          _vm._m(8),
+          _vm._m(9),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-xs-12 text-gray parte3 mb-8" }, [
@@ -53274,17 +53288,17 @@ var render = function() {
                     "data-original-title": "Bioeconomía"
                   }
                 },
-                [_vm._m(9), _vm._v(" "), _vm._m(10)]
+                [_vm._m(10), _vm._v(" "), _vm._m(11)]
               ),
               _vm._v(" "),
-              _vm._m(11),
+              _vm._m(12),
               _vm._v(" "),
-              _vm._m(12)
+              _vm._m(13)
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(13)
+        _vm._m(14)
       ]),
       _vm._v(" "),
       _c("noticias-area", { attrs: { noticias: _vm.noticias, vermas: true } })
@@ -53336,35 +53350,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "icons col-md-2 col-sm-2 col-xs-4",
-        attrs: {
-          "data-container": "body",
-          title: "",
-          "data-toggle": "popover",
-          "data-placement": "bottom",
-          "data-content":
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.",
-          "data-original-title": "Bioeconomía"
-        }
-      },
-      [
-        _c("div", { staticClass: "icon-img pop" }, [
-          _c("img", {
-            staticClass: "pop",
-            attrs: { src: "/img/home/pay-per-click.png", alt: "Bioeconomia" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "icon-text pop" }, [
-          _c("div", { staticClass: "excerpt pop" }, [
-            _c("span", { staticClass: "pop" }, [_vm._v("Economía Digital")])
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "icon-img pop" }, [
+      _c("img", {
+        staticClass: "pop",
+        attrs: { src: "/img/home/pay-per-click.png", alt: "Bioeconomia" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "icon-text pop" }, [
+      _c("div", { staticClass: "excerpt pop" }, [
+        _c("span", { staticClass: "pop" }, [_vm._v("Economía Digital")])
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -54441,7 +54442,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\n.card- {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(4, 1fr);\n}\n.card-2{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 23.25rem;\n    width: 16.25rem;\n}\n.card-2-img { height: 16.25rem; width: 16.25rem; margin: 0;\n}\n.card-2-constainer { height: 7rem; padding: 2rem 0;\n}\n", ""]);
 
 // exports
 
@@ -54704,6 +54705,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -54726,11 +54739,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         goTo: function goTo(zona) {
             this.$router.push({ name: 'proyecto_zona', params: { url: zona.url } });
-        },
-        editModal: function editModal(e) {
-            var obj = e.currentTarget.getAttribute('data_id');
-            console.log(obj);
-            // console.log(e.currentTarget.getAttribute('data_id'));
         }
     },
     mounted: function mounted() {
@@ -54746,7 +54754,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.zcn = res.data.zcnorte;
             _this.zc = res.data.zcentro;
             _this.zs = res.data.zsur;
-            console.log(_this.zn);
             _this.img = _this.smallScreen(_this.pageInfo.urlBanner, _this.pageInfo.urlBannerMobile);
             $('#lock').addClass('hidden');
         }).catch(function (err) {
@@ -54774,60 +54781,66 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _vm._m(0),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-sm-12" },
-            _vm._l(_vm.estrategias, function(estrategia, index) {
-              return _c(
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
                 "div",
-                { key: index, staticClass: "col-md-3 col-sm-4 col-xs-6" },
-                [
-                  _c(
-                    "url-link",
-                    { attrs: { info: estrategia, nombre: "estrategia_show" } },
+                { staticClass: "card-1" },
+                _vm._l(_vm.estrategias, function(item, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "card-2" },
                     [
-                      _c("div", { staticClass: "consejo-staff mtb-15" }, [
-                        _c("div", { staticClass: "consejo-staff-img" }, [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("img", {
-                              attrs: {
-                                src: estrategia.urlimage,
-                                alt: "consejo-staff"
-                              }
+                      _c(
+                        "div",
+                        { staticClass: "card-2-img" },
+                        [
+                          _c(
+                            "url-link",
+                            {
+                              attrs: { info: item, nombre: "estrategia_show" }
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "img-responsive",
+                                attrs: { src: item.urlimage, alt: "" }
+                              })
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "url-link",
+                        { attrs: { info: item, nombre: "estrategia_show" } },
+                        [
+                          _c("div", { staticClass: "card-2-constainer" }, [
+                            _c("div", {
+                              staticClass: "title f18 text-center",
+                              domProps: { textContent: _vm._s(item.excerpt) }
                             })
                           ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "consejo-staff-content text-center" },
-                          [
-                            _c("h4", {
-                              domProps: {
-                                textContent: _vm._s(estrategia.excerpt)
-                              }
-                            })
-                          ]
-                        )
-                      ])
-                    ]
+                        ]
+                      )
+                    ],
+                    1
                   )
-                ],
-                1
+                }),
+                0
               )
-            }),
-            0
-          )
+            ])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "pp-area" }, [
+      _c("div", { staticClass: "pp-area mtb-70" }, [
         _c("div", { staticClass: "container" }, [
           _vm._m(1),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "row" },
+            { staticClass: "col-md-12" },
             [
               _c("politicas-area", {
                 attrs: { politicas: _vm.politicas, vermas: true }
@@ -55353,68 +55366,73 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "inversiones-area mb-80" }, [
+      _c("div", { staticClass: "inversiones-area mt-80" }, [
         _c("div", { staticClass: "container" }, [
           _vm._m(11),
           _vm._v(" "),
           _c("div", { staticClass: "row default-bg" }, [
-            _c("div", { staticClass: "col-md-4 col-sm-12" }, [
-              _c(
-                "div",
-                { staticClass: "inversiones-img hidden-sm hidden-xs" },
-                [
-                  _c("img", {
-                    attrs: { src: _vm.pageInfo.urlimage, alt: "about" }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "inversiones-img hidden-lg hidden-md ",
-                  attrs: { vel: "" }
-                },
-                [
-                  _c("img", {
-                    staticClass: "img-responsive",
-                    attrs: { src: _vm.pageInfo.urlimageMobile, alt: "img" }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-              _c("div", { staticClass: "inversiones-content mb-8" }, [
-                _c("h2", {
-                  domProps: { textContent: _vm._s(_vm.pageInfo.title) }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "contenedor-text default mb-8",
-                  domProps: { innerHTML: _vm._s(_vm.pageInfo.body) }
-                }),
+            _c("div", [
+              _c("div", { staticClass: "col-md-4 col-sm-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "inversiones-img hidden-sm hidden-xs" },
+                  [
+                    _c("img", {
+                      attrs: { src: _vm.pageInfo.urlimage, alt: "about" }
+                    })
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
-                  "a",
-                  {
-                    staticClass: "mb-8",
-                    attrs: { href: _vm.pageInfo.externalUrl, target: "_blank" }
-                  },
-                  [_vm._v("Ir al sitio")]
+                  "div",
+                  { staticClass: "inversiones-img hidden-lg hidden-md " },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: { src: _vm.pageInfo.urlimageMobile, alt: "img" }
+                    })
+                  ]
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-8 col-sm-12" }, [
+                _c("div", { staticClass: "inversiones-content mr-80" }, [
+                  _c("h2", {
+                    staticClass: "title f24 mt-80",
+                    domProps: { textContent: _vm._s(_vm.pageInfo.title) }
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "contenedor-text t18 mt-32",
+                    domProps: { innerHTML: _vm._s(_vm.pageInfo.body) }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "target mt-16" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "title f20 degault",
+                        attrs: {
+                          href: _vm.pageInfo.externalUrl,
+                          target: "_blank"
+                        }
+                      },
+                      [_vm._v("Ir al sitio")]
+                    )
+                  ])
+                ])
               ])
             ])
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "consejo-area mtb-70" }, [
+      _c("div", { staticClass: "consejo-area mt-80 mb-160" }, [
         _c(
           "div",
           { staticClass: "container" },
           [
-            _c("div", { staticClass: "titulo text-center mb-60" }, [
+            _c("div", { staticClass: "title f32 text-center mb-60" }, [
               _c("h3", { domProps: { textContent: _vm._s(_vm.title) } })
             ]),
             _vm._v(" "),
@@ -55442,15 +55460,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titulo text-center mb-60" }, [
-      _c("h3", [_vm._v(" Políticas publicas")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "sm-12 text-center mb-60" }, [
+        _c("h2", { staticClass: "title f32" }, [_vm._v("Políticas publicas")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titulo text-center mb-8" }, [
+    return _c("div", { staticClass: "title f32 text-center mb-8" }, [
       _c("h3", [_vm._v(" Proyectos regionales")])
     ])
   },
@@ -55536,7 +55556,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titulo text-center mb-60" }, [
+    return _c("div", { staticClass: "title f32 text-center mb-64" }, [
       _c("h3", [_vm._v("Promoción de inversiones")])
     ])
   }
@@ -57377,42 +57397,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['url'],
     data: function data() {
         return {
             pageInfo: [],
-            proyect: [],
-            mapa: '/img/mapa/zn.jpeg'
+            proyect: []
         };
     },
 
@@ -57444,83 +57435,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "inversiones-area mb-80" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "row default-bg" }, [
-          _c("div", { staticClass: "col-md-4 col-sm-12" }, [
-            _c("div", { staticClass: "inversiones-img hidden-sm hidden-xs" }, [
-              _c("img", { attrs: { src: _vm.mapa, alt: "about" } })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "inversiones-img hidden-lg hidden-md ",
-                attrs: { vel: "" }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-responsive",
-                  attrs: { src: _vm.mapa, alt: "img" }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-7 col-sm-12" }, [
-            _c("div", { staticClass: "inversiones-content mb-8" }, [
-              _c(
-                "div",
-                { staticClass: "contenedor-text default mb-8" },
-                _vm._l(_vm.proyect.posts, function(proyecto, index) {
-                  return _c(
-                    "ul",
-                    { key: index, staticClass: "contenedor-text t20" },
-                    [
-                      _c(
-                        "li",
-                        [
-                          _c("strong", [_vm._v(_vm._s(index + 1))]),
-                          _vm._v(" "),
-                          _c("url-link", {
-                            attrs: { info: proyecto, nombre: "proyecto_show" },
-                            domProps: { textContent: _vm._s(proyecto.title) }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                }),
-                0
-              )
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "mb-8" },
-      [_c("proyectos-area", { attrs: { proyectos: _vm.proyect.posts } })],
-      1
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("banner-area", {
+        staticClass: "mb-8",
+        attrs: { page: _vm.pageInfo, img: _vm.img }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mb-8" },
+        [
+          _c("proyectos-area", {
+            attrs: { proyectos: _vm.proyect, vermas: true }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titulo text-center mb-60" }, [
-      _c("h3", [_vm._v("Plan de trabajo Zona Norte")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -57879,6 +57816,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -58891,6 +58829,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(120)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(106)
@@ -58899,7 +58841,7 @@ var __vue_template__ = __webpack_require__(107)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -58961,6 +58903,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['politicas', 'vermas']
@@ -58974,81 +58918,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-24" }, [
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "row  mt-24" },
-        _vm._l(_vm.politicas, function(politica, index) {
-          return _c(
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "card-1" },
+      _vm._l(_vm.politicas, function(item, index) {
+        return _c("div", { key: index, staticClass: "card-p" }, [
+          _c(
             "div",
-            { key: index, staticClass: "col-md-4 col-sm-6 col-xs-12" },
+            { staticClass: "card-p-img" },
             [
+              _c("noticia-link", { attrs: { noticia: item } }, [
+                _c("img", {
+                  staticClass: "img-responsive",
+                  attrs: { src: item.urlBanner, alt: "" }
+                })
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-p-constainer" }, [
+            _c("div", { staticClass: "title f16 text-center" }, [
               _c(
                 "div",
-                { staticClass: "card-noticias mb-24 o-hidden default-bg" },
                 [
-                  _c("img", {
-                    staticClass: "card-noticias-img-top",
-                    attrs: { src: politica.urlBanner, alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "card-noticias-body " },
-                    [
-                      _c(
-                        "h5",
-                        { staticClass: "card-noticias-title" },
-                        [
-                          _c("noticia-link", {
-                            attrs: { noticia: politica },
-                            domProps: { textContent: _vm._s(politica.title) }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("p", {
-                        staticClass:
-                          "card-noticias-text text-gray hidden-sm hidden-xs",
-                        domProps: { textContent: _vm._s(politica.excerpt) }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "noticia-link",
-                        {
-                          staticClass: "vermas hidden-sm hidden-xs",
-                          attrs: { noticia: politica }
-                        },
-                        [_vm._v("Ver politica")]
-                      )
-                    ],
-                    1
-                  )
-                ]
+                  _c("noticia-link", {
+                    attrs: { noticia: item },
+                    domProps: { textContent: _vm._s(item.title) }
+                  })
+                ],
+                1
               )
-            ]
-          )
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _vm.vermas
-        ? _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "vertodos col-xs-12" },
-              [
-                _c("router-link", { attrs: { to: { name: "noticias" } } }, [
-                  _vm._v("Ver todas")
-                ])
-              ],
-              1
-            )
+            ])
           ])
-        : _vm._e()
-    ])
+        ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []
@@ -59213,6 +59120,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(122)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(112)
@@ -59221,7 +59132,7 @@ var __vue_template__ = __webpack_require__(113)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -59290,7 +59201,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['proyectos', 'vermas'],
 
-    mounted: function mounted() {}
+    mounted: function mounted() {
+        $(".i").click(function () {
+            $(".texto").toggleClass("hide-text");
+            $("#masTexto").toggleClass("padding-text");
+            $(".texto").hasClass("hide-text") ? $(this).text("Leer menos") : $(this).text("Leer más");
+        });
+    }
 });
 
 /***/ }),
@@ -59304,18 +59221,20 @@ var render = function() {
   return _c("div", { staticClass: "home-noticias-area mt-24" }, [
     _c("div", { staticClass: "container" }, [
       _vm.vermas
-        ? _c("div", { staticClass: "titulo text-center" }, [
-            _c("h3", [_vm._v(" Proyectos ")])
+        ? _c("div", { staticClass: "title f32 text-center" }, [
+            _c("div", [
+              _vm._v(" Plan de trabajo " + _vm._s(_vm.proyectos.name))
+            ])
           ])
         : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row  mt-24" },
-        _vm._l(_vm.proyectos, function(proyecto, index) {
+        { staticClass: "row  mt-24 texto" },
+        _vm._l(_vm.proyectos.posts, function(proyecto, index) {
           return _c(
             "div",
-            { key: index, staticClass: "col-md-4 col-sm-12 col-xs-12" },
+            { key: index, staticClass: "col-md-4 col-sm-12 col-xs-12 " },
             [
               _c(
                 "div",
@@ -59367,15 +59286,22 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _vm.vermas
-        ? _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "vertodos col-xs-12" })
-          ])
-        : _vm._e()
+      _vm.vermas ? _c("div", { staticClass: "row" }, [_vm._m(0)]) : _vm._e()
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vertodos col-xs-12" }, [
+      _c("div", { staticClass: "i", attrs: { id: "masTexto" } }, [
+        _vm._v("Ver mas")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -59668,6 +59594,86 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-6193fca4", module.exports)
   }
 }
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(121);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("642b71ea", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f7598aa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./politicasArea.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f7598aa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./politicasArea.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.card-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(3, 1fr);\n}\n.card-p{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 22.25rem;\n}\n.card-p-img { height: 16.438rem; width: 22.25rem; margin: 0;\n}\n.card-p-constainer { height: 7rem; padding: 2rem 2rem 2rem 2rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(123);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("46f04b93", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12125098\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proyectosArea.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12125098\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proyectosArea.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.hide-text{\r\n    overflow: initial !important;\r\n    height: auto !important;\n}\n.texto{\r\n  height: 151rem;\r\n  overflow: hidden;\n}\n.i { cursor: pointer;\n}\n.padding-text{\r\n  margin-top : 25px !important;\r\n  padding-top: -20px;\n}\n#masTexto {\r\n  width: 100%;\r\n  height: 4em;\r\n    color: #007D80;\r\n  font-family: \"Open Sans\";\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 24px;\r\n  text-align: center;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

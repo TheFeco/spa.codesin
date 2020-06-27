@@ -11,37 +11,45 @@
                         <h2 class="title f32">Estrategias</h2>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <div class="col-md-3 col-sm-4 col-xs-6" v-for="(estrategia, index) in estrategias" :key="index">
-                        <url-link :info="estrategia" :nombre="'estrategia_show'">
-                        <div class="consejo-staff mtb-15">
-                            <div class="consejo-staff-img">
-                                <a href="#"><img :src="estrategia.urlimage" alt="consejo-staff"></a>  
-                            </div>
-                            <div class="consejo-staff-content text-center">
-                                <h4 v-text="estrategia.excerpt"></h4>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="card-1" >
+                            <div class="card-2" v-for="(item, index) in estrategias" :key="index">
+                                <div class="card-2-img">
+                                    <url-link :info="item" :nombre="'estrategia_show'">
+                                        <img class="img-responsive" :src="item.urlimage" alt="">
+                                    </url-link>
+                                </div>
+                                <url-link :info="item" :nombre="'estrategia_show'">
+                                    <div class="card-2-constainer">
+                                        <div class="title f18 text-center" v-text="item.excerpt">
+                                        </div>
+                                    </div>
+                                </url-link>
                             </div>
                         </div>
-                        </url-link>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Políticas Publicas -->
-        <div class="pp-area">
+        <div class="pp-area mtb-70">
             <div class="container">
-                <div class="titulo text-center mb-60">
-                    <h3> Políticas publicas</h3>
-                </div>
                 <div class="row">
+                    <div class="sm-12 text-center mb-60">
+                        <h2 class="title f32">Políticas publicas</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
                     <politicas-area :politicas="politicas" :vermas="true"></politicas-area>
                 </div>
             </div>
-		</div>
+        </div>
         <!-- mapa - area -->
+        
         <div class="pp-area mt-80">
             <div class="container">
-                <div class="titulo text-center mb-8">
+                <div class="title f32 text-center mb-8">
                     <h3> Proyectos regionales</h3>
                 </div>
                 <div class="row">
@@ -182,34 +190,38 @@
             </div>
 		</div>
         <!-- inversiones Inicio -->
-        <div class="inversiones-area mb-80">
+        <div class="inversiones-area mt-80">
             <div class="container">
-                <div class="titulo text-center mb-60">
+                <div class="title f32 text-center mb-64">
                     <h3>Promoción de inversiones</h3>
                 </div>
                 <div class="row default-bg">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="inversiones-img hidden-sm hidden-xs">
-                            <img :src="pageInfo.urlimage" alt="about">
+                    <div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="inversiones-img hidden-sm hidden-xs">
+                                <img :src="pageInfo.urlimage" alt="about">
+                            </div>
+                            <div class="inversiones-img hidden-lg hidden-md ">
+                                <img class="img-responsive" :src="pageInfo.urlimageMobile" alt="img">
+                            </div>
                         </div>
-                        <div class="inversiones-img hidden-lg hidden-md " vel>
-                            <img class="img-responsive" :src="pageInfo.urlimageMobile" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="inversiones-content mb-8">
-                            <h2 class="" v-text="pageInfo.title"></h2>
-                            <div class="contenedor-text default mb-8" v-html="pageInfo.body"></div>
-                            <a v-bind:href="pageInfo.externalUrl" target="_blank" class="mb-8">Ir al sitio</a>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="inversiones-content mr-80">
+                                <h2 class="title f24 mt-80" v-text="pageInfo.title"></h2>
+                                <div class="contenedor-text t18 mt-32" v-html="pageInfo.body"></div>
+                                <div class="target mt-16">
+                                    <a v-bind:href="pageInfo.externalUrl" target="_blank" class="title f20 degault">Ir al sitio</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
          <!-- Consejo del CIT -->
-         <div class="consejo-area mtb-70">
+         <div class="consejo-area mt-80 mb-160">
             <div class="container">
-                <div class="titulo text-center mb-60">
+                <div class="title f32 text-center mb-60">
                     <h3 class="" v-text="title"></h3>
                 </div>
                 <staff-area :staffs="consejos"/>
@@ -239,11 +251,6 @@ export default {
         goTo : function(zona) {
             this.$router.push({ name: 'proyecto_zona',  params:{url:zona.url}});
         },
-        editModal: function(e) {
-            const obj = e.currentTarget.getAttribute('data_id')
-            console.log(obj);
-            // console.log(e.currentTarget.getAttribute('data_id'));
-        }
 	},
     mounted() {
         $('#lock').removeClass('hidden');
@@ -257,7 +264,6 @@ export default {
                 this.zcn = res.data.zcnorte;
                 this.zc = res.data.zcentro;
                 this.zs = res.data.zsur;
-                console.log(this.zn)
                 this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
                 $('#lock').addClass('hidden');
 			})
@@ -270,4 +276,19 @@ export default {
 </script>
 <style>
     .municipio { position: relative; z-index: 10; cursor: pointer;}
+    .card- {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .card-2{ 
+        background-color: #FFF;
+        color: #4A4A4A;
+        height: 23.25rem;
+        width: 16.25rem;
+    }
+    .card-2-img { height: 16.25rem; width: 16.25rem; margin: 0;}
+    .card-2-constainer { height: 7rem; padding: 2rem 0; }
 </style>
