@@ -1,9 +1,9 @@
 @extends('dashboard.master')
 @section('header')
 <div class="breadcrumb">
-    <h1>Proyecto</h1>
+    <h1>Proyecto @if (isset($tag)) {{$tag->name }} @else {{$post->tags[0]->name}} @endif</h1>
     <ul>
-        <li>Editar Proyecto</li>
+        <li>Editar</li>
     </ul>
 </div>
 @stop
@@ -12,27 +12,7 @@
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
-        <div class="col-md-12">
-            <div class="card md-3">
-                <div class="card-body"></div>
-                <div class="card-title">Banner Area</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
-                            <label for="">banner el tamaño debe ser 1440px X 451px </label>
-                            <input type="file" name="banner" id="banner" data-default-file="{{ $post->urlBanner ? $post->urlBanner : '' }}" data-max-file-size-preview="2M" >
-                            {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
-                        </div>
-                        
-                        <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
-                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
-                            <input type="file" class="form-control" name="bannerMobile" id="bannerMobile" data-default-file="{{ $post->urlBannerMobile ? $post->urlBannerMobile : '' }}" data-max-file-size-preview="2M">
-                            {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('dashboard.partials.banner')
     </div>
     <div class="row">
         <div class="col-md-8">
@@ -59,19 +39,10 @@
                 <div class="card-body">
                     <div class="card-title"></div>
                     <div class="row">
-                        <div class="col-md-12 form-group mb-3">
-                            <label for="picker2">fecha de publicación </label>
-                            <input class="form-control" id="picker2" placeholder="dd-mm-yyyy" name="published_at" data-value="{{ old('published_at', $post->published_at ? $post->published_at : null )}}" />
-                        </div>
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('excerpt') ? 'has-error' : ''}}">
                             <label for="excerpt">Extracto publicación</label>
                             <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="10"  >{{ old('excerpt', $post->excerpt)}}</textarea>
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
-                        </div>
-                        <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
-                            <label for="urlvideo">Url de video de youtube</label>
-                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', $post->urlvideo)}}" />
-                            {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('tags') ? 'has-error' : ''}}">
                             <label for="picker1">Seleccione una etiqueta {{ old('tags')}}</label>
@@ -140,17 +111,19 @@
 
     
     <script>
-        $('#picker2, #picker3').pickadate({
-            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            weekdaysShort: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-            today: 'Hoy',
-            clear: 'Limpiar',
-            close: 'Cerrar',
-            formatSubmit: 'yyyy/mm/dd'
-        });
         // Summernote
         $('.textarea').summernote({
             height: 300,   //set editable area's height
+            lang: 'es-ES', // default: 'en-US'
+            toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
         });
         var myDropzone = new Dropzone('.dropzone', {
             url:'./photos',

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use File;
+use Carbon\Carbon;
 
 class ProyectosController extends Controller
 {
@@ -16,7 +17,7 @@ class ProyectosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Post $post)
     {
         //
         $posts = Post::allowed()->where('category_id',3)->get();
@@ -48,8 +49,11 @@ class ProyectosController extends Controller
 
         $post = Post::create( [
             'title' => $request->titleProjectModal,
+            'published_at' => Carbon::now(),
             'category_id' => 3
             ]);
+
+        $post->syncTags($request->get('tags'));
         
 
         return redirect()->route('admin.proyectos.edit', $post);
@@ -133,7 +137,7 @@ class ProyectosController extends Controller
             'iframe' => $request->get('iframe'),
             'excerpt' => $request->get('excerpt'),
             'urlvideo' => $request->get('urlvideo'),
-            'published_at' => $request->get('published_at_submit'),
+            
         ]);
           
         $post->syncTags($request->get('tags'));

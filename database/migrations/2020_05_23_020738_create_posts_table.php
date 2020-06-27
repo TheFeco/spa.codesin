@@ -15,6 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('pageName')->nullable();
             $table->string('title');
             $table->string('url')->nullable();
             $table->string('externalUrl')->nullable();

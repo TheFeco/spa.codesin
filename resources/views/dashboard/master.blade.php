@@ -10,6 +10,7 @@
     <link href="{{asset('dashboard/css/themes/lite-purple.min.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/css/plugins/perfect-scrollbar.min.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/css/plugins/fontawesome-5.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('dashboard/css/plugins/ladda-themeless.min.css')}}" rel="stylesheet"/>
     
     @stack('style')
 
@@ -33,7 +34,7 @@
                 <!-- User avatar dropdown -->
                 <div class="dropdown">
                     <div class="user col align-self-end">
-                        <img src="{{asset('dashboard/images/faces/1.jpg')}}" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{asset('dashboard/images/1.svg')}}" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                             <div class="dropdown-header">
                                 <i class="i-Lock-User mr-1"></i> {{ auth()->user()->name}}
@@ -67,6 +68,9 @@
     <script src="{{asset('dashboard/js/plugins/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/spin.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/ladda.min.js')}}"></script>
+    <script src="{{asset('dashboard/lang/summernote-es-ES.js')}}"></script>
     
     @stack('script')
     <script src="{{asset('dashboard/js/scripts/script.min.js')}}"></script>
@@ -84,17 +88,7 @@
             $('#title').focus();
             window.location.hash = '#create-noticias';
         });
-        if(window.location.hash == '#create-proyectos')
-        {
-            $('#proyectos').modal('show');
-        }
-        $('#proyectos').on('hide.bs.modal',function(){
-            window.location.hash = '#';
-        });
-        $('#proyectos').on('shown.bs.modal',function(){
-            $('#title').focus();
-            window.location.hash = '#create-proyectos';
-        });
+        
         if(window.location.hash == '#create-politicas')
         {
             $('#politicas').modal('show');

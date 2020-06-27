@@ -12,27 +12,7 @@
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
-        <div class="col-md-12">
-            <div class="card md-3">
-                <div class="card-body"></div>
-                <div class="card-title">Banner Area</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
-                            <label for="">banner el tamaño debe ser 1440px X 451px </label>
-                            <input type="file" name="banner" id="banner" data-default-file="{{ $post->urlBanner ? $post->urlBanner : '' }}" data-max-file-size-preview="2M" >
-                            {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
-                        </div>
-                        
-                        <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
-                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
-                            <input type="file" class="form-control" name="bannerMobile" id="bannerMobile" data-default-file="{{ $post->urlBannerMobile ? $post->urlBannerMobile : '' }}" data-max-file-size-preview="2M">
-                            {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('dashboard.partials.banner')
     </div>
     <div class="row">
         <div class="col-md-8">
@@ -68,20 +48,6 @@
                             <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="10"  >{{ old('excerpt', $post->excerpt)}}</textarea>
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
-                        <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
-                            <label for="urlvideo">Url de video de youtube</label>
-                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', $post->urlvideo)}}" />
-                            {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
-                        </div>
-                        {{-- <div class="col-md-12 form-group mb-3 {{ $errors->has('tags') ? 'has-error' : ''}}">
-                            <label for="picker1">Seleccione una etiqueta {{ old('category_id')}}</label>
-                            <select class="form-control form-control-rounded select2" name="tags"  data-placeholder="Seleccionar un tag">
-                                @foreach ($tags as $tag)
-                                    <option value="{{$tag->id}}" {{ old('category_id', $post->tag_id) == $tag->id ? 'selected' : ''}}>{{$tag->name}}</option>
-                                @endforeach
-                            </select>
-                            {!! $errors->first('tags', '<span class="help-block">:message</span>') !!}
-                        </div> --}}
                         <input type="hidden" name="category_id" value="2">
                         <div class="col-md-12 form-group mb-3">
                             <div class="dropzone"></div>
@@ -109,7 +75,6 @@
                         {{method_field('DELETE')}} @csrf
                         <div class="col-md-12">
                             <button class="btn btn-danger btn-sx" style="position:absolute"><i class="fas fa-times"></i></button>
-                            {{-- <img class="img-responsive" src ="{{ url($photo->url)}}"/> --}}
                             <img class="d-block w-100 rounded" src ="{{ url($photo->url)}}" alt="Second slide">
                         </div>
                     </form>
@@ -174,15 +139,7 @@
 
         Dropzone.autoDiscover = false;
 
-        $('#banner').dropify({
-            messages: {
-                'default': 'Arrastra y suelta un archivo aquí o haz clic',
-                'replace': 'Arrastra y suelta o haz clic para reemplazar',
-                'remove':  'Remover',
-                'error':   'Ooops, sucedió algo malo.'
-            }
-        });
-        $('#bannerMobile').dropify({
+        $('.banner').dropify({
             messages: {
                 'default': 'Arrastra y suelta un archivo aquí o haz clic',
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',

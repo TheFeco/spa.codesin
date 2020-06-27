@@ -57971,6 +57971,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -58033,6 +58034,20 @@ var render = function() {
             _c("div", { staticClass: "menu-area floatright hidden-xs" }, [
               _c("nav", [
                 _c("ul", [
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "menu-nav",
+                          attrs: { to: { name: "home" } }
+                        },
+                        [_vm._v("Inicio"), _c("span", { staticClass: "line" })]
+                      )
+                    ],
+                    1
+                  ),
                   _c(
                     "li",
                     [

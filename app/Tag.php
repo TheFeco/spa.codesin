@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     //
-    protected $guarded = [];
+    protected $fillable = ['name', 'url'];
     
     public function getRouteKeyName(){
         return 'url';
@@ -15,5 +15,25 @@ class Tag extends Model
 
     public function posts(){
         return $this->belongsToMany(Post::class);
+    }
+
+    public static function create(array $attributes = [])
+    {
+        $post = static::query()->create($attributes);
+        $post->generarUrl();
+       
+
+        return $post;
+    }
+
+    public function generarUrl(){
+
+        $url = str_slug($this->title);
+        if($this->where('url', $url)->exists()){
+            $url ="{$url}-{$this->id}";
+        }
+        $this->url = $url;
+        $this->save();
+
     }
 }

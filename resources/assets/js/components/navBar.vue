@@ -24,11 +24,13 @@
                         <div class="menu-area floatright hidden-xs">
                             <nav>
                                 <ul>
+                                    <li><router-link :to="{name: 'home'}" class="menu-nav">Inicio<span class="line"></span></router-link>
                                     <li><router-link :to="{name: 'quienes-somos'}" class="menu-nav">¿Quiénes somos? <span class="line"></span></router-link>
                                     <li><router-link :to="{name: 'que-hacemos'}" >¿Qué hacemos?</router-link></li>
                                     <li><router-link :to="{name: 'sinaloa'}" >Sinaloa en Números</router-link></li>
                                     <li><router-link :to="{name: 'comunicacion'}" >Comunicación</router-link></li>
                                     <li><a :href="transparencia" target="_blank">Transparencia</a></li>
+                                    
                                     <!-- <li>
                                         <div class="header-search">
                                             <form class="">

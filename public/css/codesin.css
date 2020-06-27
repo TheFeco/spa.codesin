@@ -774,7 +774,7 @@ hr{
 }
 .card-noticias-title a { color: #4A4A4A; }
 .card-noticias-title a:hover { color: #006323; }
-.card-noticias-text {  margin-bottom: 2rem; color: #626262; }
+.card-noticias-text {  margin-bottom: 2rem; color: #626262; max-height: 370px; text-overflow: ellipsis; overflow: hidden; }
 .card-noticias-text:last-child { margin-bottom: 0; }
 .vermas { font-weight: 700; color: #007D80; margin-bottom: 56px; }
 .vertodos { margin-top: 64px; margin-bottom: 64px; text-align: center; font-weight: 700;  }

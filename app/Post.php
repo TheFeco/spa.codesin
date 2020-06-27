@@ -42,6 +42,11 @@ class Post extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function sections()
+    {
+        return $this->hasOne(Section::class);
+    }
+
     public function owner(){
         return $this->belongsTo(User::class,'user_id');
     }

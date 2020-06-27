@@ -11,4 +11,5 @@
 @section('content')
     <h1>bienvenido</h1>
     <p>usuario autentificado es {{ auth()->user()->name }}</p>
+    {{$tags}}
 @stop
