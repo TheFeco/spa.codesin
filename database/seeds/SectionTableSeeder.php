@@ -13,7 +13,7 @@ class SectionTableSeeder extends Seeder
     {
         //
         
-        section::truncate();
+        Section::truncate();
 
         $section = new Section;
         $section->post_id = 1;
