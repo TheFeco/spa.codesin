@@ -172,13 +172,6 @@
                 'error':   'Ooops, sucedió algo malo.'
             }
         });
-        // $('.basic-ladda-button').on('click', function (e) {
-        //     $(this).submit();
-        //     var laddaBtn = e.currentTarget;
-        //     var l = Ladda.create(laddaBtn);
-        //     l.start();
-        // });
-        
     </script>
 @endpush
 

@@ -8,6 +8,50 @@
 </div>
 @stop
 @section('content')
+    <form id="Bannerform" action="{{ route('admin.tags.update', $tag)}}" id="form" method="post" enctype="multipart/form-data">
+        @csrf 
+        {{method_field('PUT')}}
+        <div class="col-md-12 mt-2 mb-4">
+            <div class="card text-left">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card md-3">
+                                <div class="card-body"></div>
+                                <div class="card-title">Banner Area</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
+                                            <label for="">banner el tamaño debe ser 1440px X 451px </label>
+                                            <input class="banner" type="file" name="banner" id="banner" data-default-file="{{ $tag->banners->urlBanner ? $tag->banners->urlBanner : '' }}" data-max-file-size-preview="4M" >
+                                            {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
+                                        </div>
+                                        
+                                        <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
+                                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
+                                            <input type="file" class="form-control banner" name="bannerMobile" id="bannerMobile" data-default-file="{{ $tag->banners->urlBannerMobile ? $tag->banners->urlBannerMobile : '' }}" data-max-file-size-preview="4M">
+                                            {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
+                                            <label for="urlvideo">Url de video de youtube</label>
+                                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', $tag->banners->urlvideo)}}" />
+                                            {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        {{-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
+                                        <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonBanner m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <!-- end of col-->
     <div class="col-md-12 mb-4">
         <div class="card text-left">
@@ -87,6 +131,7 @@
 @stop
 @push('style')
     <link rel="stylesheet" href="{{asset('dashboard/css/plugins/datatables.min.css')}}" />
+    <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
     <style>
         .verde { background-color: #DAE8D0; color: #73AD49; font-weight: 700}
         .amarillo { background-color: #F5EAD6; color: #D89000; font-weight: 700}
@@ -97,10 +142,19 @@
 
 @push('script')
     <script src="{{asset('dashboard/js/plugins/datatables.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dropify.min.js')}}"></script>
     <script>
         $('#post-table').DataTable({
         "order": [[3, "desc"]]
     }); // multi column ordering
+    $('.banner').dropify({
+            messages: {
+                'default': 'Arrastra y suelta un archivo aquí o haz clic',
+                'replace': 'Arrastra y suelta o haz clic para reemplazar',
+                'remove':  'Remover',
+                'error':   'Ooops, sucedió algo malo.'
+            }
+        });
     if(window.location.hash == '#create-proyectos')
         {
             $('#proyectos').modal('show');
@@ -111,6 +165,15 @@
         $('#proyectos').on('shown.bs.modal',function(){
             $('#title').focus();
             window.location.hash = '#create-proyectos';
+        });
+        $('.basic-ladda-buttonBanner').on('click', function (e) {
+        var laddaBtn = e.currentTarget;
+        var l = Ladda.create(laddaBtn);
+        l.start();
+        $('#Bannerform').submit();
+        // setTimeout(function () {
+        //     $('form').submit();
+        // }, 3000);
         });
     </script>
 @endpush

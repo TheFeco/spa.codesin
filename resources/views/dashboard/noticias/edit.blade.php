@@ -54,7 +54,7 @@
                         </div>
                         <input type="hidden" name="tags" value="1" >
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>

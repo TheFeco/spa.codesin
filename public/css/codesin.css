@@ -118,6 +118,7 @@ a:active, a:hover {
 .lh-60{ line-height: 60px;}
 
 .contenedor-text{ color:#626262; font-family: "Open Sans"; }
+.contenedor-text.t14{letter-spacing: 0; line-height: 22px; font-size: 0.875rem; }
 .contenedor-text.default{letter-spacing: 0; line-height: 26px; }
 .contenedor-text.t18{letter-spacing: 0; line-height: 26px; font-size: 1.125rem; }
 .contenedor-text.t20{letter-spacing: 0; line-height: 30px; font-size: 1.25rem; }
@@ -127,6 +128,8 @@ a:active, a:hover {
 header{
   width: 100%;
   background: #F4F4F4;
+  /* position: fixed;
+  z-index: 100; */
 }
 
 .header-login {
@@ -431,12 +434,6 @@ hr{
   text-align: center;
   margin: 0 0 0 0;
 }
-/* .icons .icon-img img{
-  position: relative;
-  margin: 59px 60px 58px 60px;
-  width: 60px;
-  height: 63px;
-} */
 
 .icons .icon-text{
   position: relative;
@@ -562,12 +559,7 @@ hr{
   margin-bottom: 56px;
 }
 
-.consejo-staff-content p{
-  color: #626262;
-  font-size: 14px;
-  text-transform: capitalize;
-  margin-bottom: 20px;
-}
+.card-staff-text { color: #626262; font-family: "Open Sans"; font-size: 14px; letter-spacing: 0; line-height: 18px; text-align: center } 
 .consejo-staff-footer p {
   font-size: 14px;
   text-align: left;
@@ -646,7 +638,7 @@ hr{
 .zonas.centro-norte{
   top: 40%;
   bottom: 0;
-  left: -2%;
+  left: 0;
   right: 0;
 }
 .zonas.sur{
@@ -670,7 +662,7 @@ hr{
   overflow: hidden;
 }
 .pp-area .consejo-staff { max-width: 260px; }
-.map-card { border-left: 4px solid}
+.map-card { border-left: 6px solid}
 .card-title { font-size: 20px; font-weight: 700; color:#121212; margin-top: 10px; margin-bottom: 10px; }
 .card-content { margin-bottom: 10px; color: #4A4A4A; }
 .card-content a { margin-bottom: 25px; color: #007D80; font-weight: bolder; }
@@ -678,7 +670,7 @@ hr{
 .amarillo-bc { border-color: #FFAA00; }
 .naranja-bc { border-color: #E74011; }
 .azul-bc { border-color: #5C9CEE; }
-.card-box-icon { width: 32px; height: 32px; margin: 24px 0 16px 16px;}
+.card-box-icon { width: 32px; height: 32px; margin: 8px 0 16px 0px;}
 .card-box-title { font-size: 1rem; font-weight: bold; }
 .card-box span { font-size: 1.75rem; font-weight: bold;  }
 .card-box strong { font-size: 1.25px; font-weight: bold;  }
@@ -691,7 +683,9 @@ hr{
   background-color: #FFF;
   color: #4A4A4A;
   padding: 1rem;
-  height: 22rem;
+  height: 19.563rem;
+  border-radius: 0.75rem;
+  width: 16.25rem;
 }
 .cards {
   max-width: 1200px;
@@ -744,7 +738,6 @@ hr{
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   margin-bottom: 25px;
 }
@@ -823,6 +816,7 @@ width: 100%;
   background-clip: border-box;
   margin-bottom: 25px;
   border-radius: 0.25rem;
+  width: 154px;
 }
 
 .card-staff-img-top {
@@ -837,19 +831,22 @@ width: 100%;
   padding: 5px 0px 0 0;
   height: 130px;
   margin-bottom: 20px;
+  margin-top: 24px;
 }
 
 .card-staff-title{
   font-size: 16px;
   margin-bottom: 1.5rem;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
 }
 .card-staff-title p { 
   font-weight: bold;
   color: #4A4A4A;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center
 
 }
-
-.card-staff-text {  margin-bottom: 2rem; color: #626262; font-size: 14px; }
-.card-staff-text:last-child { margin-bottom: 0; }
-.owl-carousel .owl-item img { height: 100%; }
-.proyectos-list{ margin-bottom: 33px;}

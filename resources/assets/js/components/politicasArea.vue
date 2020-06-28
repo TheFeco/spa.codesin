@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="">
         <div class="card-1" >
             <div class="card-p" v-for="(item, index) in politicas" :key="index">
                 <div class="card-p-img">
@@ -38,8 +38,17 @@ export default {
     .card-p{ 
         background-color: #FFF;
         color: #4A4A4A;
-        height: 22.25rem;
+        max-height: 22.25rem;
+        max-width: 22.25rem;
     }
-    .card-p-img { height: 16.438rem; width: 22.25rem; margin: 0;}
-    .card-p-constainer { height: 7rem; padding: 2rem 2rem 2rem 2rem; }
+    .card-p-img { max-height: 16.438rem; max-width: 22.25rem; margin: 0;}
+    .card-p-constainer { max-height: 7rem; padding: 2rem 2rem 2rem 2rem; }
+    @supports(object-fit: cover){
+        .card-p-img img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        }
+        
+    }
 </style>

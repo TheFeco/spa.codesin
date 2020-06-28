@@ -58,7 +58,7 @@
                             {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" id="submit-btn" class="btn btn-primary">crear personal</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>

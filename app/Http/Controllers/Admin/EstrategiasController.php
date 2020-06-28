@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Post;
+use Carbon\Carbon;
 use File;
 
 class EstrategiasController extends Controller
@@ -54,7 +55,7 @@ class EstrategiasController extends Controller
             'excerpt' => $request->get('excerpt'),
             'body' => $request->get('body'),
             'urlvideo' => $request->get('urlvideo'),
-            'published_at' => $request->get('published_at_submit'),
+            'published_at' => Carbon::now(),
             'category_id' => 5
         ]);
 
@@ -149,7 +150,6 @@ class EstrategiasController extends Controller
             'excerpt' => $request->get('excerpt'),
             'body' => $request->get('body'),
             'urlvideo' => $request->get('urlvideo'),
-            'published_at' => $request->get('published_at_submit'),
         ]);
 
         if ($request->files->has('thumbnail') ) {

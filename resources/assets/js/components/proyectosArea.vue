@@ -4,7 +4,7 @@
             <div class="title f32 text-center" v-if="vermas">
                 <div > Plan de trabajo {{proyectos.name}}</div>
             </div>
-            <div class="row  mt-24 texto">
+            <div class="row  mt-24 ocultar">
                 <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(proyecto, index) in proyectos.posts" :key="index">
                     <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="proyecto.urlBanner" alt="">
                         <div class="card-noticias-body ">
@@ -17,7 +17,7 @@
             </div>
             <div class="row" v-if="vermas">
                 <div class="vertodos col-xs-12">
-                    <div class="i" id="masTexto">Ver mas</div>
+                    <div class="i" id="masTexto">Ver más</div>
                 </div>
             </div>
         </div>
@@ -28,22 +28,37 @@ export default {
     props:['proyectos', 'vermas'],
     
     mounted() {
+        // if(this.proyectos.posts.length > 9)
+        // {
+
+        //     $(".texto").attr("height",0);
+        // }
         $(".i").click(function(){
             $(".texto").toggleClass("hide-text");
             $("#masTexto").toggleClass("padding-text");
-            $(".texto").hasClass("hide-text") ? $(this).text("Leer menos") : $(this).text("Leer más") ;
+            $(".texto").hasClass("hide-text") ? $(this).text("Ver menos") : $(this).text("Ver más") ;
         });
     },
+    updated: function () {
+        if(this.proyectos.posts.length <= 9)
+        {
+            $('.vertodos').addClass('hidden');
+        }else{
+            $('.ocultar').addClass('texto');
+        }
+    }
 }
 </script>
 <style>
 .hide-text{
     overflow: initial !important;
     height: auto !important;
+    
     }
 .texto{
   height: 151rem;
   overflow: hidden;
+  transition:  height 4s;
 }
 .i { cursor: pointer; }
 .padding-text{

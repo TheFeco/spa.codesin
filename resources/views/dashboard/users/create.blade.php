@@ -39,7 +39,7 @@
                         </div>
                         <span id="emailHelp" class="form-text text-muted">La contraseña sera creada y envida alnuevo usuario por email.</span>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">crear usuario</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tag;
+use App\Banner;
+use File;
 
 class TagsController extends Controller
 {
@@ -71,9 +73,62 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tag $tag)
     {
         //
+        $banner = Banner::where('tag_id',$tag->id)->first();
+
+        if($banner == null)
+            {
+                $banner = Banner::create([
+                        'tag_id' => $tag->id,
+                        'urlvideo' => $request->urlvideo
+                    ]);
+            }
+            else{
+                $banner->update([
+                    'urlvideo' => $request->urlvideo
+                ]);
+            }
+        if ($request->files->has('banner')) {
+            $request->validate([
+                'banner' => 'required|image|max:4048' // jpeg, pnp, bmp, gif, svg
+            ]);
+            
+            
+            $old_image = public_path().$banner->urlBanner;
+            // dd(file_exists($old_image));
+            if (file_exists($old_image)) {
+                File::delete($old_image);
+         
+            }
+
+            $filename = 'bannerZona_' . $tag->id .'_'. time() . '.' . $request->banner->extension();
+            $urlBanner = '/img/banners/'. $filename;
+            $request->banner->move(public_path('img/banners'),$filename);
+            $banner->update(['urlBanner' => $urlBanner]);
+        }
+        if ($request->files->has('bannerMobile')) {
+            $request->validate([
+                'bannerMobile' => 'required|image|max:4048' // jpeg, pnp, bmp, gif, svg
+            ]);
+            $old_image = public_path().$tag->bannerMobile;
+            if (file_exists($old_image)) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = 'bannerZona_Mobile_' . $tag->id .'_'. time() . '.' . $request->bannerMobile->extension();
+            $urlBanner = '/img/banners/'. $filename;
+            $request->bannerMobile->move(public_path('img/banners'),$filename);
+            $tag->update(['urlBannerMobile' => $urlBanner]);
+        }
+
+        $tag->load('posts','banners');
+        $posts = $tag->posts;
+        return view('dashboard.proyectos.index', compact('posts', 'tag'));
+        
     }
 
     /**

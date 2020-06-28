@@ -15,9 +15,10 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('post_id');
-            $table->string('url');
-            $table->boolean('isMobile');
+            $table->unsignedInteger('tag_id');
+            $table->string('urlBanner');
+            $table->string('urlBannerMobile');
+            $table->string('urlvideo');
             $table->timestamps();
         });
     }

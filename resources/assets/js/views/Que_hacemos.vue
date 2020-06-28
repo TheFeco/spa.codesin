@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="card-1" >
+                        <div class="card-e-1" >
                             <div class="card-2" v-for="(item, index) in estrategias" :key="index">
                                 <div class="card-2-img">
                                     <url-link :info="item" :nombre="'estrategia_show'">
@@ -39,8 +39,6 @@
                     <div class="sm-12 text-center mb-60">
                         <h2 class="title f32">Políticas publicas</h2>
                     </div>
-                </div>
-                <div class="col-md-12">
                     <politicas-area :politicas="politicas" :vermas="true"></politicas-area>
                 </div>
             </div>
@@ -86,7 +84,6 @@
                                     </g>
                                 </g>
                             </svg>
-                            <!-- <img src="img/default/mapa.svg" alt="" srcset=""> -->
                         </div>
                         <div class="hidden-sm hidden-xs">
                             <div class="zonas text-right norte">
@@ -106,16 +103,16 @@
                                 <h3>Zona Centro - Norte</h3>
                                 <div class="line amarillo-bg"></div>
                                 <div class="proyectos"> {{zcn.posts_count}} proyectos</div>
-                                <a href="Ver proyectos"> ver todo</a>
+                                <proyectos-link :post="zcn"  >ver proyectos</proyectos-link>
                             </div>
                             <div class="zonas text-left sur">
                                 <h3>Zona Sur</h3>
                                 <div class="line AzulAciano-bg"></div>
                                 <div class="proyectos"> {{zs.posts_count}} proyectos</div>
-                                <a href="Ver proyectos"> ver todo</a>
+                                <proyectos-link :post="zs"  >ver proyectos</proyectos-link>
                             </div>
                         </div>
-                        <div class="hidden-lg hidden-md">
+                        <div class="hidden-lg hidden-md mt-24 zonas-peque">
                             <div class="map-card verde-bc mb-16 default-bg">
                                 <div class="container">
                                     <div class="row">
@@ -128,7 +125,7 @@
                                             {{zn.posts_count}} Proyectos
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a href="Ver proyectos">ver proyectos</a>
+                                            <proyectos-link :post="zn"  >ver proyectos</proyectos-link>
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +142,7 @@
                                             {{zcn.posts_count}} Proyectos
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a href="Ver proyectos">ver proyectos</a>
+                                            <proyectos-link :post="zcn"  >ver proyectos</proyectos-link>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +159,7 @@
                                             {{zc.posts_count}} Proyectos
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a href="Ver proyectos">ver proyectos</a>
+                                            <proyectos-link :post="zc"  >ver proyectos</proyectos-link>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +176,7 @@
                                             {{zs.posts_count}} Proyectos
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a href="Ver proyectos">ver proyectos</a>
+                                            <proyectos-link :post="zs"  >ver proyectos</proyectos-link>
                                         </div>
                                     </div>
                                 </div>
@@ -276,7 +273,7 @@ export default {
 </script>
 <style>
     .municipio { position: relative; z-index: 10; cursor: pointer;}
-    .card- {
+    .card-e-1 {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
@@ -291,4 +288,12 @@ export default {
     }
     .card-2-img { height: 16.25rem; width: 16.25rem; margin: 0;}
     .card-2-constainer { height: 7rem; padding: 2rem 0; }
+    @supports(object-fit: cover){
+        .card-2-img  img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        }
+        
+    }
 </style>

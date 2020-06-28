@@ -48,7 +48,7 @@
                             <input type="password" class="form-control" name="password_confirmation" placeholder="Repite la contraseña contraseña" />
                         </div>
                         <div class="col-md-12">
-                            <button class="btn btn-primary">Actualizar usuario</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>

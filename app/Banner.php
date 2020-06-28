@@ -8,12 +8,12 @@ class Banner extends Model
 {
     //
     protected $guarded = [];
-
     protected static function boot(){
         parent::boot();
         static::deleting(function($photo){
-            $photo->url = str_replace('img/banners/','',$photo->url);
-            Storage::disk('public2')->delete($photo->url);
+            $banner->urlBanner = str_replace('img/','',$photo->urlBanner);
+            Storage::disk('publicImg')->delete($urlBanner->urlBanner);
         });
     }
+
 }

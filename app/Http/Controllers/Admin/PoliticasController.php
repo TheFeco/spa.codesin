@@ -49,7 +49,8 @@ class PoliticasController extends Controller
 
         $post = Post::create( [
             'title' => $request->titlepoliticaModal,
-            'category_id' => 6
+            'category_id' => 6,
+            'published_at' => Carbon::now(),
             ]);
         
 
@@ -130,7 +131,6 @@ class PoliticasController extends Controller
             'iframe' => $request->get('iframe'),
             'excerpt' => $request->get('excerpt'),
             'urlvideo' => $request->get('urlvideo'),
-            'published_at' => $request->get('published_at_submit'),
         ]);
           
         

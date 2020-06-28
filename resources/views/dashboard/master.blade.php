@@ -70,11 +70,23 @@
     <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/spin.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/ladda.min.js')}}"></script>
-    <script src="{{asset('dashboard/lang/summernote-es-ES.js')}}"></script>
+    
     
     @stack('script')
+    {{-- <script src="{{asset('dashboard/lang/summernote-es-ES.js')}}"></script> --}}
     <script src="{{asset('dashboard/js/scripts/script.min.js')}}"></script>
     <script src="{{asset('dashboard/js/scripts/sidebar.large.script.min.js')}}"></script>
+    <script> 
+    $('.basic-ladda-button').on('click', function (e) {
+        var laddaBtn = e.currentTarget;
+        var l = Ladda.create(laddaBtn);
+        l.start();
+        $('form').submit();
+        // setTimeout(function () {
+        //     $('form').submit();
+        // }, 3000);
+    });
+    </script>
     @unless(request()->is('admin/noticias/*') || request()->is('admin/proyectos/*'))
     <script>
         if(window.location.hash == '#create-noticias')

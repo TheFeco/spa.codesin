@@ -26,7 +26,7 @@ class TagsController extends Controller
     }
     public function show(Tag $tag){
         {
-            $tag->load('posts');
+            $tag->load('posts','banners');
 
             if( request()->wantsJson() )
             {

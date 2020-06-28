@@ -1,36 +1,24 @@
 <template>
-    <div class="noticias">
+    <div class="noticias default-bg">
         <!-- Banner Area Inicio -->
-        <div class="banner-area-wrapper">
-            <div class="banner-area text-center visible-lg visible-md" v-bind:style="{ backgroundImage: 'url(' + noticia.urlBanner + ')' }">
-            </div>
-            <div class="banner-area text-center visible-sm visible-xs" v-bind:style="{ backgroundImage: 'url(' + noticia.urlBannerMobile + ')' }">
-            </div>
-        </div>
+        <banner-area :page="noticia" :img="img" class="mb-8"/>
         <!-- Banner Area Fin -->
         <div class="noticias-detalle-area default-bg">
             <div class="container">
-                <div class="col xs-12">
-                    <div class="noticias tags">
-                            <div class="tag c-gris" v-for="(tag, index) in post.tag" :key="index">
-                                <router-link :to="{name: 'tags_posts', params: { tag: tag.rul }}"> {{ tag.name}} </router-link>
-                            </div>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-xs-12 mt-80">
+                    <div class="col-xs-12 mtb-80">
                         <div class="col xs-12">
-                            <div class="col xs-12" v-bind:class="[noticia.photos.length > 0 ? 'col-md-8' : '']">
-                                <div class="noticia-titulo">
+                            <div class="col xs-12" v-bind:class="[photos.length > 0 ? 'col-md-8' : '']">
+                                <div class="title f32 noticia-title">
                                     <h1 v-text="noticia.title"></h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="mt-54 col-xs-12" v-bind:class="[noticia.photos.length > 0 ? 'col-md-8' : '']">
-                                    <div class="noticia-contenido" v-html="noticia.body"></div>
+                                <div class="mt-54 centenido-area col-xs-12" v-bind:class="[photos.length > 0 ? 'col-md-8' : '']">
+                                    <div class="contenedor-text default" v-html="noticia.body"></div>
                                 </div>
-                                <div class="mt-54 col-xs-12 col-md-4" v-bind:class="[noticia.photos.length <= 0 ? 'hidden' : '']">
-                                    <div v-for="(photo, index) in noticia.photos" :key="index">
+                                <div class="mt-54 col-xs-12 col-md-4" v-bind:class="[photos.length <= 0 ? 'hidden' : '']">
+                                    <div v-for="(photo, index) in photos" :key="index">
                                         <div class="col-md-12 mb-10">
                                             <div class="card-lg o-hidden">
                                                 <img class="card-lg-img" :src="'/'+photo.url" alt="noticia">
@@ -53,16 +41,17 @@
         data(){
             return{
                 noticia:[],
-                post: {
-                    owner:'',
-                    category:''
-                }
+                photos : [],
+                img : ''
             }
         },
         mounted() {
             axios.get(`/api/noticia/${this.url}`)
             .then(res =>{
                 this.noticia = res.data;
+                this.photos = this.noticia.photos
+                this.img = this.smallScreen(this.noticia.urlBanner, this.noticia.urlBannerMobile);
+                $('#lock').addClass('hidden');
             })
             .catch(err =>{
                 console.log(err.response.data);

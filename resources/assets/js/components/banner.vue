@@ -1,5 +1,5 @@
 <template>
-    <div class="banner-area-wrapper mb-4">
+    <div class="banner-area-wrapper">
             <div class="banner-area text-center" v-bind:style="{ backgroundImage: 'url(' + img + ')' }">	
                 <div class="notice-video" v-if="page.urlvideo">
 					<div class="video-icon video-hover">

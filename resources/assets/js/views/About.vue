@@ -4,19 +4,28 @@
         <banner-area :page="pageInfo" :img="img"/>
         <!-- Banner Area Fin -->
         <!-- About Inicio -->
-        <div class="about-area mtb-70">
-            <div class="container default-bg">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="about-img ">
-                            <h2 class="hidden-lg hidden-md title f32" v-text="pageInfo.title"></h2>
-                            <img :srcset="`${pageInfo.urlimageMobile} 300w,${pageInfo.urlimageMobile} 1000w,${pageInfo.urlimage} 2000w`" alt="about">
+        <div class="inversiones-area mt-80">
+            <div class="container">
+                <div class="row default-bg">
+                    <div>
+                        <div class="col-xs-12 visible-sm visible-xs">
+                            <div class="inversiones-content">
+                                <h2 class="title f24 text-center" v-text="pageInfo.title"></h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="about-content mt-80">
-                            <h2 class="hidden-sm hidden-xs title f32" v-text="pageInfo.title"></h2>
-                            <div class="contenedor-text t32 lh-32 mds" v-html="pageInfo.body"></div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="inversiones-img hidden-sm hidden-xs">
+                                <img :src="pageInfo.urlimage" alt="about">
+                            </div>
+                            <div class="inversiones-img hidden-lg hidden-md ">
+                                <img class="img-responsive" :src="pageInfo.urlimageMobile" alt="img">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="inversiones-content mr-80">
+                                <h2 class="title f24 mt-80 hidden-sm hidden-xs" v-text="pageInfo.title"></h2>
+                                <div class="contenedor-text t18 mt-32" v-html="pageInfo.body"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

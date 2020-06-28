@@ -305,17 +305,6 @@
         mounted() {
 			
 			$('#lock').removeClass('hidden');
-			// axios.get('/api/home')
-			// .then((res) => {
-			// 	this.pageInfo = res.data.pageinfo;
-			// 	this.noticias = res.data.noticias;
-			// 	// this.$load = false;
-			// 	this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
-			// 	$('#lock').addClass('hidden');
-			// })
-			// .catch((err) =>{
-			// 	console.log(err);
-			// });
 
 			$('body').popover({
 				selector: '[data-toggle="popover"]',

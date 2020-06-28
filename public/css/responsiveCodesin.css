@@ -19,6 +19,7 @@
   .icon-img{ width: 120px !important; height: 120px !important; }
   .icon-img img {margin: 25px 0 0 0; width: 50%;  height: auto;}
   .icon-text{ width: 120px !important; }
+  .zonas { width: 21.031rem;}
 
 }
 
@@ -63,6 +64,9 @@
   }
   .about-img{margin-top: 0px; height: 224px; margin-bottom: 40px; margin-right: -35px;}
   .about-img img { height: auto; width: 100%;}
+  .s-cards { grid-template-columns: repeat(3, 1fr) !important; }
+  .card-content a { margin-right: 30px; }
+  .card-ci {    grid-template-columns: repeat( 2, 1fr) !important;}
 
 }
 
@@ -70,8 +74,12 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
   body{ background: salmon;}
-  .mt-80 {margin-top: 40px;}
-  .msm, .mlg{ margin: 32px 32px 44px 32px;}
+  .mt-80 {margin-top: 40px !important;}
+  .mt-16 { margin-top: 8px !important;}
+  .mb-16 { margin-bottom: 8px !important;}
+  .mb-60 { margin-bottom: 30px !important;}
+  .mb-64 { margin-bottom: 40px !important;}
+  .msm, .mlg{ margin: 32px 32px 44px 32px !important;}
   header{ height: 64px; line-height: 64px; vertical-align: middle; }
   .logo{  width: 120px; height: 22px; margin-top: 21px; margin-left: 16px; overflow: hidden; top: -4px }
   .logo img{ position: relative; top: -7px; }
@@ -102,16 +110,17 @@
   .about-area h2 { font-size: 18px; }
   .about-content h2{ text-align: center; margin-top: 0px; margin-bottom: 40px; }
   .about-img{margin-top: 0px; height: 224px; margin-bottom: 40px; margin-right: -35px;}
+  .about-body { margin-bottom: 40px;}
   .titulo-staff{ font-size: 18px; font-weight: 700;}
   .titulo-zonas{ height: 40px; line-height: 40px; margin-bottom: 16px; }
   .titulo-zonas h2 { font-size: 16px;}
   .que-hacemos .about-area { margin-top: 40px; padding: 0;}
   .pp-area .noticias-text { height: 128px; }
-  .pp-area .map-area { width: 100%; height: 337px; }
+  .pp-area .map-area { width: 100%; height: 337px; margin-bottom: 32px; }
   .inversiones-img {margin: 0 -15px 0 -15px; height: 220px; padding: 0;}
   .inversiones-area h2 { font-size: 20px; }
-  .inversiones-content { margin-bottom: 24px; }
-  .inversiones-content h2{  margin-top: 32px; margin-bottom: 24px; }
+  .inversiones-content { margin-bottom: 24px; margin-right: 0 !important; max-height: 100% !important; }
+  .inversiones-content h2{  margin-top: 32px !important; margin-bottom: 24px; }
   .card-box { width: 156px; height: 315px;}
   .card-box-constainer { margin: 0 8px 0 8px;}
   .card-box-title { font-size: 14px;}
@@ -126,16 +135,49 @@
   .testimonio-thumb { height: 160px; width: 160px; margin: auto;  position: relative;}
   .testimonio-contenido h4{ font-size: 18px; font-weight: bold; text-align: center; margin-top: 32px;}
   .testimonio-contenido p { display: block;  margin-bottom: 15px; font-size: 16px; }
-  .card-staff { margin-bottom: 25px; }
+  .card-staff { margin-bottom: 25px; width: 156px; }
+  .card-staff-img-top {height: 156px;}
+  .card-staff-body {  height: 124px; }
   .title.f44 { font-size: 32px; letter-spacing: 0.53px; }
   .title.f28 { font-size: 24px; letter-spacing: 0.4px; }
+  .title.f32 { font-size: 24px; letter-spacing: 0.4px; }
   .subtitle.f28 { font-size: 18px; letter-spacing: 0.4px; }
   .contenedor-text.t32{ font-size: 20px;  letter-spacing: 0; }
   .small-icons .icons { margin-left: 0; }
-
+  .s-cards { grid-gap: 1rem; grid-template-columns: repeat(2, 1fr) !important; grid-gap: 1rem !important; }
+  .s-card{ height: 100% !important;  width: 9.75rem !important; padding: 0.5rem; }
+  .s-card-title{ font-size: 14px !important;  letter-spacing: 0.35px !important;  line-height: 20px !important; }
+  .s-card-contenido-1 { font-size: 18px !important; letter-spacing: 0.35px !important; line-height: 20px !important; }
+  .s-card-contenido-small > div:first-child{ max-width: 77px;}
+  .s-card-contenido-small:last-child{ font-size: 10px !important;}
+  .s-card-constainer strong{ font-size: 0.75rem !important; }
+  .s-card hr {margin-top: 9px !important;  margin-bottom: 8px !important;}
+  .f-container { grid-gap: 1rem; grid-template-columns: repeat(1, 1fr) !important; }
+  .f-form-group {min-width: 100%; }
+  .btn-generar { width: 100% !important; }
+  .contenedor-text { margin: 0}
+  .card-content a { margin-right: 0px !important; }
+  .card-1 {  grid-template-columns: repeat(1, 1fr) !important; }
+  .card-e-1 {  grid-template-columns: repeat(2, 1fr) !important; }
+  .zonas-peque{ margin-left: -15px; margin-right: -15px; }
+  .card-2 { width: 9.75rem !important; height: 100% !important; }
+  .card-2-img { height: 9.75rem !important;  width: 9.75rem !important; }
+  .card-2-constainer {  height: 4.5rem !important; }
+  .card-noticias { margin-left: -15px; margin-right: -15px;}
+  .banner-area { min-height:  390px !important; }
+  .centenido-area { margin: 40px 0 40px 0; }
+  .banner-area-wrapper { margin-bottom: 60px !important; }
+  .cc-area .container { padding-left: 0 !important; padding-right: 0 !important;}
+  .card-c-interes { margin-bottom: 25px; width: 360px; }
+  .card-c-interes-img {height: 180px;}
+  .card-c-interes-body {  height: 124px;   padding-top: 24px; }
+  .card-c-interes-text { margin-top: 8px; }
+  .card-ci {    grid-template-columns: repeat( 1, 1fr) !important;}
+  .cards-ci { max-width: 22.5rem !important; }
+  .card-ci-img { height: 11.25rem !important;}
+  .card-ci-constainer { max-height: 7.75rem !important;}
 }
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
  
 }
- 

@@ -50,11 +50,6 @@
                                 <textarea class="textarea form-control form-control-rounded" name="body" aria-label="With textarea" style="height: 113px;">{{ old('body', $post->body)}}</textarea>
                                 {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
                             </div>
-                            {{-- <div class="col-md-12 form-group mb-3 {{ $errors->has('iframe') ? 'has-error' : ''}}">
-                                <label for="title">Contenido embebido (video)</label>
-                                <textarea class="form-control form-control-rounded" name="iframe" aria-label="With textarea" style="height: 113px;">{{ old('iframe', $post->iframe)}}</textarea>
-                                {!! $errors->first('iframe', '<span class="help-block">:message</span>') !!}
-                            </div> --}}
                         </div>
                 </div>
             </div>
@@ -68,14 +63,13 @@
                             <label for="photos"></label>
                             <div class="dropzone" id="photos"></div>
                         </div>
-                        {{-- <input type="hidden" name="tags" value="1" > --}}
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
                             <label for="urlvideo">Url de video de youtube</label>
                             <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', $post->urlvideo)}}" />
                             {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>

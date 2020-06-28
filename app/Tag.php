@@ -17,6 +17,10 @@ class Tag extends Model
         return $this->belongsToMany(Post::class);
     }
 
+    public function banners(){
+        return $this->hasOne(Banner::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $post = static::query()->create($attributes);
