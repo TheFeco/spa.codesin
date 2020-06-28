@@ -4,7 +4,7 @@
         <banner-area :page="pageInfo" :img="img"/>
         <!-- Banner Area Fin -->
         <!-- About Inicio -->
-        <div class="inversiones-area mt-80">
+        <div class="about-area mt-80">
             <div class="container">
                 <div class="row default-bg">
                     <div>
@@ -23,8 +23,8 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="inversiones-content mr-80">
-                                <h2 class="title f24 mt-80 hidden-sm hidden-xs" v-text="pageInfo.title"></h2>
-                                <div class="contenedor-text t18 mt-32" v-html="pageInfo.body"></div>
+                                <h2 class="title f32 mt-80 hidden-sm hidden-xs" v-text="pageInfo.title"></h2>
+                                <div class="contenedor-text t16 mt-32" v-html="pageInfo.body"></div>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
         </div>
         <!-- About Fin -->
         <!-- QUIENES SOMOS - Inicio -->
-        <div class="about-area">
+        <div class="about-area mt-80">
             <div class="container default-bg">
                 <div class="row">
                     <div class="titulo text-center mtb-80">
