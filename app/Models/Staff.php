@@ -8,7 +8,7 @@ class Staff extends Model
 {
     //
     
-    protected $table = 'Personal';
+    protected $table = 'personal';
     protected $fillable = ['departamento_id','urlimg', 'name', 'urlvideo', 'email', 'job','user_id'];
 
     public function departamento (){
