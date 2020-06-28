@@ -54105,7 +54105,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("div", {
-                    staticClass: "contenedor-text t16 mt-32",
+                    staticClass: "contenedor-text default mt-32",
                     domProps: { innerHTML: _vm._s(_vm.pageInfo.body) }
                   })
                 ])
