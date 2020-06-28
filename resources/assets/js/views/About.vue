@@ -24,7 +24,7 @@
                         <div class="col-md-8 col-sm-12">
                             <div class="inversiones-content mr-80">
                                 <h2 class="title f32 mt-80 hidden-sm hidden-xs" v-text="pageInfo.title"></h2>
-                                <div class="contenedor-text t16 mt-32" v-html="pageInfo.body"></div>
+                                <div class="contenedor-text default mt-32" v-html="pageInfo.body"></div>
                             </div>
                         </div>
                     </div>
