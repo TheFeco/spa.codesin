@@ -92,4 +92,14 @@ class PagesController extends Controller
             ];
         }
     }
+
+    public function indexsearch(Request $request){
+        // dd ($request);
+        $keywords = request('keywords');
+        $posts = Post::where('title', 'LIKE', "%{$keywords}%")->where('category_id','!=', '4')
+        ->orWhere('body', 'LIKE', "%{$keywords}%")
+        ->get();
+        
+        return $posts;
+    }
 }

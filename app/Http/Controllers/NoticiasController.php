@@ -10,7 +10,6 @@ class NoticiasController extends Controller
     //
     public function index(){
         {
-            
             $post = Post::Published()->where('category_id', 2)->get();
             
             if( request()->wantsJson() )

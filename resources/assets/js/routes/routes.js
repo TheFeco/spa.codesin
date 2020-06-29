@@ -61,6 +61,12 @@ export default new Router({
             props: true
         },
         {
+            path: '/resultado',
+            name: 'resultado',
+            component: require('../views/resultadoPage'),
+            props: true
+        },
+        {
             path: '/tags/:url',
             name: 'tags_posts',
             component: require('../views/tags_posts'),

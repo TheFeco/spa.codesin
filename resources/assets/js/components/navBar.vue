@@ -42,10 +42,11 @@
                                 <ul>
                                     <li>
                                         <div class="search">
-                                            <form action="" id="search-form">
-                                                <button type="submit"></button>
-                                                <input type="search" name="buscar" placeholder="Buscar..." v-model="buscar">
-                                            </form>
+                                            <div action="" id="search-form">
+                                                <button><i class="fa fa-search"></i></button >
+                                                <!-- <button type="submit"></button> -->
+                                                <input type="search" name="buscar" placeholder="Buscar..." v-model.lazy="keywords"/>
+                                            </div>
                                         </div>
                                     </li>
                                     <li>
@@ -81,7 +82,7 @@
 export default {
     data() {
         return {
-            buscar: '',
+            keywords: null,
             transparencia : 'http://codesin.transparenciasinaloa.gob.mx/obligaciones-de-transparencia-del-consejo-para-el-desarrollo-economico-del-estado-de-sinaloa-codesin/',
         }
     },
@@ -105,6 +106,44 @@ export default {
                 $('.labelMenu').text("Menú");
             }
         });
-    }
+    },
+    methods: {
+        fetch() {
+            $('#lock').removeClass('hidden');
+            this.$router.push({
+                    name: 'resultado',
+                    params: {
+                        keywords: this.keywords
+                    }
+                })
+                this.cerrarMenu();
+            // axios.get('/api/indexsearch', { params: { keywords: this.keywords } })
+            // .then(res => {
+            //     this.results = res.data
+            //     this.cerrarMenu();
+            //     $('#lock').addClass('hidden');
+            //     this.$router.push({
+            //         name: 'resultado',
+            //         params: {
+            //             results: res.data
+            //         }
+            //     })
+            // })
+            // .catch(error => {
+            //     $('#lock').addClass('hidden');
+            // });
+        },
+        cerrarMenu(){
+            if($('.menuBtn').hasClass('act')) {
+                $('.menuBtn').toggleClass('act');
+                $('.mainMenu').removeClass('act');
+                $('.labelMenu').text("Menú");
+            }
+        }
+            
+    },
+    watch: {
+        keywords: 'fetch',
+    },
 }
 </script>
