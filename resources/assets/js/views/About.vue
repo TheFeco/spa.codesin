@@ -101,7 +101,7 @@
                     <carousel class="testimonio-active owlCarousel" :loop="true" :responsive="{0:{items:1,nav:false},600:{items:1,nav:false},1000:{items:1,nav:true}}">
                         <div class="testimonio-owl" v-for="(testimonio, index) in testimonios" :key="index">
                             <div class="col-md-6 col-sm-12 col-xs-12" >
-                                <div class="testimonio-thumb">
+                                <div class="testimonio-thumb thumb">
                                     <img class="img-responsive" :src="testimonio.urlImg" alt="testimonio">
                                 </div>
                             </div>

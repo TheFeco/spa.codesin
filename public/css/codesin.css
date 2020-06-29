@@ -255,7 +255,7 @@ header{
   height: 100%;
   width: 100%;
   display: table;
-  text-align: center;
+  text-align: left;
   opacity: 0;
   -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -279,9 +279,10 @@ header{
 .mainMenu ul {
   display: table-cell;
   vertical-align: middle;
+  line-height: 40px;
 }
 .mainMenu li {
-  padding: 8px 0;
+  padding: 8px 16px;
   -webkit-transition: all 400ms 510ms;
   transition: all 400ms 510ms;
   opacity: 0;
@@ -305,34 +306,43 @@ header{
   display: inline-block;
   font-size: 18px;
 }
-/**/
-form.searchFom input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
-form.searchFom button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
-form.searchFom button:hover {
-  background: #0b7dda;
-}
 
-form.searchFom::after {
-  content: "";
-  clear: both;
-  display: table;
+.header-area.sticky{ 
+  -webkit-transition: all 0.6s ease 0s;
+  -o-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 25px 0 rgba(255, 255, 255, 0.4);
+  left: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 150;
+ }
+.header-area.sticky .header-top-area { display: none; }
+.header-area.sticky .mainMenu { top: 4px; }
+.search { background: #fff none repeat scroll 0 0; height: 40px; width: 100%;} 
+#search-form > input { 
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 2px solid #CACACA;
+  color: #4A4A4A;
+  height: 40px;
+  padding: 0 10px 0 40px;
+  width: 100%;
+ }
+#search-form > button {
+  background: #ffffff none repeat scroll 0 0;
+  border: 2px solid #CACACA;
+  border-right: none;
+  color: #4A4A4A;
+  font-size: 15px;
+  position: absolute;
+  padding: 0;
+  left: 16px;
+  top: 8px;
+  width: 40px;
+  height: 40px;
 }
 /**/
 .facebook { width: 32px;  height: 32px;  margin-right: 16px;}
@@ -849,4 +859,13 @@ width: 100%;
   line-height: 22px;
   text-align: center
 
+}
+
+@supports(object-fit: cover){
+  .thumb img{
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  }
+  
 }

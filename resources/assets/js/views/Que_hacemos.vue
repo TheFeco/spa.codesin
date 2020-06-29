@@ -14,14 +14,14 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="card-e-1" >
-                            <div class="card-2" v-for="(item, index) in estrategias" :key="index">
-                                <div class="card-2-img">
+                            <div class="card-e-2" v-for="(item, index) in estrategias" :key="index">
+                                <div class="card-e-2-img">
                                     <url-link :info="item" :nombre="'estrategia_show'">
                                         <img class="img-responsive" :src="item.urlimage" alt="">
                                     </url-link>
                                 </div>
                                 <url-link :info="item" :nombre="'estrategia_show'">
-                                    <div class="card-2-constainer">
+                                    <div class="card-e-2-constainer">
                                         <div class="title f18 text-center" v-text="item.excerpt">
                                         </div>
                                     </div>
@@ -280,16 +280,16 @@ export default {
         grid-gap: 1rem;
         grid-template-columns: repeat(4, 1fr);
     }
-    .card-2{ 
+    .card-e-2{ 
         background-color: #FFF;
         color: #4A4A4A;
         height: 23.25rem;
         width: 16.25rem;
     }
-    .card-2-img { height: 16.25rem; width: 16.25rem; margin: 0;}
-    .card-2-constainer { height: 7rem; padding: 2rem 0; }
+    .card-e-2-img { height: 16.25rem; width: 100%; margin: 0;}
+    .card-e-2-constainer { height: 7rem; padding: 2rem 0; }
     @supports(object-fit: cover){
-        .card-2-img  img{
+        .card-e-2-img  img{
         height: 100%;
         object-fit: cover;
         object-position: center center;

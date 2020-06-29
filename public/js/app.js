@@ -54228,15 +54228,19 @@ var render = function() {
                             "div",
                             { staticClass: "col-md-6 col-sm-12 col-xs-12" },
                             [
-                              _c("div", { staticClass: "testimonio-thumb" }, [
-                                _c("img", {
-                                  staticClass: "img-responsive",
-                                  attrs: {
-                                    src: testimonio.urlImg,
-                                    alt: "testimonio"
-                                  }
-                                })
-                              ])
+                              _c(
+                                "div",
+                                { staticClass: "testimonio-thumb thumb" },
+                                [
+                                  _c("img", {
+                                    staticClass: "img-responsive",
+                                    attrs: {
+                                      src: testimonio.urlImg,
+                                      alt: "testimonio"
+                                    }
+                                  })
+                                ]
+                              )
                             ]
                           ),
                           _vm._v(" "),
@@ -54452,7 +54456,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\n.card-e-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(4, 1fr);\n}\n.card-2{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 23.25rem;\n    width: 16.25rem;\n}\n.card-2-img { height: 16.25rem; width: 16.25rem; margin: 0;\n}\n.card-2-constainer { height: 7rem; padding: 2rem 0;\n}\n@supports(object-fit: cover){\n.card-2-img  img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
+exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\n.card-e-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(4, 1fr);\n}\n.card-e-2{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 23.25rem;\n    width: 16.25rem;\n}\n.card-e-2-img { height: 16.25rem; width: 100%; margin: 0;\n}\n.card-e-2-constainer { height: 7rem; padding: 2rem 0;\n}\n@supports(object-fit: cover){\n.card-e-2-img  img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
 
 // exports
 
@@ -54796,11 +54800,11 @@ var render = function() {
                 _vm._l(_vm.estrategias, function(item, index) {
                   return _c(
                     "div",
-                    { key: index, staticClass: "card-2" },
+                    { key: index, staticClass: "card-e-2" },
                     [
                       _c(
                         "div",
-                        { staticClass: "card-2-img" },
+                        { staticClass: "card-e-2-img" },
                         [
                           _c(
                             "url-link",
@@ -54822,7 +54826,7 @@ var render = function() {
                         "url-link",
                         { attrs: { info: item, nombre: "estrategia_show" } },
                         [
-                          _c("div", { staticClass: "card-2-constainer" }, [
+                          _c("div", { staticClass: "card-e-2-constainer" }, [
                             _c("div", {
                               staticClass: "title f18 text-center",
                               domProps: { textContent: _vm._s(item.excerpt) }
@@ -59735,7 +59739,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.card-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(3, 1fr);\n}\n.card-p{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    max-height: 22.25rem;\n    max-width: 22.25rem;\n}\n.card-p-img { max-height: 16.438rem; max-width: 22.25rem; margin: 0;\n}\n.card-p-constainer { max-height: 7rem; padding: 2rem 2rem 2rem 2rem;\n}\n@supports(object-fit: cover){\n.card-p-img img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
+exports.push([module.i, "\n.card-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(3, 1fr);\n}\n.card-p{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    max-height: 22.25rem;\n    max-width: 22.25rem;\n}\n.card-p-img { max-height: 16.438rem; max-width: 100%; margin: 0;\n}\n.card-p-constainer { max-height: 7rem; padding: 2rem 2rem 2rem 2rem;\n}\n@supports(object-fit: cover){\n.card-p-img img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
 
 // exports
 

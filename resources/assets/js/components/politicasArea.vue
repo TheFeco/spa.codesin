@@ -41,7 +41,7 @@ export default {
         max-height: 22.25rem;
         max-width: 22.25rem;
     }
-    .card-p-img { max-height: 16.438rem; max-width: 22.25rem; margin: 0;}
+    .card-p-img { max-height: 16.438rem; max-width: 100%; margin: 0;}
     .card-p-constainer { max-height: 7rem; padding: 2rem 2rem 2rem 2rem; }
     @supports(object-fit: cover){
         .card-p-img img{
