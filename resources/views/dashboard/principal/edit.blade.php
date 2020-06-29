@@ -6,6 +6,7 @@
         <li><a href="">pagina</a></li>
         <li>Editar página Principal </li>
     </ul>
+    
 </div>
 @stop
 @section('content')
@@ -34,7 +35,6 @@
                     </div>
                     @if ($post->id == 1)
                     <div class="col-md-12">
-                        {{-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
                         <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                     </div>
                     @endif
@@ -65,7 +65,7 @@
                             {!! $errors->first('imgMobile', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>
@@ -148,15 +148,7 @@
                     ]
         });
 
-        $('#banner').dropify({
-            messages: {
-                'default': 'Arrastra y suelta un archivo aquí o haz clic',
-                'replace': 'Arrastra y suelta o haz clic para reemplazar',
-                'remove':  'Remover',
-                'error':   'Ooops, sucedió algo malo.'
-            }
-        });
-        $('#bannerMobile').dropify({
+        $('.banner').dropify({
             messages: {
                 'default': 'Arrastra y suelta un archivo aquí o haz clic',
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',

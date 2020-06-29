@@ -12,6 +12,9 @@
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
+        <div class="return">
+            <a href="{{route('admin.noticias.index')}}" class="btn btn-info">Regresar</a>
+        </div>
         @include('dashboard.partials.banner')
     </div>
     <div class="row">

@@ -92,7 +92,7 @@ class TagsController extends Controller
             }
         if ($request->files->has('banner')) {
             $request->validate([
-                'banner' => 'required|image|max:4048' // jpeg, pnp, bmp, gif, svg
+                'banner' => 'required|image|max:2048' // jpeg, pnp, bmp, gif, svg
             ]);
             
             
@@ -109,8 +109,9 @@ class TagsController extends Controller
             $banner->update(['urlBanner' => $urlBanner]);
         }
         if ($request->files->has('bannerMobile')) {
+            
             $request->validate([
-                'bannerMobile' => 'required|image|max:4048' // jpeg, pnp, bmp, gif, svg
+                'bannerMobile' => 'required|image|max:2048' // jpeg, pnp, bmp, gif, svg
             ]);
             $old_image = public_path().$tag->bannerMobile;
             if (file_exists($old_image)) {
@@ -122,7 +123,7 @@ class TagsController extends Controller
             $filename = 'bannerZona_Mobile_' . $tag->id .'_'. time() . '.' . $request->bannerMobile->extension();
             $urlBanner = '/img/banners/'. $filename;
             $request->bannerMobile->move(public_path('img/banners'),$filename);
-            $tag->update(['urlBannerMobile' => $urlBanner]);
+            $banner->update(['urlBannerMobile' => $urlBanner]);
         }
 
         $tag->load('posts','banners');

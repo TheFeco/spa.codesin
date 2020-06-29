@@ -40,12 +40,12 @@
                     <div class="row">
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('excerpt') ? 'has-error' : ''}}">
                             <label for="excerpt">Titulo del thumbnail</label>
-                            <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="5"  >{{ old('excerpt', $post->excerpt)}}</textarea>
+                            <input type="text" class="form-control form-control-rounded" id="excerpt" name="excerpt" value="{{ old('excerpt', $post->excerpt)}}" />
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('thumbnail') ? 'has-error' : ''}}">
                             <label for="thumbnail">thumbnail </label>
-                            <input type="file" name="thumbnail" id="thumbnail" data-default-file="{{ $post->urlimage ? $post->urlimage : '' }}" data-max-file-size-preview="4M" >
+                            <input type="file" name="thumbnail" id="thumbnail" data-default-file="{{ $post->urlimage ? $post->urlimage : '' }}" data-max-file-size="2M" >
                             {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
@@ -61,22 +61,14 @@
 @stop
 
 @push('style')
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.date.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
-    <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
-    <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
-    <link href="{{asset('dashboard/css/plugins/select2.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
 @endpush
 @push('script')
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.date.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/dropzone.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/select2.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/dropify.min.js')}}"></script>
     <script src="{{asset('dashboard/lang/summernote-es-ES.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dropify.min.js')}}"></script>
+    
 
     
     <script>
@@ -101,6 +93,10 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
 
@@ -110,6 +106,10 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
     </script>

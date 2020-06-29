@@ -15,6 +15,9 @@
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
+        <div class="return">
+            <a href="{{route('admin.politicas.index')}}" class="btn btn-info">Regresar</a>
+        </div>
         @include('dashboard.partials.banner')
     </div>
     <div class="row">
@@ -88,8 +91,6 @@
 @stop
 
 @push('style')
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.date.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
     <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
@@ -97,8 +98,6 @@
     <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
 @endpush
 @push('script')
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.date.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/dropzone.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/select2.min.js')}}"></script>
@@ -107,14 +106,6 @@
 
     
     <script>
-        $('#picker2, #picker3').pickadate({
-            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            weekdaysShort: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-            today: 'Hoy',
-            clear: 'Limpiar',
-            close: 'Cerrar',
-            formatSubmit: 'yyyy/mm/dd'
-        });
         // Summernote
         $('.textarea').summernote({
             height: 300,   //set editable area's height
@@ -154,6 +145,10 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
 

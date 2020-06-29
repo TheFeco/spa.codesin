@@ -6,13 +6,13 @@
             <div class="row">
                 <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
                     <label for="">banner el tamaño debe ser 1440px X 451px </label>
-                    <input class="banner" type="file" name="banner" id="banner" data-default-file="{{ $post->urlBanner ? $post->urlBanner : '' }}" data-max-file-size-preview="4M" >
+                    <input class="banner" type="file" name="banner" id="banner" data-default-file="{{ $post->urlBanner ? $post->urlBanner : '' }}" data-max-file-size="2M" >
                     {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
                 </div>
                 
                 <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
                     <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
-                    <input type="file" class="form-control banner" name="bannerMobile" id="bannerMobile" data-default-file="{{ $post->urlBannerMobile ? $post->urlBannerMobile : '' }}" data-max-file-size-preview="4M">
+                    <input type="file" class="form-control banner" name="bannerMobile" id="bannerMobile" data-default-file="{{ $post->urlBannerMobile ? $post->urlBannerMobile : '' }}" data-max-file-size="2M">
                     {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
                 </div>
             </div>

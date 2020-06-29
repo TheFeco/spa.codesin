@@ -22,26 +22,25 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6 form-group mb-4 {{ $errors->has('banner') ? 'has-error' : ''}}">
-                                            <label for="">banner el tamaño debe ser 1440px X 451px </label>
-                                            <input class="banner" type="file" name="banner" id="banner" data-default-file="{{ $tag->banners->urlBanner ? $tag->banners->urlBanner : '' }}" data-max-file-size-preview="4M" >
+                                            <label for="">banner el tamaño debe ser 1440px X 451px y pesar menos de 2Mb </label>
+                                            <input class="banner" type="file" name="banner" id="banner" data-default-file="{{ $tag->banners ? $tag->banners->urlBanner : '' }}" data-max-file-size-preview="4M" >
                                             {!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
                                         </div>
                                         
                                         <div class="col-md-6 form-group mb-3{{ $errors->has('bannerMobile') ? 'has-error' : ''}}">
-                                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px</label>
-                                            <input type="file" class="form-control banner" name="bannerMobile" id="bannerMobile" data-default-file="{{ $tag->banners->urlBannerMobile ? $tag->banners->urlBannerMobile : '' }}" data-max-file-size-preview="4M">
+                                            <label for="bannerMobile">banner versión pequeña debe ser 360px X 400px y pesar menos de 2Mb </label>
+                                            <input type="file" class="form-control banner" name="bannerMobile" id="bannerMobile" data-default-file="{{ $tag->banners ? $tag->banners->urlBannerMobile : '' }}" data-max-file-size-preview="4M">
                                             {!! $errors->first('bannerMobile', '<span class="help-block">:message</span>') !!}
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
                                             <label for="urlvideo">Url de video de youtube</label>
-                                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', $tag->banners->urlvideo)}}" />
+                                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo', !$tag->banners ?  '' : $tag->banners->urlvideo)}}" />
                                             {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-right">
-                                        {{-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
                                         <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonBanner m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                                     </div>
                                 </div>
@@ -98,36 +97,6 @@
             </div>
         </div>
     </div>
-    {{-- modal --}}
-    <div class="modal fade" id="proyectos" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabel">Titulo del proyecto</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" action="{{ route('admin.proyectos.store', '#create-proyectos') }}">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12 form-group mb-3 {{ $errors->has('titleProjectModal') ? 'has-error' : ''}}" >
-                                <label for="titleProjectModal"></label>
-                                <input class="form-control form-control-rounded" id="title" name="titleProjectModal" type="text" value="{{ old('titleProjectModal')}}" required/>
-                                {!! $errors->first('titleProjectModal', '<span class="help-block">:message</span>') !!}
-                            </div>
-                            @if (isset($tag))
-                                <input type="hidden" name="tags" value="{{$tag->id}}">
-                            @endif
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 @stop
 @push('style')
     <link rel="stylesheet" href="{{asset('dashboard/css/plugins/datatables.min.css')}}" />
@@ -155,27 +124,12 @@
                 'error':   'Ooops, sucedió algo malo.'
             }
         });
-    if(window.location.hash == '#create-proyectos')
-        {
-            $('#proyectos').modal('show');
-        }
-        $('#proyectos').on('hide.bs.modal',function(){
-            window.location.hash = '#';
-        });
-        $('#proyectos').on('shown.bs.modal',function(){
-            $('#title').focus();
-            window.location.hash = '#create-proyectos';
-        });
+    
         $('.basic-ladda-buttonBanner').on('click', function (e) {
-        var laddaBtn = e.currentTarget;
-        var l = Ladda.create(laddaBtn);
-        l.start();
-        $('#Bannerform').submit();
-        // setTimeout(function () {
-        //     $('form').submit();
-        // }, 3000);
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#Bannerform').submit();
         });
     </script>
 @endpush
-
-{{-- if (isset($tag)) { --}}

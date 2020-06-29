@@ -12,6 +12,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
+            <div class="return">
+                <a href="{{route('admin.testimonios.index')}}" class="btn btn-info">Regresar</a>
+            </div>
             <div class="card-body">
                 <div class="card-title mb-3">Formulario</div>
                 <div>
@@ -25,12 +28,12 @@
                         </ul>
                     @endif
                 </div>
-                <form action="{{ route('admin.testimonios.store')}}" id="form" method="post" enctype="multipart/form-data">
+                <form id="testicreate" action="{{ route('admin.testimonios.store')}}" id="form" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-md-6 form-group mb-4 {{ $errors->has('thumbnail') ? 'has-error' : ''}}">
                             <label for="">thumbnail</label>
-                            <input type="file" name="thumbnail" id="thumbnail" data-default-file="" data-max-file-size-preview="4M" >
+                            <input type="file" name="thumbnail" id="thumbnail" data-default-file="" data-max-file-size-preview="2M" >
                             {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-xs-12 col-md-6">
@@ -46,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonTestc m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>
@@ -69,11 +72,18 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
 
-        $('#form').submit(function(){
-            $('#submit-btn').prop('disabled', true);
+        $('.basic-ladda-buttonTestc').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#testicreate').submit();
         });
     </script>
 @endpush

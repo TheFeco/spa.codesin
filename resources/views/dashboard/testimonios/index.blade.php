@@ -27,9 +27,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th></th>
-                                <th style="width: 10%">Nombre</th>
-                                <th style="width: 75%;">cuerpo</th>
+                                <th style="width: 10%"></th>
+                                <th style="width: 15%">Nombre</th>
+                                <th >cuerpo</th>
                                 <th style="width: 8%">Acciones</th>
                             </tr>
                         </thead>
@@ -37,14 +37,14 @@
                             @foreach ($testimonios as $testimonio)
                                 <tr>
                                     <td class="align-middle">{{ $loop->index + 1 }}</td>
-                                    <th class="text-center">
+                                    <td class="align-middle text-center">
                                         <div >
                                             <a class="image-popup" href="{{ $testimonio->urlImg}}">
-                                                <img src="{{ $testimonio->urlImg}}" alt="" class="avatar-md rounded mr-3 image-popup">
+                                                <img src="{{ $testimonio->urlImg}}" alt="" class="avatar-md rounded mr-3">
                                             </a>
                                         </div>
                                             
-                                    </th>
+                                    </td>
                                     <td class="align-middle">{{ $testimonio->name }}</td>
                                     <td class="align-middle">{{ $testimonio->body }}</td>
                                     <td class="align-middle">
@@ -65,26 +65,15 @@
 @stop
 @push('style')
     <link rel="stylesheet" href="{{asset('dashboard/css/plugins/datatables.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-    <style>
-        .image-popup {cursor: -webkit-zoom-in;}
-    </style>
 
 @endpush
 
 @push('script')
     <script src="{{asset('dashboard/js/plugins/datatables.min.js')}}"></script>
-    <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
-
     <script>
         $('#post-table').DataTable({
         "order": [[3, "desc"]]
     }); // multi column ordering
-    $('.image-popup').magnificPopup({
-        type: 'image',
-        gallery:{
-            enabled:false
-        }
-    });
+    
     </script>
 @endpush

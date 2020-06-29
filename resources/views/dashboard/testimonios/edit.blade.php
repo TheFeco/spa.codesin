@@ -12,6 +12,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
+            <div class="return">
+                <a href="{{route('admin.testimonios.index')}}" class="btn btn-info">Regresar</a>
+            </div>
             <div class="card-body">
                 <div class="card-title mb-3">Formulario</div>
                 <div>
@@ -25,7 +28,7 @@
                         </ul>
                     @endif
                 </div>
-                <form action="{{ route('admin.testimonios.update', $testimonio)}}" id="form" method="post" enctype="multipart/form-data">
+                <form id="testiUpdate" action="{{ route('admin.testimonios.update', $testimonio)}}" id="form" method="post" enctype="multipart/form-data">
                     @csrf {{method_field('PUT')}}
                     <div class="row">
                         <div class="col-xs-12 col-md-6 form-group mb-4 {{ $errors->has('thumbnail') ? 'has-error' : ''}}">
@@ -46,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonTestu m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>
@@ -69,11 +72,18 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
 
-        $('#form').submit(function(){
-            $('#submit-btn').prop('disabled', true);
+        $('.basic-ladda-buttonTestu').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#testiUpdate').submit();
         });
     </script>
 @endpush

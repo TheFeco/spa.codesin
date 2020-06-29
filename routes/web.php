@@ -33,7 +33,10 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::resource('noticias', 'NoticiasController', ['except' => 'show','as' => 'admin'])->parameters(['noticias' => 'post']);
     Route::resource('proyectos', 'ProyectosController', ['except' => 'show','as' => 'admin'])->parameters(['proyectos' => 'post']);
     Route::resource('tags', 'TagsController', ['as' => 'admin']);
-    Route::resource('staff', 'PersonalController', ['except' => 'show','as' => 'admin']);
+    Route::resource('departamentos', 'DepartamentosController', ['as' => 'admin']);
+    Route::resource('staff', 'PersonalController', ['except' => ['show ', 'create'],'as' => 'admin']);
+    Route::get('staff/create/{departamento}', 'PersonalController@create', ['except' => 'show','as' => 'admin'])->name('admin.staff.create');;
+
     Route::resource('testimonios', 'TestimoniosController', ['except' => 'show','as' => 'admin']);
     Route::resource('contenidos', 'ContenidoInteresController', ['except' => 'show','as' => 'admin'])->parameters(['contenidos' => 'post']);
     Route::resource('estrategias', 'EstrategiasController', ['except' => 'show','as' => 'admin'])->parameters(['estrategias' => 'post']);

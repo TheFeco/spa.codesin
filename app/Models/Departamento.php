@@ -12,4 +12,8 @@ class Departamento extends Model
     public function staff(){
         return $this->hasMany('App\Models\Staff');
     }
+
+    public function staffs(){
+        return $this->hasMany(Staff::class,'departamento_id');
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Post;
+use Carbon\Carbon;
 use File;
 
 class ContenidoInteresController extends Controller
@@ -52,7 +53,7 @@ class ContenidoInteresController extends Controller
             'title' => $request->get('title'),
             'excerpt' => $request->get('excerpt'),
             'urlvideo' => $request->get('urlvideo'),
-            'published_at' => $request->get('published_at_submit'),
+            'published_at' => Carbon::now(),
             'category_id' => 4
         ]);
 

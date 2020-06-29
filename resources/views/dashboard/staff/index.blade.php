@@ -14,10 +14,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8 col-sm-12">
-                        <h4 class="card-title mb-3">Listado del staff de codesin</h4>
+                        <h4 class="card-title mb-3">Listado de staff @if (isset($departamento)) {{$departamento->name }}@endif</h4>
                     </div>
                     <div class="col-md-4 col-sm-12 text-right">
-                        <a href="{{route('admin.staff.create')}}">
+                        <a href="{{route('admin.staff.create',$departamento)}}">
                             <button class="btn btn-primary ripple m-1" type="button">Crear personal</button>
                         </a>
                     </div>
@@ -39,7 +39,7 @@
                             @foreach ($staffs as $staff)
                                 <tr>
                                     <td class="align-middle">{{ $loop->index + 1 }}</td>
-                                    <th class="text-center"><img src="{{ $staff->urlimg}}" alt="" class="avatar-md rounded mr-3"></th>
+                                    <th class="text-center"><a class="image-popup" href="{{ $staff->urlimg}}"><img src="{{ $staff->urlimg}}" alt="{{ $staff->name }}" class="avatar-md rounded"></a></th>
                                     <td class="align-middle">{{ $staff->name }}</td>
                                     <td class="align-middle">{{ $staff->email }}</td>
                                     <td class="align-middle">{{ $staff->job }}</td>

@@ -8,10 +8,13 @@
 </div>
 @stop
 @section('content')
-<form method="POST" action="{{ route('admin.proyectos.update', $post) }}" enctype="multipart/form-data">
+<form id="pUpdate" method="POST" action="{{ route('admin.proyectos.update', $post) }}" enctype="multipart/form-data">
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
+        <div class="return">
+            <a href="{{route('admin.tags.show', $post->tags[0]->url)}}" class="btn btn-info">Regresar</a>
+        </div>
         @include('dashboard.partials.banner')
     </div>
     <div class="row">
@@ -57,7 +60,7 @@
                             <div class="dropzone"></div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonProyectos m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +147,7 @@
 
         Dropzone.autoDiscover = false;
 
-        $('#banner').dropify({
+        $('.banner').dropify({
             messages: {
                 'default': 'Arrastra y suelta un archivo aquí o haz clic',
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
@@ -152,13 +155,11 @@
                 'error':   'Ooops, sucedió algo malo.'
             }
         });
-        $('#bannerMobile').dropify({
-            messages: {
-                'default': 'Arrastra y suelta un archivo aquí o haz clic',
-                'replace': 'Arrastra y suelta o haz clic para reemplazar',
-                'remove':  'Remover',
-                'error':   'Ooops, sucedió algo malo.'
-            }
+        $('.basic-ladda-buttonProyectos').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#pUpdate').submit();
         });
     </script>
 @endpush

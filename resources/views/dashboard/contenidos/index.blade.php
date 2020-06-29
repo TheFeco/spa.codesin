@@ -27,10 +27,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th></th>
-                                <th style="width: 10%">titulo</th>
-                                <th style="width: 75%;">cuerpo</th>
-                                <th style="width: 8%">Acciones</th>
+                                <th style="width: 10%"></th>
+                                <th style="width: 15%">titulo</th>
+                                <th>cuerpo</th>
+                                <th style="width: 10%">Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="align-middle">

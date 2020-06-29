@@ -30,13 +30,12 @@ class PersonalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Departamento $departamento)
     {
         //
-        $staff = new Staff;
-        $departamentos = Departamento::get();
+        $staff = new Staff; 
 
-        return view('dashboard.staff.create', compact('staff','departamentos'));
+        return view('dashboard.staff.create', compact('staff','departamento'));
     }
 
     /**

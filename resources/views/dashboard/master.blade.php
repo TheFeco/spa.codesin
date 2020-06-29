@@ -11,6 +11,8 @@
     <link href="{{asset('dashboard/css/plugins/perfect-scrollbar.min.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/css/plugins/fontawesome-5.min.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/css/plugins/ladda-themeless.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/btn.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     
     @stack('style')
 
@@ -64,55 +66,39 @@
             </div>
             <!-- end of main-content -->
         </div>
+        @include('dashboard.partials.createModal')
     </div>
     <script src="{{asset('dashboard/js/plugins/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/spin.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/ladda.min.js')}}"></script>
+    <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
     
     
     @stack('script')
     {{-- <script src="{{asset('dashboard/lang/summernote-es-ES.js')}}"></script> --}}
     <script src="{{asset('dashboard/js/scripts/script.min.js')}}"></script>
     <script src="{{asset('dashboard/js/scripts/sidebar.large.script.min.js')}}"></script>
+    
+    
+
     <script> 
     $('.basic-ladda-button').on('click', function (e) {
         var laddaBtn = e.currentTarget;
         var l = Ladda.create(laddaBtn);
         l.start();
         $('form').submit();
-        // setTimeout(function () {
-        //     $('form').submit();
-        // }, 3000);
+    });
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:false
+        }
     });
     </script>
     @unless(request()->is('admin/noticias/*') || request()->is('admin/proyectos/*'))
-    <script>
-        if(window.location.hash == '#create-noticias')
-        {
-            $('#noticias').modal('show');
-        }
-        $('#noticias').on('hide.bs.modal',function(){
-            window.location.hash = '#';
-        });
-        $('#noticias').on('shown.bs.modal',function(){
-            $('#title').focus();
-            window.location.hash = '#create-noticias';
-        });
-        
-        if(window.location.hash == '#create-politicas')
-        {
-            $('#politicas').modal('show');
-        }
-        $('#politicas').on('hide.bs.modal',function(){
-            window.location.hash = '#';
-        });
-        $('#politicas').on('shown.bs.modal',function(){
-            $('#title').focus();
-            window.location.hash = '#create-politicas';
-        });
-    </script>
+        <script src="{{asset('dashboard/js/createModal.js')}}"></script>
     @endunless
 </body>
 

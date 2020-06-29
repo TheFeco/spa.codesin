@@ -46,9 +46,6 @@
             <li class="nav-item">
                 <a href="{{route('admin.paginas.edit', 'que-hacemos')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">¿Qué hacemos?</span></a>
             </li>
-            <li class="nav-item">
-                <a href="{{route('admin.paginas.edit', 'comunicacion')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Comunicación</span></a>
-            </li>
         </li>
         </ul>
         <ul class="childNav" data-parent="noticias">
@@ -67,10 +64,8 @@
             @endforeach
         </ul>
         <ul class="childNav" data-parent="staff">
-            <li class="nav-item"><a href="{{route('admin.staff.index')}}"><i class="nav-icon fas fa-user-circle"></i><span class="item-name">ver todo el staff</span></a></li>
-            <li class="nav-item"><a href="{{route('admin.staff.create')}}"><i class="nav-icon i-Add-User"></i><span class="item-name">Nuevo Personal</span></a></li>
             @foreach ($departamentos as $departamento)
-            <li class="nav-item"><a href=""><i class="nav-icon i-ID-3"></i><span class="item-name">ver {{$departamento->name}}</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.departamentos.show', $departamento)}}"><i class="nav-icon i-ID-3"></i><span class="item-name">ver {{$departamento->name}}</span></a></li>
             @endforeach
         </ul>
         <ul class="childNav" data-parent="testimonios">
@@ -90,59 +85,4 @@
         </ul>
     </div>
     <div class="sidebar-overlay"></div>
-</div>
-{{-- modal --}}
-<div class="modal fade" id="noticias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Titulo de la publicación</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ route('admin.noticias.store', '#create-noticias') }}">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-12 form-group mb-3 {{ $errors->has('titleModal') ? 'has-error' : ''}}" >
-                            <label for="titleModal"></label>
-                            <input class="form-control form-control-rounded" id="title" name="titleModal" type="text" value="{{ old('titleModal')}}" required/>
-                            {!! $errors->first('titleModal', '<span class="help-block">:message</span>') !!}
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                        <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{-- modal --}}
-<div class="modal fade" id="politicas" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Titulo del politica</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ route('admin.politicas.store', '#create-politica') }}">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-12 form-group mb-3 {{ $errors->has('titlepoliticaModal') ? 'has-error' : ''}}" >
-                            <label for="titlepoliticaModal"></label>
-                            <input class="form-control form-control-rounded" id="title" name="titlepoliticaModal" type="text" value="{{ old('titlepoliticaModal')}}" required/>
-                            {!! $errors->first('titlepoliticaModal', '<span class="help-block">:message</span>') !!}
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                        <button class="btn btn-primary ml-2" type="submit">Crear politica</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
