@@ -62,7 +62,19 @@ Vue.mixin({
 
             return imagen;
         },
-    }
+    },
+    mounted() {
+        let windows = $(window);
+        let stick = $('.header-area');
+        windows.on('scroll',function(){
+            let scroll = windows.scrollTop();
+            if(scroll < 5){
+                stick.removeClass('sticky');
+            }else{
+                stick.addClass('sticky');
+            }
+        });
+    },
 });
 const app = new Vue({
     el: '#app',

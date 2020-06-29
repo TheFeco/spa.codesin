@@ -4081,6 +4081,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.mixin({
 
             return imagen;
         }
+    },
+    mounted: function mounted() {
+        var windows = $(window);
+        var stick = $('.header-area');
+        windows.on('scroll', function () {
+            var scroll = windows.scrollTop();
+            if (scroll < 5) {
+                stick.removeClass('sticky');
+            } else {
+                stick.addClass('sticky');
+            }
+        });
     }
 });
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
@@ -58724,25 +58736,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            buscar: '',
             transparencia: 'http://codesin.transparenciasinaloa.gob.mx/obligaciones-de-transparencia-del-consejo-para-el-desarrollo-economico-del-estado-de-sinaloa-codesin/'
         };
     },
@@ -58776,7 +58774,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
+  return _c("div", { staticClass: "header-area" }, [
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "main-menu-area" }, [
@@ -58886,7 +58884,38 @@ var render = function() {
               _vm._v(" "),
               _c("nav", { staticClass: "mainMenu" }, [
                 _c("ul", [
-                  _vm._m(2),
+                  _c("li", [
+                    _c("div", { staticClass: "search" }, [
+                      _c("form", { attrs: { action: "", id: "search-form" } }, [
+                        _c("button", { attrs: { type: "submit" } }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.buscar,
+                              expression: "buscar"
+                            }
+                          ],
+                          attrs: {
+                            type: "search",
+                            name: "buscar",
+                            placeholder: "Buscar..."
+                          },
+                          domProps: { value: _vm.buscar },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.buscar = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c(
                     "li",
@@ -59028,30 +59057,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "menuBtn", attrs: { href: "#" } }, [
       _c("span", { staticClass: "lines" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "form",
-        {
-          staticClass: "searchFom",
-          staticStyle: { margin: "auto", "max-width": "300px", height: "40px" },
-          attrs: { action: "" }
-        },
-        [
-          _c("button", { attrs: { type: "submit" } }, [
-            _c("i", { staticClass: "fa fa-search" })
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", placeholder: "Search..", name: "search2" }
-          })
-        ]
-      )
     ])
   }
 ]
