@@ -26,7 +26,7 @@
                         </ul>
                     @endif
                 </div>
-                <form action="{{ route('admin.users.update', $user)}}" method="post">
+                <form id="UserUpdate" action="{{ route('admin.users.update', $user)}}" method="post">
                     @csrf 
                     {{method_field('PUT')}}
                     <div class="row">
@@ -48,7 +48,7 @@
                             <input type="password" class="form-control" name="password_confirmation" placeholder="Repite la contraseña contraseña" />
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonUserUdate m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>
@@ -57,3 +57,14 @@
     </div>
 </div>
 @endsection
+@push('script')
+
+    <script>
+        $('.basic-ladda-buttonUserUdate').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#UserUpdate').submit();
+        });
+    </script>
+@endpush

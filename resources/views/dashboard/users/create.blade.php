@@ -26,7 +26,7 @@
                         </ul>
                     @endif
                 </div>
-                <form action="{{ route('admin.users.store')}}" method="post">
+                <form id="UserCreate" action="{{ route('admin.users.store')}}" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 form-group mb-3">
@@ -39,7 +39,7 @@
                         </div>
                         <span id="emailHelp" class="form-text text-muted">La contraseña sera creada y envida alnuevo usuario por email.</span>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonUser m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </form>
@@ -48,3 +48,14 @@
     </div>
 </div>
 @endsection
+@push('script')
+
+    <script>
+        $('.basic-ladda-buttonUser').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#UserCreate').submit();
+        });
+    </script>
+@endpush

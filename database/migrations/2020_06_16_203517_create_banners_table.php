@@ -16,9 +16,9 @@ class CreateBannersTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('tag_id');
-            $table->string('urlBanner');
-            $table->string('urlBannerMobile');
-            $table->string('urlvideo');
+            $table->string('urlBanner')->nullable();;
+            $table->string('urlBannerMobile')->nullable();;
+            $table->string('urlvideo')->nullable();;
             $table->timestamps();
         });
     }
