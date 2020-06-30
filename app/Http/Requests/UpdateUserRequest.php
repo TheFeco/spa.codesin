@@ -27,7 +27,8 @@ class UpdateUserRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'email' => [
-                'required', Rule::unique('users')->ignore($this->route('user')->id)]
+                'required', Rule::unique('users')->ignore($this->route('user')->id)->where('status',1)
+                ]
         ];
 
         if($this->filled('password'))
