@@ -862,7 +862,7 @@ width: 100%;
 }
 
 @supports(object-fit: cover){
-  .thumb, .inversiones-img img{
+  .thumb img, .inversiones-img img{
   height: 100%;
   object-fit: cover;
   object-position: center center;
