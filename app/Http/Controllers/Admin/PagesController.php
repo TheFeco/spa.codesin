@@ -29,7 +29,6 @@ class PagesController extends Controller
             ]);
 
             $old_image = public_path().$post->urlBanner;
-            // dd(file_exists($old_image));
             if (file_exists($old_image)) {
                 File::delete($old_image);
          
@@ -101,8 +100,8 @@ class PagesController extends Controller
         if ($post->id == 1) {
             $section = Section::where('post_id',1)->first();
             $section->update([
-                'title' => $request->get('title'),
-                'body' => $request->get('body'),
+                'title' => $request->get('titleSection'),
+                'body' => $request->get('bodySection'),
                 'icon1' => $request->get('icon1'),
                 'icon1_popover' => $request->get('icon1_popover'),
                 'icon2' => $request->get('icon2'),

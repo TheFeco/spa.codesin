@@ -18,64 +18,64 @@
 		<div class="contenedor default-bg mb-4">
 			<div class="row">
 				<div class="col-xs-12 mtb-80">
-					<h2 class="title f28 text-center">Modelo de Desarrollo Económico para Sinaloa</h2>
-					<div class="contenedor-text default mlg">El principal objetivo del CODESIN es promover el desarrollo del estado con una visión integral y de largo plazo fomentando la colaboración público-privada. Esta visión se despliega en un Modelo Competitivo para el Desarrollo del Estado al cual se alinean las estrategias, políticas públicas y proyectos impulsados. </div>
+					<h2 class="title f28 text-center" v-text="sections.title"></h2>
+					<div class="contenedor-text default mlg" v-html="sections.body"></div>
 				</div>
 			</div>
 			<!-- icons -->
 			<div class="row">
 				<div class="col-xs-12 text-gray">
-					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="msg" data-original-title="Bioeconomía">
+					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon1_popover" :data-original-title="sections.icon1">
 						<div class="icon-img pop" >
-							<img class="pop" src="/img/home/process.png" alt="Bioeconomia">
+							<img class="pop" :src="sections.icon1_img" :alt="sections.icon1">
 						</div>
 						<div class="icon-text pop">
 							<div class="excerpt pop">
-								<span class="pop">Bioeconomía</span>
+								<span class="pop" v-text="sections.icon1"></span>
 							</div>
 						</div>
 					</div>
 					<!-- Economía Digital -->
-					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="msg" data-original-title="Bioeconomía">
+					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon2_popover" :data-original-title="sections.icon2">
 						<div class="icon-img pop">
-							<img class="pop" src="/img/home/pay-per-click.png" alt="Bioeconomia">
+							<img class="pop" :src="sections.icon2_img" :alt="sections.icon2">
 						</div>
 						<div class="icon-text pop">
 							<div class="excerpt pop">
-								<span class="pop">Economía Digital</span>
+								<span class="pop" v-text="sections.icon2"></span>
 							</div>
 						</div>
 					</div>
 					<!-- Turismo -->
-					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
+					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon3_popover" :data-original-title="sections.icon3">
 						<div class="icon-img pop">
-							<img class="pop" src="/img/home/process.png" alt="Bioeconomia">
+							<img class="pop" :src="sections.icon3_img" :alt="sections.icon3">
 						</div>
 						<div class="icon-text pop">
 							<div class="excerpt pop">
-								<span class="pop">Turismo</span>
+								<span class="pop" v-text="sections.icon3"></span>
 							</div>
 						</div>
 					</div>
 					<!-- Logística -->
-					<div class="icons col-md-2 col-sm-2 col-xs-4 mobile" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
+					<div class="icons col-md-2 col-sm-2 col-xs-4 mobile" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon4_popover" :data-original-title="sections.icon4">
 						<div class="icon-img pop">
-							<img class="pop" src="/img/home/process.png" alt="Bioeconomia">
+							<img class="pop" :src="sections.icon4_img" :alt="sections.icon4">
 						</div>
 						<div class="icon-text pop">
 							<div class="excerpt ">
-								<span class="pop">Logística</span>
+								<span class="pop" v-text="sections.icon4"></span>
 							</div>
 						</div>
 					</div>
 					<!-- Manufactura -->
-					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
+					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon5_popover" :data-original-title="sections.icon5">
 						<div class="icon-img pop">
-							<img class="pop" src="/img/home/process.png" alt="Bioeconomia">
+							<img class="pop" :src="sections.icon5_img" :alt="sections.icon5">
 						</div>
 						<div class="icon-text pop">
 							<div class="excerpt pop">
-								<span class="pop">Manufactura</span>
+								<span class="pop" v-text="sections.icon5"></span>
 							</div>
 						</div>
 					</div>
@@ -92,46 +92,46 @@
 				<div class="row" >
 					<div class="col-xs-12 text-gray parte2">
 						<!--  -->
-						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon6_popover" :data-original-title="sections.icon6">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon6_img" :alt="sections.icon6">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Sustentabilidad Ambiental</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon6"></span>
 								</div>
 							</div>
 						</div>
 						<!--  -->
-						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon7_popover" :data-original-title="sections.icon7">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon7_img" :alt="sections.icon7">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Sistema de Derecho</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon7"></span>
 								</div>
 							</div>
 						</div>
 						<!--  -->
-						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon8_popover" :data-original-title="sections.icon8">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon8_img" :alt="sections.icon8">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Investigación, Desarrollo e Innovación</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon8"></span>
 								</div>
 							</div>
 						</div>
 						<!--  -->
-						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon9_popover" :data-original-title="sections.icon9">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon9_img" :alt="sections.icon9">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Educación</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon9"></span>
 								</div>
 							</div>
 						</div>
@@ -140,35 +140,35 @@
 				<div class="row">
 					<div class="col-xs-12 text-gray parte3 mb-8">
 						<!-- Planeación Urbana -->
-						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="msg" data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon10_popover" :data-original-title="sections.icon10">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon10_img" :alt="sections.icon10">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Planeación Urbana</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon10"></span>
 								</div>
 							</div>
 						</div>
 						<!-- Gobierno Locales -->
-						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon11_popover" :data-original-title="sections.icon11">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon11_img" :alt="sections.icon11">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Gobierno Locales</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon11"></span>
 								</div>
 							</div>
 						</div>
 						<!-- Salud -->
-						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." data-original-title="Bioeconomía">
-							<div class="icon-img">
-								<img src="/img/home/light-bulb.png" alt="Bioeconomia">
+						<div class="icons col-md-3 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon12_popover" :data-original-title="sections.icon12">
+							<div class="icon-img pop">
+								<img class="pop" :src="sections.icon12_img" :alt="sections.icon12">
 							</div>
-							<div class="icon-text">
-								<div class="excerpt">
-									<span>Salud</span>
+							<div class="icon-text pop">
+								<div class="excerpt pop">
+									<span class="pop" v-text="sections.icon12"></span>
 								</div>
 							</div>
 						</div>
@@ -182,83 +182,83 @@
 						<div class="small-icons">
 							<div class="row">
 								<!--  -->
-								<div class="icons  col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Sustentabilidad Ambiental">
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon6_popover" :data-original-title="sections.icon6">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon6_img" :alt="sections.icon6">
 									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Sustentabilidad Ambiental</span>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon6"></span>
 										</div>
 									</div>
 								</div>
 								<!--  -->
-								<div class="icons col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Sistema de Derecho">
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon7_popover" :data-original-title="sections.icon7">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon7_img" :alt="sections.icon7">
 									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Sistema de Derecho</span>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon7"></span>
 										</div>
 									</div>
 								</div>
 								<!--  -->
-								<div class="icons col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Investigación, Desarrollo e Innovación">
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon8_popover" :data-original-title="sections.icon8">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon8_img" :alt="sections.icon8">
 									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Investigación, Desarrollo e Innovación</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<!--  -->
-								<div class="icons col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Educación">
-									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Educación</span>
-										</div>
-									</div>
-								</div>
-								<!--  -->
-								<div class="icons col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Planeación">
-									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Planeación</span>
-										</div>
-									</div>
-								</div>
-								<!--  -->
-								<div class="icons col-sm-4 col-xs-4">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Gobiernos Locales">
-									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Gobiernos Locales</span>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon8"></span>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<!--  -->
-								<div class="icons col-xs-12 mb-8">
-									<div class="icon-img">
-										<img src="/img/home/light-bulb.png" alt="Salud">
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon9_popover" :data-original-title="sections.icon9">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon9_img" :alt="sections.icon9">
 									</div>
-									<div class="icon-text">
-										<div class="excerpt">
-											<span>Salud</span>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon9"></span>
+										</div>
+									</div>
+								</div>
+								<!--  -->
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon10_popover" :data-original-title="sections.icon10">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon10_img" :alt="sections.icon10">
+									</div>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon10"></span>
+										</div>
+									</div>
+								</div>
+								<!--  -->
+								<div class="icons  col-sm-4 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon11_popover" :data-original-title="sections.icon11">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon11_img" :alt="sections.icon11">
+									</div>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon11"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<!--  -->
+								<div class="icons col-xs-12 mb-8" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon12_popover" :data-original-title="sections.icon12">
+									<div class="icon-img pop">
+										<img class="pop" :src="sections.icon12_img" :alt="sections.icon12">
+									</div>
+									<div class="icon-text pop">
+										<div class="excerpt pop">
+											<span class="pop" v-text="sections.icon12"></span>
 										</div>
 									</div>
 								</div>
@@ -282,8 +282,7 @@
 				pageInfo: [],
 				noticias: [],
 				img: '',
-				msg: '32',
-				items: 5,
+				sections: [],
 			}
 		},
 		created(){
@@ -295,6 +294,7 @@
 				.then(res => res.json())
 				.then(json => {
 					this.pageInfo = json.pageinfo;
+					this.sections =this.pageInfo.sections;
 					this.noticias = json.noticias;
 					this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
 					$('#lock').addClass('hidden');

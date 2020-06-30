@@ -30,6 +30,8 @@
                                     <li><router-link :to="{name: 'sinaloa'}" >Sinaloa en Números</router-link></li>
                                     <li><router-link :to="{name: 'comunicacion'}" >Comunicación</router-link></li>
                                     <li><a :href="transparencia" target="_blank">Transparencia</a></li>
+                                    <li><router-link :to="{name: 'resultado'}"  ><i class="fa fa-search"></i></router-link>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -44,7 +46,6 @@
                                         <div class="search">
                                             <div action="" id="search-form">
                                                 <button><i class="fa fa-search"></i></button >
-                                                <!-- <button type="submit"></button> -->
                                                 <input type="search" name="buscar" placeholder="Buscar..." v-model.lazy="keywords"/>
                                             </div>
                                         </div>
@@ -117,21 +118,6 @@ export default {
                     }
                 })
                 this.cerrarMenu();
-            // axios.get('/api/indexsearch', { params: { keywords: this.keywords } })
-            // .then(res => {
-            //     this.results = res.data
-            //     this.cerrarMenu();
-            //     $('#lock').addClass('hidden');
-            //     this.$router.push({
-            //         name: 'resultado',
-            //         params: {
-            //             results: res.data
-            //         }
-            //     })
-            // })
-            // .catch(error => {
-            //     $('#lock').addClass('hidden');
-            // });
         },
         cerrarMenu(){
             if($('.menuBtn').hasClass('act')) {

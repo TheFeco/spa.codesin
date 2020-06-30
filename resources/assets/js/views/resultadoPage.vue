@@ -4,7 +4,6 @@
     <div class="container ">
         <div class="search-lg mt-40 default-bg">
             <div action="" id="search-form">
-                <!-- <button type="submit"></button> -->
                 <input type="search" name="buscar" placeholder="Buscar..." v-model.lazy="keywords"/>
             </div>
         </div>

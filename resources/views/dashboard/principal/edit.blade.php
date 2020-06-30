@@ -10,7 +10,7 @@
 </div>
 @stop
 @section('content')
-<form class="form" method="POST" action="{{ route('admin.paginas.update', $post) }}" enctype="multipart/form-data">
+<form id="pageUpdate" class="form" method="POST" action="{{ route('admin.paginas.update', $post) }}" enctype="multipart/form-data">
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
@@ -35,7 +35,7 @@
                     </div>
                     @if ($post->id == 1)
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                        <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonpages m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                     </div>
                     @endif
                 </div>
@@ -65,7 +65,7 @@
                             {!! $errors->first('imgMobile', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonpages m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>
@@ -115,16 +115,11 @@
 @stop
 
 @push('style')
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.date.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
-    <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
     
 @endpush
 @push('script')
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.date.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/dropzone.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/dropify.min.js')}}"></script>
@@ -163,6 +158,12 @@
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
             }
+        });
+        $('.basic-ladda-buttonpages').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#pageUpdate').submit();
         });
     </script>
 @endpush

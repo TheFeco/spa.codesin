@@ -657,7 +657,7 @@ hr{
   left: 25%;
   right: 0;
 }
-.inversiones-content { max-height: 380px;}
+.inversiones-content { max-height: 100%;}
 
 .inversiones-content a{
   color: #007D80;
@@ -862,7 +862,7 @@ width: 100%;
 }
 
 @supports(object-fit: cover){
-  .thumb img{
+  .thumb, .inversiones-img img{
   height: 100%;
   object-fit: cover;
   object-position: center center;

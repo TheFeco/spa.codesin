@@ -1,6 +1,5 @@
 /* Large Screen :1920px. */
 @media (min-width: 1400px) and (max-width: 1920px) {
-  body{ background: palegreen;}
   .cards { grid-template-columns: repeat(3, 1fr); }
   .icon-img{ width: 180px; height: 180px; }
   .search-field, .search-field.-size-s { font-size: 13px;}
@@ -10,7 +9,6 @@
 
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1200px) {
-  body{ background: peru;}
   .cards { grid-template-columns: repeat(3, 1fr); }
   .icons { margin-right: 7%;}
   .parte2 .icons { margin-right: 0%; }
@@ -26,7 +24,6 @@
  
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-  body{ background: royalblue;}
   .msm , .mlg{ margin: 32px 32px 44px 32px;}
   .menu-area ul li a {
     font-size: 12px;
@@ -73,7 +70,6 @@
  
 /* small mobile :320px. */
 @media (max-width: 767px) {
-  body{ background: salmon;}
   .mt-80 {margin-top: 40px !important;}
   .mt-16 { margin-top: 8px !important;}
   .mb-16 { margin-bottom: 8px !important;}

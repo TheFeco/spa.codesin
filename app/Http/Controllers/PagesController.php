@@ -18,7 +18,7 @@ class PagesController extends Controller
         return view('pages.spa');
     }
     public function home(){
-        $pageinfo = Post::findOrFail(1);
+        $pageinfo = Post::with('sections')->findOrFail(1);
         $noticias = Post::published()->where('category_id',2)->take(3)->get();
         
 
@@ -94,7 +94,6 @@ class PagesController extends Controller
     }
 
     public function indexsearch(Request $request){
-        // dd ($request);
         $keywords = request('keywords');
         $posts = Post::where('title', 'LIKE', "%{$keywords}%")->where('category_id','!=', '4')
         ->orWhere('body', 'LIKE', "%{$keywords}%")

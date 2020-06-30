@@ -5,7 +5,7 @@
                 <div > Plan de trabajo {{proyectos.name}}</div>
             </div>
             <div class="row  mt-24 ocultar">
-                <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(proyecto, index) in proyectos.posts" :key="index">
+                <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(proyecto, index) in proyects" :key="index">
                     <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="proyecto.urlBanner" alt="">
                         <div class="card-noticias-body ">
                             <h5 class="card-noticias-title"><url-link :info="proyecto" :nombre="'proyecto_show'" v-text="proyecto.title"></url-link></h5>
@@ -26,13 +26,15 @@
 <script>
 export default {
     props:['proyectos', 'vermas'],
-    
+    data() {
+        return {
+            proyects : []
+        }
+    },
+    created() {
+        this.proyects = this.proyectos.posts;
+    },
     mounted() {
-        // if(this.proyectos.posts.length > 9)
-        // {
-
-        //     $(".texto").attr("height",0);
-        // }
         $(".i").click(function(){
             $(".texto").toggleClass("hide-text");
             $("#masTexto").toggleClass("padding-text");
@@ -40,7 +42,7 @@ export default {
         });
     },
     updated: function () {
-        if(this.proyectos.posts.length <= 9)
+        if(this.proyects.length <= 9)
         {
             $('.vertodos').addClass('hidden');
         }else{
