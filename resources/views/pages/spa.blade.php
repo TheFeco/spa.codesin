@@ -7,16 +7,14 @@
         <meta name="description" content="@yield('meta-content', 'Codesin')">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('meta-title', config('app.name'))</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
         <!-- all css empieza -->
         <link rel="stylesheet" href="{{asset('js/bootstrap/dist/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-        {{-- <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('css/codesin.css')}}">
         <link rel="stylesheet" href="{{asset('css/responsiveCodesin.css')}}">
         <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-        {{-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> --}}
-        {{-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> --}}
         <!-- @stack('script') -->
         <style>
             .lock { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100000; background-color: rgba( 255,255,255,1 ); }
@@ -100,20 +98,7 @@
 </div>
 <script src="{{asset('js/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    {{-- <script src="{{asset('js/owl.carousel.min.js')}}"></script> --}}
-    {{-- <!-- <script src="js/jquery.counterup.min.js"></script> --> --}}
-    {{-- <!-- <script src="js/waypoints.min.js"></script> --> --}}
-    {{-- <!-- <script src="js/wow.min.js"></script> --> --}}
-    <!-- <script src="js/jquery.mb.YTPlayer.min.js"></script> -->
-    {{-- <script src="js/jquery.meanmenu.js"></script> --}}
     <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
-
-    <!-- <script src="js/jquery.magnific-popup.min.js"></script> -->
-    <!-- <script src="js/plugins.js"></script> -->
-    <!-- Development version -->
-    {{-- <script src="https://unpkg.com/@popperjs/core@2"></script> --}}
-    {{-- <script src="{{asset('js/main.js')}}"></script> --}}
-    {{-- <script src="{{asset('js/all.js')}}"></script> --}}
     <script src="{{mix('js/app.js')}}"></script>
 </body>
 </html>
