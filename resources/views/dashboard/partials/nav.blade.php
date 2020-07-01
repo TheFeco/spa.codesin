@@ -9,7 +9,7 @@
                 <div class="triangle"></div>
             </li>
             @else
-            <li class="nav-item {{ request()->is('admin/users*') ? 'active' : ''}}"  ><a class="nav-item-hold" href="{{route('admin.users.edit', auth()->user())}}" ><i class="nav-icon fas fa-user-friends"></i><span class="nav-text">Perfil</span></a>
+            <li class="nav-item {{ request()->is('admin/users*') ? 'active' : ''}}"  ><a class="nav-item-hold" href="{{route('admin.users.edit', auth()->user())}}" ><i class="nav-icon fas fa-user-friends"></i><span class="nav-text">Usuarios</span></a>
                 <div class="triangle"></div>
             </li>
             @endcan

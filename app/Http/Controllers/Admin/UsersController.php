@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Events\UserWasCreated;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\StoreUserRequest;
 use App\User;
+
 
 
 class UsersController extends Controller
@@ -43,13 +45,10 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
         //validar formulario
-       $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-        ]);
+       $data = $request->validated();
         //generar contraseña
         $data['password'] = str_random(8);
         //Creamos usuarios
@@ -109,12 +108,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(USer $user)
+    public function destroy(User $user)
     {
         //
 
-        $user->status = 0;
-        $user->save();
+        $user->delete();
 
         return redirect()->route('admin.users.index', $user)->withFlash('Usuario eliminado.');
 
