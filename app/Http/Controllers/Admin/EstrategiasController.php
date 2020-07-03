@@ -111,9 +111,12 @@ class EstrategiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         //
+        $post->load('projects');
+        $projects = $post->projects;
+        return view('dashboard.estrategiasProyectos.index', compact('projects', 'post'));
     }
 
     /**

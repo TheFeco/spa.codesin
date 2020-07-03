@@ -98,7 +98,7 @@
         }
     });
     </script>
-    @unless(request()->is('admin/noticias/*') || request()->is('admin/proyectos/*'))
+    @unless(request()->is('admin/noticias/*') || request()->is('admin/proyectos/*')|| request()->is('admin/politicas/*')|| request()->is('admin/estrategiasProyectos/*'))
         <script src="{{asset('dashboard/js/createModal.js')}}"></script>
     @endunless
 </body>

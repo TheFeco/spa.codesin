@@ -17,8 +17,6 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('post_id');
             $table->string('url');
-            $table->string('url_mobile')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }

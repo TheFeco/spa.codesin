@@ -32,7 +32,7 @@ class Tag extends Model
 
     public function generarUrl(){
 
-        $url = str_slug($this->title);
+        $url = str_slug($this->name);
         if($this->where('url', $url)->exists()){
             $url ="{$url}-{$this->id}";
         }

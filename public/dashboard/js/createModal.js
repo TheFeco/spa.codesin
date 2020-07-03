@@ -42,4 +42,16 @@
         $('#title').focus();
         window.location.hash = '#create-politicas';
     });
+    // Modal para crar projectos
+    if(window.location.hash == '#create-projects')
+        {
+            $('#projects').modal('show');
+        }
+        $('#projects').on('hide.bs.modal',function(){
+            window.location.hash = '#';
+        });
+        $('#projects').on('shown.bs.modal',function(){
+            $('#title').focus();
+            window.location.hash = '#create-projects';
+        });
 })(jQuery);

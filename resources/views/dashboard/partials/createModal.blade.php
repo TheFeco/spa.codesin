@@ -20,7 +20,7 @@
                         @endif
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                         <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
                     </div>
                 </form>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                         <button class="btn btn-primary ml-2" type="submit">Crear publicacion</button>
                     </div>
                 </form>
@@ -75,8 +75,38 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                         <button class="btn btn-primary ml-2" type="submit">Crear politica</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- modal de Estrategias-proyectos--}}
+<div class="modal fade" id="projects" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Titulo del proyecto.</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('admin.estrategiasProyectos.store', '#create-projects') }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('title') ? 'has-error' : ''}}" >
+                            <label for="title"></label>
+                            <input class="form-control form-control-rounded" id="title" name="title" type="text" value="{{ old('title')}}" required/>
+                            {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
+                        </div>
+                        @if (isset($post))
+                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                        @endif
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                        <button class="btn btn-primary ml-2" type="submit">Crear</button>
                     </div>
                 </form>
             </div>

@@ -39,7 +39,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
 
     Route::resource('testimonios', 'TestimoniosController', ['except' => 'show','as' => 'admin']);
     Route::resource('contenidos', 'ContenidoInteresController', ['except' => 'show','as' => 'admin'])->parameters(['contenidos' => 'post']);
-    Route::resource('estrategias', 'EstrategiasController', ['except' => 'show','as' => 'admin'])->parameters(['estrategias' => 'post']);
+    Route::resource('estrategias', 'EstrategiasController', ['as' => 'admin'])->parameters(['estrategias' => 'post']);
+    Route::resource('estrategiasProyectos', 'ProjectsController', ['as' => 'admin']);
     Route::resource('politicas', 'PoliticasController', ['except' => 'show','as' => 'admin'])->parameters(['politicas' => 'post']);
 
 

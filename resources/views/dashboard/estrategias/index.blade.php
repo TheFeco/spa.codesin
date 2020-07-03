@@ -37,10 +37,11 @@
                                     <td class="align-middle">{{ $loop->index + 1 }}</td>
                                     <td class="align-middle">{{ $Post->title }}</td>
                                     <td class="align-middle">
-                                        <a class="text-success mr-2" href="{{ route('admin.estrategias.edit', $Post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                        <a class="text-info mr-2" href="{{ route('admin.estrategias.show', $Post)}}"><i class="nav-icon i-File-Clipboard-File--Text font-weight-bold" title="Proyectos"></i></a>
+                                        <a class="text-success mr-2" href="{{ route('admin.estrategias.edit', $Post)}}"><i class="nav-icon i-Pen-2 font-weight-bold" title="Editar"></i></a>
                                         <form method="POST" action="{{ route('admin.estrategias.destroy',$Post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
-                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold" title="Eliminar"></i></button>
                                         </form>
                                     </td>
                                 </tr>
