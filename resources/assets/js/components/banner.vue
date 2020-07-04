@@ -4,7 +4,7 @@
                 <div class="notice-video" v-if="page.urlvideo">
 					<div class="video-icon video-hover">
 						<a class="video-popup" :href="page.urlvideo">
-							<i class="fa fa-play"></i>
+							<img src="img/icons/Play.svg" alt="">
 						</a>
 					</div>
 				</div>

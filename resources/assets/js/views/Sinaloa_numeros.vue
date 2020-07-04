@@ -427,17 +427,9 @@
                     <h2>Comparativo de indicadores</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 mb-60">
                         <div class="">
                             <div class="f-container">
-                                <div class="f-form-group">
-                                    <div class="s-constainer">
-                                        <label for="">Módulo</label>
-                                        <select name="" id="">
-                                            <option value="">Económicos</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="f-form-group">
                                     <div class="s-constainer">
                                         <label for="">Indicador</label>
@@ -463,19 +455,17 @@
                                     </div>
                                 </div>
                                 <div class="f-form-group">
-                                    <div class="">
+                                    <div class="s-constainer">
                                         <label for="">Lugar</label>
                                         <select name="" id="">
                                             <option value="">Selecciona</option>
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="button">
-                                    <button class="btn btn-generar mtb-60">Generar comparativo</button>
+                                <div class="f-form-group">
+                                    <div class="s-constainer btn">
+                                        <button class="btn btn-generar">Generar comparativo</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -508,7 +498,6 @@
     color: #4A4A4A;
     padding: 1rem;
     height: 19.563rem;
-    border-radius: 0.75rem;
     width: 100%;
     max-width: 26.25rem;
     font-family: "Open Sans";
@@ -579,6 +568,8 @@ select {
   background-color: #FFFFFF;
 }
 
+.btn-s-container { margin-top: 25%; }
+
 .btn-generar{
     border-radius: 12px;
     background-color: #007D80;
@@ -590,8 +581,6 @@ select {
     line-height: 26px;
     text-align: center;
     height: 56px;
-    width: 228px;
-    float: right;
 }
 
 .f-container {
@@ -607,5 +596,7 @@ select {
     max-width: 12.625rem;
     font-family: "Open Sans";
 }
-
+@media (max-width: 767px) {
+    .btn-s-container { margin-top: 0; }
+}
 </style>

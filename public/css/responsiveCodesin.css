@@ -24,6 +24,7 @@
  
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+  .body { background: aquamarine;}
   .msm , .mlg{ margin: 32px 32px 44px 32px;}
   .menu-area ul li a {
     font-size: 12px;
@@ -70,6 +71,7 @@
  
 /* small mobile :320px. */
 @media (max-width: 767px) {
+  .body { background: red;}
   .mt-80 {margin-top: 40px !important;}
   .mt-16 { margin-top: 8px !important;}
   .mb-16 { margin-bottom: 8px !important;}

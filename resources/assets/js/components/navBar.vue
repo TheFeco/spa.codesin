@@ -1,17 +1,5 @@
 <template>
     <div class="header-area">
-        <div class="header-top-area azul-bg hidden-xs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <ul class="header-login">
-                            <li><a href="/login"><i class="fa fa-key"></i>Login</a></li>
-                            <li><a href="signup.html"><i class="fa fa-key"></i>gestori</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="main-menu-area">
             <div class="container">
                 <div class="row">

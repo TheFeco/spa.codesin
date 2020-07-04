@@ -11,7 +11,7 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Open Sans', sans-serif !important; 
   background: #F4F4F4;
   width: 100%;
 }
@@ -49,7 +49,6 @@ a:active, a:hover {
 .amarillo-bg { background: #FFAA00;}
 .naranja-bg { background: #E74011;}
 .AzulAciano-bg { background: #5C9CEE;}
-/* .default-bg { background: #2c4256 !important; } */
 .transparent-bg { background: transparent !important; }
 
 .mb-10 { margin-bottom: 10px !important;}
@@ -128,8 +127,6 @@ a:active, a:hover {
 header{
   width: 100%;
   background: #F4F4F4;
-  /* position: fixed;
-  z-index: 100; */
 }
 
 .header-login {
@@ -186,7 +183,7 @@ header{
 .menu-area ul li a:hover{
   color: #007D80;
 }
-.menu-area ul li a.active { color:#121212 !important; border-bottom: 4px solid #FFAA00; }
+.menu-area ul li a.active { color:#121212 !important; border-bottom: 3px solid #FFAA00; }
 /* mobile menu */
 /*Label*/
 .labelMenu { 
@@ -300,9 +297,10 @@ header{
   -webkit-transform: none;
           transform: none;
   border-bottom: none;
+  text-align: center;
 }
 .mainMenu a {
-  color: #19b698;
+  color: #4A4A4A;
   display: inline-block;
   font-size: 18px;
 }
@@ -311,8 +309,8 @@ header{
   -webkit-transition: all 0.6s ease 0s;
   -o-transition: all 0.6s ease 0s;
   transition: all 0.6s ease 0s;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 25px 0 rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255);
+  box-shadow: 0 0 25px 0 rgba(255, 255, 255);
   left: 0;
   padding: 0;
   position: fixed;
@@ -412,11 +410,6 @@ hr{
   font-family: "Open Sans";
 }
 
-
-
-
-
-
 .contenedor > * img{
   width: 80px;
   height: 80px;
@@ -449,10 +442,13 @@ hr{
   position: relative;
   text-align: center;
   color: #4A4A4A;
-  margin-top: 32px;
   width: 180px;
-  font-size: 20px; /*2px / 16px*/
-  font-weight: 700;
+  margin-top: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 26px;
+  text-align: center;
 }
 .contenedor .header{
   position: relative;
@@ -862,7 +858,7 @@ width: 100%;
 }
 
 @supports(object-fit: cover){
-  .thumb img, .inversiones-img img{
+  .card-staff img, .thumb img, .inversiones-img img{
   height: 100%;
   object-fit: cover;
   object-position: center center;

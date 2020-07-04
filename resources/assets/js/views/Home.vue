@@ -24,7 +24,7 @@
 			</div>
 			<!-- icons -->
 			<div class="row">
-				<div class="col-xs-12 text-gray">
+				<div class="col-xs-12 text-gray small">
 					<div class="icons col-md-2 col-sm-2 col-xs-4" data-container="body" title="" data-toggle="popover" data-placement="bottom" :data-content="sections.icon1_popover" :data-original-title="sections.icon1">
 						<div class="icon-img pop" >
 							<img class="pop" :src="sections.icon1_img" :alt="sections.icon1">
@@ -326,3 +326,63 @@
 		}
     }
 </script>
+<style>
+.h-card{ 
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    max-width: 26.25rem;
+    font-family: "Open Sans";
+    }
+.h-cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1.7rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+.h-icon { 
+	width: 180px;
+    height: 180px;
+    margin: 8px 0 16px 0px;
+    text-align: center;
+    background: #F4F4F4;
+    border-radius: 50%; }
+.h-card-title{
+  color: #4A4A4A;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+}
+.h-card-contenido-1{
+  color: #4A4A4A;
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+.h-card-contenido-small{
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.h-card-constainer strong{
+  color: #4A4A4A;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+.h-card-contenido-small .extrabold{
+    color: #4A4A4A;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+</style>
