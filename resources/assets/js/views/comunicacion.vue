@@ -12,9 +12,9 @@
                             <div class="card-ci-img">
                                 <img class="img-responsive" :src="estrategia.urlimage" alt="">
                                 <div class="notice-video" v-if="estrategia.urlvideo">
-                                    <div class="video-icon video-hover">
+                                    <div class="video-icon-c video-hover">
                                         <a class="video-popup" :href="estrategia.urlvideo">
-                                            <i class="fa fa-play"></i>
+                                            <img src="img/icons/Play.svg" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -95,6 +95,14 @@ export default {
 }
 </script>
 <style>
+.video-icon-c {
+    left: 50%;
+    position: absolute;
+    top: 0%;
+    transform: translate(-50%, -90%);
+    z-index: 1;
+}
+
 .cc-area .notice-video { height: 0; top: -80px; }
 
 .card-ci {

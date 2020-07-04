@@ -84,6 +84,15 @@ class PagesController extends Controller
 
         $estrategias = Post::where('category_id',4)->latest()->get();
         $noticias = Post::published()->where('category_id',2)->take(3)->get();
+        foreach ($estrategias as $estrategia) {
+            $text = $estrategia->excerpt;
+            $maxPos = 153;
+            if (strlen($text) > $maxPos)
+            {
+                $lastPos = ($maxPos - 3) - strlen($text);
+                $estrategia->excerpt = substr($text, 0, strrpos($text, ' ', $lastPos)) . '...';
+            }
+        }
         if( request()->wantsJson() )
         {
             return [

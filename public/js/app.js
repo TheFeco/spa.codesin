@@ -57422,7 +57422,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.cc-area .notice-video { height: 0; top: -80px;\n}\n.card-ci {\r\n        max-width: 1200px;\r\n        margin: 0 auto;\r\n        display: grid;\r\n        grid-gap: 1rem;\r\n        grid-template-columns: repeat(3, 1fr);\n}\n.cards-ci{ \r\n        background-color: #FFF;\r\n        color: #4A4A4A;\r\n        max-height: 100%;\r\n        max-width: 22.25rem;\n}\n.card-ci-img { height: 13.25rem; width: 100%; margin: 0;\n}\n.card-ci-constainer { max-height: 11.125rem; padding: 1.5rem 2rem 1.5rem 2rem; overflow: hidden;\n}\n.card-ci-constainer .contenedor-text { margin-top: 1rem; overflow: hidden;\n}\n@supports(object-fit: cover){\n.card-ci-img img{\r\n        height: 100%;\r\n        object-fit: cover;\r\n        object-position: center center;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.video-icon-c {\r\n    left: 50%;\r\n    position: absolute;\r\n    top: 0%;\r\n    transform: translate(-50%, -90%);\r\n    z-index: 1;\n}\n.cc-area .notice-video { height: 0; top: -80px;\n}\n.card-ci {\r\n        max-width: 1200px;\r\n        margin: 0 auto;\r\n        display: grid;\r\n        grid-gap: 1rem;\r\n        grid-template-columns: repeat(3, 1fr);\n}\n.cards-ci{ \r\n        background-color: #FFF;\r\n        color: #4A4A4A;\r\n        max-height: 100%;\r\n        max-width: 22.25rem;\n}\n.card-ci-img { height: 13.25rem; width: 100%; margin: 0;\n}\n.card-ci-constainer { max-height: 11.125rem; padding: 1.5rem 2rem 1.5rem 2rem; overflow: hidden;\n}\n.card-ci-constainer .contenedor-text { margin-top: 1rem; overflow: hidden;\n}\n@supports(object-fit: cover){\n.card-ci-img img{\r\n        height: 100%;\r\n        object-fit: cover;\r\n        object-position: center center;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -57559,16 +57559,27 @@ var render = function() {
                     _vm._v(" "),
                     estrategia.urlvideo
                       ? _c("div", { staticClass: "notice-video" }, [
-                          _c("div", { staticClass: "video-icon video-hover" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "video-popup",
-                                attrs: { href: estrategia.urlvideo }
-                              },
-                              [_c("i", { staticClass: "fa fa-play" })]
-                            )
-                          ])
+                          _c(
+                            "div",
+                            { staticClass: "video-icon-c video-hover" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "video-popup",
+                                  attrs: { href: estrategia.urlvideo }
+                                },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/icons/Play.svg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
                         ])
                       : _vm._e()
                   ]),
