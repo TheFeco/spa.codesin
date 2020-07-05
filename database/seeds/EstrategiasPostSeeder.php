@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Post;
 use App\Category;
 use App\Tag;
+use App\Models\TagEstrategias;
 use Carbon\Carbon;
 
 class EstrategiasPostSeeder extends Seeder
@@ -16,6 +17,8 @@ class EstrategiasPostSeeder extends Seeder
     public function run()
     {
         //
+        TagEstrategias::truncate();
+
         $post = new Post;
         $post->title = "Estrategia para el Desarrollo industrial de Sinaloa";
         $post->url = str_slug("Estrategia para el Desarrollo industrial de Sinaloa");
@@ -31,6 +34,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->category_id = 5;
         $post->user_id = 1;
         $post->save();
+
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
 
         $post = new Post;
         $post->title = "Estrategia para la Bioeconomía de Sinaloa";
@@ -48,6 +57,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->user_id = 1;
         $post->save();
 
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
+
         $post = new Post;
         $post->title = "Estrategia para el Capital humano";
         $post->url = str_slug("Estrategia para el Capital humano");
@@ -63,6 +78,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->category_id = 5;
         $post->user_id = 1;
         $post->save();
+
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
 
         $post = new Post;
         $post->title = "Estrategia para los Institutos Municipales de Planeación";
@@ -80,6 +101,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->user_id = 1;
         $post->save();
 
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
+
         $post = new Post;
         $post->title = "Estrategia para la Movilidad Sustentable";
         $post->url = str_slug("Estrategia para la Movilidad Sustentable");
@@ -95,6 +122,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->category_id = 5;
         $post->user_id = 1;
         $post->save();
+
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
 
         $post = new Post;
         $post->title = "Estrategia para los Rellenos Sanitarios";
@@ -112,6 +145,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->user_id = 1;
         $post->save();
 
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
+
         $post = new Post;
         $post->title = "Estrategia para la Planeación de largo plazo en Sinaloa";
         $post->url = str_slug("Estrategia para la Planeación de largo plazo en Sinaloa");
@@ -128,6 +167,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->user_id = 1;
         $post->save();
 
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
+
         $post = new Post;
         $post->title = "Estrategia para el Sistema Estatal Innovación";
         $post->url = str_slug("Estrategia para el Sistema Estatal Innovación");
@@ -143,6 +188,12 @@ class EstrategiasPostSeeder extends Seeder
         $post->category_id = 5;
         $post->user_id = 1;
         $post->save();
+
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
 
         $post = new Post;
         $post->title = "Ley de Movilidad Sustentable - Reglamento de Transporte Público";

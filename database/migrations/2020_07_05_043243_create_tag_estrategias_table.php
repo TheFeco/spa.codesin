@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIconsTable extends Migration
+class CreateTagEstrategiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateIconsTable extends Migration
      */
     public function up()
     {
-        Schema::create('icons', function (Blueprint $table) {
+        Schema::create('tag_estrategias', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('post_id');
+            $table->string('name');
+            $table->string('url');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateIconsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icons');
+        Schema::dropIfExists('tag_estrategias');
     }
 }

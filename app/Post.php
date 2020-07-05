@@ -37,14 +37,13 @@ class Post extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function estrategias(){
+        return $this->belongsToMany('App\Models\TagEstrategias','id','estrategia_id');
+    }
+
     public function photos()
     {
         return $this->hasMany(Photo::class);
-    }
-
-    public function projects()
-    {
-        return $this->hasMany(Models\Project::class);
     }
 
     public function sections()
