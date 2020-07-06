@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Post;
+use App\Models\TagEstrategias;
 use Carbon\Carbon;
 use File;
 
@@ -58,6 +59,12 @@ class EstrategiasController extends Controller
             'published_at' => Carbon::now(),
             'category_id' => 5
         ]);
+
+        $estrategia = new TagEstrategias;
+        $estrategia->post_id = $post->id;
+        $estrategia->name = $post->excerpt;
+        $estrategia->url = str_slug($post->excerpt);
+        $estrategia->save();
 
         if ($request->files->has('thumbnail') ) {
 
@@ -114,9 +121,9 @@ class EstrategiasController extends Controller
     public function show(Post $post)
     {
         //
-        $post->load('projects');
-        $projects = $post->projects;
-        return view('dashboard.estrategiasProyectos.index', compact('projects', 'post'));
+        $estrategia = TagEstrategias::where('post_id',$post->id)->with('posts')->first();
+        $posts = $estrategia->posts;
+        return view('dashboard.estrategiasProyectos.index', compact('estrategia', 'posts'));
     }
 
     /**
@@ -154,6 +161,13 @@ class EstrategiasController extends Controller
             'body' => $request->get('body'),
             'urlvideo' => $request->get('urlvideo'),
         ]);
+
+        $estrategia = TagEstrategias::where('post_id',$post->id)->first();
+
+        $estrategia->name = $post->excerpt;
+        $estrategia->save();
+        $estrategia->generarUrl();
+
 
         if ($request->files->has('thumbnail') ) {
             $old_image = public_path().$post->urlimage;
@@ -216,6 +230,10 @@ class EstrategiasController extends Controller
     public function destroy(Post $post)
     {
         //
+        $estrategia = TagEstrategias::where('post_id',$post->id)->first();
+        $estrategia->status = 0;
+        $estrategia->save();
+
         $post->delete();
         return redirect()->route('admin.estrategias.index')->with('flash','La estrategia a sido Eliminada');
     }

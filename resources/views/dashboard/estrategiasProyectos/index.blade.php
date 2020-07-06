@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 @section('header')
 <div class="breadcrumb">
-    <h1>Proyectos de la @if (isset($post)) {{$post->title }}@endif</h1>
+    <h1>Proyectos de la estrategia @if (isset($estrategia)) {{$estrategia->name }}@endif</h1>
 </div>
 @stop
 @section('content')
@@ -26,14 +26,14 @@
                         </thead>
                         <tbody>
                             
-                            @foreach ($projects as $project)
+                            @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $project->title }}</td>
-                                    <td>{{ $project->excerpt }}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $post->excerpt }}</td>
                                     <td>
-                                        <a class="text-success mr-2" href="{{ route('admin.estrategiasProyectos.edit', $project)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" action="{{ route('admin.proyectos.destroy',$project)}}" style="display: inline">
+                                        <a class="text-success mr-2" href="{{ route('admin.estrategiasProyectos.edit', $post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                        <form method="POST" action="{{ route('admin.proyectos.destroy',$post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
                                             <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></button>
                                         </form>

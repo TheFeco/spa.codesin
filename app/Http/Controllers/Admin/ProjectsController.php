@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Project;
+use App\Post;
+use App\Tag;
+use App\Models\TagEstrategias;
 use File;
 use Carbon\Carbon;
 
@@ -41,14 +43,16 @@ class ProjectsController extends Controller
         //
         $this->validate($request,['title' => 'required|min:3']);
 
-        $project = Project::create( [
+        $post = Post::create( [
             'title' => $request->title,
             'published_at' => Carbon::now(),
-            'post_id' => $request->post_id
+            'category_id' => 3
             ]);
+
+        $post->syncEstrategia($request->get('tag_estrategias_id'));
         
 
-        return redirect()->route('admin.estrategiasProyectos.edit', $project);
+        return redirect()->route('admin.estrategiasProyectos.edit', $post);
     }
 
     /**
@@ -68,12 +72,13 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $estrategiasProyecto)
+    public function edit(Post $estrategiasProyecto)
     {
         //
-        // dd($estrategiasProyecto);
+        $tags = Tag::all();
         $post = $estrategiasProyecto->load('estrategias');
-        return view('dashboard.estrategiasProyectos.edit', compact('post'));
+        $return = Post::where('id',$post->estrategias[0]->post_id)->first();
+        return view('dashboard.estrategiasProyectos.edit', compact('post', 'tags', 'return'));
     }
 
     /**
@@ -83,10 +88,67 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $estrategiasProyecto)
+    public function update(Request $request, Post $estrategiasProyecto)
     {
         //
-        dd($request);
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'excerpt' => 'required',
+            'body' => 'required',
+
+        ]);
+        $post = $estrategiasProyecto;
+        if ($request->files->has('banner') ) {
+            $request->validate([
+                'banner' => 'image|max:2048' // jpeg, pnp, bmp, gif, svg
+            ]);
+
+            $old_image = public_path().$post->urlBanner;
+            
+            if (file_exists($old_image) && $post->urlBanner != null) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = 'banner_' . $post->id .'_'. time() . '.' . $request->banner->extension();
+            $urlBanner = '/img/banners/'. $filename;
+            $request->banner->move(public_path('img/banners'),$filename);
+            $post->update(['urlBanner' => $urlBanner]);
+        }
+        if ($request->files->has('bannerMobile')) {
+
+            $request->validate([
+                'bannerMobile' => 'image|max:2048' // jpeg, pnp, bmp, gif, svg
+            ]);
+            $old_image = public_path().$post->bannerMobile;
+            if (file_exists($old_image) && $post->bannerMobile != null) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = 'banner_Mobile_' . $post->id .'_'. time() . '.' . $request->bannerMobile->extension();
+            $urlBanner = '/img/banners/'. $filename;
+            $request->bannerMobile->move(public_path('img/banners'),$filename);
+            $post->update(['urlBannerMobile' => $urlBanner]);
+        }
+
+        $post->update([
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
+            'iframe' => $request->get('iframe'),
+            'excerpt' => $request->get('excerpt'),
+            'urlvideo' => $request->get('urlvideo'),
+            
+        ]);
+          
+        $post->syncTags($request->get('tag_id'));
+
+        $post = $estrategiasProyecto->load('estrategias');
+        $return = Post::where('id',$post->estrategias[0]->post_id)->first();
+        
+       return redirect()->route('admin.estrategiasProyectos.edit', ['post'=>$post, 'return' => $return])->with('flash','Tu publicación a sido guardada');
     }
 
     /**

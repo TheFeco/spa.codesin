@@ -4,13 +4,16 @@
             <div class="title f32 text-center" v-if="vermas">
                 <div > Plan de trabajo {{proyectos.name}}</div>
             </div>
+            <div class="title f32 text-center" v-else>
+                <div >Proyectos</div>
+            </div>
             <div class="row  mt-24 ocultar">
-                <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(proyecto, index) in proyects" :key="index">
-                    <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="proyecto.urlBanner" alt="">
+                <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(item, index) in proyects" :key="index">
+                    <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="item.urlBanner" alt="">
                         <div class="card-noticias-body ">
-                            <h5 class="card-noticias-title"><url-link :info="proyecto" :nombre="'proyecto_show'" v-text="proyecto.title"></url-link></h5>
-                            <p class="card-noticias-text text-gray hidden-sm hidden-xs" v-text="proyecto.excerpt"></p>
-                            <url-link :info="proyecto" :name="'proyecto_show'"  class="vermas hidden-sm hidden-xs">Ver mas</url-link>
+                            <h5 class="card-noticias-title"><proyecto-link :proyecto="item" v-text="item.title"></proyecto-link></h5>
+                            <p class="card-noticias-text text-gray hidden-sm hidden-xs" v-text="item.excerpt"></p>
+                            <proyecto-link :proyecto="item"  class="vermas hidden-sm hidden-xs">Ver mas</proyecto-link>
                         </div>
                     </div>
                 </div>
@@ -32,7 +35,6 @@ export default {
         }
     },
     created() {
-        this.proyects = this.proyectos.posts;
     },
     mounted() {
         $(".i").click(function(){
@@ -40,6 +42,12 @@ export default {
             $("#masTexto").toggleClass("padding-text");
             $(".texto").hasClass("hide-text") ? $(this).text("Ver menos") : $(this).text("Ver más") ;
         });
+         if(this.proyectos.posts){
+            this.proyects = this.proyectos.data.post;
+            console-log('existe');
+        }else{
+            this.proyects = this.proyectos;
+        }
     },
     updated: function () {
         if(this.proyects.length <= 9)

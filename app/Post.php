@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TagEstrategias;
 use Carbon\Carbon;
 
 class Post extends Model
@@ -38,7 +39,7 @@ class Post extends Model
     }
 
     public function estrategias(){
-        return $this->belongsToMany('App\Models\TagEstrategias','id','estrategia_id');
+        return $this->belongsToMany('App\Models\TagEstrategias');
     }
 
     public function photos()
@@ -106,6 +107,13 @@ class Post extends Model
             return Tag::find($tag) ? $tag : Tag::create(['name' => $tag])->id;
         });
         $this->tags()->sync($tagIds);
+    }
+
+    public function syncEstrategia($estrategia){
+        $estrategiaIds = collect($estrategia)->map(function($estrategia){
+            return TagEstrategias::find($estrategia) ? $estrategia : TagEstrategias::create(['name' => $estrategia])->id;
+        });
+        $this->estrategias()->sync($estrategiaIds);
     }
 
 }

@@ -463,7 +463,7 @@
                                     </div>
                                 </div>
                                 <div class="f-form-group">
-                                    <div class="s-constainer btn">
+                                    <div class="btn-s-container">
                                         <button class="btn btn-generar">Generar comparativo</button>
                                     </div>
                                 </div>

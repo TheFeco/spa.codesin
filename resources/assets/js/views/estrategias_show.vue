@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="mb-8" v-if="proyectos != undefined ">
+        <div class="mb-8" v-if="proyectos.length > 0 ">
             <proyectos-area :proyectos="proyectos"></proyectos-area>
         </div>
         

@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 @section('header')
 <div class="breadcrumb">
-    <h1>Proyecto de la @if (isset($post->estrategias)) {{$post->estrategias->title }} @endif</h1>
+    <h1>Proyecto de la @if (isset($post->estrategias)) {{$post->estrategias[0]->name }} @endif</h1>
     <ul>
         <li>Editar</li>
     </ul>
@@ -13,7 +13,7 @@
     
     <div class="row mb-3">
         <div class="return">
-            {{-- <a href="{{route('admin.tags.show', $post->tags[0]->url)}}" class="btn btn-info">Regresar</a> --}}
+            <a href="{{route('admin.estrategias.show', $return)}}" class="btn btn-info">Regresar</a>
         </div>
         @include('dashboard.partials.banner')
     </div>
@@ -47,6 +47,17 @@
                             <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="10"  >{{ old('excerpt', $post->excerpt)}}</textarea>
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('tag_id') ? 'has-error' : ''}}">
+                            <label for="picker1">Seleccione una Zona</label>
+                            <select class="form-control form-control-rounded" name="tag_id" >
+                                <option value="">Seleccionar...</option>
+                                @foreach ($tags as $tag)
+                                    <option {{ collect(old('tags', $post->tags->pluck('id')))->contains($tag->id) ? 'selected' : ''}} value="{{ $tag->id }}">{{$tag->name}}</option>
+                                    {{-- <option value="{{$tag->id}}" {{ old('tag_id', $post->category_id) == $category->id ? 'selected' : ''}}>{{$tag->name}}</option> --}}
+                                @endforeach
+                            </select>
+                            {!! $errors->first('category_id', '<span class="help-block">:message</span>') !!}
+                        </div>
                         <div class="col-md-12 form-group mb-3">
                             <div class="dropzone"></div>
                         </div>
@@ -59,7 +70,7 @@
         </div>
     </div>
 </form>
-{{-- @if ($post->photos->count())
+@if ($post->photos->count())
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
@@ -82,13 +93,11 @@
         </div>
     </div>
 </div>
-@endif --}}
+@endif
 
 @stop
 
 @push('style')
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/css/plugins/pickadate/classic.date.css')}}" rel="stylesheet" />
     <link href="{{asset('dashboard/js/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" >
     <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('dashboard/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
@@ -96,7 +105,6 @@
     <link href="{{asset('dashboard/css/plugins/dropify.min.css')}}" rel="stylesheet"/>
 @endpush
 @push('script')
-    <script src="{{asset('dashboard/js/plugins/pickadate/picker.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/pickadate/picker.date.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/dropzone.min.js')}}"></script>

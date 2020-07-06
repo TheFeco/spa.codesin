@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Post;
 use App\Tag;
+use App\Models\TagEstrategias;
 use File;
 use Carbon\Carbon;
 
@@ -83,8 +84,9 @@ class ProyectosController extends Controller
         //
         
         $tags = Tag::all();
-        $post->load('tags');
-        return view('dashboard.proyectos.edit', compact('post', 'tags'));
+        $estrategias = TagEstrategias::all();
+        $post->load('tags', 'estrategias');
+        return view('dashboard.proyectos.edit', compact('post', 'tags', 'estrategias'));
     }
 
     /**
@@ -143,6 +145,8 @@ class ProyectosController extends Controller
         ]);
           
         $post->syncTags($request->get('tags'));
+
+        $post->syncEstrategia($request->get('estrategias'));
         
        return redirect()->route('admin.proyectos.edit', $post)->with('flash','Tu publicación a sido guardada');
     }

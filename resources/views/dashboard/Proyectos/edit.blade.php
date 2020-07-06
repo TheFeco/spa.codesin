@@ -48,14 +48,25 @@
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('tags') ? 'has-error' : ''}}">
-                            <label for="picker1">Seleccione una etiqueta {{ old('tags')}}</label>
+                            <label for="picker1">Seleccione una zona {{ old('tags')}}</label>
                             <select class="form-control form-control-rounded select2" name="tags[]"   data-placeholder="Seleccionar una etiqueta">
+                                <option value="">Seleccionar...</option>
                                 @foreach ($tags as $tag)
                                     <option value="{{$tag->id}}"{{collect(old('tags',$post->tags->pluck('id')))->contains($tag->id) ? 'selected' : ''}}>{{$tag->name}}</option>
                                 @endforeach
                             </select>
                             {!! $errors->first('tags', '<span class="help-block">:message</span>') !!}
-                        </div> 
+                        </div>
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('estrategias') ? 'has-error' : ''}}">
+                            <label for="picker1">Seleccione una estrategia {{ old('estrategias')}}</label>
+                            <select class="form-control form-control-rounded select2" name="estrategias[]"   data-placeholder="Seleccionar una etiqueta">
+                                <option value="">Seleccionar...</option>
+                                @foreach ($estrategias as $estrategia)
+                                    <option value="{{$estrategia->id}}"{{collect(old('estrategias',$post->estrategias->pluck('id')))->contains($estrategia->id) ? 'selected' : ''}}>{{$estrategia->name}}</option>
+                                @endforeach
+                            </select>
+                            {!! $errors->first('estrategias', '<span class="help-block">:message</span>') !!}
+                        </div>
                         <div class="col-md-12 form-group mb-3">
                             <div class="dropzone"></div>
                         </div>

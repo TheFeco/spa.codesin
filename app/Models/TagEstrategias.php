@@ -11,7 +11,7 @@ class TagEstrategias extends Model
     protected $fillable = ['post_id', 'name', 'url'];
 
     public function posts(){
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany('App\Post');
     }
 
     public static function create(array $attributes = [])

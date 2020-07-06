@@ -57313,7 +57313,7 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "s-constainer btn" }, [
+                  _c("div", { staticClass: "btn-s-container" }, [
                     _c("button", { staticClass: "btn btn-generar" }, [
                       _vm._v("Generar comparativo")
                     ])
@@ -58034,7 +58034,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm.proyectos != undefined
+      _vm.proyectos.length > 0
         ? _c(
             "div",
             { staticClass: "mb-8" },
@@ -58430,6 +58430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             proyect: [],
+            proyects: [],
             banners: [{ urlvideo: '', urlBanner: '', urlBannerMobile: '' }],
             img: ''
         };
@@ -58447,6 +58448,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.get('/api/zonas/' + this.url).then(function (res) {
             console.log(res);
             _this.proyect = res.data.post;
+            _this.proyects = _this.proyect.posts;
             _this.banners = _this.proyect.banners ? _this.proyect.banners : _this.banners;
             _this.img = _this.smallScreen(_this.banners.urlBanner, _this.banners.urlBannerMobile);
             $('#lock').addClass('hidden');
@@ -58473,16 +58475,18 @@ var render = function() {
         attrs: { page: _vm.banners, img: _vm.img }
       }),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mb-8" },
-        [
-          _c("proyectos-area", {
-            attrs: { proyectos: _vm.proyect, vermas: true }
-          })
-        ],
-        1
-      )
+      _vm.proyects.length > 0
+        ? _c(
+            "div",
+            { staticClass: "mb-8" },
+            [
+              _c("proyectos-area", {
+                attrs: { proyectos: _vm.proyects, vermas: true }
+              })
+            ],
+            1
+          )
+        : _vm._e()
     ],
     1
   )
@@ -60780,6 +60784,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['proyectos', 'vermas'],
@@ -60788,15 +60795,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             proyects: []
         };
     },
-    created: function created() {
-        this.proyects = this.proyectos.posts;
-    },
+    created: function created() {},
     mounted: function mounted() {
         $(".i").click(function () {
             $(".texto").toggleClass("hide-text");
             $("#masTexto").toggleClass("padding-text");
             $(".texto").hasClass("hide-text") ? $(this).text("Ver menos") : $(this).text("Ver más");
         });
+        if (this.proyectos.posts) {
+            this.proyects = this.proyectos.data.post;
+            console - log('existe');
+        } else {
+            this.proyects = this.proyectos;
+        }
     },
 
     updated: function updated() {
@@ -60824,12 +60835,14 @@ var render = function() {
               _vm._v(" Plan de trabajo " + _vm._s(_vm.proyectos.name))
             ])
           ])
-        : _vm._e(),
+        : _c("div", { staticClass: "title f32 text-center" }, [
+            _c("div", [_vm._v("Proyectos")])
+          ]),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "row  mt-24 ocultar" },
-        _vm._l(_vm.proyects, function(proyecto, index) {
+        _vm._l(_vm.proyects, function(item, index) {
           return _c(
             "div",
             { key: index, staticClass: "col-md-4 col-sm-12 col-xs-12 " },
@@ -60840,7 +60853,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "card-noticias-img-top",
-                    attrs: { src: proyecto.urlBanner, alt: "" }
+                    attrs: { src: item.urlBanner, alt: "" }
                   }),
                   _vm._v(" "),
                   _c(
@@ -60851,9 +60864,9 @@ var render = function() {
                         "h5",
                         { staticClass: "card-noticias-title" },
                         [
-                          _c("url-link", {
-                            attrs: { info: proyecto, nombre: "proyecto_show" },
-                            domProps: { textContent: _vm._s(proyecto.title) }
+                          _c("proyecto-link", {
+                            attrs: { proyecto: item },
+                            domProps: { textContent: _vm._s(item.title) }
                           })
                         ],
                         1
@@ -60862,14 +60875,14 @@ var render = function() {
                       _c("p", {
                         staticClass:
                           "card-noticias-text text-gray hidden-sm hidden-xs",
-                        domProps: { textContent: _vm._s(proyecto.excerpt) }
+                        domProps: { textContent: _vm._s(item.excerpt) }
                       }),
                       _vm._v(" "),
                       _c(
-                        "url-link",
+                        "proyecto-link",
                         {
                           staticClass: "vermas hidden-sm hidden-xs",
-                          attrs: { info: proyecto, name: "proyecto_show" }
+                          attrs: { proyecto: item }
                         },
                         [_vm._v("Ver mas")]
                       )

@@ -100,8 +100,8 @@
                             <input class="form-control form-control-rounded" id="title" name="title" type="text" value="{{ old('title')}}" required/>
                             {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
                         </div>
-                        @if (isset($post))
-                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                        @if (isset($estrategia))
+                            <input type="hidden" name="tag_estrategias_id" value="{{$estrategia->id}}">
                         @endif
                     </div>
                     <div class="modal-footer">
