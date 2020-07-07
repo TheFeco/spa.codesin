@@ -61,7 +61,13 @@ export default new Router({
             props: true
         },
         {
-            path: '/resultado',
+            path: '/resultado/:keywords',
+            name: 'results',
+            component: require('../views/resultadoPage'),
+            props: true
+        },
+        {
+            path: '/resultado/:keywords',
             name: 'resultado',
             component: require('../views/resultadoPage'),
             props: true

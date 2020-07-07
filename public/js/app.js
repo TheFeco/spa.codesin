@@ -49772,7 +49772,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         component: __webpack_require__(83),
         props: true
     }, {
-        path: '/resultado',
+        path: '/resultado/:keywords',
+        name: 'results',
+        component: __webpack_require__(86),
+        props: true
+    }, {
+        path: '/resultado/:keywords',
         name: 'resultado',
         component: __webpack_require__(86),
         props: true
@@ -53239,13 +53244,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		getdata: function getdata() {
 			var _this = this;
 
-			fetch("/api/home").then(function (res) {
-				return res.json();
-			}).then(function (json) {
-				_this.pageInfo = json.pageinfo;
+			axios.get('/api/home').then(function (res) {
+				_this.pageInfo = res.data.pageinfo;
 				_this.sections = _this.pageInfo.sections;
-				_this.noticias = json.noticias;
+				_this.noticias = res.data.noticias;
 				_this.img = _this.smallScreen(_this.pageInfo.urlBanner, _this.pageInfo.urlBannerMobile);
+				$('#lock').addClass('hidden');
+			}).catch(function (err) {
+				console.log(err);
 				$('#lock').addClass('hidden');
 			});
 		}
@@ -55895,7 +55901,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.s-card{ \r\n    background-color: #FFF;\r\n    color: #4A4A4A;\r\n    padding: 1rem;\r\n    height: 19.563rem;\r\n    width: 100%;\r\n    max-width: 26.25rem;\r\n    font-family: \"Open Sans\";\n}\n.s-cards {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(4, 1fr);\n}\n.s-card hr {margin-top: 16px;  margin-bottom: 15px;\n}\n.s-card-title{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  letter-spacing: 0.4px;\r\n  line-height: 24px;\n}\n.s-card-contenido-1{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small{\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  letter-spacing: 0;\r\n  line-height: 17px;\n}\n.s-card-constainer strong{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small .extrabold{\r\n    color: #4A4A4A;\r\n    font-size: 12px;\r\n    font-weight: 800;\r\n    letter-spacing: 0;\r\n    line-height: 17px;\n}\n.f-container label {\r\n  display: block;\r\n  margin: .5em 0 0 0;\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 26px;\r\n  padding-bottom: 16px;\n}\nselect {\r\n  box-sizing: border-box;\r\n  height: 56px;\r\n  width: 100%; /*tamaño original 202px*/\r\n  border: 1px solid #C6C6C6;\r\n  border-radius: 8px;\r\n  background-color: #FFFFFF;\n}\n.btn-s-container { margin-top: 25%;\n}\n.btn-generar{\r\n    border-radius: 12px;\r\n    background-color: #007D80;\r\n    color: #FFFFFF;\r\n    font-family: \"Open Sans\";\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    letter-spacing: 0;\r\n    line-height: 26px;\r\n    text-align: center;\r\n    height: 56px;\n}\n.f-container {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(5, 1fr);\n}\n.f-form-group{\r\n    color: #4A4A4A;\r\n    width: 100%;\r\n    max-width: 12.625rem;\r\n    font-family: \"Open Sans\";\n}\n@media (max-width: 767px) {\n.btn-s-container { margin-top: 0;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.s-card{ \r\n    background-color: #FFF;\r\n    color: #4A4A4A;\r\n    padding: 1rem;\r\n    height: 19.563rem;\r\n    width: 100%;\r\n    max-width: 26.25rem;\r\n    font-family: \"Open Sans\";\n}\n.s-cards {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(4, 1fr);\n}\n.s-card hr {margin-top: 16px;  margin-bottom: 15px;\n}\n.s-card-title{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  letter-spacing: 0.4px;\r\n  line-height: 24px;\n}\n.s-card-contenido-1{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small{\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  letter-spacing: 0;\r\n  line-height: 17px;\n}\n.s-card-constainer strong{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small .extrabold{\r\n    color: #4A4A4A;\r\n    font-size: 12px;\r\n    font-weight: 800;\r\n    letter-spacing: 0;\r\n    line-height: 17px;\n}\n.f-container label {\r\n  display: block;\r\n  margin: .5em 0 0 0;\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 26px;\r\n  padding-bottom: 16px;\n}\nselect {\r\n  box-sizing: border-box;\r\n  height: 56px;\r\n  width: 100%; /*tamaño original 202px*/\r\n  border: 1px solid #C6C6C6;\r\n  border-radius: 8px;\r\n  background-color: #FFFFFF;\r\n  padding: 0 16px;\n}\n.btn-s-container { margin-top: 25%;\n}\n.btn-generar{\r\n    border-radius: 12px;\r\n    background-color: #007D80;\r\n    color: #FFFFFF;\r\n    font-family: \"Open Sans\";\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    letter-spacing: 0;\r\n    line-height: 26px;\r\n    text-align: center;\r\n    height: 56px;\n}\n.f-container {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(5, 1fr);\n}\n.f-form-group{\r\n    color: #4A4A4A;\r\n    width: 100%;\r\n    max-width: 12.625rem;\r\n    font-family: \"Open Sans\";\n}\n@media (max-width: 767px) {\n.btn-s-container { margin-top: 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -58745,44 +58751,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['keywords'],
+    props: ['results'],
     data: function data() {
         return {
-            results: []
+            // result: this.results
         };
+    },
+
+    created: function created() {
+        this.init();
     },
     mounted: function mounted() {
         $('#lock').addClass('hidden');
-        this.search();
     },
 
     methods: {
-        search: function search() {
-            var _this = this;
-
-            axios.get('/api/indexsearch', { params: { keywords: this.keywords } }).then(function (res) {
-                _this.results = res.data;
-                $('#lock').addClass('hidden');
-            }).catch(function (error) {
-                $('#lock').addClass('hidden');
-            });
+        update: function update() {
+            this.$mount();
+        },
+        init: function init() {
+            console.log(this.$route);
         }
-    },
-    watch: {
-        keywords: 'search'
     }
-
 });
 
 /***/ }),
@@ -58794,31 +58786,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c("div", { staticClass: "container " }, [
-      _c("div", { staticClass: "search-lg mt-40 default-bg" }, [
-        _c("div", { attrs: { action: "", id: "search-form" } }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.lazy",
-                value: _vm.keywords,
-                expression: "keywords",
-                modifiers: { lazy: true }
-              }
-            ],
-            attrs: { type: "search", name: "buscar", placeholder: "Buscar..." },
-            domProps: { value: _vm.keywords },
-            on: {
-              change: function($event) {
-                _vm.keywords = $event.target.value
-              }
-            }
-          })
-        ])
-      ])
-    ]),
-    _vm._v(" "),
     _vm.results == undefined || _vm.results.length == 0
       ? _c("div", { staticClass: "noRults" }, [
           _c("div", { staticClass: "container default-bg" }, [
@@ -58852,9 +58819,7 @@ var render = function() {
         ])
       : _c("div", [
           _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "titulo text-center mt-40" }, [
-              _c("h3", [_vm._v(" Resultados " + _vm._s(_vm.results.length))])
-            ]),
+            _vm._m(0),
             _vm._v(" "),
             _c(
               "div",
@@ -58969,7 +58934,16 @@ var render = function() {
         ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "titulo text-center mt-40" }, [
+      _c("h3", [_vm._v(" Resultados")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -59183,6 +59157,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(136)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(97)
@@ -59191,7 +59169,7 @@ var __vue_template__ = __webpack_require__(98)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -59300,6 +59278,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -59327,18 +59315,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 $('.labelMenu').text("Menú");
             }
         });
+        // Search Toggle
+        $("#search_input_box").hide();
+        $("#search").on("click", function () {
+            $("#search_input_box").slideToggle();
+            $("#search_input").focus();
+        });
+        $("#close_search").on("click", function () {
+            $('#search_input_box').slideUp(500);
+        });
     },
 
     methods: {
-        fetch: function fetch() {
-            $('#lock').removeClass('hidden');
-            this.$router.push({
-                name: 'resultado',
+        search: function search() {
+            var _this = this;
+
+            axios.get('/api/indexsearch', {
                 params: {
                     keywords: this.keywords
                 }
-            });
-            this.cerrarMenu();
+            }).then(function (response) {
+                _this.cerrarMenu();
+
+                _this.$router.push({
+                    name: 'resultado',
+                    params: {
+                        keywords: _this.keywords,
+                        results: response.data
+                    }
+                });
+                _this.keywords = "";
+            }).catch(function (error) {});
         },
         cerrarMenu: function cerrarMenu() {
             if ($('.menuBtn').hasClass('act')) {
@@ -59349,7 +59356,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     watch: {
-        keywords: 'fetch'
+        keywords: function keywords(after, before) {
+            if (this.keywords != "") {
+                this.search();
+            }
+        }
     }
 });
 
@@ -59459,17 +59470,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        { attrs: { to: { name: "resultado" } } },
-                        [_c("i", { staticClass: "fa fa-search" })]
-                      )
-                    ],
-                    1
-                  )
+                  _vm._m(0)
                 ])
               ])
             ]),
@@ -59477,14 +59478,14 @@ var render = function() {
             _c("div", { staticClass: "mobile-menu-area  visible-xs" }, [
               _c("label", { staticClass: "labelMenu" }, [_vm._v("Menú")]),
               _vm._v(" "),
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c("nav", { staticClass: "mainMenu" }, [
                 _c("ul", [
                   _c("li", [
                     _c("div", { staticClass: "search" }, [
                       _c("div", { attrs: { action: "", id: "search-form" } }, [
-                        _vm._m(1),
+                        _vm._m(2),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -59612,7 +59613,59 @@ var render = function() {
               ])
             ])
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "search_input", attrs: { id: "search_input_box" } },
+          [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "d-flex justify-content-between",
+                  attrs: { onSubmit: "return false;" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model.lazy",
+                        value: _vm.keywords,
+                        expression: "keywords",
+                        modifiers: { lazy: true }
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "search_input",
+                      name: "buscar",
+                      placeholder: "Buscar..."
+                    },
+                    domProps: { value: _vm.keywords },
+                    on: {
+                      change: function($event) {
+                        _vm.keywords = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", {
+                    staticClass: "btn",
+                    attrs: { type: "button" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "fa fa-close",
+                    attrs: { id: "close_search", title: "Close Search" }
+                  })
+                ]
+              )
+            ])
+          ]
+        )
       ])
     ])
   ])
@@ -59622,7 +59675,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "menuBtn", attrs: { href: "#" } }, [
+    return _c("li", [
+      _c("button", { staticClass: "search shadow-none" }, [
+        _c("span", { staticClass: "fa fa-search", attrs: { id: "search" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "menuBtn" }, [
       _c("span", { staticClass: "lines" })
     ])
   },
@@ -61205,6 +61268,46 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-6193fca4", module.exports)
   }
 }
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(137);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("11005e8c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f20e3672\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navBar.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f20e3672\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navBar.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.header_area.sticky #search_input_box { max-width: 100%;\n}\n#search_input_box {\r\n  position: fixed;\r\n  left: 50%;\r\n  -webkit-transform: translateX(-50%);\r\n  -moz-transform: translateX(-50%);\r\n  -ms-transform: translateX(-50%);\r\n  -o-transform: translateX(-50%);\r\n  transform: translateX(-50%);\r\n  width: 100%;\r\n  max-width: 1200px;\r\n  z-index: 999;\r\n  text-align: center;\r\n  padding: 5px 20px; \r\n  background: #fff;\n}\n#search_input_box .form-control {\r\n    background: transparent;\r\n    border: 0;\r\n    color: #4A4A4A;\r\n    font-weight: 400;\r\n    font-size: 15px;\r\n    padding: 0;\n}\n#search_input_box .form-control:focus {\r\n      box-shadow: none;\r\n      outline: none;\n}\n#search_input_box input.placeholder {\r\n    color: #4A4A4A;\r\n    font-size: 14px;\n}\n#search_input_box input:-moz-placeholder {\r\n    color: #4A4A4A;\r\n    font-size: 14px;\n}\n#search_input_box input::-moz-placeholder {\r\n    color: #4A4A4A;\r\n    font-size: 14px;\n}\n#search_input_box input::-webkit-input-placeholder {\r\n    color: #4A4A4A;\r\n    font-size: 14px;\n}\n#search_input_box .btn {\r\n    width: 0;\r\n    height: 0;\r\n    padding: 0;\r\n    border: 0; \r\n    position: absolute;\r\n    right: 40px;\r\n    top: 0;\n}\n#search_input_box .fa-close {\r\n    color: #4A4A4A;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    padding: 10px 3px; \r\n    position: absolute;\r\n    right: 40px;\r\n    top: 0;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

@@ -123,6 +123,11 @@ a:active, a:hover {
 .contenedor-text.t20{letter-spacing: 0; line-height: 30px; font-size: 1.25rem; }
 .contenedor-text.t32{ line-height: 2rem; letter-spacing: 0; font-size: 2rem; }
 
+.search:focus,.search:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 /* 2. Header CSS */
 header{
   width: 100%;
@@ -321,7 +326,7 @@ header{
  }
 .header-area.sticky .header-top-area { display: none; }
 .header-area.sticky .mainMenu { top: 4px; }
-.search { background: #fff none repeat scroll 0 0; height: 40px; width: 100%;} 
+.search { border: none; background: #fff none repeat scroll 0 0; height: 40px; width: 100%;} 
 #search-form > input { 
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 2px solid #CACACA;

@@ -290,17 +290,18 @@
 		},
 		 methods: {
 			getdata(){
-				fetch("/api/home")
-				.then(res => res.json())
-				.then(json => {
-					this.pageInfo = json.pageinfo;
+				axios.get('/api/home')
+				.then((res) => {
+					this.pageInfo = res.data.pageinfo;
 					this.sections =this.pageInfo.sections;
-					this.noticias = json.noticias;
+					this.noticias = res.data.noticias;
 					this.img = this.smallScreen(this.pageInfo.urlBanner, this.pageInfo.urlBannerMobile);
 					$('#lock').addClass('hidden');
-				});
+				})
+				.catch((err) =>{
+					console.log(err);
+					$('#lock').addClass('hidden');});
 			}
-		
 		},
         mounted() {
 			

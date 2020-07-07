@@ -106,8 +106,8 @@ class PagesController extends Controller
         $keywords = request('keywords');
         $posts = Post::where('title', 'LIKE', "%{$keywords}%")->where('category_id','!=', '4')
         ->orWhere('body', 'LIKE', "%{$keywords}%")
+        ->orderBy('id')
         ->get();
-        
         return $posts;
     }
 }

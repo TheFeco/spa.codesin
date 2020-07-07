@@ -1,14 +1,5 @@
 <template>
 <section>
-    
-    <div class="container ">
-        <div class="search-lg mt-40 default-bg">
-            <div action="" id="search-form">
-                <input type="search" name="buscar" placeholder="Buscar..." v-model.lazy="keywords"/>
-            </div>
-        </div>
-    </div>
-
     <div class="noRults" v-if="results == undefined  || results.length == 0">
 		<div class="container default-bg">
 			<div class="row mb-40">
@@ -25,7 +16,7 @@
     <div v-else>
         <div class="container">
             <div class="titulo text-center mt-40">
-                <h3> Resultados {{results.length}}</h3>
+                <h3> Resultados</h3>
             </div>
             <div class="row  mt-24">
                 <div class="col-md-4 col-sm-12 col-xs-12" v-for="(item, index) in results" :key="index">
@@ -59,32 +50,27 @@
 </template>
 <script>
 export default {
-    props:['keywords'],
+    props:['results'],
     data() {
         return {
-            results: []
+            // result: this.results
         }
+    },
+    created: function () {
+      this.init()
     },
     mounted() {
         $('#lock').addClass('hidden');
-        this.search();
+
     },
-    methods: {
-        search (){
-            axios.get('/api/indexsearch', { params: { keywords: this.keywords } })
-            .then(res => {
-                this.results = res.data
-                $('#lock').addClass('hidden');
-            })
-            .catch(error => {
-                $('#lock').addClass('hidden');
-            });
-        }
+    methods:{
+        update(){
+        this.$mount();
+        },
+        init () {
+        console.log(this.$route)
+      }
     },
-    watch: {
-        keywords: 'search',
-    }
-    
 }
 </script>
 <style >

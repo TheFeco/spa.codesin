@@ -566,6 +566,7 @@ select {
   border: 1px solid #C6C6C6;
   border-radius: 8px;
   background-color: #FFFFFF;
+  padding: 0 16px;
 }
 
 .btn-s-container { margin-top: 25%; }

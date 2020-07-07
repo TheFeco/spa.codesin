@@ -19,7 +19,7 @@ class SendLoginCredentials
     {
         //
         //
-        MAil::to($event->user)->queue(
+        Mail::to($event->user)->queue(
             new LoginLoginCredentials( $event->user, $event->password)
         );
     }
