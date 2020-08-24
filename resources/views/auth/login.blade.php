@@ -50,7 +50,7 @@
                         </form>
                         <div class="mt-3 text-center">
                             <a class="text-muted" href="{{ url('/password/reset')}}">
-                                {{-- <u>Restablecer contraseña</u> --}}
+                                <u>Restablecer contraseña</u>
                             </a>
                         </div>
                     </div>

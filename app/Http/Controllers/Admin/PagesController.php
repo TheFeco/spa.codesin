@@ -161,7 +161,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon2_img->extension();
+            $filename = 'icons_' . $data->icon2 .'_'. time() . '.' . $data->icon2_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon2_img->move(public_path('img/icons'),$filename);
             $section->update(['icon2_img' => $urlicon]);
@@ -175,7 +175,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon3_img->extension();
+            $filename = 'icons_' . $data->icon3 .'_'. time() . '.' . $data->icon3_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon3_img->move(public_path('img/icons'),$filename);
             $section->update(['icon3_img' => $urlicon]);
@@ -189,7 +189,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon4_img->extension();
+            $filename = 'icons_' . $data->icon4 .'_'. time() . '.' . $data->icon4_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon4_img->move(public_path('img/icons'),$filename);
             $section->update(['icon4_img' => $urlicon]);
@@ -203,7 +203,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon5_img->extension();
+            $filename = 'icons_' . $data->icon5 .'_'. time() . '.' . $data->icon5_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon5_img->move(public_path('img/icons'),$filename);
             $section->update(['icon5_img' => $urlicon]);
@@ -217,7 +217,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon6_img->extension();
+            $filename = 'icons_' . $data->icon6 .'_'. time() . '.' . $data->icon6_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon6_img->move(public_path('img/icons'),$filename);
             $section->update(['icon6_img' => $urlicon]);
@@ -231,7 +231,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon7_img->extension();
+            $filename = 'icons_' . $data->icon7 .'_'. time() . '.' . $data->icon7_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon7_img->move(public_path('img/icons'),$filename);
             $section->update(['icon7_img' => $urlicon]);
@@ -245,7 +245,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon8_img->extension();
+            $filename = 'icons_' . $data->icon8 .'_'. time() . '.' . $data->icon8_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon8_img->move(public_path('img/icons'),$filename);
             $section->update(['icon8_img' => $urlicon]);
@@ -259,7 +259,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon9_img->extension();
+            $filename = 'icons_' . $data->icon9 .'_'. time() . '.' . $data->icon9_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon9_img->move(public_path('img/icons'),$filename);
             $section->update(['icon9_img' => $urlicon]);
@@ -273,7 +273,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon10_img->extension();
+            $filename = 'icons_' . $data->icon10 .'_'. time() . '.' . $data->icon10_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon10_img->move(public_path('img/icons'),$filename);
             $section->update(['icon10_img' => $urlicon]);
@@ -287,7 +287,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon11_img->extension();
+            $filename = 'icons_' . $data->icon11 .'_'. time() . '.' . $data->icon11_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon11_img->move(public_path('img/icons'),$filename);
             $section->update(['icon11_img' => $urlicon]);
@@ -301,7 +301,7 @@ class PagesController extends Controller
          
             }
 
-            $filename = 'icons_' . $data->icon1 .'_'. time() . '.' . $data->icon12_img->extension();
+            $filename = 'icons_' . $data->icon12 .'_'. time() . '.' . $data->icon12_img->extension();
             $urlicon = '/img/icons/'. $filename;
             $data->icon12_img->move(public_path('img/icons'),$filename);
             $section->update(['icon12_img' => $urlicon]);
