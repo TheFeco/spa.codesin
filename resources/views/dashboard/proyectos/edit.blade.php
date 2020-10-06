@@ -138,15 +138,12 @@
             },
             dictDefaultMessage: 'Arrastra las todos aquí para subirlas'
         });
-
         myDropzone.on('error', function(file, res){
             console.log(res);
             var msn = res.errors.photo[0];
             $('.dz-error-message:last > span').text(msn);
         });
-
         Dropzone.autoDiscover = false;
-
         $('.banner').dropify({
             messages: {
                 'default': 'Arrastra y suelta un archivo aquí o haz clic',

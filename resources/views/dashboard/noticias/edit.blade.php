@@ -8,7 +8,7 @@
 </div>
 @stop
 @section('content')
-<form method="POST" action="{{ route('admin.noticias.update', $post) }}" enctype="multipart/form-data">
+<form id="nUpdate" method="POST" action="{{ route('admin.noticias.update', $post) }}" enctype="multipart/form-data">
     {{method_field('PUT')}}
     @csrf
     <div class="row mb-3">
@@ -57,7 +57,7 @@
                         </div>
                         <input type="hidden" name="tags" value="1" >
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button basic-ladda-buttonNoticias m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
                     </div>
                 </div>
@@ -149,6 +149,12 @@
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
             }
+        });
+        $('.basic-ladda-buttonNoticias').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#nUpdate').submit();
         });
     </script>
 @endpush

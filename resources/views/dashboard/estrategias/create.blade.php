@@ -8,7 +8,7 @@
 </div>
 @stop
 @section('content')
-<form method="POST" action="{{ route('admin.estrategias.store') }}" enctype="multipart/form-data">
+<form id="eStore" method="POST" action="{{ route('admin.estrategias.store') }}" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
         <div class="col-md-12">
@@ -76,7 +76,7 @@
                             {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary basic-ladda-buttonEstrategias">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -138,6 +138,12 @@
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
             }
+        });
+        $('.basic-ladda-buttonEstrategias').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#eStore').submit();
         });
     </script>
 @endpush

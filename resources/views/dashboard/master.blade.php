@@ -85,12 +85,12 @@
     
 
     <script> 
-    $('.basic-ladda-button').on('click', function (e) {
-        var laddaBtn = e.currentTarget;
-        var l = Ladda.create(laddaBtn);
-        l.start();
-        $('form').submit();
-    });
+    // $('.basic-ladda-button').on('click', function (e) {
+    //     var laddaBtn = e.currentTarget;
+    //     var l = Ladda.create(laddaBtn);
+    //     l.start();
+    //     $('form').submit();
+    // });
     $('.image-popup').magnificPopup({
         type: 'image',
         gallery:{

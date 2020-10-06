@@ -8,7 +8,7 @@
 </div>
 @stop
 @section('content')
-<form method="POST" action="{{ route('admin.estrategias.update' , $post) }}" enctype="multipart/form-data">
+<form id="eUpdate" method="POST" action="{{ route('admin.estrategias.update' , $post) }}" enctype="multipart/form-data">
     @csrf {{method_field('PUT')}}
     <div class="row mb-3">
         @include('dashboard.partials.banner')
@@ -49,7 +49,7 @@
                             {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary basic-ladda-buttonEstrategiasUpdate">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -111,6 +111,12 @@
                 'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
                 'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
+        });
+        $('.basic-ladda-buttonEstrategiasUpdate').on('click', function (e) {
+            var laddaBtn = e.currentTarget;
+            var l = Ladda.create(laddaBtn);
+            l.start();
+            $('#eUpdate').submit();
         });
     </script>
 @endpush
