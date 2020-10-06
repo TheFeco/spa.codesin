@@ -22,7 +22,7 @@ Route::get('quienes-somos','PagesController@quienesSomos');
 Route::get('que-hacemos', 'PagesController@queHacemos');
 Route::get('comunicacion','PagesController@comunicacion');
 Route::get('noticia/{post}','NoticiasController@show');
-Route::get('proyectos/{post}','proyectosController@show');
+Route::get('proyectos/{post}','ProyectosController@show');
 Route::get('tag/{tag}', 'TagsController@zonas');
 Route::get('zonas/{tag}', 'TagsController@show');
 Route::get('estrategias/{post}','EstrategiasController@show');
