@@ -61111,7 +61111,7 @@ var render = function() {
     _c("div", {}, [
       _c(
         "div",
-        { staticClass: "row  mt-24" },
+        { staticClass: "row equal mt-24" },
         _vm._l(_vm.staffs, function(staff, index) {
           return _c(
             "div",
@@ -61228,6 +61228,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['zonas', 'title']
@@ -61259,44 +61261,52 @@ var render = function() {
         _c("h2", [_vm._v(_vm._s(_vm.title))])
       ]),
       _vm._v(" "),
-      _vm._l(_vm.zonas, function(zona, index) {
-        return _c(
-          "div",
-          {
-            key: index,
-            staticClass: "col-sm-4 col-xs-6",
-            class: {
-              "col-md-12": _vm.zonas.length == 1,
-              "col-md-6": _vm.zonas.length == 2,
-              "col-md-4": _vm.zonas.length == 3,
-              "col-md-3": _vm.zonas.length == 4,
-              "col-md-2": _vm.zonas.length == 5,
-              "col-md-2": _vm.zonas.length >= 5
-            }
-          },
-          [
-            _c("div", { staticClass: "card-staff mb-4 o-hidden default-bg" }, [
-              _c("img", {
-                staticClass: "card-staff-img-top",
-                attrs: { src: zona.urlimg, alt: "" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-staff-body " }, [
-                _c("h5", { staticClass: "card-staff-title text-center" }, [
-                  _c("p", { domProps: { textContent: _vm._s(zona.name) } })
-                ]),
-                _vm._v(" "),
-                _c("p", {
-                  staticClass: "card-staff-text text-gray text-center",
-                  domProps: { textContent: _vm._s(zona.job) }
-                })
-              ])
-            ])
-          ]
-        )
-      })
-    ],
-    2
+      _c(
+        "div",
+        { staticClass: "row equal" },
+        _vm._l(_vm.zonas, function(zona, index) {
+          return _c(
+            "div",
+            {
+              key: index,
+              staticClass: "col-sm-4 col-xs-6",
+              class: {
+                "col-md-12": _vm.zonas.length == 1,
+                "col-md-6": _vm.zonas.length == 2,
+                "col-md-4": _vm.zonas.length == 3,
+                "col-md-3": _vm.zonas.length == 4,
+                "col-md-2": _vm.zonas.length == 5,
+                "col-md-2": _vm.zonas.length >= 5
+              }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "card-staff mb-4 o-hidden default-bg" },
+                [
+                  _c("img", {
+                    staticClass: "card-staff-img-top",
+                    attrs: { src: zona.urlimg, alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-staff-body " }, [
+                    _c("h5", { staticClass: "card-staff-title text-center" }, [
+                      _c("p", { domProps: { textContent: _vm._s(zona.name) } })
+                    ]),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass: "card-staff-text text-gray text-center",
+                      domProps: { textContent: _vm._s(zona.job) }
+                    })
+                  ])
+                ]
+              )
+            ]
+          )
+        }),
+        0
+      )
+    ]
   )
 }
 var staticRenderFns = []
