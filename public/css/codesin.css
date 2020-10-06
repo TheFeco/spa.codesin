@@ -871,3 +871,8 @@ width: 100%;
   }
   
 }
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}

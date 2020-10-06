@@ -65,6 +65,10 @@
   .s-cards { grid-template-columns: repeat(3, 1fr) !important; }
   .card-content a { margin-right: 30px; }
   .card-ci {    grid-template-columns: repeat( 2, 1fr) !important;}
+  .row.equal {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 }
 
