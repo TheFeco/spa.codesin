@@ -145,7 +145,11 @@ class PersonalController extends Controller
     public function destroy(Staff $staff)
     {
         //
+        $departamento_id = $staff->departamento_id;
+        $staffs = Staff::where('departamento_id',$departamento_id)->orderBy('departamento_id')->get();
+        $departamento = Departamento::where('id',$departamento_id)->first();
         $staff->delete();
-        return redirect()->route('admin.staff.index')->with('flash','El staff eliminado');
+
+        return redirect()->route('admin.departamentos.show',[ 'departamento' => $departamento, 'staffs'=>$staffs])->with('flash','El staff eliminado');
     }
 }
