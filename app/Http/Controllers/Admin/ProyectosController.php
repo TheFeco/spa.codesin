@@ -160,7 +160,14 @@ class ProyectosController extends Controller
     public function destroy(Post $post)
     {
         //
+        $post->load('tags');
+        $tag = Tag::where('id',$post->tags[0]->id)->first();
         $post->delete();
-        return redirect()->route('admin.proyectos.index')->with('flash','Tu publicación a sido Eliminada');
+        $tag->load('posts');
+        $posts = $tag->posts;
+        // return view('dashboard.proyectos.index', compact('posts', 'tag'));
+        // return redirect()->route('dashboard.proyectos.index')->with('flash','Tu publicación a sido Eliminada');
+        return view('dashboard.proyectos.index', compact('posts', 'tag'),
+        ['flash'=>'Tu publicación a sido Eliminada']);
     }
 }

@@ -17,7 +17,7 @@ import router from './routes/routes';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('nav-bar', require('./components/navBar'));
+Vue.component('nav-bar', require('./components/navBarv2'));
 Vue.component('noticia-link', require('./components/noticiaLink'));
 Vue.component('url-link', require('./components/urlLink'));
 Vue.component('tags-link', require('./components/tagsLink'));
