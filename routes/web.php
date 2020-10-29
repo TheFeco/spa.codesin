@@ -22,6 +22,13 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::get('paginas/{post}/edit', 'PagesController@edit', ['as' => 'admin' ])->name('admin.paginas.edit');
     Route::put('paginas/{post}', 'PagesController@update', ['as' => 'admin' ])->name('admin.paginas.update');
 
+    Route::resource('historia', 'historiaController', ['as' => 'admin' ])->parameters(['historia' => 'post']);
+
+    Route::resource('codetalks', 'codetalksController', ['as' => 'admin' ])->parameters(['codetalks' => 'post']);
+    Route::resource('codesinHechos', 'codesinHechosController', ['as' => 'admin' ])->parameters(['codesinHechos' => 'post']);
+    Route::resource('sinaloaNumeros', 'sinaloaNumerosController', ['as' => 'admin' ])->parameters(['sinaloaNumeros' => 'post']);
+
+
     Route::post('post/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.update');
     Route::delete('photos/{photo}', 'PhotosController@destroy')->name('admin.photos.destroy');
     //subir imagenes 

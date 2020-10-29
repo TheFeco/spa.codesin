@@ -22,10 +22,26 @@
                                             <li>
                                                 <router-link :to="{name: 'que-hacemos'}">¿Qué hacemos?</router-link>
                                             </li>
-                                            <li><router-link :to="{name: 'sinaloa'}" >Sinaloa en Números</router-link></li>
+                                            <li><router-link :to="{name: 'historia'}" >Historia</router-link></li>
+
                                         </ul>
                                     </li>
-                                    <li><router-link :to="{name: 'que-hacemos'}" class="menu-nav" >Contenido</router-link></li>
+                                    <li>
+                                        <a href="#!" class="menu-nav menu-parent">Contenido <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <ul class="nav-dropdown">
+                                            <li>
+                                                <router-link :to="{name: 'codetalks'}" >CodeTalks</router-link>
+                                            </li>
+                                            <li>
+                                                <router-link :to="{name: 'codesinHechos'}">Codesin con Hechos</router-link>
+                                            </li>
+                                            <li><router-link :to="{name: 'sinaloaNumeros'}" >Sinaloa en Números</router-link></li>
+                                            <li><router-link :to="{name: 'sinaloa'}" >Indicadores económicos</router-link></li>
+                                            <li><router-link :to="{name: 'biblioteca'}" >Biblioteca</router-link></li>
+                                            <li><router-link :to="{name: 'multimedia'}" >Multimedia</router-link></li>
+                                        </ul>
+                                    </li>
+                                    <!-- <li><router-link :to="{name: 'que-hacemos'}" class="menu-nav" >Contenido</router-link></li> -->
                                     <li><router-link :to="{name: 'comunicacion'}" class="menu-nav" >Comunicación</router-link></li>
                                     <li><a :href="transparencia" target="_blank">COVID</a></li>
                                     <li><a :href="transparencia" target="_blank">Transparencia</a></li>
@@ -62,11 +78,23 @@
                                             <li>
                                                 <router-link :to="{name: 'que-hacemos'}">¿Qué hacemos?</router-link>
                                             </li>
-                                            <li><router-link :to="{name: 'sinaloa'}" >Sinaloa en Números</router-link></li>
+                                            <li><router-link :to="{name: 'historia'}" >Historia</router-link></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <router-link :to="{name: 'que-hacemos'}">¿Qué hacemos?</router-link>
+                                        <a href="#!" class="menu-nav menu-parent">Contenido <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <ul class="nav-dropdown">
+                                            <li>
+                                                <router-link :to="{name: 'codetalks'}" >CodeTalks</router-link>
+                                            </li>
+                                            <li>
+                                                <router-link :to="{name: 'codesinHechos'}">Codesin con Hechos</router-link>
+                                            </li>
+                                            <li><router-link :to="{name: 'sinaloaNumeros'}" >Sinaloa en Números</router-link></li>
+                                            <li><router-link :to="{name: 'sinaloa'}" >Indicadores económicos</router-link></li>
+                                            <li><router-link :to="{name: 'biblioteca'}" >Biblioteca</router-link></li>
+                                            <li><router-link :to="{name: 'multimedia'}" >Multimedia</router-link></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <router-link :to="{name: 'sinaloa'}">Sinaloa en Números</router-link>
@@ -201,13 +229,9 @@ export default {
 }
 </script>
 <style>
-/* nav ul li a:not(:only-child):after,
-nav ul li a:visited:not(:only-child):after {
-  padding-left: 4px;
-  content: ' ▾';
-} */
 nav ul li ul li {
-  min-width: 190px;
+  min-width: 250px;
+  text-align: center;
 }
 nav ul li ul li a {
   padding: 15px;

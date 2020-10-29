@@ -26,9 +26,16 @@ Vue.component('proyecto-link', require('./components/proyectoLink'));
 Vue.component('noticias-area', require('./components/noticiasArea'));
 Vue.component('politicas-area', require('./components/politicasArea'));
 Vue.component('banner-area', require('./components/banner'));
+Vue.component('banner-area2', require('./components/bannerv2'));
 Vue.component('proyectos-area', require('./components/proyectosArea'));
 Vue.component('staff-area', require('./components/staffEstatal'));
 Vue.component('zonas-area', require('./components/Zonas'));
+Vue.component('full-container', require('./components/fullheight'));
+Vue.component('left-container', require('./components/leftContainer'));
+Vue.component('right-container', require('./components/rightContainer'));
+Vue.component('business-container', require('./components/businessContainer'));
+Vue.component('boletin-container', require('./components/boletinContainer'));
+Vue.component('box-container', require('./components/boxContainer'));
 Vue.component('carousel',carousel);
 
 Vue.mixin({

@@ -21,6 +21,11 @@ export default new Router({
             component: require('../views/Que_hacemos')
         },
         {
+            path: '/historia',
+            name: 'historia',
+            component: require('../views/historia')
+        },
+        {
             path: '/sinaloa-numeros',
             name: 'sinaloa',
             component: require('../views/Sinaloa_numeros')
@@ -76,6 +81,30 @@ export default new Router({
             path: '/tags/:url',
             name: 'tags_posts',
             component: require('../views/tags_posts'),
+            props: true
+        },
+        {
+            path: '/codetalks/:url',
+            name: 'codetalks_show',
+            component: require('../views/codetalks_show'),
+            props: true
+        },
+        {
+            path: '/sinaloaNumeros',
+            name: 'sinaloaNumeros',
+            component: require('../views/sinaloaNumeros'),
+            props: true
+        },
+        {
+            path: '/codetalks',
+            name: 'codetalks',
+            component: require('../views/codetalks'),
+            props: true
+        },
+        {
+            path: '/codesinHechos',
+            name: 'codesinHechos',
+            component: require('../views/codesinHechos'),
             props: true
         },
         {

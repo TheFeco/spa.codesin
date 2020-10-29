@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="sm-12 title f32 text-center mb-60 mt-80">
-                        <h2>Semáforo económico</h2>
+                        <h2>Indicadores Económicos</h2>
                     </div>
                 </div>
                 <div class="col-sm-12">

@@ -75,6 +75,7 @@
     <script src="{{asset('dashboard/js/plugins/spin.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/ladda.min.js')}}"></script>
     <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
     
     @stack('script')

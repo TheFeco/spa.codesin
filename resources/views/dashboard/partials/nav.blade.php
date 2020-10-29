@@ -46,6 +46,18 @@
             <li class="nav-item">
                 <a href="{{route('admin.paginas.edit', 'que-hacemos')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">¿Qué hacemos?</span></a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.historia.edit', 'historia')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Historia</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.codetalks.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">CodeTalks</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.codesinHechos.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Codesin con hechos</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.sinaloaNumeros.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Sinaloa en números</span></a>
+            </li>
         </li>
         </ul>
         <ul class="childNav" data-parent="noticias">
