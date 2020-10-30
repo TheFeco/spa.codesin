@@ -38,7 +38,7 @@
                                             <li><router-link :to="{name: 'sinaloaNumeros'}" >Sinaloa en Números</router-link></li>
                                             <li><router-link :to="{name: 'sinaloa'}" >Indicadores económicos</router-link></li>
                                             <li><router-link :to="{name: 'biblioteca'}" >Biblioteca</router-link></li>
-                                            <li><router-link :to="{name: 'multimedia'}" >Multimedia</router-link></li>
+                                            <li><router-link :to="{name: 'comunicacion'}" >Multimedia</router-link></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -102,7 +102,7 @@
                                             <li><router-link :to="{name: 'sinaloaNumeros'}" >Sinaloa en Números</router-link></li>
                                             <li><router-link :to="{name: 'sinaloa'}" >Indicadores económicos</router-link></li>
                                             <li><router-link :to="{name: 'biblioteca'}" >Biblioteca</router-link></li>
-                                            <li><router-link :to="{name: 'multimedia'}" >Multimedia</router-link></li>
+                                            <li><router-link :to="{name: 'comunicacion'}" >Multimedia</router-link></li>
                                         </ul>
                                     </li>
                                     <li>

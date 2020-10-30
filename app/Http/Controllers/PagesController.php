@@ -124,7 +124,7 @@ class PagesController extends Controller
     public function comunicacion(){
 
         $estrategias = Post::where('category_id',4)->latest()->get();
-        $noticias = Post::published()->where('category_id',2)->take(3)->get();
+        // $noticias = Post::published()->where('category_id',2)->take(3)->get();
         foreach ($estrategias as $estrategia) {
             $text = $estrategia->excerpt;
             $maxPos = 153;
@@ -138,7 +138,7 @@ class PagesController extends Controller
         {
             return [
                 'contenidoInsteres' => $estrategias,
-                'noticias' => $noticias
+                // 'noticias' => $noticias
             ];
         }
     }

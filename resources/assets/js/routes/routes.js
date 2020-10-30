@@ -78,12 +78,6 @@ export default new Router({
             props: true
         },
         {
-            path: '/multimedia',
-            name: 'multimedia',
-            component: require('../views/multimedia'),
-            props: true
-        },
-        {
             path: '/resultado/:keywords',
             name: 'results',
             component: require('../views/resultadoPage'),
