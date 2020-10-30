@@ -1,6 +1,18 @@
 <template>
-    <section class="pages container">
+    <section>
         <div class="row">
+            <div class="containerIframe">
+                 <iframe src="http://gestori.codesin.mx/indicadoreseconomicos_public.php" class="responsive-iframe" frameborder="0"></iframe>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="containerIframe">
+                <iframe src="http://gestori.codesin.mx/comparativos_public.php" class="responsive-iframe" frameborder="0"></iframe>
+            </div>
+            
+        </div>
+        
+        <!-- <div class="row">
             <div class="container">
                 <div class="row">
                     <div class="sm-12 title f32 text-center mb-60 mt-80">
@@ -472,7 +484,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+       
+        <div id="myDiv"></div>
     </section>
 </template>
 
@@ -493,6 +507,52 @@
     }
 </script>
 <style>
+.containerIframe {
+  position: relative;
+  width: 99%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+@media (min-width: 320px) {
+
+  iframe {
+
+    width: 200px;
+
+    height: 150px;
+
+  }
+
+}
+
+
+
+
+/* Pantalla 768px o superior */
+
+@media (min-width: 768px) {
+
+  iframe {
+
+    width: 500px;
+
+    height: 350px;
+
+  }
+
+}
+
 .s-card{ 
     background-color: #FFF;
     color: #4A4A4A;

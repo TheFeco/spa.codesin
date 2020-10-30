@@ -60,9 +60,27 @@ export default new Router({
             props: true
         },
         {
+            path: '/posicionamiento',
+            name: 'posicionamiento',
+            component: require('../views/Noticias'),
+            props: true
+        },
+        {
             path: '/noticias',
             name: 'noticias',
             component: require('../views/Noticias'),
+            props: true
+        },
+        {
+            path: '/biblioteca',
+            name: 'biblioteca',
+            component: require('../views/biblioteca'),
+            props: true
+        },
+        {
+            path: '/multimedia',
+            name: 'multimedia',
+            component: require('../views/multimedia'),
             props: true
         },
         {

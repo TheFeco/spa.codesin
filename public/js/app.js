@@ -49829,9 +49829,24 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         component: __webpack_require__(86),
         props: true
     }, {
+        path: '/posicionamiento',
+        name: 'posicionamiento',
+        component: __webpack_require__(89),
+        props: true
+    }, {
         path: '/noticias',
         name: 'noticias',
         component: __webpack_require__(89),
+        props: true
+    }, {
+        path: '/biblioteca',
+        name: 'biblioteca',
+        component: __webpack_require__(192),
+        props: true
+    }, {
+        path: '/multimedia',
+        name: 'multimedia',
+        component: __webpack_require__(197),
         props: true
     }, {
         path: '/resultado/:keywords',
@@ -56186,7 +56201,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.s-card{ \r\n    background-color: #FFF;\r\n    color: #4A4A4A;\r\n    padding: 1rem;\r\n    height: 19.563rem;\r\n    width: 100%;\r\n    max-width: 26.25rem;\r\n    font-family: \"Open Sans\";\n}\n.s-cards {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(4, 1fr);\n}\n.s-card hr {margin-top: 16px;  margin-bottom: 15px;\n}\n.s-card-title{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  letter-spacing: 0.4px;\r\n  line-height: 24px;\n}\n.s-card-contenido-1{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small{\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  letter-spacing: 0;\r\n  line-height: 17px;\n}\n.s-card-constainer strong{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small .extrabold{\r\n    color: #4A4A4A;\r\n    font-size: 12px;\r\n    font-weight: 800;\r\n    letter-spacing: 0;\r\n    line-height: 17px;\n}\n.f-container label {\r\n  display: block;\r\n  margin: .5em 0 0 0;\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 26px;\r\n  padding-bottom: 16px;\n}\nselect {\r\n  box-sizing: border-box;\r\n  height: 56px;\r\n  width: 100%; /*tamaño original 202px*/\r\n  border: 1px solid #C6C6C6;\r\n  border-radius: 8px;\r\n  background-color: #FFFFFF;\r\n  padding: 0 16px;\n}\n.btn-s-container { margin-top: 25%;\n}\n.btn-generar{\r\n    border-radius: 12px;\r\n    background-color: #007D80;\r\n    color: #FFFFFF;\r\n    font-family: \"Open Sans\";\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    letter-spacing: 0;\r\n    line-height: 26px;\r\n    text-align: center;\r\n    height: 56px;\n}\n.f-container {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(5, 1fr);\n}\n.f-form-group{\r\n    color: #4A4A4A;\r\n    width: 100%;\r\n    max-width: 12.625rem;\r\n    font-family: \"Open Sans\";\n}\n@media (max-width: 767px) {\n.btn-s-container { margin-top: 0;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.containerIframe {\r\n  position: relative;\r\n  width: 99%;\r\n  overflow: hidden;\r\n  padding-top: 56.25%; /* 16:9 Aspect Ratio */\n}\n.responsive-iframe {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  border: none;\n}\n@media (min-width: 320px) {\niframe {\r\n\r\n    width: 200px;\r\n\r\n    height: 150px;\n}\n}\r\n\r\n\r\n\r\n\r\n/* Pantalla 768px o superior */\n@media (min-width: 768px) {\niframe {\r\n\r\n    width: 500px;\r\n\r\n    height: 350px;\n}\n}\n.s-card{ \r\n    background-color: #FFF;\r\n    color: #4A4A4A;\r\n    padding: 1rem;\r\n    height: 19.563rem;\r\n    width: 100%;\r\n    max-width: 26.25rem;\r\n    font-family: \"Open Sans\";\n}\n.s-cards {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(4, 1fr);\n}\n.s-card hr {margin-top: 16px;  margin-bottom: 15px;\n}\n.s-card-title{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  letter-spacing: 0.4px;\r\n  line-height: 24px;\n}\n.s-card-contenido-1{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small{\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  letter-spacing: 0;\r\n  line-height: 17px;\n}\n.s-card-constainer strong{\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 18px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 30px;\n}\n.s-card-contenido-small .extrabold{\r\n    color: #4A4A4A;\r\n    font-size: 12px;\r\n    font-weight: 800;\r\n    letter-spacing: 0;\r\n    line-height: 17px;\n}\n.f-container label {\r\n  display: block;\r\n  margin: .5em 0 0 0;\r\n  color: #4A4A4A;\r\n  font-family: \"Open Sans\";\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  letter-spacing: 0;\r\n  line-height: 26px;\r\n  padding-bottom: 16px;\n}\nselect {\r\n  box-sizing: border-box;\r\n  height: 56px;\r\n  width: 100%; /*tamaño original 202px*/\r\n  border: 1px solid #C6C6C6;\r\n  border-radius: 8px;\r\n  background-color: #FFFFFF;\r\n  padding: 0 16px;\n}\n.btn-s-container { margin-top: 25%;\n}\n.btn-generar{\r\n    border-radius: 12px;\r\n    background-color: #007D80;\r\n    color: #FFFFFF;\r\n    font-family: \"Open Sans\";\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    letter-spacing: 0;\r\n    line-height: 26px;\r\n    text-align: center;\r\n    height: 56px;\n}\n.f-container {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    display: grid;\r\n    grid-gap: 1.7rem;\r\n    grid-template-columns: repeat(5, 1fr);\n}\n.f-form-group{\r\n    color: #4A4A4A;\r\n    width: 100%;\r\n    max-width: 12.625rem;\r\n    font-family: \"Open Sans\";\n}\n@media (max-width: 767px) {\n.btn-s-container { margin-top: 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -56197,6 +56212,20 @@ exports.push([module.i, "\n.s-card{ \r\n    background-color: #FFF;\r\n    color
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -56699,922 +56728,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "pages container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "s-cards" }, [
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(1)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(2)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(3)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(4)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(5)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(6)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(7)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _vm._m(8)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "s-card-title text-left" }, [
-                  _vm._v(
-                    "\n                                Remesas\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(9),
-                _vm._v(" "),
-                _vm._m(10),
-                _vm._v(" "),
-                _vm._m(11),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(12)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "s-card-title text-left" }, [
-                  _vm._v(
-                    "\n                                Contrucción\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(13),
-                _vm._v(" "),
-                _vm._m(14),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(15)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "s-card-title text-left" }, [
-                  _vm._v(
-                    "\n                                Competitividad\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(16),
-                _vm._v(" "),
-                _vm._m(17),
-                _vm._v(" "),
-                _vm._m(18),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(19)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "s-card" }, [
-                _c("div", { staticClass: "card-box-icon text-left" }, [
-                  _vm.positivo
-                    ? _c("img", {
-                        attrs: { src: "/img/icons/up.svg", alt: "" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "/img/icons/down.svg", alt: "" }
-                      })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "s-card-title text-left" }, [
-                  _vm._v(
-                    "\n                                Inflación\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(20),
-                _vm._v(" "),
-                _vm._m(21),
-                _vm._v(" "),
-                _vm._m(22),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._m(23)
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(24)
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "sm-12 title f32 text-center mb-60 mt-80" }, [
-        _c("h2", [_vm._v("Indicadores Económicos")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Inversión extranjera directa\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("44.95 ")]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("MMD")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("4° Trim. 2019")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("-4.85%")])
+    return _c("section", [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "containerIframe" }, [
+          _c("iframe", {
+            staticClass: "responsive-iframe",
+            attrs: {
+              src: "http://gestori.codesin.mx/indicadoreseconomicos_public.php",
+              frameborder: "0"
+            }
+          })
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("24/32")])
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "containerIframe" }, [
+          _c("iframe", {
+            staticClass: "responsive-iframe",
+            attrs: {
+              src: "http://gestori.codesin.mx/comparativos_public.php",
+              frameborder: "0"
+            }
+          })
         ])
       ]),
       _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("47.25")]),
-            _vm._v("  MDD")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right " }, [_vm._v("4º Trim. 2018")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Inversión privada\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("18,240 ")]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("MDP")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("2019")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("-40.68%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ene-sep 2019")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("30,747")]),
-            _vm._v(" MDP")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right " }, [_vm._v("2018")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Empleo generado\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("11,585 ")]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("Empleos")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ene 2019 - Ene 2020")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("+2.04%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("14/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("580,209")]),
-            _vm._v(" Empleo total")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right" }, [_vm._v("Ene 2020")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("568,624")]),
-            _vm._v(" Empleo total")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right" }, [_vm._v("Ene 2019")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    PIB per cápita\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("157,802 ")]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("Pesos")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("2018")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("+5.58%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("18/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("149,466")]),
-            _vm._v(" Pesos")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right " }, [_vm._v("Ene 2020")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("568,624")]),
-            _vm._v(" Empleo total")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right" }, [_vm._v("Ene 2019")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    PIB\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [
-          _vm._v("395,849.29 ")
-        ]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("MDP")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("2018")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("+2.71%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("17/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("385,388.82 MDP")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("2017")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Población\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [
-          _vm._v("2,966,321 ")
-        ]),
-        _vm._v(" "),
-        _c("strong", [_vm._v("Personas")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("2015")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("+7.17%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("15/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("2,767,761 Personas")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("2017")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Desempleo\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("2.89% ")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Feb 2020")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("-19.18%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("16/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("3.57%")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("Feb 2019")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "s-card-constainer" }, [
-      _c("div", { staticClass: "s-card-title text-left" }, [
-        _vm._v(
-          "\n                                    Patrones\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-left" }, [
-        _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("40,696")]),
-        _vm._v(" "),
-        _c("strong", [_vm._v(" Patrones")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Feb 2020")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("+3.93%")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-10 mb-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right extrabold" }, [_vm._v("16/32")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-16" }, [
-        _c("div", { staticClass: "s-card-contenido-small" }, [
-          _c("div", { staticClass: "left" }, [
-            _c("span", { staticClass: "extrabold" }, [_vm._v("39,158")]),
-            _vm._v(" Patrones")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "right" }, [_vm._v("Feb 2019")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-left" }, [
-      _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("241.24")]),
-      _vm._v(" "),
-      _c("strong", [_vm._v(" MDD")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("4º Trim. 2019")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" }, [_vm._v("+7.75%")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-10 mb-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" }, [_vm._v("13/32")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "extrabold" }, [_vm._v("223.88")]),
-          _vm._v(" MDD")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right" }, [_vm._v("4º Trim. 2018")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-left" }, [
-      _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("453.07")]),
-      _vm._v(" "),
-      _c("strong", [_vm._v(" MDP")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Ene 2020")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" }, [_vm._v("-24.57%")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "extrabold" }, [_vm._v("600.62")]),
-          _vm._v(" MDP")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right" }, [_vm._v("Ene 2019")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-left" }, [
-      _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("3.55%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Feb 2020")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" }, [_vm._v("20/46")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "extrabold" }, [_vm._v("3.70%")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right" }, [_vm._v("Feb 2020")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-left" }, [
-      _c("span", { staticClass: "s-card-contenido-1" }, [_vm._v("3.55%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Feb 2020")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [_vm._v("Ranking Vs. Nacional")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right extrabold" }, [_vm._v("20/46")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-16" }, [
-      _c("div", { staticClass: "s-card-contenido-small" }, [
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "extrabold" }, [_vm._v("3.70%")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right" }, [_vm._v("Feb 2020")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "sm-12 title f32 text-center mb-60 mt-80" }, [
-          _c("h2", [_vm._v("Comparativo de indicadores")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12 mb-60" }, [
-            _c("div", {}, [
-              _c("div", { staticClass: "f-container" }, [
-                _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "s-constainer" }, [
-                    _c("label", { attrs: { for: "" } }, [_vm._v("Indicador")]),
-                    _vm._v(" "),
-                    _c("select", { attrs: { name: "", id: "" } }, [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("Selecciona")
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "s-constainer" }, [
-                    _c("label", { attrs: { for: "" } }, [_vm._v("Gráfica")]),
-                    _vm._v(" "),
-                    _c("select", { attrs: { name: "", id: "" } }, [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("Selecciona")
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "s-constainer" }, [
-                    _c("label", { attrs: { for: "" } }, [_vm._v("Grupo")]),
-                    _vm._v(" "),
-                    _c("select", { attrs: { name: "", id: "" } }, [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("Selecciona")
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "s-constainer" }, [
-                    _c("label", { attrs: { for: "" } }, [_vm._v("Lugar")]),
-                    _vm._v(" "),
-                    _c("select", { attrs: { name: "", id: "" } }, [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("Selecciona")
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "f-form-group" }, [
-                  _c("div", { staticClass: "btn-s-container" }, [
-                    _c("button", { staticClass: "btn btn-generar" }, [
-                      _vm._v("Generar comparativo")
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
+      _c("div", { attrs: { id: "myDiv" } })
     ])
   }
 ]
@@ -60385,6 +59531,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -60648,20 +59809,35 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "li",
-                    [
+                  _c("li", [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "nav-dropdown" }, [
                       _c(
-                        "router-link",
-                        {
-                          staticClass: "menu-nav",
-                          attrs: { to: { name: "comunicacion" } }
-                        },
-                        [_vm._v("Comunicación")]
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: { name: "noticias" } } },
+                            [_vm._v("Noticias")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: { name: "posicionamiento" } } },
+                            [_vm._v("Posicionamiento")]
+                          )
+                        ],
+                        1
                       )
-                    ],
-                    1
-                  ),
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("li", [
                     _c(
@@ -60679,7 +59855,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(2)
+                  _vm._m(3)
                 ])
               ])
             ]),
@@ -60687,14 +59863,14 @@ var render = function() {
             _c("div", { staticClass: "mobile-menu-area  visible-xs" }, [
               _c("label", { staticClass: "labelMenu" }, [_vm._v("Menú")]),
               _vm._v(" "),
-              _vm._m(3),
+              _vm._m(4),
               _vm._v(" "),
               _c("nav", { staticClass: "mainMenu" }, [
                 _c("ul", [
                   _c("li", [
                     _c("div", { staticClass: "search" }, [
                       _c("div", { attrs: { action: "", id: "search-form" } }, [
-                        _vm._m(4),
+                        _vm._m(5),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -60738,7 +59914,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("li", [
-                    _vm._m(5),
+                    _vm._m(6),
                     _vm._v(" "),
                     _c("ul", { staticClass: "nav-dropdown" }, [
                       _c(
@@ -60780,7 +59956,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("li", [
-                    _vm._m(6),
+                    _vm._m(7),
                     _vm._v(" "),
                     _c("ul", { staticClass: "nav-dropdown" }, [
                       _c(
@@ -60857,29 +60033,43 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "li",
-                    [
+                  _c("li", [
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "nav-dropdown" }, [
                       _c(
-                        "router-link",
-                        { attrs: { to: { name: "sinaloa" } } },
-                        [_vm._v("Sinaloa en Números")]
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: { name: "noticias" } } },
+                            [_vm._v("Noticias")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: { name: "posicionamiento" } } },
+                            [_vm._v("Posicionamiento")]
+                          )
+                        ],
+                        1
                       )
-                    ],
-                    1
-                  ),
+                    ])
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        { attrs: { to: { name: "comunicacion" } } },
-                        [_vm._v("Comunicación")]
-                      )
-                    ],
-                    1
-                  ),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: _vm.transparencia, target: "_blank" } },
+                      [_vm._v("COVID")]
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("li", [
                     _c(
@@ -61027,6 +60217,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "menu-nav menu-parent", attrs: { href: "#!" } },
+      [
+        _vm._v("Comunicación "),
+        _c("i", {
+          staticClass: "fa fa-caret-down",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("li", [
       _c("button", { staticClass: "search shadow-none" }, [
         _c("span", { staticClass: "fa fa-search", attrs: { id: "search" } })
@@ -61072,6 +60278,22 @@ var staticRenderFns = [
       { staticClass: "menu-nav menu-parent", attrs: { href: "#!" } },
       [
         _vm._v("Contenido "),
+        _c("i", {
+          staticClass: "fa fa-caret-down",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "menu-nav menu-parent", attrs: { href: "#!" } },
+      [
+        _vm._v("Comunicación "),
         _c("i", {
           staticClass: "fa fa-caret-down",
           attrs: { "aria-hidden": "true" }
@@ -65102,6 +64324,347 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-0cfaa58d", module.exports)
   }
 }
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(193)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(195)
+/* template */
+var __vue_template__ = __webpack_require__(196)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/biblioteca.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-01eb048e", Component.options)
+  } else {
+    hotAPI.reload("data-v-01eb048e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(194);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("5ba3f668", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-01eb048e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./biblioteca.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-01eb048e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./biblioteca.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.video-icon-c {\r\n    left: 50%;\r\n    position: absolute;\r\n    top: 0%;\r\n    transform: translate(-50%, -90%);\r\n    z-index: 1;\n}\n.cc-area .notice-video { height: 0; top: -80px;\n}\n.card-ci {\r\n        max-width: 1200px;\r\n        margin: 0 auto;\r\n        display: grid;\r\n        grid-gap: 1rem;\r\n        grid-template-columns: repeat(3, 1fr);\n}\n.cards-ci{ \r\n        background-color: #FFF;\r\n        color: #4A4A4A;\r\n        max-height: 100%;\r\n        max-width: 22.25rem;\n}\n.card-ci-img { height: 13.25rem; width: 100%; margin: 0;\n}\n.card-ci-constainer { max-height: 11.125rem; padding: 1.5rem 2rem 1.5rem 2rem; overflow: hidden;\n}\n.card-ci-constainer .contenedor-text { margin-top: 1rem; overflow: hidden;\n}\n@supports(object-fit: cover){\n.card-ci-img img{\r\n        height: 100%;\r\n        object-fit: cover;\r\n        object-position: center center;\n}\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 195 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            estrategias: [],
+            noticias: [],
+            BotonText: 'ver todos los videos',
+            show: false
+
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/comunicacion').then(function (res) {
+            console.log(res);
+            _this.noticias = res.data.noticias;
+            _this.estrategias = res.data.contenidoInsteres;
+            $('#lock').addClass('hidden');
+        }).catch(function (err) {
+            console.log(err);
+        });
+    },
+
+    updated: function updated() {
+        this.$nextTick(function () {
+            $('.video-popup').magnificPopup({
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                zoom: {
+                    enabled: true
+                },
+                iframe: {
+                    patterns: {
+                        youtube_short: {
+                            index: 'https://youtu.be/',
+                            id: 'youtu.be/',
+                            src: '//www.youtube.com/embed/%id%?autoplay=1'
+                        },
+                        youtube: {
+                            index: 'youtube.com/',
+                            id: 'v=',
+                            src: '//www.youtube.com/embed/%id%?autoplay=1'
+                        }
+                    },
+                    srcAction: 'iframe_src'
+                }
+            });
+        });
+    }
+});
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "cc-area mt-24" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-24 ocultar" }, [
+            _c(
+              "div",
+              { staticClass: "card-ci" },
+              _vm._l(_vm.estrategias, function(estrategia, index) {
+                return _c("div", { key: index, staticClass: "cards-ci" }, [
+                  _c("div", { staticClass: "card-ci-img" }, [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: { src: estrategia.urlimage, alt: "" }
+                    }),
+                    _vm._v(" "),
+                    estrategia.urlvideo
+                      ? _c("div", { staticClass: "notice-video" }, [
+                          _c(
+                            "div",
+                            { staticClass: "video-icon-c video-hover" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "video-popup",
+                                  attrs: { href: estrategia.urlvideo }
+                                },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/icons/Play.svg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-ci-constainer default-bg" }, [
+                    _c("div", { staticClass: "title f16 text-left" }, [
+                      _c("div", {
+                        domProps: { textContent: _vm._s(estrategia.title) }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "contenedor-text t14 text-left" },
+                      [
+                        _c("div", {
+                          domProps: { textContent: _vm._s(estrategia.excerpt) }
+                        })
+                      ]
+                    )
+                  ])
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]),
+      _vm._v(" "),
+      _c("noticias-area", { attrs: { noticias: _vm.noticias } })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title f32 text-center" }, [
+      _c("div", [_vm._v("Contenido de interés")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "vertodos col-xs-12" }, [
+        _c("div", { staticClass: "i", attrs: { id: "masTexto" } }, [
+          _vm._v("Ver más")
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-01eb048e", module.exports)
+  }
+}
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/multimedia.vue"
+
+module.exports = Component.exports
+
 
 /***/ })
 /******/ ]);

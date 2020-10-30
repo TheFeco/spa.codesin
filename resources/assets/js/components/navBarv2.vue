@@ -41,8 +41,17 @@
                                             <li><router-link :to="{name: 'multimedia'}" >Multimedia</router-link></li>
                                         </ul>
                                     </li>
-                                    <!-- <li><router-link :to="{name: 'que-hacemos'}" class="menu-nav" >Contenido</router-link></li> -->
-                                    <li><router-link :to="{name: 'comunicacion'}" class="menu-nav" >Comunicación</router-link></li>
+                                    <li>
+                                        <a href="#!" class="menu-nav menu-parent">Comunicación <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <ul class="nav-dropdown">
+                                            <li>
+                                                <router-link :to="{name: 'noticias'}" >Noticias</router-link>
+                                            </li>
+                                            <li>
+                                                <router-link :to="{name: 'posicionamiento'}">Posicionamiento</router-link>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li><a :href="transparencia" target="_blank">COVID</a></li>
                                     <li><a :href="transparencia" target="_blank">Transparencia</a></li>
                                     <li><button class="search shadow-none"><span class="fa fa-search" id="search"></span></button>
@@ -97,11 +106,17 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <router-link :to="{name: 'sinaloa'}">Sinaloa en Números</router-link>
+                                        <a href="#!" class="menu-nav menu-parent">Comunicación <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <ul class="nav-dropdown">
+                                            <li>
+                                                <router-link :to="{name: 'noticias'}" >Noticias</router-link>
+                                            </li>
+                                            <li>
+                                                <router-link :to="{name: 'posicionamiento'}">Posicionamiento</router-link>
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li>
-                                        <router-link :to="{name: 'comunicacion'}">Comunicación</router-link>
-                                    </li>
+                                    <li><a :href="transparencia" target="_blank">COVID</a></li>
                                     <li>
                                         <a :href="transparencia" target="_blank">Transparencia</a>
                                     </li>
