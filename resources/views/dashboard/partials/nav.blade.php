@@ -46,6 +46,18 @@
             <li class="nav-item">
                 <a href="{{route('admin.paginas.edit', 'que-hacemos')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">¿Qué hacemos?</span></a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.historia.edit', 'historia')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Historia</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.codetalks.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">CodeTalks</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.codesinHechos.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Codesin con hechos</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.sinaloaNumeros.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Sinaloa en números</span></a>
+            </li>
         </li>
         </ul>
         <ul class="childNav" data-parent="noticias">
@@ -57,6 +69,7 @@
                 <a href="#" data-toggle="modal" data-target="#noticias"><i class="nav-icon i-Pen-4"></i><span class="item-name">Crear una noticia</span></a>
             @endif
             </li>
+            <li class="nav-item"><a href="{{route('admin.posicionamiento.index')}}"><i class="nav-icon i-ID-3"></i><span class="item-name">Posicionamiento</span></a></li>
         </ul>
         <ul class="childNav" data-parent="proyectos">
             @foreach ($tags as $tag)
@@ -73,10 +86,12 @@
             <li class="nav-item"><a href="{{route('admin.testimonios.create')}}"><i class="nav-icon i-Add-User"></i><span class="item-name">Crear testimonio</span></a></li>
         </ul>
         <ul class="childNav" data-parent="contenidos">
-            <li class="nav-item"><a href="{{route('admin.contenidos.index')}}"><i class="nav-icon i-Video"></i><span class="item-name">ver contenidos</span></a></li>
-            <li class="nav-item"><a href="{{route('admin.contenidos.create')}}"><i class="nav-icon i-File-Video"></i><span class="item-name">Crear contenido</span></a></li>
-            <li class="nav-item"><a href="{{route('admin.estrategias.index')}}"><i class="nav-icon i-Gears"></i><span class="item-name">ver estrategias</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.contenidos.index')}}"><i class="nav-icon i-Video"></i><span class="item-name">Multimedia</span></a></li>
+            <!-- <li class="nav-item"><a href="{{route('admin.contenidos.create')}}"><i class="nav-icon i-File-Video"></i><span class="item-name">Crear contenido</span></a></li> -->
+            <li class="nav-item"><a href="{{route('admin.estrategias.index')}}"><i class="nav-icon i-Gears"></i><span class="item-name">Estrategias</span></a></li>
             <li class="nav-item"><a href="{{route('admin.politicas.index')}}"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="item-name">ver Políticas publicas </span></a></li>
+            <li class="nav-item"><a href="{{route('admin.biblioteca.index')}}"><i class="nav-icon i-Video"></i><span class="item-name">Biblioteca</span></a></li>
+
 
         </ul>
         <ul class="childNav" data-parent="users">

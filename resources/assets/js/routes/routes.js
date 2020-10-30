@@ -8,7 +8,7 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: require('../views/Home')
+            component: require('../views/HomeV2')
         },
         {
             path: '/quienes-somos',
@@ -19,6 +19,11 @@ export default new Router({
             path: '/que-hacemos',
             name: 'que-hacemos',
             component: require('../views/Que_hacemos')
+        },
+        {
+            path: '/historia',
+            name: 'historia',
+            component: require('../views/historia')
         },
         {
             path: '/sinaloa-numeros',
@@ -55,9 +60,21 @@ export default new Router({
             props: true
         },
         {
+            path: '/posicionamiento',
+            name: 'posicionamiento',
+            component: require('../views/Noticias'),
+            props: true
+        },
+        {
             path: '/noticias',
             name: 'noticias',
             component: require('../views/Noticias'),
+            props: true
+        },
+        {
+            path: '/biblioteca',
+            name: 'biblioteca',
+            component: require('../views/biblioteca'),
             props: true
         },
         {
@@ -76,6 +93,30 @@ export default new Router({
             path: '/tags/:url',
             name: 'tags_posts',
             component: require('../views/tags_posts'),
+            props: true
+        },
+        {
+            path: '/codetalks/:url',
+            name: 'codetalks_show',
+            component: require('../views/codetalks_show'),
+            props: true
+        },
+        {
+            path: '/sinaloaNumeros',
+            name: 'sinaloaNumeros',
+            component: require('../views/sinaloaNumeros'),
+            props: true
+        },
+        {
+            path: '/codetalks',
+            name: 'codetalks',
+            component: require('../views/codetalks'),
+            props: true
+        },
+        {
+            path: '/codesinHechos',
+            name: 'codesinHechos',
+            component: require('../views/codesinHechos'),
             props: true
         },
         {

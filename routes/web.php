@@ -22,6 +22,13 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::get('paginas/{post}/edit', 'PagesController@edit', ['as' => 'admin' ])->name('admin.paginas.edit');
     Route::put('paginas/{post}', 'PagesController@update', ['as' => 'admin' ])->name('admin.paginas.update');
 
+    Route::resource('historia', 'historiaController', ['as' => 'admin' ])->parameters(['historia' => 'post']);
+
+    Route::resource('codetalks', 'codetalksController', ['as' => 'admin' ])->parameters(['codetalks' => 'post']);
+    Route::resource('codesinHechos', 'codesinHechosController', ['as' => 'admin' ])->parameters(['codesinHechos' => 'post']);
+    Route::resource('sinaloaNumeros', 'sinaloaNumerosController', ['as' => 'admin' ])->parameters(['sinaloaNumeros' => 'post']);
+
+
     Route::post('post/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.update');
     Route::delete('photos/{photo}', 'PhotosController@destroy')->name('admin.photos.destroy');
     //subir imagenes 
@@ -31,6 +38,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::post('politicas/{post}/photos', 'PhotosController@store')->name('admin.politicas.photos.update');
     //carga de datos
     Route::resource('noticias', 'NoticiasController', ['except' => 'show','as' => 'admin'])->parameters(['noticias' => 'post']);
+    Route::resource('posicionamiento', 'PosicionamientoController', ['except' => 'show','as' => 'admin'])->parameters(['posicionamiento' => 'post']);
     Route::resource('proyectos', 'ProyectosController', ['except' => 'show','as' => 'admin'])->parameters(['proyectos' => 'post']);
     Route::resource('tags', 'TagsController', ['as' => 'admin']);
     Route::resource('departamentos', 'DepartamentosController', ['as' => 'admin']);
@@ -42,6 +50,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::resource('estrategias', 'EstrategiasController', ['as' => 'admin'])->parameters(['estrategias' => 'post']);
     Route::resource('estrategiasProyectos', 'ProjectsController', ['as' => 'admin']);
     Route::resource('politicas', 'PoliticasController', ['except' => 'show','as' => 'admin'])->parameters(['politicas' => 'post']);
+    Route::resource('biblioteca', 'BibliotecaController', ['except' => 'show','as' => 'admin']);
+
 
 
 

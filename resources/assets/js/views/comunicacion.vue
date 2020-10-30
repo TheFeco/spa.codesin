@@ -8,7 +8,7 @@
                 </div>
                 <div class="mt-24 ocultar">
                     <div class="card-ci" >
-                        <div class="cards-ci" v-for="(estrategia, index) in estrategias" :key="index">
+                        <div class="cards-ci" v-for="(estrategia, index) in estrategias" :key="index" v-if="index < limitationList">
                             <div class="card-ci-img">
                                 <img class="img-responsive" :src="estrategia.urlimage" alt="">
                                 <div class="notice-video" v-if="estrategia.urlvideo">
@@ -32,13 +32,14 @@
                 </div>
                 <div>
                     <div class="vertodos col-xs-12">
-                        <div class="i" id="masTexto">Ver más</div>
+                        <div class="i" id="masTexto" @click="updateLimitation(limitationList)">Ver {{limitationList == defaultList ? 'mas' : 'menos'}}</div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <!-- NOTICIAS -->
-		<noticias-area :noticias="noticias" />
+        
+		<boletin-container></boletin-container>
     </div>
 </template>
 <script>
@@ -48,15 +49,16 @@ export default {
             estrategias: [],
             noticias: [],
             BotonText: 'ver todos los videos',
-            show:false
+            show:false,
+            defaultList: 9,
+            limitationList: 9
             
         }
     },
     mounted() {
         axios.get('/api/comunicacion')
 			.then((res) => {
-                console.log(res);
-                this.noticias = res.data.noticias;
+                // this.noticias = res.data.noticias;
                 this.estrategias = res.data.contenidoInsteres;
                 $('#lock').addClass('hidden');
 			})
@@ -91,10 +93,20 @@ export default {
             }
             });
         })
+    },
+    methods:{
+        updateLimitation(limitationList){
+        if (this.limitationList == this.estrategias.length) {
+                this.limitationList = defaultList;
+            }else{
+                this.limitationList = this.estrategias.length;
+            }
+        },
     }
 }
 </script>
 <style>
+#masTexto { color: #007D80 }
 .video-icon-c {
     left: 50%;
     position: absolute;

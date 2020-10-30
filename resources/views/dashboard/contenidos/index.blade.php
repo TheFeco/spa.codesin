@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-4 col-sm-12 text-right">
                         <a href="{{route('admin.contenidos.create')}}">
-                            <button class="btn btn-primary ripple m-1" type="button">Crear testimonio</button>
+                            <button class="btn btn-primary ripple m-1" type="button">Crear</button>
                         </a>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
                                     <td class="align-middle">{{ $Post->excerpt }}</td>
                                     <td class="align-middle">
                                         <a class="text-success mr-2" href="{{ route('admin.contenidos.edit', $Post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" action="{{ route('admin.contenidos.destroy',$Post)}}" style="display: inline">
+                                        <form method="POST" id="cnDelete"  action="{{ route('admin.contenidos.destroy',$Post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
-                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold delete-confirm-contenido"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -80,6 +80,20 @@
         $('#post-table').DataTable({
         "order": [[3, "desc"]]
     }); // multi column ordering
+    $('.delete-confirm-contenido').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Estas seguro?',
+            text: 'Este registro y sus detalles se eliminarán de forma permanente!',
+            icon: 'warning',
+            buttons: ["Cancel", "Sí!"],
+        }).then(function(value) {
+            if (value) {
+                $('#cnDelete').submit();
+            }
+        });
+    });
     /*------------------------------------
         Video Player
     --------------------------------------*/

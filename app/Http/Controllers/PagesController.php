@@ -9,6 +9,7 @@ use App\Category;
 use App\Tag;
 use App\Models\Testimonio;
 use App\Models\Staff;
+use App\Models\PostExtras;
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -25,9 +26,48 @@ class PagesController extends Controller
         return [ 'pageinfo' => $pageinfo, 'noticias'=>$noticias ];
     }
 
+    public function homev2(){
+        $codetalk = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',7)->orderBy('published_at','DESC')->first();
+        $codesinHechos = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',8)->orderBy('published_at','DESC')->first();
+        $sinaloaNum = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',9)->orderBy('published_at','DESC')->first();
+        
+        if(is_null($codetalk)){
+            $codetalk = (object)[];
+            $codetalk->status = false;
+            $codetalk->published_at = Carbon::create(1899, 1, 1, 0, 0, 0, 'America/Toronto');;
+        }
+        if(is_null($codesinHechos)){
+            $codesinHechos = (object)[];
+            $codesinHechos->status = false;
+            $codesinHechos->published_at = Carbon::create(1899, 1, 1, 0, 0, 0, 'America/Toronto');
+        }
+        if(is_null($sinaloaNum)){
+            $sinaloaNum = (object)[];
+            $sinaloaNum->status = false;
+            $sinaloaNum->published_at = Carbon::create(1899, 1, 1, 0, 0, 0, 'America/Toronto');
+        }
+        
+        $a = array();
+        $a[71] = Array ('author' => $codetalk, 'date' => $codetalk->published_at );
+        $a[49] = Array ( 'author' => $codesinHechos, 'date' => $codesinHechos->published_at ) ;
+        $a[75] = Array ( 'author' => $sinaloaNum, 'date' => $sinaloaNum->published_at) ;
+        
+        $date = array();
+
+        foreach ($a as $key => $row) {
+            $date[$key]  = $row['date'];    
+        }
+        // array_multisort($date, SORT_ASC, $a);
+        array_multisort($date, SORT_DESC, $a);
+
+        $noticias = Post::published()->where('category_id',2)->take(3)->get();
+        return [ 'pagInfo' =>  $a, 'noticias'=>$noticias];
+    }
+
     public function quienesSomos(){
 
         $pageinfo = Post::findOrFail(2);
+        $sections = Post::with('sections')->findOrFail(1);
         $testimonios = Testimonio::orderBy('id')->get();
         $consejos = Staff::where('departamento_id',1)->get();
         $estatales = Staff::where('departamento_id',2)->get();
@@ -39,6 +79,7 @@ class PagesController extends Controller
         {
             return [ 
                     'pageinfo' => $pageinfo,
+                    'sections' => $sections,
                     'testimonios' => $testimonios,
                     'consejos' => $consejos,
                     'estatales' => $estatales,
@@ -83,7 +124,7 @@ class PagesController extends Controller
     public function comunicacion(){
 
         $estrategias = Post::where('category_id',4)->latest()->get();
-        $noticias = Post::published()->where('category_id',2)->take(3)->get();
+        // $noticias = Post::published()->where('category_id',2)->take(3)->get();
         foreach ($estrategias as $estrategia) {
             $text = $estrategia->excerpt;
             $maxPos = 153;
@@ -97,7 +138,7 @@ class PagesController extends Controller
         {
             return [
                 'contenidoInsteres' => $estrategias,
-                'noticias' => $noticias
+                // 'noticias' => $noticias
             ];
         }
     }
@@ -109,5 +150,25 @@ class PagesController extends Controller
         ->orderBy('id')
         ->get();
         return $posts;
+    }
+    public function sinaloaNumeros(){
+        $sinaloaNum = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',9)->orderBy('published_at','DESC')->get();
+
+        return [ 'sinaloaNum' =>  $sinaloaNum];
+    }
+    public function codetalks(){
+        $codetalks = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',7)->orderBy('published_at','DESC')->get();
+
+        return [ 'codetalks' =>  $codetalks];
+    }
+    public function codesinHechos(){
+        $codesinHechos = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',8)->orderBy('published_at','DESC')->get();
+
+        return [ 'codesinHechos' =>  $codesinHechos];
+    }
+    public function historia(){
+        $pageinfo = Post::findOrFail(4);
+
+        return [ 'pageinfo' =>  $pageinfo];
     }
 }

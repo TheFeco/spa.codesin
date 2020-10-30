@@ -12,8 +12,10 @@
         <link rel="stylesheet" href="{{asset('js/bootstrap/dist/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+        
         <link rel="stylesheet" href="{{asset('css/codesin.css')}}">
         <link rel="stylesheet" href="{{asset('css/responsiveCodesin.css')}}">
+        <link rel="stylesheet" href="{{asset('css/nicepage.css')}}">
         <link rel="stylesheet" href="{{asset('css/reset.css')}}">
         <!-- @stack('script') -->
         <style>
@@ -113,6 +115,11 @@
 <script src="{{asset('js/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+    <!-- <script src="{{asset('js/nicepage.js')}}"></script> -->
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
     <script src="{{mix('js/app.js')}}"></script>
+    
 </body>
 </html>
