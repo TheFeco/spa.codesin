@@ -36,6 +36,7 @@ Vue.component('right-container', require('./components/rightContainer'));
 Vue.component('business-container', require('./components/businessContainer'));
 Vue.component('boletin-container', require('./components/boletinContainer'));
 Vue.component('box-container', require('./components/boxContainer'));
+Vue.component('texbox-container', require('./components/texBoxContainer'));
 Vue.component('carousel',carousel);
 
 Vue.mixin({

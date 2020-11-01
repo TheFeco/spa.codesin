@@ -31,6 +31,11 @@
             <li class="nav-item nav-item {{ request()->is('admin/contenidos*') ? 'active' : ''}}" data-item="contenidos"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-photo-video"></i><span class="nav-text">Contenido interes</span></a>
                 <div class="triangle"></div>
             </li>
+            <li class="nav-item nav-item {{ request()->is('admin/biblioteca*') ? 'active' : ''}}" data-item="biblioteca"><a class="nav-item-hold" href="#"><i class="nav-icon fas fa-photo-video"></i><span class="nav-text">Biblioteca</span></a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item nav-item"><a class="nav-item-hold" href="{{route('admin.excel.export')}}"><i class="nav-icon fas fa-file-excel"></i><span class="nav-text">Descargar Emails</span></a>
+            </li>
         </ul>
     </div>
     <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
@@ -93,6 +98,12 @@
             <li class="nav-item"><a href="{{route('admin.biblioteca.index')}}"><i class="nav-icon i-Video"></i><span class="item-name">Biblioteca</span></a></li>
 
 
+        </ul>
+        <ul class="childNav" data-parent="biblioteca">
+            <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>1])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Artículos</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>2])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Reportes</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>3])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Planes</span></a></li>
+            <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>4])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Análisis</span></a></li>
         </ul>
         <ul class="childNav" data-parent="users">
             <li class="nav-item"><a href="{{route('admin.users.index')}}"><i class="nav-icon fas fa-user-circle"></i><span class="item-name">ver todos usuarios</span></a></li>

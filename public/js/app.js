@@ -4153,6 +4153,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('right-container', __webpa
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('business-container', __webpack_require__(182));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('boletin-container', __webpack_require__(187));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('box-container', __webpack_require__(192));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('texbox-container', __webpack_require__(197));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('carousel', __WEBPACK_IMPORTED_MODULE_1_vue_owl_carousel___default.a);
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.mixin({
@@ -58202,58 +58203,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            estrategias: [],
-            noticias: [],
-            BotonText: 'ver todos los videos',
-            show: false
+            biblioteca: [],
+            categoria1: [],
+            categoria2: [],
+            categoria3: [],
+            categoria4: [],
+            categorias: [],
+            limitationList: 12
 
         };
     },
     mounted: function mounted() {
         var _this = this;
 
-        axios.get('/api/comunicacion').then(function (res) {
+        axios.get('/api/biblioteca').then(function (res) {
             console.log(res);
-            _this.noticias = res.data.noticias;
-            _this.estrategias = res.data.contenidoInsteres;
+            _this.categorias = res.data.categorias;
+            _this.categoria1 = res.data.categoria1;
+            _this.categoria2 = res.data.categoria2;
+            _this.categoria3 = res.data.categoria3;
+            _this.categoria4 = res.data.categoria4;
             $('#lock').addClass('hidden');
         }).catch(function (err) {
             console.log(err);
         });
     },
 
-    updated: function updated() {
-        this.$nextTick(function () {
-            $('.video-popup').magnificPopup({
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-                zoom: {
-                    enabled: true
-                },
-                iframe: {
-                    patterns: {
-                        youtube_short: {
-                            index: 'https://youtu.be/',
-                            id: 'youtu.be/',
-                            src: '//www.youtube.com/embed/%id%?autoplay=1'
-                        },
-                        youtube: {
-                            index: 'youtube.com/',
-                            id: 'v=',
-                            src: '//www.youtube.com/embed/%id%?autoplay=1'
-                        }
-                    },
-                    srcAction: 'iframe_src'
-                }
-            });
-        });
-    }
+    methods: {
+        bibliotecaData: function bibliotecaData(category_id) {}
+    },
+    updated: function updated() {}
 });
 
 /***/ }),
@@ -58264,101 +58253,134 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { staticClass: "cc-area mt-24" }, [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "mt-24 ocultar" }, [
-            _c(
-              "div",
-              { staticClass: "card-ci" },
-              _vm._l(_vm.estrategias, function(estrategia, index) {
-                return _c("div", { key: index, staticClass: "cards-ci" }, [
-                  _c("div", { staticClass: "card-ci-img" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: estrategia.urlimage, alt: "" }
-                    }),
-                    _vm._v(" "),
-                    estrategia.urlvideo
-                      ? _c("div", { staticClass: "notice-video" }, [
-                          _c(
-                            "div",
-                            { staticClass: "video-icon-c video-hover" },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "video-popup",
-                                  attrs: { href: estrategia.urlvideo }
-                                },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/icons/Play.svg",
-                                      alt: ""
-                                    }
-                                  })
-                                ]
-                              )
-                            ]
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-ci-constainer default-bg" }, [
-                    _c("div", { staticClass: "title f16 text-left" }, [
-                      _c("div", {
-                        domProps: { textContent: _vm._s(estrategia.title) }
-                      })
-                    ]),
-                    _vm._v(" "),
+  return _c("div", [
+    _c("div", { staticClass: "about-area mt-80" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-body" }, [
+              _c("div", { staticClass: "tab-content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade in active",
+                    attrs: { id: "1" }
+                  },
+                  [
                     _c(
                       "div",
-                      { staticClass: "contenedor-text t14 text-left" },
+                      { staticClass: "row" },
                       [
-                        _c("div", {
-                          domProps: { textContent: _vm._s(estrategia.excerpt) }
+                        _c("texbox-container", {
+                          attrs: { data: _vm.categoria1 }
                         })
-                      ]
+                      ],
+                      1
                     )
-                  ])
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "tab-pane fade", attrs: { id: "2" } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "row" },
+                      [
+                        _c("texbox-container", {
+                          attrs: { data: _vm.categoria2 }
+                        })
+                      ],
+                      1
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "tab-pane fade", attrs: { id: "3" } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "row" },
+                      [
+                        _c("texbox-container", {
+                          attrs: { data: _vm.categoria3 }
+                        })
+                      ],
+                      1
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "tab-pane fade", attrs: { id: "4" } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "row" },
+                      [
+                        _c("texbox-container", {
+                          attrs: { data: _vm.categoria4 }
+                        })
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("noticias-area", { attrs: { noticias: _vm.noticias } })
-    ],
-    1
-  )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title f32 text-center" }, [
-      _c("div", [_vm._v("Contenido de interés")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "titulo text-center mtb-80" }, [
+        _c("h2", { staticClass: "title f32" }, [_vm._v("Biblioteca")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "vertodos col-xs-12" }, [
-        _c("div", { staticClass: "i", attrs: { id: "masTexto" } }, [
-          _vm._v("Ver más")
+    return _c("div", { staticClass: "about-pills" }, [
+      _c("ul", { staticClass: "nav nav-tabs" }, [
+        _c("li", { staticClass: "active" }, [
+          _c("a", { attrs: { href: "#1", "data-toggle": "tab" } }, [
+            _vm._v("Artículos")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#2", "data-toggle": "tab" } }, [
+            _vm._v("Reportes")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#3", "data-toggle": "tab" } }, [
+            _vm._v("Planes")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#4", "data-toggle": "tab" } }, [
+            _vm._v("Análisis")
+          ])
         ])
       ])
     ])
@@ -64060,13 +64082,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     // props:['noticias', 'vermas']
     data: function data() {
-        return {};
+        return {
+            email: "",
+            resp: null
+        };
+    },
+
+    methods: {
+        sendEmail: function sendEmail() {
+            var _this = this;
+
+            axios.post('/api/email', { email: this.email }).then(function (res) {
+                _this.email = "";
+                $('.u-form-send-success').css("display", "block");
+                setTimeout(function () {
+                    $('.u-form-send-success').fadeOut('fast');
+                }, 4000);
+            }).catch(function (err) {
+                console.log(err);
+                $('#lock').addClass('hidden');
+            });
+        }
     }
 });
 
@@ -64078,7 +64118,166 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "section",
+    {
+      staticClass: "u-clearfix u-white u-section-6",
+      attrs: { id: "sec-b34c" }
+    },
+    [
+      _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1"
+          },
+          [
+            _c("div", { staticClass: "u-layout" }, [
+              _c("div", { staticClass: "u-layout-row" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "u-container-style u-layout-cell u-right-cell u-size-39 u-layout-cell-2"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "u-container-layout u-container-layout-2"
+                      },
+                      [
+                        _c(
+                          "h1",
+                          {
+                            staticClass:
+                              "u-custom-font u-text u-text-font u-title u-text-1"
+                          },
+                          [_vm._v("Recibe novedades en exclusiva")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "u-text u-text-2" }, [
+                          _vm._v(
+                            "Suscríbete a nuestro boletín y entérate del desarrollo económico de Sinaloa"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-form u-form-1" }, [
+                          _c(
+                            "form",
+                            {
+                              staticClass:
+                                "u-clearfix u-form-horizontal u-form-spacing-30 u-inner-form",
+                              staticStyle: { padding: "16px" },
+                              attrs: { source: "custom" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "u-form-email u-form-group u-form-group-1"
+                                },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass:
+                                        "u-form-control-hidden u-label",
+                                      attrs: { for: "email" }
+                                    },
+                                    [_vm._v("Nombre")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.email,
+                                        expression: "email"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle",
+                                    attrs: {
+                                      type: "email",
+                                      placeholder: "ejemplo@correo.com",
+                                      id: "email",
+                                      name: "email",
+                                      required: "required"
+                                    },
+                                    domProps: { value: _vm.email },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.email = $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "u-form-group u-form-submit u-form-group-2"
+                                },
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-radius-12 u-btn-1",
+                                      attrs: { type: "button" },
+                                      on: { click: _vm.sendEmail }
+                                    },
+                                    [_vm._v("Enviar")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "u-form-send-message u-form-send-success"
+                                },
+                                [_vm._v("Gracias! Tu mensaje ha sido enviado.")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "u-form-send-error u-form-send-message"
+                                },
+                                [
+                                  _vm._v(
+                                    "No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo."
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -64086,192 +64285,30 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "section",
+      "div",
       {
-        staticClass: "u-clearfix u-white u-section-6",
-        attrs: { id: "sec-b34c" }
+        staticClass:
+          "u-container-style u-layout-cell u-left-cell u-size-21 u-layout-cell-1"
       },
       [
-        _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1"
-            },
-            [
-              _c("div", { staticClass: "u-layout" }, [
-                _c("div", { staticClass: "u-layout-row" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "u-container-style u-layout-cell u-left-cell u-size-21 u-layout-cell-1"
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "u-container-layout u-valign-middle-md u-valign-top-sm u-valign-top-xs u-container-layout-1"
-                        },
-                        [
-                          _c("img", {
-                            staticClass: "u-image u-image-default u-image-1",
-                            attrs: {
-                              src: "/images/sending_emails.png",
-                              alt: "",
-                              "data-image-width": "270",
-                              "data-image-height": "213"
-                            }
-                          })
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "u-container-style u-layout-cell u-right-cell u-size-39 u-layout-cell-2"
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "u-container-layout u-container-layout-2"
-                        },
-                        [
-                          _c(
-                            "h1",
-                            {
-                              staticClass:
-                                "u-custom-font u-text u-text-font u-title u-text-1"
-                            },
-                            [_vm._v("Recibe novedades en exclusiva")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "u-text u-text-2" }, [
-                            _vm._v(
-                              "Suscríbete a nuestro boletín y entérate del desarrollo económico de Sinaloa"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "u-form u-form-1" }, [
-                            _c(
-                              "form",
-                              {
-                                staticClass:
-                                  "u-clearfix u-form-horizontal u-form-spacing-30 u-inner-form",
-                                staticStyle: { padding: "16px" },
-                                attrs: {
-                                  action: "#",
-                                  method: "POST",
-                                  source: "custom"
-                                }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "u-form-email u-form-group u-form-group-1"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass:
-                                          "u-form-control-hidden u-label",
-                                        attrs: { for: "email" }
-                                      },
-                                      [_vm._v("Nombre")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      staticClass:
-                                        "u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle",
-                                      attrs: {
-                                        type: "email",
-                                        placeholder: "ejemplo@correo.com",
-                                        id: "email",
-                                        name: "email",
-                                        required: "required"
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "u-form-group u-form-submit u-form-group-2"
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass:
-                                          "u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-radius-12 u-btn-1",
-                                        attrs: { href: "#" }
-                                      },
-                                      [_vm._v("Enviar")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      staticClass: "u-form-control-hidden",
-                                      attrs: { type: "submit", value: "submit" }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "u-form-send-message u-form-send-success"
-                                  },
-                                  [
-                                    _vm._v(
-                                      "Gracias! Tu mensaje ha sido enviado."
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "u-form-send-error u-form-send-message"
-                                  },
-                                  [
-                                    _vm._v(
-                                      "No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo."
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  attrs: {
-                                    type: "hidden",
-                                    value: "",
-                                    name: "recaptchaResponse"
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
-        ])
+        _c(
+          "div",
+          {
+            staticClass:
+              "u-container-layout u-valign-middle-md u-valign-top-sm u-valign-top-xs u-container-layout-1"
+          },
+          [
+            _c("img", {
+              staticClass: "u-image u-image-default u-image-1",
+              attrs: {
+                src: "/images/sending_emails.png",
+                alt: "",
+                "data-image-width": "270",
+                "data-image-height": "213"
+              }
+            })
+          ]
+        )
       ]
     )
   }
@@ -64660,6 +64697,260 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0cfaa58d", module.exports)
+  }
+}
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(198)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(200)
+/* template */
+var __vue_template__ = __webpack_require__(201)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/texBoxContainer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-aeee1d14", Component.options)
+  } else {
+    hotAPI.reload("data-v-aeee1d14", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(199);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0d3b10d1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aeee1d14\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./texBoxContainer.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aeee1d14\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./texBoxContainer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.u-sectionBox-2 .u-sheet-1 {min-height: 575px\n}\n.u-sectionBox-2 .u-list-1 {margin-top: 55px; margin-bottom: 0; min-height: 661px; grid-template-columns: calc(33.3333% - 29px) calc(33.3333% - 29px) calc(33.3333% - 29px); grid-template-rows: auto; grid-gap: 44px 44px; height: auto\n}\n.u-sectionBox-2 .u-list-item-1 {background-image: none; background:#FFF;\n}\n.u-sectionBox-2 .u-container-layout-1 {padding: 30px 0\n}\n.u-sectionBox-2 .u-image-1 {height: 319px; margin: -30px 0 0 -30px\n}\n.u-sectionBox-2 .u-text-1 {margin: 19px 30px 0; font-size: 1rem; line-height: 24px; color: #4A4A4A; font-weight: bold;\n}\n.u-sectionBox-2 .u-text-2 {margin: 30px 30px 0 30px; font-size: 1rem; line-height: 24px; color: #626262;\n}\n.u-sectionBox-2 .u-image-2 {width: 24px; height: 24px; margin: 20px auto 0 30px\n}\n.u-sectionBox-2 .u-text-3 {margin: -25px auto 0 69px; font-size: 1rem; line-height: 24px; color: #626262;\n}\n.u-sectionBox-2 .u-image-3 {width: 24px; height: 24px; margin: 20px auto 0 30px\n}\n.u-sectionBox-2 .u-text-4 {margin: -25px auto 0 69px; font-size: 1rem; line-height: 24px; color: #626262;\n}\n.u-sectionBox-2 .u-image-4 {width: 24px; height: 24px; margin: 20px auto 0 30px\n}\n.u-sectionBox-2 .u-text-5 {margin: -25px auto 0 69px\n}\n.u-sectionBox-2 .u-btn-1 {font-size: 1rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 30px auto 0 30px; padding: 0; color: #007D80 !important;\n}\n.u-sectionBox-2 .u-list-item-2 {background-image: none\n}\n.u-sectionBox-2 .u-container-layout-2 {padding: 30px 0\n}\n.u-sectionBox-2 .u-image-5 {height: 319px; margin: -30px 0 0 -30px\n}\n.u-sectionBox-2 .u-text-6 { margin: -25px auto 0 30px; font-size: 0.625rem; line-height: 16px; color: #626262;\n}\n.u-sectionBox-2 .u-btn-4 {border-style: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 30px auto 55px; padding: 0; color: #007D80 !important;\n}\n.u-sectionBox-2 .u-btn-4.u-btn-4:hober { color: #007D80 !important;\n}\n@media (max-width: 1199px){\n.u-sectionBox-2 .u-sheet-1 {min-height: 342px\n}\n.u-sectionBox-2 .u-list-1 {min-height: 545px; grid-template-columns: repeat(3, calc(33.333333333333336% - 29px))\n}\n.u-sectionBox-2 .u-image-1 {height: 213px; margin-right: initial; margin-left: initial\n}\n.u-sectionBox-2 .u-text-1 {margin-left: 0; margin-right: 0\n}\n.u-sectionBox-2 .u-text-2 {margin-left: 0\n}\n.u-sectionBox-2 .u-image-2 {margin-left: 0\n}\n.u-sectionBox-2 .u-text-3 {width: auto; margin-top: -24px; margin-left: 57px\n}\n.u-sectionBox-2 .u-image-3 {margin-top: 19px\n}\n.u-sectionBox-2 .u-text-4 {width: auto; margin-top: -24px; margin-left: 57px\n}\n.u-sectionBox-2 .u-image-4 {margin-top: 19px\n}\n.u-sectionBox-2 .u-text-5 {width: auto; margin-top: -24px; margin-left: 57px\n}\n.u-sectionBox-2 .u-btn-1 {width: 99px; height: 38px; margin-top: 73px; margin-left: 0\n}\n.u-sectionBox-2 .u-image-5 {height: 213px; margin-right: initial; margin-left: initial\n}\n}\n@media (max-width: 991px){\n.u-sectionBox-2 .u-sheet-1 {min-height: 744px\n}\n.u-sectionBox-2 .u-list-1 {min-height: 1252px; grid-template-columns: repeat(2, calc(((100% - 720px) / 2)  + 338px))\n}\n.u-sectionBox-2 .u-text-3 {margin-left: 44px\n}\n.u-sectionBox-2 .u-text-4 {margin-left: 44px\n}\n.u-sectionBox-2 .u-text-5 {margin-left: 44px\n}\n}\n@media (max-width: 767px){\n.u-sectionBox-2 .u-sheet-1 {min-height: 2587px\n}\n.u-sectionBox-2 .u-list-1 {grid-gap: 0 0; grid-template-columns: 100%\n}\n.u-sectionBox-2 .u-container-layout-1 {padding-top: 0\n}\n.u-sectionBox-2 .u-image-1 {height: 344px; margin-right: initial; margin-left: initial\n}\n.u-sectionBox-2 .u-text-1 {margin-right: auto\n}\n.u-sectionBox-2 .u-text-3 {margin-top: -25px; margin-left: 43px\n}\n.u-sectionBox-2 .u-image-3 {margin-top: 20px\n}\n.u-sectionBox-2 .u-text-4 {margin-left: 43px\n}\n.u-sectionBox-2 .u-text-5 {margin-top: -25px; margin-left: 43px\n}\n.u-sectionBox-2 .u-btn-1 {margin-top: 74px\n}\n.u-sectionBox-2 .u-container-layout-2 {padding-top: 0\n}\n.u-sectionBox-2 .u-image-5 {height: 344px; margin-right: initial; margin-left: initial\n}\n}\n@media (max-width: 575px){\n.u-sectionBox-2 .u-image-1 {height: 212px; margin-right: initial; margin-left: initial\n}\n.u-sectionBox-2 .u-text-3 {margin-top: -26px; margin-left: 42px\n}\n.u-sectionBox-2 .u-image-3 {margin-top: 21px\n}\n.u-sectionBox-2 .u-text-4 {margin-left: 42px\n}\n.u-sectionBox-2 .u-text-5 {margin-left: 42px\n}\n.u-sectionBox-2 .u-image-5 {height: 212px; margin-right: initial; margin-left: initial\n}\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 200 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _props$props$data$met;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = (_props$props$data$met = {
+    props: ['data']
+}, _defineProperty(_props$props$data$met, 'props', {
+    'data': {
+        type: Array,
+        required: true
+    },
+    'visible': {
+        type: Boolean,
+        required: false,
+        default: true
+    },
+    'url': {
+        type: String,
+        required: false,
+        default: 'home'
+    }
+}), _defineProperty(_props$props$data$met, 'data', function data() {
+    return {
+        limitationList: 12
+    };
+}), _defineProperty(_props$props$data$met, 'methods', {
+    updateLimitation: function updateLimitation(limitationList) {
+        if (this.limitationList == this.data.length) {
+            this.limitationList = 12;
+        } else {
+            this.limitationList = this.data.length;
+        }
+    },
+    img: function img(obj) {
+        return obj.urlbannerHomeMobile ? obj.urlbannerHomeMobile : '../images/3.svg';
+    },
+    indicador: function indicador(id) {
+        if (id == 1) {
+            return 'Min.';
+        }
+        if (id == 2) {
+            return 'Hrs.';
+        }
+    }
+}), _props$props$data$met);
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "u-clearfix u-sectionBox-2" }, [
+    _c("div", { staticClass: "u-clearfix u-sheet u-valign-middle u-sheet-1" }, [
+      _c(
+        "div",
+        { staticClass: "u-expanded-width u-list u-repeater u-list-1" },
+        _vm._l(_vm.data, function(item, index) {
+          return index < _vm.limitationList
+            ? _c(
+                "div",
+                {
+                  key: item.id,
+                  staticClass:
+                    "u-container-style u-custom-background u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "u-container-layout u-similar-container u-container-layout-1"
+                    },
+                    [
+                      _c("p", {
+                        staticClass: "u-text u-text-default u-text-6",
+                        domProps: { textContent: _vm._s(item.published_at) }
+                      }),
+                      _vm._v(" "),
+                      _c("h3", {
+                        staticClass: "u-text u-text-1",
+                        domProps: { textContent: _vm._s(item.titulo) }
+                      }),
+                      _vm._v(" "),
+                      _c("p", {
+                        staticClass: "u-text u-text-default u-text-2",
+                        domProps: { textContent: _vm._s(item.excerpt) }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "u-btn u-button-style u-none u-btn-1",
+                          attrs: {
+                            href: item.urlArchivo,
+                            arget: "_self",
+                            download: ""
+                          }
+                        },
+                        [_vm._v("Descargar")]
+                      )
+                    ]
+                  )
+                ]
+              )
+            : _vm._e()
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "u-btn u-button-style u-none u-btn-4",
+          attrs: { href: "#!" },
+          on: {
+            click: function($event) {
+              return _vm.updateLimitation(_vm.limitationList)
+            }
+          }
+        },
+        [_vm._v("Ver " + _vm._s(_vm.limitationList == 12 ? "mas" : "menos"))]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-aeee1d14", module.exports)
   }
 }
 

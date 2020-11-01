@@ -34,3 +34,5 @@ Route::get('estrategias/{post}','EstrategiasController@show');
 Route::get('noticias','NoticiasController@index');
 Route::get('noticia/{post}','NoticiasController@show');
 Route::get('indexsearch', 'PagesController@indexsearch');
+Route::get('biblioteca', 'PagesController@biblioteca');
+Route::post('email', 'PagesController@storeEmail');

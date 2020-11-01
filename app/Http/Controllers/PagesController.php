@@ -10,6 +10,10 @@ use App\Tag;
 use App\Models\Testimonio;
 use App\Models\Staff;
 use App\Models\PostExtras;
+use App\Models\biblioteca;
+use App\Models\BibliotecaCategories;
+use App\Models\Email;
+
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -170,5 +174,41 @@ class PagesController extends Controller
         $pageinfo = Post::findOrFail(4);
 
         return [ 'pageinfo' =>  $pageinfo];
+    }
+    public function biblioteca(){
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+        $categorias =  BibliotecaCategories::get();
+        $categoria1 = biblioteca::where('category_id',1)->orderBy('published_at', 'DESC')->get();
+        $categoria2 = biblioteca::where('category_id',2)->orderBy('published_at', 'DESC')->get();
+        $categoria3 = biblioteca::where('category_id',3)->orderBy('published_at', 'DESC')->get();
+        $categoria4 = biblioteca::where('category_id',4)->orderBy('published_at', 'DESC')->get();
+
+        $categoria1 = $this->formatDate($categoria1);
+        $categoria2 = $this->formatDate($categoria2);
+        $categoria3 = $this->formatDate($categoria3);
+        $categoria4 = $this->formatDate($categoria4);
+
+        return [ 
+            'categoria1' =>  $categoria1,
+            'categoria2' =>  $categoria2,
+            'categoria3' =>  $categoria3,
+            'categoria4' =>  $categoria4,
+            'categorias' => $categorias];
+    }
+    public function storeEmail(Request $request){
+
+        Email::create(['email' => $request->email]);
+
+        return 'llegue';
+    }
+    public function formatDate($obj){
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        foreach ($obj as $key => $value) {
+            $fecha = Carbon::parse($value->published_at);
+            $mes = $meses[($fecha->format('n')) - 1];
+            $value->published_at = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
+        }
+        return $obj;
     }
 }

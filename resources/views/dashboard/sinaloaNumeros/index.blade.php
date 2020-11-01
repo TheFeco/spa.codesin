@@ -41,7 +41,7 @@
                                     <td>{{ $post->published_at->format('d/m/Y') }}</td>
                                     <td>
                                         <a class="text-success mr-2" href="{{ route('admin.sinaloaNumeros.edit', $post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" id="snDelete" action="{{ route('admin.sinaloaNumeros.destroy',$post)}}" style="display: inline">
+                                        <form method="POST" id="snDelete{{$post->id}}" action="{{ route('admin.sinaloaNumeros.destroy',$post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
                                             <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold delete-confirm"></i></button>
                                         </form>
@@ -103,6 +103,7 @@
 
     $('.delete-confirm').on('click', function (event) {
         event.preventDefault();
+        const form = $(this).parents("form").attr("id");
         const url = $(this).attr('href');
         swal({
             title: 'Estas seguro?',
@@ -111,7 +112,7 @@
             buttons: ["Cancelar", "Sí!"],
         }).then(function(value) {
             if (value) {
-                $('#snDelete').submit();
+                $('#'+form).submit();
             }
         });
     });

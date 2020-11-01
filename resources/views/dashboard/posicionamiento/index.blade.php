@@ -39,7 +39,7 @@
                                     <td>{{ $post->published_at ? $post->published_at->format('d/m/Y') : '00/00/00' }}</td>
                                     <td>
                                         <a class="text-success mr-2" href="{{ route('admin.posicionamiento.edit', $post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" id="psDelete" action="{{ route('admin.posicionamiento.destroy',$post)}}" style="display: inline">
+                                        <form method="POST" id="psDelete{{$Post->id}}" action="{{ route('admin.posicionamiento.destroy',$post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
                                             <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold delete-confirm"></i></button>
                                         </form>
@@ -102,6 +102,7 @@
 
     $('.delete-confirm').on('click', function (event) {
         event.preventDefault();
+        const form = $(this).parents("form").attr("id");
         const url = $(this).attr('href');
         swal({
             title: 'Estas seguro?',
@@ -110,7 +111,7 @@
             buttons: ["Cancel", "Sí!"],
         }).then(function(value) {
             if (value) {
-                $('#psDelete').submit();
+                $('#'+form).submit();
             }
         });
     });

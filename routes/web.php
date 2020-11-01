@@ -43,14 +43,18 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::resource('tags', 'TagsController', ['as' => 'admin']);
     Route::resource('departamentos', 'DepartamentosController', ['as' => 'admin']);
     Route::resource('staff', 'PersonalController', ['except' => ['show ', 'create'],'as' => 'admin']);
-    Route::get('staff/create/{departamento}', 'PersonalController@create', ['except' => 'show','as' => 'admin'])->name('admin.staff.create');;
+    Route::get('staff/create/{departamento}', 'PersonalController@create', ['except' => 'show','as' => 'admin'])->name('admin.staff.create');
 
     Route::resource('testimonios', 'TestimoniosController', ['except' => 'show','as' => 'admin']);
     Route::resource('contenidos', 'ContenidoInteresController', ['except' => 'show','as' => 'admin'])->parameters(['contenidos' => 'post']);
     Route::resource('estrategias', 'EstrategiasController', ['as' => 'admin'])->parameters(['estrategias' => 'post']);
     Route::resource('estrategiasProyectos', 'ProjectsController', ['as' => 'admin']);
     Route::resource('politicas', 'PoliticasController', ['except' => 'show','as' => 'admin'])->parameters(['politicas' => 'post']);
-    Route::resource('biblioteca', 'BibliotecaController', ['except' => 'show','as' => 'admin']);
+    Route::resource('biblioteca', 'BibliotecaController', ['except' => 'create','as' => 'admin']);
+    Route::get('biblioteca/create/{id}', 'BibliotecaController@create', ['as' => 'admin'])->name('admin.biblioteca.create');
+    Route::get('excel/export', 'emailExport@export', ['as' => 'admin'])->name('admin.excel.export');
+
+
 
 
 

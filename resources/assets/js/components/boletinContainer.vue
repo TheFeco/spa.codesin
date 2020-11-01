@@ -14,18 +14,16 @@
                   <h1 class="u-custom-font u-text u-text-font u-title u-text-1">Recibe novedades en exclusiva</h1>
                   <p class="u-text u-text-2">Suscríbete a nuestro boletín y entérate del desarrollo económico de Sinaloa</p>
                   <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-horizontal u-form-spacing-30 u-inner-form" style="padding: 16px;" source="custom">
+                    <form class="u-clearfix u-form-horizontal u-form-spacing-30 u-inner-form" style="padding: 16px;" source="custom">
                       <div class="u-form-email u-form-group u-form-group-1">
                         <label for="email" class="u-form-control-hidden u-label">Nombre</label>
-                        <input type="email" placeholder="ejemplo@correo.com" id="email" name="email" class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="required">
+                        <input type="email" placeholder="ejemplo@correo.com" id="email" v-model="email" name="email" class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-form-group u-form-submit u-form-group-2">
-                        <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-radius-12 u-btn-1">Enviar</a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        <button type="button" @click="sendEmail" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-radius-12 u-btn-1">Enviar</button>
                       </div>
                       <div class="u-form-send-message u-form-send-success">Gracias! Tu mensaje ha sido enviado.</div>
                       <div class="u-form-send-error u-form-send-message">No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo.</div>
-                      <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                   </div>
                 </div>
@@ -41,7 +39,23 @@ export default {
     // props:['noticias', 'vermas']
     data(){
 			return{
-        
+        email: "",
+        resp:null
+      }
+    },
+    methods:{
+      sendEmail(){
+        axios.post('/api/email', {email:this.email})
+				.then((res) => {
+          this.email = "";
+          $('.u-form-send-success').css("display", "block");
+          setTimeout(function() { 
+              $('.u-form-send-success').fadeOut('fast'); 
+          }, 4000);
+				})
+				.catch((err) =>{
+					console.log(err);
+					$('#lock').addClass('hidden');});
       }
     }
 }

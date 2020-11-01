@@ -1,100 +1,92 @@
 <template>
     <div>
-        <!-- About Inicio -->
-        <div class="cc-area mt-24">
+        <div class="about-area mt-80">
             <div class="container">
-                <div class="title f32 text-center">
-                    <div>Contenido de interés</div>
+                <div class="row">
+                    <div class="titulo text-center mtb-80">
+                        <h2 class="title f32">Biblioteca</h2>
+                    </div>
                 </div>
-                <div class="mt-24 ocultar">
-                    <div class="card-ci" >
-                        <div class="cards-ci" v-for="(estrategia, index) in estrategias" :key="index">
-                            <div class="card-ci-img">
-                                <img class="img-responsive" :src="estrategia.urlimage" alt="">
-                                <div class="notice-video" v-if="estrategia.urlvideo">
-                                    <div class="video-icon-c video-hover">
-                                        <a class="video-popup" :href="estrategia.urlvideo">
-                                            <img src="img/icons/Play.svg" alt="">
-                                        </a>
+                <div class="row">
+                    <div class="container">
+                        <div class="about-pills">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#1" data-toggle="tab">Artículos</a></li>
+                                <li><a href="#2" data-toggle="tab">Reportes</a></li>
+                                <li><a href="#3" data-toggle="tab">Planes</a></li>
+                                <li><a href="#4" data-toggle="tab">Análisis</a></li>
+                            </ul>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="1">
+                                    <div class="row">
+                                        <texbox-container :data="categoria1"/>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-ci-constainer default-bg">
-                                <div class="title f16 text-left">
-                                    <div v-text="estrategia.title"></div>
+                                <div class="tab-pane fade" id="2">
+                                    <div class="row">
+                                        <texbox-container :data="categoria2"/>
+                                    </div>
                                 </div>
-                                <div class="contenedor-text t14 text-left">
-                                    <div v-text="estrategia.excerpt"></div>
+                                <div class="tab-pane fade" id="3">
+                                    <div class="row">
+                                        <texbox-container :data="categoria3"/>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="4">
+                                    <div class="row">
+                                        <texbox-container :data="categoria4"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="vertodos col-xs-12">
-                        <div class="i" id="masTexto">Ver más</div>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- NOTICIAS -->
-		<noticias-area :noticias="noticias" />
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            estrategias: [],
-            noticias: [],
-            BotonText: 'ver todos los videos',
-            show:false
+            biblioteca: [],
+            categoria1: [],
+            categoria2: [],
+            categoria3: [],
+            categoria4: [],
+            categorias: [],
+            limitationList: 12
             
         }
     },
     mounted() {
-        axios.get('/api/comunicacion')
+        axios.get('/api/biblioteca')
 			.then((res) => {
                 console.log(res);
-                this.noticias = res.data.noticias;
-                this.estrategias = res.data.contenidoInsteres;
+                this.categorias = res.data.categorias;
+                this.categoria1 = res.data.categoria1;
+                this.categoria2 = res.data.categoria2;
+                this.categoria3 = res.data.categoria3;
+                this.categoria4 = res.data.categoria4;
                 $('#lock').addClass('hidden');
 			})
 			.catch((err) =>{
 				console.log(err);
             });
     },
+    methods:{
+        bibliotecaData(category_id){
+
+        }
+    },
     updated: function () {
-    this.$nextTick(function () {
-         $('.video-popup').magnificPopup({
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-                zoom: {
-                    enabled: true,
-                },
-            iframe: {
-                patterns: {
-                        youtube_short: {
-                        index: 'https://youtu.be/',
-                        id: 'youtu.be/',
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
-                        },
-                        youtube: {
-                        index: 'youtube.com/',
-                        id: 'v=',
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
-                        }
-                },
-                srcAction: 'iframe_src',
-            }
-            });
-        })
     }
 }
 </script>
 <style>
+
 .video-icon-c {
     left: 50%;
     position: absolute;
