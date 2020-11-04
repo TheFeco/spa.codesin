@@ -99,6 +99,7 @@ class ProyectosController extends Controller
     public function update(Post $post, Request $request)
     {
         //
+        // dd($request->get('estrategias'));
         if ($request->files->has('banner') ) {
             $request->validate([
                 'banner' => 'image|max:2048' // jpeg, pnp, bmp, gif, svg
@@ -135,6 +136,20 @@ class ProyectosController extends Controller
             $post->update(['urlBannerMobile' => $urlBanner]);
         }
 
+        if ($request->files->has('thumbnail') ) {
+            $old_image = public_path().$post->urlimage;
+            if (file_exists($old_image)) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = 'proyecto' . $post->id .'_'. time() . '.' . $request->thumbnail->extension();
+            $urlcontenido = '/img/proyecto/'. $filename;
+            $request->thumbnail->move(public_path('img/proyecto'),$filename);
+            $post->update(['urlimage' => $urlcontenido]);
+        }
+
         $post->update([
             'title' => $request->get('title'),
             'body' => $request->get('body'),
@@ -145,8 +160,11 @@ class ProyectosController extends Controller
         ]);
           
         $post->syncTags($request->get('tags'));
-
-        $post->syncEstrategia($request->get('estrategias'));
+        
+        if (is_null($request->get('estrategias'))){
+            $post->syncEstrategia($request->get('estrategias'));
+        }
+        
         
        return redirect()->route('admin.proyectos.edit', $post)->with('flash','Tu publicación a sido guardada');
     }

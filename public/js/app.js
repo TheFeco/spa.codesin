@@ -62022,7 +62022,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
         if (this.proyectos.posts) {
             this.proyects = this.proyectos.data.post;
-            console - log('existe');
         } else {
             this.proyects = this.proyectos;
         }
@@ -62034,7 +62033,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } else {
             $('.ocultar').addClass('texto');
         }
+    },
+    methods: {
+        getThumbnail: function getThumbnail(image) {
+            return image ? image : '../images/3.svg';
+        }
     }
+
 });
 
 /***/ }),
@@ -62071,7 +62076,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "card-noticias-img-top",
-                    attrs: { src: item.urlBanner, alt: "" }
+                    attrs: { src: _vm.getThumbnail(item.urlimage), alt: "" }
                   }),
                   _vm._v(" "),
                   _c(

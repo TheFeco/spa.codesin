@@ -9,7 +9,7 @@
             </div>
             <div class="row  mt-24 ocultar">
                 <div class="col-md-4 col-sm-12 col-xs-12 " v-for="(item, index) in proyects" :key="index">
-                    <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="item.urlBanner" alt="">
+                    <div class="card-noticias mb-4 o-hidden default-bg"><img class="card-noticias-img-top" :src="getThumbnail(item.urlimage)" alt="">
                         <div class="card-noticias-body ">
                             <h5 class="card-noticias-title"><proyecto-link :proyecto="item" v-text="item.title"></proyecto-link></h5>
                             <p class="card-noticias-text text-gray hidden-sm hidden-xs" v-text="item.excerpt"></p>
@@ -44,7 +44,6 @@ export default {
         });
          if(this.proyectos.posts){
             this.proyects = this.proyectos.data.post;
-            console-log('existe');
         }else{
             this.proyects = this.proyectos;
         }
@@ -56,7 +55,13 @@ export default {
         }else{
             $('.ocultar').addClass('texto');
         }
+    },
+    methods:{
+        getThumbnail(image){
+            return image ? image : '../images/3.svg'
+        }
     }
+    
 }
 </script>
 <style>

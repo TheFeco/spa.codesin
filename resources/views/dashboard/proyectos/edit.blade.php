@@ -70,6 +70,11 @@
                         <div class="col-md-12 form-group mb-3">
                             <div class="dropzone"></div>
                         </div>
+                        <div class="col-md-12 form-group mb-3 {{ $errors->has('thumbnail') ? 'has-error' : ''}}">
+                            <label for="thumbnail">thumbnail </label>
+                            <input type="file" name="thumbnail" id="thumbnail" data-default-file="{{ old('thumbnail',$post->urlimage ? $post->urlimage : '' )}}" data-max-file-size-preview="2M" >
+                            {!! $errors->first('thumbnail', '<span class="help-block">:message</span>') !!}
+                        </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary ladda-button basic-ladda-buttonProyectos m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                         </div>
@@ -164,6 +169,18 @@
                 'replace': 'Arrastra y suelta o haz clic para reemplazar',
                 'remove':  'Remover',
                 'error':   'Ooops, sucedió algo malo.'
+            }
+        });
+        $('#thumbnail').dropify({
+            messages: {
+                'default': 'Arrastra y suelta un archivo aquí o haz clic',
+                'replace': 'Arrastra y suelta o haz clic para reemplazar',
+                'remove':  'Remover',
+                'error':   'Ooops, sucedió algo malo.'
+            },
+            error: {
+                'fileSize': 'El tamaño del archivo es demasiado grande. (2M max).',
+                'imageFormat': 'El formato de imagen no está permitido. (solo imagen).'
             }
         });
         $('.basic-ladda-buttonProyectos').on('click', function (e) {
