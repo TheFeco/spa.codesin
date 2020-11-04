@@ -63,6 +63,9 @@
             <li class="nav-item">
                 <a href="{{route('admin.sinaloaNumeros.index')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Sinaloa en números</span></a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.covid.edit', 'covid')}}"><i class="nav-icon i-Code-Window"></i><span class="item-name">Covid</span></a>
+            </li>
         </li>
         </ul>
         <ul class="childNav" data-parent="noticias">

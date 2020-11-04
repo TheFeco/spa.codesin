@@ -49849,6 +49849,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         name: 'historia',
         component: __webpack_require__(61)
     }, {
+        path: '/covid',
+        name: 'covid',
+        component: __webpack_require__(202)
+    }, {
         path: '/sinaloa-numeros',
         name: 'sinaloa',
         component: __webpack_require__(66)
@@ -60199,13 +60203,15 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("li", [
-                    _c(
-                      "a",
-                      { attrs: { href: _vm.transparencia, target: "_blank" } },
-                      [_vm._v("COVID")]
-                    )
-                  ]),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: { name: "covid" } } }, [
+                        _vm._v("COVID")
+                      ])
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c("li", [
                     _c(
@@ -60423,13 +60429,15 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("li", [
-                    _c(
-                      "a",
-                      { attrs: { href: _vm.transparencia, target: "_blank" } },
-                      [_vm._v("COVID")]
-                    )
-                  ]),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: { name: "covid" } } }, [
+                        _vm._v("COVID")
+                      ])
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c("li", [
                     _c(
@@ -64951,6 +64959,194 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-aeee1d14", module.exports)
+  }
+}
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(203)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(205)
+/* template */
+var __vue_template__ = __webpack_require__(206)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/covid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c3909ffc", Component.options)
+  } else {
+    hotAPI.reload("data-v-c3909ffc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(204);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("69d4fbbe", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c3909ffc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./covid.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c3909ffc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./covid.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nsection { font-family: 'Open Sans',sans-serif;\n}\n.u-section-Banner .u-sheet-1 {min-height: 451px\n}\n@media (max-width: 1199px){\n.u-section-1 .u-sheet-1 {min-height: 500px\n}\n}\n.u-section-2 .u-sheet-1 {min-height: 500px\n}\n.u-section-2 .u-text-1 {font-size: 2rem; font-weight: 700; margin: 110px auto 0; color: #4A4A4A;\n}\n.u-section-2 .u-text-2 {margin: 20px 200px 60px; font-size: 1rem; line-height: 26px; color: #626262;\n}\n@media (max-width: 1199px){\n.u-section-2 .u-text-2 {margin-left: 10px; margin-right: 10px\n}\n}\n@media (max-width: 991px){\n.u-section-2 .u-text-2 {margin-left: 0; margin-right: 0\n}\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            pageinfo: [],
+            img: ''
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/covid/').then(function (res) {
+            _this.pageinfo = res.data.pageinfo;
+            _this.img = _this.smallScreen(_this.pageinfo.urlBanner, _this.pageinfo.urlBannerMobile);
+            $('#lock').addClass('hidden');
+        }).catch(function (err) {
+            console.log(err.response.data);
+        });
+    }
+});
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "section",
+        {
+          staticClass: "u-align-left u-clearfix u-image u-section-Banner",
+          staticStyle: { position: "relative" },
+          style: {
+            backgroundImage: "url(" + _vm.img + ")",
+            backgroundPosition: "50% 50%"
+          }
+        },
+        [_c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" })]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "u-clearfix u-section-2" }, [
+        _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
+          _c("h1", {
+            staticClass:
+              "u-heading-font u-text u-text-default u-title u-text-1",
+            domProps: { textContent: _vm._s(_vm.pageinfo.title) }
+          }),
+          _vm._v(" "),
+          _c("p", {
+            staticClass:
+              "u-large-text u-text u-text-font u-text-variant u-text-2",
+            domProps: { innerHTML: _vm._s(_vm.pageinfo.body) }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("boletin-container")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c3909ffc", module.exports)
   }
 }
 

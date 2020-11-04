@@ -26,6 +26,11 @@ export default new Router({
             component: require('../views/historia')
         },
         {
+            path: '/covid',
+            name: 'covid',
+            component: require('../views/covid')
+        },
+        {
             path: '/sinaloa-numeros',
             name: 'sinaloa',
             component: require('../views/Sinaloa_numeros')

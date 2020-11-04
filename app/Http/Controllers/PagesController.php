@@ -175,6 +175,11 @@ class PagesController extends Controller
 
         return [ 'pageinfo' =>  $pageinfo];
     }
+    public function covid(){
+        $pageinfo = Post::findOrFail(5);
+
+        return [ 'pageinfo' =>  $pageinfo];
+    }
     public function biblioteca(){
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 

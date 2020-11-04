@@ -52,7 +52,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a :href="transparencia" target="_blank">COVID</a></li>
+                                    <li><router-link :to="{name: 'covid'}" >COVID</router-link></li>
                                     <li><a :href="transparencia" target="_blank">Transparencia</a></li>
                                     <li><button class="search shadow-none"><span class="fa fa-search" id="search"></span></button>
                                     </li>
@@ -116,7 +116,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a :href="transparencia" target="_blank">COVID</a></li>
+                                    <li><router-link :to="{name: 'covid'}" >COVID</router-link></li>
                                     <li>
                                         <a :href="transparencia" target="_blank">Transparencia</a>
                                     </li>

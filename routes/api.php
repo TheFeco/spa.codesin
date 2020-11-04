@@ -22,6 +22,7 @@ Route::get('homev2','PagesController@homev2');
 Route::get('quienes-somos','PagesController@quienesSomos');
 Route::get('que-hacemos', 'PagesController@queHacemos');
 Route::get('historia', 'PagesController@historia');
+Route::get('covid', 'PagesController@covid');
 Route::get('comunicacion','PagesController@comunicacion');
 Route::get('sinaloaNumeros','PagesController@sinaloaNumeros');
 Route::get('codetalks','PagesController@codetalks');
