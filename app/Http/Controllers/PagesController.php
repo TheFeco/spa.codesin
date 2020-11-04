@@ -7,6 +7,7 @@ use App\Post;
 use App\User;
 use App\Category;
 use App\Tag;
+use App\Section;
 use App\Models\Testimonio;
 use App\Models\Staff;
 use App\Models\PostExtras;
@@ -71,7 +72,7 @@ class PagesController extends Controller
     public function quienesSomos(){
 
         $pageinfo = Post::findOrFail(2);
-        $sections = Post::with('sections')->findOrFail(1);
+        $sections = Section::first();
         $testimonios = Testimonio::orderBy('id')->get();
         $consejos = Staff::where('departamento_id',1)->get();
         $estatales = Staff::where('departamento_id',2)->get();

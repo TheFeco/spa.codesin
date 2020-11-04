@@ -53666,7 +53666,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get('/api/quienes-somos').then(function (res) {
                 // console.log(res.data.sections.sections);
                 _this.pageInfo = res.data.pageinfo;
-                _this.sections = res.sections.sections;
+                _this.sections = res.data.sections;
                 _this.testimonios = res.data.testimonios;
                 _this.consejos = res.data.consejos;
                 _this.estatales = res.data.estatales;
@@ -53681,6 +53681,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 $('#lock').addClass('hidden');
             });
         }
+
     },
     mounted: function mounted() {
         $('body').popover({

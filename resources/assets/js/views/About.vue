@@ -401,7 +401,7 @@ export default {
 			.then((res) => {
                 // console.log(res.data.sections.sections);
                 this.pageInfo       = res.data.pageinfo;
-                this.sections       = res.sections.sections;
+                this.sections       = res.data.sections;
                 this.testimonios    = res.data.testimonios;
                 this.consejos       = res.data.consejos;
                 this.estatales      = res.data.estatales
@@ -416,7 +416,8 @@ export default {
 			.catch((err) =>{
                 console.log(err);
                 $('#lock').addClass('hidden');});
-        }
+		}
+		
     },
     mounted() {
         $('body').popover({
@@ -442,6 +443,6 @@ export default {
             $( ".owl-prev").html('<i class="fa fa-chevron-left"></i>');
             $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
         })
-    },
+	}
 }
 </script>
