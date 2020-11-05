@@ -27,7 +27,6 @@ export default {
         $('#lock').addClass('hidden');
             axios.get(`/api/zonas/${this.url}`)
             .then(res =>{
-                console.log(res);
                 this.proyect = res.data.post;
                 this.proyects = this.proyect.posts;
                 this.banners = this.proyect.banners ? this.proyect.banners : this.banners ;

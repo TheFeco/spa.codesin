@@ -22,7 +22,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::get('paginas/{post}/edit', 'PagesController@edit', ['as' => 'admin' ])->name('admin.paginas.edit');
     Route::put('paginas/{post}', 'PagesController@update', ['as' => 'admin' ])->name('admin.paginas.update');
 
-    Route::resource('historia', 'historiaController', ['as' => 'admin' ])->parameters(['historia' => 'post']);
+    Route::resource('historia', 'HistoriaController', ['as' => 'admin' ])->parameters(['historia' => 'post']);
     Route::resource('covid', 'CovidController', ['as' => 'admin' ])->parameters(['covid' => 'post']);
 
     Route::resource('codetalks', 'codetalksController', ['as' => 'admin' ])->parameters(['codetalks' => 'post']);
