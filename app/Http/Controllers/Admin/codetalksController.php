@@ -150,10 +150,12 @@ class codetalksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
         //
-        dd('hola');
+        $post->delete();
+        return redirect()->route('admin.codetalks.index')->with('flash','Tu publicación a sido Eliminada');
+
     }
     public function extraUpdate ($id, $data){
         $postExtra = PostExtras::where('post_id',$id)->first();

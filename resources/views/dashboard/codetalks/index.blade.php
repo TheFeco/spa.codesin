@@ -74,9 +74,9 @@
                                     <td>{{ $post->published_at }}</td>
                                     <td>
                                         <a class="text-success mr-2" href="{{ route('admin.codetalks.edit', $post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" action="{{ route('admin.codetalks.destroy',$post)}}" style="display: inline">
+                                        <form method="POST" id="ctDelete{{$post->id}}" action="{{ route('admin.codetalks.destroy',$post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
-                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                            <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold delete-confirm"></i></button>
                                         </form>
                                         
                                     </td>
@@ -136,6 +136,21 @@
         $('#post-table').DataTable({
         "order": [[3, "desc"]]
     }); // multi column ordering
+    $('.delete-confirm').on('click', function (event) {
+        event.preventDefault();
+        const form = $(this).parents("form").attr("id");
+        const url = $(this).attr('href');
+        swal({
+            title: 'Estas seguro?',
+            text: 'Este registro y sus detalles se eliminarán de forma permanente!',
+            icon: 'warning',
+            buttons: ["Cancel", "Sí!"],
+        }).then(function(value) {
+            if (value) {
+                $('#'+form).submit();
+            }
+        });
+    });
     if(window.location.hash == '#create-codetalks')
         {
             $('#codetalks').modal('show');

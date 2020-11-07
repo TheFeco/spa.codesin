@@ -90,7 +90,6 @@ class BibliotecaController extends Controller
     public function edit(Biblioteca $biblioteca)
     {
         //
-        // dd($biblioteca);
         return view('dashboard.biblioteca.edit', compact('biblioteca'));
         
     }
