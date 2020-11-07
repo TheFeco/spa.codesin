@@ -62,6 +62,7 @@ export default {
         }
     },
     mounted() {
+        $('#lock').removeClass('hidden');
         axios.get('/api/biblioteca')
 			.then((res) => {
                 console.log(res);

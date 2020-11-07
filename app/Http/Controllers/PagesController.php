@@ -11,7 +11,7 @@ use App\Section;
 use App\Models\Testimonio;
 use App\Models\Staff;
 use App\Models\PostExtras;
-use App\Models\biblioteca;
+use App\Models\Biblioteca;
 use App\Models\BibliotecaCategories;
 use App\Models\Email;
 use App\BannersPostIndex;
@@ -185,10 +185,10 @@ class PagesController extends Controller
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 
         $categorias =  BibliotecaCategories::get();
-        $categoria1 = biblioteca::where('category_id',1)->orderBy('published_at', 'DESC')->get();
-        $categoria2 = biblioteca::where('category_id',2)->orderBy('published_at', 'DESC')->get();
-        $categoria3 = biblioteca::where('category_id',3)->orderBy('published_at', 'DESC')->get();
-        $categoria4 = biblioteca::where('category_id',4)->orderBy('published_at', 'DESC')->get();
+        $categoria1 = Biblioteca::where('category_id',1)->orderBy('published_at', 'DESC')->get();
+        $categoria2 = Biblioteca::where('category_id',2)->orderBy('published_at', 'DESC')->get();
+        $categoria3 = Biblioteca::where('category_id',3)->orderBy('published_at', 'DESC')->get();
+        $categoria4 = Biblioteca::where('category_id',4)->orderBy('published_at', 'DESC')->get();
 
         $categoria1 = $this->formatDate($categoria1);
         $categoria2 = $this->formatDate($categoria2);

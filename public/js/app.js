@@ -58463,6 +58463,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
+        $('#lock').removeClass('hidden');
         axios.get('/api/biblioteca').then(function (res) {
             console.log(res);
             _this.categorias = res.data.categorias;
