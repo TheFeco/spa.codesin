@@ -37,3 +37,4 @@ Route::get('noticia/{post}','NoticiasController@show');
 Route::get('indexsearch', 'PagesController@indexsearch');
 Route::get('biblioteca', 'PagesController@biblioteca');
 Route::post('email', 'PagesController@storeEmail');
+Route::post('email2', 'MailchimpTest@subscribe');

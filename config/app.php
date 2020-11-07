@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Skovmand\Mailchimp\MailchimpServiceProvider::class,
         /*
          * Application Service Providers...
          */

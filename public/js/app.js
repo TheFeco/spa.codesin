@@ -64324,7 +64324,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             email: "",
-            resp: null
+            resp: null,
+            error: ''
         };
     },
 
@@ -64332,14 +64333,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sendEmail: function sendEmail() {
             var _this = this;
 
-            axios.post('/api/email', { email: this.email }).then(function (res) {
+            axios.post('/api/email2', { email: this.email }).then(function (res) {
+                console.log(res);
                 _this.email = "";
-                $('.u-form-send-success').css("display", "block");
-                setTimeout(function () {
-                    $('.u-form-send-success').fadeOut('fast');
-                }, 4000);
+                if (res.data.statu == 'success') {
+                    $('.u-form-send-success').css("display", "block");
+                    setTimeout(function () {
+                        $('.u-form-send-success').fadeOut('fast');
+                    }, 4000);
+                } else {
+                    _this.error = res.data.msg;
+                    $('.u-form-send-error').css("display", "block");
+                    setTimeout(function () {
+                        $('.u-form-send-error').fadeOut('fast');
+                    }, 4000);
+                }
             }).catch(function (err) {
                 console.log(err);
+                // this.error = err.data.msg;
+                $('.u-form-send-error').css("display", "block");
+                setTimeout(function () {
+                    $('.u-form-send-error').fadeOut('fast');
+                }, 4000);
                 $('#lock').addClass('hidden');
             });
         }
@@ -64488,18 +64503,11 @@ var render = function() {
                                 [_vm._v("Gracias! Tu mensaje ha sido enviado.")]
                               ),
                               _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "u-form-send-error u-form-send-message"
-                                },
-                                [
-                                  _vm._v(
-                                    "No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo."
-                                  )
-                                ]
-                              )
+                              _c("div", {
+                                staticClass:
+                                  "u-form-send-error u-form-send-message",
+                                domProps: { textContent: _vm._s(_vm.error) }
+                              })
                             ]
                           )
                         ])

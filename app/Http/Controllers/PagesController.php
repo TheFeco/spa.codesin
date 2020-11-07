@@ -15,6 +15,7 @@ use App\Models\Biblioteca;
 use App\Models\BibliotecaCategories;
 use App\Models\Email;
 use App\BannersPostIndex;
+
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -206,7 +207,7 @@ class PagesController extends Controller
 
         Email::create(['email' => $request->email]);
 
-        return 'llegue';
+        return 'guardado con exito';
     }
     public function formatDate($obj){
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");

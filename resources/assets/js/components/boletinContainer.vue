@@ -23,7 +23,7 @@
                         <button type="button" @click="sendEmail" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-radius-12 u-btn-1">Enviar</button>
                       </div>
                       <div class="u-form-send-message u-form-send-success">Gracias! Tu mensaje ha sido enviado.</div>
-                      <div class="u-form-send-error u-form-send-message">No se puede enviar su mensaje. Por favor, corrija los errores y vuelva a intentarlo.</div>
+                      <div class="u-form-send-error u-form-send-message" v-text="error"></div>
                     </form>
                   </div>
                 </div>
@@ -40,21 +40,37 @@ export default {
     data(){
 			return{
         email: "",
-        resp:null
+        resp:null,
+        error:''
       }
     },
     methods:{
       sendEmail(){
-        axios.post('/api/email', {email:this.email})
+        axios.post('/api/email2', {email:this.email})
 				.then((res) => {
+          console.log(res)
           this.email = "";
-          $('.u-form-send-success').css("display", "block");
-          setTimeout(function() { 
-              $('.u-form-send-success').fadeOut('fast'); 
-          }, 4000);
+          if(res.data.statu == 'success'){
+            $('.u-form-send-success').css("display", "block");
+            setTimeout(function() { 
+                $('.u-form-send-success').fadeOut('fast'); 
+            }, 4000);
+          }else{
+            this.error = res.data.msg;
+            $('.u-form-send-error').css("display", "block");
+            setTimeout(function() { 
+                $('.u-form-send-error').fadeOut('fast'); 
+            }, 4000);
+          }
+          
 				})
 				.catch((err) =>{
-					console.log(err);
+          console.log(err);
+					// this.error = err.data.msg;
+            $('.u-form-send-error').css("display", "block");
+            setTimeout(function() { 
+                $('.u-form-send-error').fadeOut('fast'); 
+            }, 4000);
 					$('#lock').addClass('hidden');});
       }
     }
