@@ -64,7 +64,7 @@ export default {
 </script>
 <style>
 .u-sectionBox-2 .u-sheet-1 {min-height: 575px}
-.u-sectionBox-2 .u-list-1 {margin-top: 55px; margin-bottom: 0; min-height: 661px; grid-template-columns: calc(33.3333% - 29px) calc(33.3333% - 29px) calc(33.3333% - 29px); grid-template-rows: auto; grid-gap: 44px 44px; height: auto}
+.u-sectionBox-2 .u-list-1 {margin-top: 55px; margin-bottom: 0; min-height: /*661px*/auto; grid-template-columns: calc(33.3333% - 29px) calc(33.3333% - 29px) calc(33.3333% - 29px); grid-template-rows: auto; grid-gap: 44px 44px; height: auto}
 .u-sectionBox-2 .u-list-item-1 {background-image: none; background:#FFF;}
 .u-sectionBox-2 .u-container-layout-1 {padding: 30px 0}
 .u-sectionBox-2 .u-image-1 {height: 319px; margin: -30px 0 0 -30px}
