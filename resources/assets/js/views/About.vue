@@ -32,7 +32,7 @@
             </div>
         </div>
         <!-- MODELO DE DESARROLLO - Inicio -->
-		<div class="contenedor default-bg mt-40 mb-4">
+		<div class="contenedor default-bg mt-80 mb-4">
 			<div class="row">
 				<div class="col-xs-12 mtb-80">
 					<h2 class="title f28 text-center" v-text="sections.title"></h2>

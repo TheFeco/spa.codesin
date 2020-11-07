@@ -53778,7 +53778,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "contenedor default-bg mt-40 mb-4" }, [
+      _c("div", { staticClass: "contenedor default-bg mt-80 mb-4" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-xs-12 mtb-80" }, [
             _c("h2", {
