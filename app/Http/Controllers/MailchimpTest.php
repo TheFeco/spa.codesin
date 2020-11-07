@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Email;
 use Auth;
 use Config;
 use Mailchimp;
@@ -14,7 +15,7 @@ class MailchimpTest extends Controller
     //
     public $mailchimp;
 
-    public $listId = '282be78176';
+    public $listId = 'e881f9c4fa';
 
     public function __construct(Mailchimp $mailchimp)
 
@@ -44,7 +45,7 @@ class MailchimpTest extends Controller
             );
 
 
-
+            Email::create(['email' => $request->email]);
             return ['statu' =>'success','msg' =>'Email Suscrito con éxito'];
 
 
