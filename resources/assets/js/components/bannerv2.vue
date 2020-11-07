@@ -1,5 +1,5 @@
 <template>
-    <section class="u-clearfix u-image u-banner-1" v-bind:style="{ backgroundImage: 'url(' + image + ')', backgroundPosition:'50% 50%' }" style="position: relative;" data-image-width="1280" data-image-height="853">
+    <section class="u-clearfix u-image u-banner-1" v-bind:style="{ backgroundImage: 'url(' + getBanner(banner) + ')', backgroundPosition:'50% 50%' }" style="position: relative;" data-image-width="1280" data-image-height="853">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-left u-container-style u-custom-color-3 u-group u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
@@ -11,13 +11,18 @@
 </template>
 <script>
 export default {
-    props:['page', 'img', 'logo', 'clase'],
+    props:['page', 'banner', 'logo', 'clase'],
     data() {
         return {
             image: 'images/53e6d1454350aa14f6da8c7dda793678153bdee757596c48732f78d29f4cc55cb1_1280.jpg',
         }
     },
     mounted() {
+    },
+    methods:{
+      getBanner (obj){
+        return this.smallScreen(obj.urlBanner, obj.urlBannerMobile)
+      }
     }
 }
 </script>

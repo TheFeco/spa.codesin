@@ -21,7 +21,7 @@ class ProyectosController extends Controller
     public function index(Post $post)
     {
         //
-        $posts = Post::allowed()->where('category_id',3)->get();
+        $posts = Post::where('category_id',3)->get();
         return view('dashboard.proyectos.index', compact('posts'));
     }
 

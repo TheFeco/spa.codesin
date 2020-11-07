@@ -159,7 +159,7 @@ class PagesController extends Controller
     public function sinaloaNumeros(){
         $sinaloaNum = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',9)->orderBy('published_at','DESC')->get();
         $banners = BannersPostIndex::where('category_id',9)->first();
-        return [ 'sinaloaNum' =>  $sinaloaNum];
+        return [ 'sinaloaNum' =>  $sinaloaNum, 'banners' => $banners];
     }
     public function codetalks(){
         $codetalks = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',7)->orderBy('published_at','DESC')->get();
@@ -169,7 +169,7 @@ class PagesController extends Controller
     public function codesinHechos(){
         $codesinHechos = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',8)->orderBy('published_at','DESC')->get();
         $banners = BannersPostIndex::where('category_id',8)->first();
-        return [ 'codesinHechos' =>  $codesinHechos];
+        return [ 'codesinHechos' =>  $codesinHechos, 'banners' => $banners];
     }
     public function historia(){
         $pageinfo = Post::findOrFail(4);

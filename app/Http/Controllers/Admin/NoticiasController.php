@@ -94,7 +94,6 @@ class NoticiasController extends Controller
             'published_at' => $request->get('published_at_submit'),
         ]);
           
-        $post->syncTags($request->get('tags'));
         
        return redirect()->route('admin.noticias.edit', $post)->with('flash','Tu publicación a sido guardada');
     }

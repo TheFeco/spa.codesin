@@ -1,6 +1,6 @@
 <template>
 <div>
-    <banner-area2 logo="images/Sinaloaennumeros1.png" clase='sinaloaNumeros'/>
+    <banner-area2 :banner="banners" logo="images/Sinaloaennumeros1.png" clase='sinaloaNumeros'/>
     <box-container :data="sinnumeros"/>
     <boletin-container></boletin-container>
 </div>
@@ -9,13 +9,16 @@
 export default {
     data() {
         return {
-            sinnumeros: []
+            sinnumeros: [],
+            banners:[]
         }
     },
     mounted() {
             axios.get('/api/sinaloaNumeros/')
             .then(res =>{
+                console.log(res);
                 this.sinnumeros = res.data.sinaloaNum;
+                this.banners = res.data.banners;
                 $('#lock').addClass('hidden');
             })
             .catch(err =>{

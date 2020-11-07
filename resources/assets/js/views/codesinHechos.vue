@@ -1,6 +1,6 @@
 <template>
 <div>
-    <banner-area2 logo="images/Codesinhechos.png" clase="codesinHechos"/>
+    <banner-area2 :banner="banners" logo="images/codesinhechos.png" clase="codesinHechos"/>
     <box-container :data="codesinHechos" :visible="false"/>
     <boletin-container></boletin-container>
 </div>
@@ -9,13 +9,15 @@
 export default {
     data() {
         return {
-            codesinHechos: []
+            codesinHechos: [],
+            banners: []
         }
     },
     mounted() {
             axios.get('/api/codesinHechos/')
             .then(res =>{
                 this.codesinHechos = res.data.codesinHechos;
+                this.banners = res.data.banners;
                 $('#lock').addClass('hidden');
             })
             .catch(err =>{

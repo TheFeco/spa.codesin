@@ -59549,14 +59549,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            sinnumeros: []
+            sinnumeros: [],
+            banners: []
         };
     },
     mounted: function mounted() {
         var _this = this;
 
         axios.get('/api/sinaloaNumeros/').then(function (res) {
+            console.log(res);
             _this.sinnumeros = res.data.sinaloaNum;
+            _this.banners = res.data.banners;
             $('#lock').addClass('hidden');
         }).catch(function (err) {
             console.log(err.response.data);
@@ -59576,7 +59579,11 @@ var render = function() {
     "div",
     [
       _c("banner-area2", {
-        attrs: { logo: "images/Sinaloaennumeros1.png", clase: "sinaloaNumeros" }
+        attrs: {
+          banner: _vm.banners,
+          logo: "images/Sinaloaennumeros1.png",
+          clase: "sinaloaNumeros"
+        }
       }),
       _vm._v(" "),
       _c("box-container", { attrs: { data: _vm.sinnumeros } }),
@@ -59660,15 +59667,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            codetalks: []
+            codetalks: [],
+            banners: []
         };
     },
     mounted: function mounted() {
         var _this = this;
 
         axios.get('/api/codetalks/').then(function (res) {
-            console.log(res);
             _this.codetalks = res.data.codetalks;
+            _this.banners = res.data.banners;
             $('#lock').addClass('hidden');
         }).catch(function (err) {
             console.log(err.response.data);
@@ -59688,7 +59696,11 @@ var render = function() {
     "div",
     [
       _c("banner-area2", {
-        attrs: { logo: "images/Code talks.png", clase: "codetalks" }
+        attrs: {
+          banner: _vm.banners,
+          logo: "images/Code talks.png",
+          clase: "codetalks"
+        }
       }),
       _vm._v(" "),
       _c("box-container", { attrs: { data: _vm.codetalks } }),
@@ -59772,7 +59784,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            codesinHechos: []
+            codesinHechos: [],
+            banners: []
         };
     },
     mounted: function mounted() {
@@ -59780,6 +59793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         axios.get('/api/codesinHechos/').then(function (res) {
             _this.codesinHechos = res.data.codesinHechos;
+            _this.banners = res.data.banners;
             $('#lock').addClass('hidden');
         }).catch(function (err) {
             console.log(err.response.data);
@@ -59799,7 +59813,11 @@ var render = function() {
     "div",
     [
       _c("banner-area2", {
-        attrs: { logo: "images/Codesinhechos.png", clase: "codesinHechos" }
+        attrs: {
+          banner: _vm.banners,
+          logo: "images/codesinhechos.png",
+          clase: "codesinHechos"
+        }
       }),
       _vm._v(" "),
       _c("box-container", {
@@ -62042,13 +62060,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['page', 'img', 'logo', 'clase'],
+    props: ['page', 'banner', 'logo', 'clase'],
     data: function data() {
         return {
             image: 'images/53e6d1454350aa14f6da8c7dda793678153bdee757596c48732f78d29f4cc55cb1_1280.jpg'
         };
     },
-    mounted: function mounted() {}
+    mounted: function mounted() {},
+
+    methods: {
+        getBanner: function getBanner(obj) {
+            return this.smallScreen(obj.urlBanner, obj.urlBannerMobile);
+        }
+    }
 });
 
 /***/ }),
@@ -62065,7 +62089,7 @@ var render = function() {
       staticClass: "u-clearfix u-image u-banner-1",
       staticStyle: { position: "relative" },
       style: {
-        backgroundImage: "url(" + _vm.image + ")",
+        backgroundImage: "url(" + _vm.getBanner(_vm.banner) + ")",
         backgroundPosition: "50% 50%"
       },
       attrs: { "data-image-width": "1280", "data-image-height": "853" }
