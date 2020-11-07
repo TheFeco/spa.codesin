@@ -150,6 +150,6 @@ class PosicionamientoController extends Controller
     {
         //
         $post->delete();
-        return redirect()->route('admin.posicionameinto.index')->with('flash','Tu publicación a sido Eliminada');
+        return redirect()->route('admin.posicionamiento.index')->with('flash','Tu publicación a sido Eliminada');
     }
 }
