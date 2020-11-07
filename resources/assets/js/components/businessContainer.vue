@@ -33,7 +33,7 @@ export default {
     props:['tipo'],
     data(){
 			return{
-                image: '../images/business.jpg'
+                image: '../images/business.jpeg'
 			}
 		},
 }

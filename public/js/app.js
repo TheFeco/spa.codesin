@@ -63932,7 +63932,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
              props: ['tipo'],
              data: function data() {
                           return {
-                                       image: '../images/business.jpg'
+                                       image: '../images/business.jpeg'
                           };
              }
 });
