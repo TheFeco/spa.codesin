@@ -53778,7 +53778,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "contenedor default-bg mb-4" }, [
+      _c("div", { staticClass: "contenedor default-bg mt-40 mb-4" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-xs-12 mtb-80" }, [
             _c("h2", {
@@ -54503,7 +54503,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "about-area mt-80 mb-40" }, [
+      _c("div", { staticClass: "about-area mt-80" }, [
         _c("div", { staticClass: "container default-bg" }, [
           _vm._m(1),
           _vm._v(" "),
