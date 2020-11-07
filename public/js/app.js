@@ -62819,10 +62819,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     flogo: function flogo(id) {
       if (id == 7) {
-        return 'images/Code_talks.svg';
+        return 'images/Code_talks.png';
       }
       if (id == 8) {
-        return 'images/Codesin_hechos.svg';
+        return 'images/codesinhechos.png';
       }
       if (id == 9) {
         return 'images/Sinaloaennumeros1.png';
