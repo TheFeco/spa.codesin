@@ -53,17 +53,17 @@
                         <div class="col-md-12">
                             <div class="card md-3">
                                 <div class="card-body"></div>
-                                <div class="card-title">Banner Area</div>
+                                <div class="card-title">Banner Area ( centrar el contenido importante )</div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6 form-group mb-4 {{ $errors->has('bannerHome') ? 'has-error' : ''}}">
-                                            <label for="">banner grande</label>
+                                            <label for="">banner grande( full page )</label>
                                             <input class="banner" type="file" name="bannerHome" id="bannerHome" data-default-file="{{ $extra->urlbannerHome ? $extra->urlbannerHome : '' }}" data-max-file-size="2M" >
                                             {!! $errors->first('bannerHome', '<span class="help-block">:message</span>') !!}
                                         </div>
                                         
                                         <div class="col-md-6 form-group mb-3{{ $errors->has('bannerHomeMobile') ? 'has-error' : ''}}">
-                                            <label for="bannerHomeMobile">banner pequeño</label>
+                                            <label for="bannerHomeMobile">banner cuadro pequeño 399x632</label>
                                             <input type="file" class="form-control banner" name="bannerHomeMobile" id="bannerHomeMobile" data-default-file="{{ $extra->urlbannerHomeMobile ? $extra->urlbannerHomeMobile : '' }}" data-max-file-size="2M">
                                             {!! $errors->first('bannerHomeMobile', '<span class="help-block">:message</span>') !!}
                                         </div>
