@@ -1,5 +1,5 @@
 <template>
-    <section class="u-clearfix u-image u-banner-1" v-bind:style="{ backgroundImage: 'url(' + getBanner(banner) + ')', backgroundPosition:'50% 50%' }" style="position: relative;" data-image-width="1280" data-image-height="853">
+    <!-- <section class="u-clearfix u-image u-banner-1" v-bind:style="{ backgroundImage: 'url(' + getBanner(banner) + ')', backgroundPosition:'50% 50%' }" style="position: relative;" data-image-width="1280" data-image-height="853">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-left u-container-style u-custom-color-3 u-group u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
@@ -7,7 +7,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+    <div class="banner-area-wrapper">
+            <div class="banner-area text-center" v-bind:style="{ backgroundImage: 'url(' + getBanner(banner) + ')' }">	
+            </div>
+        </div>
 </template>
 <script>
 export default {

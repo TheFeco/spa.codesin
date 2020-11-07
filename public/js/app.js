@@ -62058,6 +62058,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['page', 'banner', 'logo', 'clase'],
@@ -62083,49 +62087,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    {
-      staticClass: "u-clearfix u-image u-banner-1",
-      staticStyle: { position: "relative" },
-      style: {
-        backgroundImage: "url(" + _vm.getBanner(_vm.banner) + ")",
-        backgroundPosition: "50% 50%"
-      },
-      attrs: { "data-image-width": "1280", "data-image-height": "853" }
-    },
-    [
-      _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "u-align-left u-container-style u-custom-color-3 u-group u-group-1"
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "u-container-layout u-valign-middle u-container-layout-1"
-              },
-              [
-                _c("img", {
-                  class: "u-image u-image-default u-image-1 " + _vm.clase,
-                  attrs: {
-                    src: _vm.logo,
-                    alt: "",
-                    "data-image-width": "161",
-                    "data-image-height": "62"
-                  }
-                })
-              ]
-            )
-          ]
-        )
-      ])
-    ]
-  )
+  return _c("div", { staticClass: "banner-area-wrapper" }, [
+    _c("div", {
+      staticClass: "banner-area text-center",
+      style: { backgroundImage: "url(" + _vm.getBanner(_vm.banner) + ")" }
+    })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
