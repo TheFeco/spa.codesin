@@ -71,7 +71,7 @@
                                     @if ($post->category_id == 7)
                                     <div class="row">
                                         <div class="col-md-6 form-group mb-3{{ $errors->has('thumbnailspotify') ? 'has-error' : ''}}">
-                                            <label for="thumbnailspotify">thumbnail spotify</label>
+                                            <label for="thumbnailspotify">thumbnail spotify 294x294</label>
                                             <input type="file" class="form-control banner" name="thumbnailspotify" id="thumbnailspotify" data-default-file="{{ $extra->urlthumbnailspotify ? $extra->urlthumbnailspotify : '' }}" data-max-file-size="2M">
                                             {!! $errors->first('thumbnailspotify', '<span class="help-block">:message</span>') !!}
                                         </div>
