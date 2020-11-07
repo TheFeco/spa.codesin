@@ -54503,7 +54503,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "about-area mt-80" }, [
+      _c("div", { staticClass: "about-area mt-80 mb-40" }, [
         _c("div", { staticClass: "container default-bg" }, [
           _vm._m(1),
           _vm._v(" "),

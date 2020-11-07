@@ -286,7 +286,7 @@
 			</div>
 		</div>
         <!-- QUIENES SOMOS - Inicio -->
-        <div class="about-area mt-80">
+        <div class="about-area mt-80 mb-40">
             <div class="container default-bg">
                 <div class="row">
                     <div class="titulo text-center mtb-80">
