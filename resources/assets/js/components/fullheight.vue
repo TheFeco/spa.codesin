@@ -23,20 +23,18 @@ export default {
   methods:{
     flogo(id){
       if(id == 7){
-          // return 'images/Code_talks.svg';
-          return 'images/Sinaloa_numeros.svg';
+          return 'images/Code_talks.svg';
       }
       if(id == 8){
         return 'images/Codesin_hechos.svg';
       }
       if(id == 9){
-        return 'images/Sinaloa_numeros.svg';
+        return 'images/Sinaloaennumeros1.png';
       }
     },
     clss(id){
       if(id == 7){
-        // return 'u-image-codetalk';
-        return 'u-image-sinNumeros';
+        return 'u-image-codetalk';
       }
       if(id == 8){
         return 'u-image-codesinHechos';

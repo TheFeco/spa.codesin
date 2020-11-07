@@ -32,7 +32,7 @@
                         <tbody>
                             @foreach ($posts as $post)
                                 <tr>
-                                    <td>{{ $post->id }}</td>
+                                    <td>{{ $loop->index +1 }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->excerpt }}</td>
                                     <td>

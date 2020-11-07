@@ -14,7 +14,7 @@ use App\Models\PostExtras;
 use App\Models\biblioteca;
 use App\Models\BibliotecaCategories;
 use App\Models\Email;
-
+use App\BannersPostIndex;
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -158,17 +158,17 @@ class PagesController extends Controller
     }
     public function sinaloaNumeros(){
         $sinaloaNum = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',9)->orderBy('published_at','DESC')->get();
-
+        $banners = BannersPostIndex::where('category_id',9)->first();
         return [ 'sinaloaNum' =>  $sinaloaNum];
     }
     public function codetalks(){
         $codetalks = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',7)->orderBy('published_at','DESC')->get();
-
-        return [ 'codetalks' =>  $codetalks];
+        $banners = BannersPostIndex::where('category_id',7)->first();
+        return [ 'codetalks' =>  $codetalks, 'banners' => $banners];
     }
     public function codesinHechos(){
         $codesinHechos = Post::published()->join('post_extra', 'posts.id', '=', 'post_extra.post_id')->where('category_id',8)->orderBy('published_at','DESC')->get();
-
+        $banners = BannersPostIndex::where('category_id',8)->first();
         return [ 'codesinHechos' =>  $codesinHechos];
     }
     public function historia(){

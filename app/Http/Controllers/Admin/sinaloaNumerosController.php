@@ -8,6 +8,7 @@ use App\Post;
 use App\Tag;
 use App\Models\PostExtras;
 use App\Category;
+use App\BannersPostIndex;
 use Carbon\Carbon;
 use File;
 
@@ -22,7 +23,8 @@ class sinaloaNumerosController extends Controller
     {
         //
         $posts = Post::allowed()->where('category_id',9)->get();
-        return view('dashboard.sinaloaNumeros.index', compact('posts'));
+        $banners = BannersPostIndex::where('category_id', 9)->first();
+        return view('dashboard.sinaloaNumeros.index', compact('posts', 'banners'));
     }
 
     /**

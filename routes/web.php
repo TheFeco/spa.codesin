@@ -24,6 +24,9 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
 
     Route::resource('historia', 'HistoriaController', ['as' => 'admin' ])->parameters(['historia' => 'post']);
     Route::resource('covid', 'CovidController', ['as' => 'admin' ])->parameters(['covid' => 'post']);
+    Route::post('codetalks/banners', 'BannersController@store', ['as' => 'admin' ])->name('admin.codetalks.banners');
+    Route::post('codesinhechos/banners', 'BannersController@codesinHechos', ['as' => 'admin' ])->name('admin.codesinhechos.banners');
+    Route::post('sinaloanumeros/banners', 'BannersController@sinaloaNumeros', ['as' => 'admin' ])->name('admin.sinaloanumeros.banners');
 
     Route::resource('codetalks', 'codetalksController', ['as' => 'admin' ])->parameters(['codetalks' => 'post']);
     Route::resource('codesinHechos', 'codesinHechosController', ['as' => 'admin' ])->parameters(['codesinHechos' => 'post']);

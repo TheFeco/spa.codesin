@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use App\Models\PostExtras;
+use App\BannersPostIndex;
 use App\Category;
 use Carbon\Carbon;
 use File;
@@ -22,7 +23,8 @@ class codetalksController extends Controller
     {
         //
         $posts = Post::allowed()->where('category_id',7)->get();
-        return view('dashboard.codetalks.index', compact('posts'));
+        $banners = BannersPostIndex::where('category_id', 7)->first();
+        return view('dashboard.codetalks.index', compact('posts','banners'));
     }
 
     /**
@@ -151,6 +153,7 @@ class codetalksController extends Controller
     public function destroy($id)
     {
         //
+        dd('hola');
     }
     public function extraUpdate ($id, $data){
         $postExtra = PostExtras::where('post_id',$id)->first();

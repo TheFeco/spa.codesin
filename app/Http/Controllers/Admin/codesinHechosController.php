@@ -8,6 +8,7 @@ use App\Post;
 use App\Tag;
 use App\Models\PostExtras;
 use App\Category;
+use App\BannersPostIndex;
 use Carbon\Carbon;
 use File;
 
@@ -22,8 +23,8 @@ class codesinHechosController extends Controller
     {
         //
         $posts = Post::allowed()->where('category_id',8)->get();
-        
-        return view('dashboard.codesinHechos.index', compact('posts'));
+        $banners = BannersPostIndex::where('category_id', 8)->first();
+        return view('dashboard.codesinHechos.index', compact('posts', 'banners'));
     }
 
     /**
