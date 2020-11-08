@@ -226,7 +226,21 @@ class PagesController extends Controller
             {
                 return $post;
             }
-            return view('posts.show', compact('post'));
+        }
+
+        abort(404);
+       
+    }
+    public function posicionamientoGet(Post $post){
+        {
+            
+            $post->load('photos');
+            $posicionamientos = Post::where('category_id', 10)->whereNotIn('id', [$post->id])->take(3)->orderBy('published_at','DESC')->get();
+            
+            if( request()->wantsJson() )
+            {
+                return ['post'=>$post, 'posicionamientos' => $posicionamientos];
+            }
 
         }
 

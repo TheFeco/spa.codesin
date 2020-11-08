@@ -26,6 +26,7 @@
                                 <th>ID</th>
                                 <th>Titulo</th>
                                 <th style="width: 70%;">Extracto</th>
+                                <th>Fecha publicación</th>
                                 <th style="width: 8%;">Acciones</th>
                             </tr>
                         </thead>

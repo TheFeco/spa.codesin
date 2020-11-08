@@ -38,4 +38,6 @@ Route::get('indexsearch', 'PagesController@indexsearch');
 Route::get('biblioteca', 'PagesController@biblioteca');
 Route::post('email2', 'MailchimpTest@subscribe');
 Route::get('posicionamiento','PagesController@posicionamiento');
+Route::get('posicionamiento/{post}','PagesController@posicionamientoGet');
+
 

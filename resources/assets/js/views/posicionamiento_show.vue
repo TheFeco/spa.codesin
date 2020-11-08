@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <posicionamiento-area :data="posicionamientos" :vermas = "true" v-if="posicionamientos.length > 0"/>
     </div>
 </template>
 
@@ -42,15 +43,18 @@
             return{
                 datos:[],
                 photos : [],
-                img : ''
+                img : '',
+                posicionamientos:[]
             }
         },
         mounted() {
-            axios.get(`/api/noticia/${this.url}`)
+            axios.get(`/api/posicionamiento/${this.url}`)
             .then(res =>{
-                this.datos = res.data;
-                this.photos = this.noticia.photos
-                this.img = this.smallScreen(this.noticia.urlBanner, this.noticia.urlBannerMobile);
+                console.log(res);
+                this.datos = res.data.post;
+                this.photos = this.datos.photos
+                this.posicionamientos = res.data.posicionamientos;
+                this.img = this.smallScreen(this.datos.urlBanner, this.datos.urlBannerMobile);
                 $('#lock').addClass('hidden');
             })
             .catch(err =>{

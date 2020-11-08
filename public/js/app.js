@@ -65405,6 +65405,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['url'],
@@ -65412,16 +65413,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             datos: [],
             photos: [],
-            img: ''
+            img: '',
+            posicionamientos: []
         };
     },
     mounted: function mounted() {
         var _this = this;
 
-        axios.get('/api/noticia/' + this.url).then(function (res) {
-            _this.datos = res.data;
-            _this.photos = _this.noticia.photos;
-            _this.img = _this.smallScreen(_this.noticia.urlBanner, _this.noticia.urlBannerMobile);
+        axios.get('/api/posicionamiento/' + this.url).then(function (res) {
+            console.log(res);
+            _this.datos = res.data.post;
+            _this.photos = _this.datos.photos;
+            _this.posicionamientos = res.data.posicionamientos;
+            _this.img = _this.smallScreen(_this.datos.urlBanner, _this.datos.urlBannerMobile);
             $('#lock').addClass('hidden');
         }).catch(function (err) {
             console.log(err.response.data);
@@ -65506,7 +65510,13 @@ var render = function() {
             ])
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.posicionamientos.length > 0
+        ? _c("posicionamiento-area", {
+            attrs: { data: _vm.posicionamientos, vermas: true }
+          })
+        : _vm._e()
     ],
     1
   )
@@ -65601,7 +65611,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data', 'vermas']
+    props: ['data', 'vermas'],
+    data: function data() {
+        return {
+            urlName: 'posicionamiento_show'
+        };
+    }
 });
 
 /***/ }),
@@ -65619,7 +65634,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "row  mt-24" },
-        _vm._l(_vm.data, function(info, index) {
+        _vm._l(_vm.data, function(item, index) {
           return _c(
             "div",
             { key: index, staticClass: "col-md-4 col-sm-12 col-xs-12" },
@@ -65630,7 +65645,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "card-noticias-img-top",
-                    attrs: { src: info.urlBanner, alt: "" }
+                    attrs: { src: item.urlBanner, alt: "" }
                   }),
                   _vm._v(" "),
                   _c(
@@ -65641,9 +65656,9 @@ var render = function() {
                         "h5",
                         { staticClass: "card-noticias-title" },
                         [
-                          _c("noticia-link", {
-                            attrs: { noticia: info },
-                            domProps: { textContent: _vm._s(info.title) }
+                          _c("url-link", {
+                            attrs: { info: item, name: _vm.urlName },
+                            domProps: { textContent: _vm._s(item.title) }
                           })
                         ],
                         1
@@ -65652,16 +65667,16 @@ var render = function() {
                       _c("p", {
                         staticClass:
                           "card-noticias-text text-gray hidden-sm hidden-xs",
-                        domProps: { textContent: _vm._s(info.excerpt) }
+                        domProps: { textContent: _vm._s(item.excerpt) }
                       }),
                       _vm._v(" "),
                       _c(
-                        "noticia-link",
+                        "url-link",
                         {
                           staticClass: "vermas hidden-sm hidden-xs",
-                          attrs: { noticia: info }
+                          attrs: { nombre: _vm.urlName, info: item }
                         },
-                        [_vm._v("Ver más")]
+                        [_vm._v("Ver Más")]
                       )
                     ],
                     1
@@ -65680,9 +65695,11 @@ var render = function() {
               "div",
               { staticClass: "vertodos col-xs-12" },
               [
-                _c("router-link", { attrs: { to: { name: "noticias" } } }, [
-                  _vm._v("Ver todas")
-                ])
+                _c(
+                  "router-link",
+                  { attrs: { to: { name: "posicionamiento" } } },
+                  [_vm._v("Ver todas")]
+                )
               ],
               1
             )
@@ -65697,7 +65714,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "titulo text-center" }, [
-      _c("h3", [_vm._v(" Posicionamiento")])
+      _c("h3", [_vm._v(" Posicionamientos")])
     ])
   }
 ]
