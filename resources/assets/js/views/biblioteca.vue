@@ -21,22 +21,26 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="1">
                                     <div class="row">
-                                        <texbox-container :data="categoria1"/>
+                                        <texbox-container :data="categoria1" v-if="categoria1.length > 0" />
+                                        <div v-else class="proximamente">Proximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="2">
                                     <div class="row">
-                                        <texbox-container :data="categoria2"/>
+                                        <texbox-container :data="categoria2" v-if="categoria2.length > 0" />
+                                        <div v-else class="proximamente">Proximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="3">
                                     <div class="row">
-                                        <texbox-container :data="categoria3"/>
+                                        <texbox-container :data="categoria3" v-if="categoria3.length > 0" />
+                                        <div v-else class="proximamente">Proximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="4">
                                     <div class="row">
-                                        <texbox-container :data="categoria4"/>
+                                        <texbox-container :data="categoria4" v-if="categoria4.length > 0" />
+                                        <div v-else class="proximamente">Proximamente</div>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +91,7 @@ export default {
 }
 </script>
 <style>
-
+.proximamente { text-align: center; font-size: 32px; font-weight: bold; padding: 20px 0; }
 .video-icon-c {
     left: 50%;
     position: absolute;
