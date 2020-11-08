@@ -4144,6 +4144,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('tags-link', __webpack_req
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('proyectos-link', __webpack_require__(140));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('proyecto-link', __webpack_require__(143));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('noticias-area', __webpack_require__(146));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('posicionamiento-area', __webpack_require__(214));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('politicas-area', __webpack_require__(149));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('banner-area', __webpack_require__(154));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('banner-area2', __webpack_require__(157));
@@ -49892,7 +49893,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     }, {
         path: '/posicionamiento',
         name: 'posicionamiento',
-        component: __webpack_require__(14),
+        component: __webpack_require__(208),
+        props: true
+    }, {
+        path: '/posicionamiento/:url',
+        name: 'posicionamiento_show',
+        component: __webpack_require__(211),
         props: true
     }, {
         path: '/noticias',
@@ -65210,6 +65216,497 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-aeee1d14", module.exports)
+  }
+}
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(209)
+/* template */
+var __vue_template__ = __webpack_require__(210)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/posicionamiento.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-654ce8a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-654ce8a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 209 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            infodata: []
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/posicionamiento/').then(function (res) {
+            _this.infodata = res.data;
+        }).catch(function (err) {
+            console.log(err.response.data);
+        });
+    }
+});
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("posicionamiento-area", {
+    attrs: { data: _vm.infodata, vermas: false }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-654ce8a4", module.exports)
+  }
+}
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/posicionamiento_show.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d050ac30", Component.options)
+  } else {
+    hotAPI.reload("data-v-d050ac30", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['url'],
+    data: function data() {
+        return {
+            datos: [],
+            photos: [],
+            img: ''
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/noticia/' + this.url).then(function (res) {
+            _this.datos = res.data;
+            _this.photos = _this.noticia.photos;
+            _this.img = _this.smallScreen(_this.noticia.urlBanner, _this.noticia.urlBannerMobile);
+            $('#lock').addClass('hidden');
+        }).catch(function (err) {
+            console.log(err.response.data);
+        });
+    }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "noticias default-bg" },
+    [
+      _c("banner-area", {
+        staticClass: "mb-8",
+        attrs: { page: _vm.datos, img: _vm.img }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "noticias-detalle-area default-bg" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xs-12 mtb-80" }, [
+              _c("div", { staticClass: "col xs-12" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col xs-12",
+                    class: [_vm.photos.length > 0 ? "col-md-8" : ""]
+                  },
+                  [
+                    _c("div", { staticClass: "title f32 noticia-title" }, [
+                      _c("h1", {
+                        domProps: { textContent: _vm._s(_vm.datos.title) }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "mt-54 centenido-area col-xs-12",
+                      class: [_vm.photos.length > 0 ? "col-md-8" : ""]
+                    },
+                    [
+                      _c("div", {
+                        staticClass: "contenedor-text default",
+                        domProps: { innerHTML: _vm._s(_vm.datos.body) }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "mt-54 col-xs-12 col-md-4",
+                      class: [_vm.photos.length <= 0 ? "hidden" : ""]
+                    },
+                    _vm._l(_vm.photos, function(photo, index) {
+                      return _c("div", { key: index }, [
+                        _c("div", { staticClass: "col-md-12 mb-10" }, [
+                          _c("div", { staticClass: "card-lg o-hidden" }, [
+                            _c("img", {
+                              staticClass: "card-lg-img",
+                              attrs: { src: "/" + photo.url, alt: "noticia" }
+                            })
+                          ])
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d050ac30", module.exports)
+  }
+}
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(215)
+/* template */
+var __vue_template__ = __webpack_require__(216)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/posicionamientoArea.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-57a7b9ed", Component.options)
+  } else {
+    hotAPI.reload("data-v-57a7b9ed", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data', 'vermas']
+});
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "home-noticias-area mt-24" }, [
+    _c("div", { staticClass: "container" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row  mt-24" },
+        _vm._l(_vm.data, function(info, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "col-md-4 col-sm-12 col-xs-12" },
+            [
+              _c(
+                "div",
+                { staticClass: "card-noticias mb-4 o-hidden default-bg" },
+                [
+                  _c("img", {
+                    staticClass: "card-noticias-img-top",
+                    attrs: { src: info.urlBanner, alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "card-noticias-body " },
+                    [
+                      _c(
+                        "h5",
+                        { staticClass: "card-noticias-title" },
+                        [
+                          _c("noticia-link", {
+                            attrs: { noticia: info },
+                            domProps: { textContent: _vm._s(info.title) }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("p", {
+                        staticClass:
+                          "card-noticias-text text-gray hidden-sm hidden-xs",
+                        domProps: { textContent: _vm._s(info.excerpt) }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "noticia-link",
+                        {
+                          staticClass: "vermas hidden-sm hidden-xs",
+                          attrs: { noticia: info }
+                        },
+                        [_vm._v("Ver más")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm.vermas
+        ? _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "vertodos col-xs-12" },
+              [
+                _c("router-link", { attrs: { to: { name: "noticias" } } }, [
+                  _vm._v("Ver todas")
+                ])
+              ],
+              1
+            )
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "titulo text-center" }, [
+      _c("h3", [_vm._v(" Posicionamiento")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-57a7b9ed", module.exports)
   }
 }
 

@@ -67,7 +67,13 @@ export default new Router({
         {
             path: '/posicionamiento',
             name: 'posicionamiento',
-            component: require('../views/Noticias'),
+            component: require('../views/posicionamiento'),
+            props: true
+        },
+        {
+            path: '/posicionamiento/:url',
+            name: 'posicionamiento_show',
+            component: require('../views/posicionamiento_show'),
             props: true
         },
         {

@@ -218,4 +218,19 @@ class PagesController extends Controller
         }
         return $obj;
     }
+    public function posicionamiento(){
+        {
+            $post = Post::Published()->where('category_id', 10)->get();
+            
+            if( request()->wantsJson() )
+            {
+                return $post;
+            }
+            return view('posts.show', compact('post'));
+
+        }
+
+        abort(404);
+       
+    }
 }

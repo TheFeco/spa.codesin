@@ -25,6 +25,7 @@ Vue.component('tags-link', require('./components/tagsLink'));
 Vue.component('proyectos-link', require('./components/proyectosLink'));
 Vue.component('proyecto-link', require('./components/proyectoLink'));
 Vue.component('noticias-area', require('./components/noticiasArea'));
+Vue.component('posicionamiento-area', require('./components/posicionamientoArea'));
 Vue.component('politicas-area', require('./components/politicasArea'));
 Vue.component('banner-area', require('./components/banner'));
 Vue.component('banner-area2', require('./components/bannerv2'));
