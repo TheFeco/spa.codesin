@@ -82,9 +82,6 @@ export default {
             });
     },
     methods:{
-        bibliotecaData(category_id){
-
-        }
     },
     updated: function () {
     }

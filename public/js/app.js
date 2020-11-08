@@ -58808,9 +58808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
     },
 
-    methods: {
-        bibliotecaData: function bibliotecaData(category_id) {}
-    },
+    methods: {},
     updated: function updated() {}
 });
 
