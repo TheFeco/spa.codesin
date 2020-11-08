@@ -11,6 +11,7 @@ import carousel from 'vue-owl-carousel';
 window.Vue = require('vue');
 
 import router from './routes/routes';
+import VueAnalytics from 'vue-analytics';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -84,6 +85,12 @@ Vue.mixin({
             }
         });
     },
+});
+// Configuration VueAnalytics
+Vue.use(VueAnalytics, {
+    //id: 'UA-53143604-17',
+    id:'G-WR8B3ENXM8',
+    router
 });
 const app = new Vue({
     el: '#app',
