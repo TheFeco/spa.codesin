@@ -89,7 +89,7 @@ Vue.mixin({
 // Configuration VueAnalytics
 Vue.use(VueAnalytics, {
     //id: 'UA-53143604-17',
-    id:'G-WR8B3ENXM8',
+    id:'UA-182338023-1',
     router
 });
 const app = new Vue({
