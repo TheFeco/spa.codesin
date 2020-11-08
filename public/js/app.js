@@ -64881,7 +64881,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios.post('/api/email2', { email: this.email }).then(function (res) {
-                console.log(res);
                 _this.email = "";
                 if (res.data.statu == 'success') {
                     $('.u-form-send-success').css("display", "block");
@@ -64896,8 +64895,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }, 4000);
                 }
             }).catch(function (err) {
-                console.log(err);
-                // this.error = err.data.msg;
+                console.log(err.exception);
+                _this.error = err.message;
                 $('.u-form-send-error').css("display", "block");
                 setTimeout(function () {
                     $('.u-form-send-error').fadeOut('fast');

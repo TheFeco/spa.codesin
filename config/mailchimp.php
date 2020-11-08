@@ -11,5 +11,5 @@ return [
     |
      */
 
-    'apikey' => env('MAILCHIMP_API_KEY')
+    'apikey' => env('MAILCHIMP_API_KEY', 'b151d8f79feca94fa5dcf95973c30564-us20')
 ];

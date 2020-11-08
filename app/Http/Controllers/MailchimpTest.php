@@ -51,11 +51,11 @@ class MailchimpTest extends Controller
 
 
         } catch (Mailchimp_List_AlreadySubscribed $e) {
-
+            dd('entre al mail');
             return ['statu' =>'error', 'msg' => 'Email ya está suscrito'];
 
         } catch (Mailchimp_Error $e) {
-
+            dd('entre aquí');
             return ['statu' =>'error', 'msg' =>'Error de MailChimp'];
 
         }

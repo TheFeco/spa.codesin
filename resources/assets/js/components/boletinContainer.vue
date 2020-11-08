@@ -48,7 +48,6 @@ export default {
       sendEmail(){
         axios.post('/api/email2', {email:this.email})
 				.then((res) => {
-          console.log(res)
           this.email = "";
           if(res.data.statu == 'success'){
             $('.u-form-send-success').css("display", "block");
@@ -65,8 +64,8 @@ export default {
           
 				})
 				.catch((err) =>{
-          console.log(err);
-					// this.error = err.data.msg;
+          console.log(err.exception);
+					this.error = err.message;
             $('.u-form-send-error').css("display", "block");
             setTimeout(function() { 
                 $('.u-form-send-error').fadeOut('fast'); 
