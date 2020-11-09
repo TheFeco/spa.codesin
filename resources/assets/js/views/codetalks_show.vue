@@ -19,6 +19,7 @@
         <section class="u-clearfix u-sectionImage-3" id="sec-0b41" v-if="datos.category_id == 7">
             <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
                 <img :src="imageSmall()" alt="" class="u-image u-image-default u-image-1" data-image-width="600" data-image-height="600">
+                <!-- <img :src="thumbnail()" alt="" class="u-image u-image-default u-image-2" data-image-width="1280" data-image-height="853"> -->
                 <div class="u-image u-image-default u-image-2" data-image-width="1280" data-image-height="853"></div>
                 <a :href="datos.urlspotify" target="_blank" rel="noopener noreferrer"><img src="/images/Group5.png" alt="" class="u-image u-image-default u-image-3" data-image-width="280" data-image-height="64"></a>
             </div>
