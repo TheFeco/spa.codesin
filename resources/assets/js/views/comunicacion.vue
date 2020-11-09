@@ -1,12 +1,12 @@
 <template>
     <div>
         <!-- About Inicio -->
-        <div class="cc-area mt-24">
+        <div class="cc-area mt-80">
             <div class="container">
                 <div class="title f32 text-center">
                     <div>Contenido de interés</div>
                 </div>
-                <div class="mt-24 ocultar">
+                <div class="mt-80 ocultar">
                     <div class="card-ci" >
                         <div class="cards-ci" v-for="(estrategia, index) in estrategias" :key="index" v-if="index < limitationList">
                             <div class="card-ci-img">
@@ -97,7 +97,7 @@ export default {
     methods:{
         updateLimitation(limitationList){
         if (this.limitationList == this.estrategias.length) {
-                this.limitationList = defaultList;
+                this.limitationList = this.defaultList;
             }else{
                 this.limitationList = this.estrategias.length;
             }
@@ -106,7 +106,7 @@ export default {
 }
 </script>
 <style>
-#masTexto { color: #007D80 }
+#masTexto { color: #007D80; cursor: pointer; }
 .video-icon-c {
     left: 50%;
     position: absolute;

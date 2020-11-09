@@ -89,12 +89,12 @@ section.u-image,
 .u-container-style.u-palette-3-base:before,
 .u-table-alt-palette-3-base tr:nth-child(even) {
   color: #111111;
-  background-color: #f1c50e;
+  background-color: #FFAA00;
 }
 .u-button-style.u-palette-3-base,
 .u-button-style.u-palette-3-base[class*="u-border-"] {
   color: #111111 !important;
-  background-color: #f1c50e !important;
+  background-color: #FFAA00 !important;
 }
 .u-button-style.u-palette-3-base:hover,
 .u-button-style.u-palette-3-base[class*="u-border-"]:hover,

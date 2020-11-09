@@ -106,7 +106,7 @@ export default {
 .u-section-2 .u-text-4 {margin: -21px 236px 0 255px; color: #626262;}
 .u-section-2 .u-icon-3 {height: 24px; width: 24px; margin: -20px 191px 0 auto}
 .u-section-2 .u-text-5 {margin: -19px 39px 0 auto; color: #626262;}
-.u-section-2 .u-btn-1 {font-size: 0.875rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 33px auto 0 0; padding: 0}
+.u-section-2 .u-btn-1 {font-size: 0.875rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 33px auto 0 0; padding: 0; color: #007d80 !important;}
 .u-section-2 .u-image-2 {min-height: 632px; }
 .u-section-2 .u-container-layout-2 {padding: 30px 30px 30px 40px}
 .u-section-2 .u-image-3 {height: 353px; margin: 38px -5px 0 0}

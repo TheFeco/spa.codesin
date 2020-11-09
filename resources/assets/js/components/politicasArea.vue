@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-p-constainer">
                     <div class="title f16 text-center">
-                        <div><noticia-link :noticia="item" v-text="item.title"></noticia-link></div>
+                        <div><noticia-link :noticia="item" v-text="item.title" class="titile-color"></noticia-link></div>
                     </div>
                 </div>
             </div>

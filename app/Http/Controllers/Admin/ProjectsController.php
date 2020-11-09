@@ -157,8 +157,16 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $estrategiasProyecto)
     {
-        //
+        //obtenemos la estrategia
+        $post = $estrategiasProyecto->load('estrategias');
+        // eliminamos el proyecto
+        $estrategiasProyecto->delete();
+        // obtenemos datos para regresar 
+        $return = Post::where('id',$post->estrategias[0]->post_id)->first();
+        return redirect()->route('admin.estrategias.show', $return)->with('flash','Tu publicación a sido eliminado');
+        
+        
     }
 }

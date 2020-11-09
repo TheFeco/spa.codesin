@@ -26,7 +26,7 @@
                     </span>
                     <p class="u-text u-text-default u-text-5" v-if="info.category_id == 7">{{info.timePodcast}} {{indicador(info.indicadorPodcast)}} de podcast</p>
                   </div>
-                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >Ver Más</url-link>
+                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >ver más</url-link>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default {
 .u-section-3 .u-text-4 {margin: -21px 236px 0 255px; color: #626262;}
 .u-section-3 .u-icon-3 {height: 24px; width: 24px; margin: -20px 191px 0 auto}
 .u-section-3 .u-text-5 {margin: -19px 39px 0 auto; color: #626262;}
-.u-section-3 .u-btn-1 {font-size: 0.875rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 33px auto 0 0; padding: 0}
+.u-section-3 .u-btn-1 {font-size: 0.875rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 33px auto 0 0; padding: 0; color: #007D80 !important;}
 @media (max-width: 1199px){ .u-section-3 .u-sheet-1 {min-height: 570px}
 .u-section-3 .u-layout-wrap-1 {margin-bottom: 0; margin-right: initial; margin-left: initial}
 .u-section-3 .u-image-1 {min-height: 521px}

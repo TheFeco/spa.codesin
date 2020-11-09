@@ -17,7 +17,7 @@
             </div>
             <div class="row" v-if="vermas">
                 <div class="vertodos col-xs-12">
-                    <router-link :to="{ name: 'noticias' }" >Ver todas</router-link>
+                    <router-link :to="{ name: 'noticias' }" class="default-textcolor" >Ver todas</router-link>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@
           </div>
         </div>
         
-        <a href="#!" class="u-btn u-button-style u-none u-btn-4" @click="updateLimitation(limitationList)">Ver {{limitationList == 12 ? 'mas' : 'menos'}}</a>
+        <a href="#!" class="u-btn u-button-style u-none u-btn-4" @click="updateLimitation(limitationList)">Ver {{limitationList == 12 ? 'más' : 'menos'}}</a>
       </div>
     </section>
 </template>
@@ -80,8 +80,8 @@ export default {
 .u-sectionBox-2 .u-list-item-2 {background-image: none}
 .u-sectionBox-2 .u-container-layout-2 {padding: 30px 0}
 .u-sectionBox-2 .u-image-5 {height: 319px; margin: -30px 0 0 -30px}
-.u-sectionBox-2 .u-text-6 { margin: -25px auto 0 30px; font-size: 0.625rem; line-height: 16px; color: #626262; }
-.u-sectionBox-2 .u-btn-4 {border-style: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 30px auto 55px; padding: 0; color: #007D80 !important;} 
+.u-sectionBox-2 .u-text-6 { margin: -13px auto 0 30px; font-size: 0.625rem; line-height: 16px; color: #626262; }
+.u-sectionBox-2 .u-btn-4 {border-style: none; font-weight: 700;  letter-spacing: 1px; margin: 30px auto 55px; padding: 0; color: #007D80 !important;} 
 .u-sectionBox-2 .u-btn-4.u-btn-4:hober { color: #007D80 !important; }
 
 @media (max-width: 1199px){ .u-sectionBox-2 .u-sheet-1 {min-height: 342px}

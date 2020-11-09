@@ -1,8 +1,9 @@
 <template>
     <div>
-        <section class="skrollable u-clearfix u-image u-sectionBanner-1" v-bind:style="{ backgroundImage: 'url(' + img + ')', backgroundPosition:'50% 50%' }">
+        <banner-area :page="''" :img="img" />
+        <!-- <section class="skrollable u-clearfix u-image u-sectionBanner-1" v-bind:style="{ backgroundImage: 'url(' + img + ')', backgroundPosition:'50% 50%' }">
             <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"></div>
-        </section>
+        </section> -->
         <section class="u-clearfix u-sectionTitle-2">
             <div class="u-clearfix u-sheet u-sheet-1">
                 <h1 class="u-align-center u-text u-text-default u-text-1" v-text="datos.title"></h1>

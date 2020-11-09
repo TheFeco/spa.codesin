@@ -297,13 +297,13 @@
                     <div class="container">
                         <div class="about-pills">
                             <ul class="nav nav-tabs">
-                                <li><a href="#consejo" data-toggle="tab">Consejo</a></li>
-                                <li class="active"><a href="#staff" data-toggle="tab">Staff</a></li>
+                                <li class="active"><a href="#consejo" data-toggle="tab">Consejo</a></li>
+                                <li><a href="#staff" data-toggle="tab">Staff</a></li>
                             </ul>
                         </div>
                         <div class="panel-body">
                             <div class="tab-content">
-                                <div class="tab-pane fade" id="consejo">
+                                <div class="tab-pane fade in active" id="consejo">
                                     <div class="row">
                                         <staff-area :staffs="consejos"/>
                                     </div>
@@ -316,7 +316,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade in active" id="staff">
+                                <div class="tab-pane fade" id="staff">
                                     <div class="row">
                                         <div class="titulo-staff text-center mtb-40">
                                             <h2>Oficina Estatal</h2>

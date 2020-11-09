@@ -33,7 +33,7 @@
                                     <td>{{ $post->excerpt }}</td>
                                     <td>
                                         <a class="text-success mr-2" href="{{ route('admin.estrategiasProyectos.edit', $post)}}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
-                                        <form method="POST" action="{{ route('admin.proyectos.destroy',$post)}}" style="display: inline">
+                                        <form method="POST" action="{{ route('admin.estrategiasProyectos.destroy',$post)}}" style="display: inline">
                                             @csrf {{method_field('DELETE')}}
                                             <button class="text-danger mr-2" style="border: none; background: transparent; cursor: pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></button>
                                         </form>

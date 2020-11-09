@@ -1385,11 +1385,7 @@
   
   background-color: transparent !important;
 }
-.u-text-palette-1-base,
-a.u-button-style.u-text-palette-1-base,
-a.u-button-style.u-text-palette-1-base[class*="u-border-"] {
-  color: #478ac9 !important;
-}
+
 a.u-button-style.u-text-palette-1-base:hover,
 a.u-button-style.u-text-palette-1-base[class*="u-border-"]:hover,
 a.u-button-style.u-text-palette-1-base:focus,
