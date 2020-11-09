@@ -59548,7 +59548,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             datos: [],
             photos: [],
             img: '',
-            more: []
+            more: [],
+            urlVideo: 'www.youtube.com/embed/ePbKGoIGAXY'
         };
     },
     mounted: function mounted() {
@@ -59595,6 +59596,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         imageSmall: function imageSmall() {
             return this.datos.urlbannerHomeMobile ? this.datos.urlbannerHomeMobile : '../img/banner.png';
+        },
+        youtube_parser: function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            console.log(match[7]);
+            return match && match[7].length == 11 ? match[7] : false;
         }
     }
 });
@@ -59776,9 +59783,39 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _vm.datos.iframe == 1
+      _vm.datos.iframe != null
         ? _c("section", { staticClass: "u-clearfix u-sectionVideo-5" }, [
-            _vm._m(0)
+            _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "u-expand-resize u-video u-video-contain u-video-1"
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-sm-12" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "embed-responsive embed-responsive-4by3"
+                        },
+                        [
+                          _c("iframe", {
+                            staticClass: "embed-responsive-item",
+                            attrs: {
+                              src:
+                                "//www.youtube.com/embed/" +
+                                _vm.youtube_parser(_vm.datos.iframe)
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            ])
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -59795,35 +59832,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "u-clearfix u-sheet u-sheet-1" }, [
-      _c(
-        "div",
-        { staticClass: "u-expand-resize u-video u-video-contain u-video-1" },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c(
-                "div",
-                { staticClass: "embed-responsive embed-responsive-4by3" },
-                [
-                  _c("iframe", {
-                    staticClass: "embed-responsive-item",
-                    attrs: { src: "//www.youtube.com/embed/ePbKGoIGAXY" }
-                  })
-                ]
-              )
-            ])
-          ])
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

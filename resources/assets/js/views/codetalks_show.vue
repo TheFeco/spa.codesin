@@ -28,13 +28,13 @@
                 <p class="u-text u-text-1" v-html="datos.body"></p>
             </div>
         </section>
-        <section class="u-clearfix u-sectionVideo-5" v-if="datos.iframe == 1">
+        <section class="u-clearfix u-sectionVideo-5" v-if="datos.iframe != null">
             <div class="u-clearfix u-sheet u-sheet-1">
                 <div class="u-expand-resize u-video u-video-contain u-video-1">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                                <iframe class="embed-responsive-item" :src="'//www.youtube.com/embed/' +youtube_parser(datos.iframe)"></iframe>
                             </div>
                         </div>
                     </div>
@@ -55,6 +55,7 @@
                 photos : [],
                 img : '',
                 more:[],
+                urlVideo: 'www.youtube.com/embed/ePbKGoIGAXY'
             }
         },
         mounted() {
@@ -101,6 +102,12 @@
             imageSmall(){
                 return this.datos.urlbannerHomeMobile ? this.datos.urlbannerHomeMobile : '../img/banner.png';
             },
+            youtube_parser(url){
+                let regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+                let match = url.match(regExp);
+                console.log(match[7]);
+                return (match&&match[7].length==11)? match[7] : false;
+            }
         }
     }
 </script>
