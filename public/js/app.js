@@ -59698,65 +59698,67 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "section",
-        {
-          staticClass: "u-clearfix u-sectionImage-3",
-          attrs: { id: "sec-0b41" }
-        },
-        [
-          _c(
-            "div",
+      _vm.datos.category_id == 7
+        ? _c(
+            "section",
             {
-              staticClass:
-                "u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"
+              staticClass: "u-clearfix u-sectionImage-3",
+              attrs: { id: "sec-0b41" }
             },
             [
-              _c("img", {
-                staticClass: "u-image u-image-default u-image-1",
-                attrs: {
-                  src: _vm.imageSmall(),
-                  alt: "",
-                  "data-image-width": "600",
-                  "data-image-height": "600"
-                }
-              }),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "u-image u-image-default u-image-2",
-                attrs: {
-                  src: _vm.thumbnail(),
-                  alt: "",
-                  "data-image-width": "1280",
-                  "data-image-height": "853"
-                }
-              }),
-              _vm._v(" "),
               _c(
-                "a",
+                "div",
                 {
-                  attrs: {
-                    href: _vm.datos.urlspotify,
-                    target: "_blank",
-                    rel: "noopener noreferrer"
-                  }
+                  staticClass:
+                    "u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"
                 },
                 [
                   _c("img", {
-                    staticClass: "u-image u-image-default u-image-3",
+                    staticClass: "u-image u-image-default u-image-1",
                     attrs: {
-                      src: "/images/Group5.png",
+                      src: _vm.imageSmall(),
                       alt: "",
-                      "data-image-width": "280",
-                      "data-image-height": "64"
+                      "data-image-width": "600",
+                      "data-image-height": "600"
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "u-image u-image-default u-image-2",
+                    attrs: {
+                      src: _vm.thumbnail(),
+                      alt: "",
+                      "data-image-width": "1280",
+                      "data-image-height": "853"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: _vm.datos.urlspotify,
+                        target: "_blank",
+                        rel: "noopener noreferrer"
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "u-image u-image-default u-image-3",
+                        attrs: {
+                          src: "/images/Group5.png",
+                          alt: "",
+                          "data-image-width": "280",
+                          "data-image-height": "64"
+                        }
+                      })
+                    ]
+                  )
                 ]
               )
             ]
           )
-        ]
-      ),
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "section",
@@ -59774,7 +59776,7 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _vm.datos.iframe == null
+      _vm.datos.iframe == 1
         ? _c("section", { staticClass: "u-clearfix u-sectionVideo-5" }, [
             _vm._m(0)
           ])
