@@ -16,7 +16,7 @@
                 </div>
             </div>
         </section>
-        <section class="u-clearfix u-sectionImage-3" id="sec-0b41">
+        <section class="u-clearfix u-sectionImage-3" id="sec-0b41" v-if="datos.category_id == 7">
             <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
                 <img :src="imageSmall()" alt="" class="u-image u-image-default u-image-1" data-image-width="600" data-image-height="600">
                 <img :src="thumbnail()" alt="" class="u-image u-image-default u-image-2" data-image-width="1280" data-image-height="853">
@@ -28,7 +28,7 @@
                 <p class="u-text u-text-1" v-html="datos.body"></p>
             </div>
         </section>
-        <section class="u-clearfix u-sectionVideo-5" v-if="datos.iframe == null">
+        <section class="u-clearfix u-sectionVideo-5" v-if="datos.iframe == 1">
             <div class="u-clearfix u-sheet u-sheet-1">
                 <div class="u-expand-resize u-video u-video-contain u-video-1">
                     <div class="row">
