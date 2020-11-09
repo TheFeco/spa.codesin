@@ -16,7 +16,7 @@
                   <div class="u-form u-form-1">
                     <form class="u-clearfix u-form-horizontal u-form-spacing-30 u-inner-form" style="padding: 16px;" source="custom">
                       <div class="u-form-email u-form-group u-form-group-1">
-                        <label for="email" class="u-form-control-hidden u-label">Nombre</label>
+                        <label for="email" class="u-form-control-hidden u-label"></label>
                         <input type="email" placeholder="ejemplo@correo.com" id="email" v-model="email" name="email" class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-form-group u-form-submit u-form-group-2">
@@ -84,12 +84,12 @@ export default {
 .u-section-6 .u-image-1 {width: 255px; height: 201px; margin: 53px auto}
 .u-section-6 .u-layout-cell-2 {min-height: 367px}
 .u-section-6 .u-container-layout-2 {padding: 30px 0 30px 30px}
-.u-section-6 .u-text-1 {font-weight: 700; font-size: 2rem; margin: 27px 0 0}
-.u-section-6 .u-text-2 {font-size: 1.25rem; margin: 42px 7px 0 0}
+.u-section-6 .u-text-1 {font-weight: 700; font-size: 2rem; margin: 27px 0 0; line-height: 40px; color: #4A4A4A;}
+.u-section-6 .u-text-2 {font-size: 1.25rem; margin: 42px 7px 0 0; line-height: 28PX; color: #626262;}
 .u-section-6 .u-form-1 {height: 79px; margin: 42px 220px 0 -12px}
 .u-section-6 .u-form-group-1 {width: 100%}
 .u-section-6 .u-form-group-2 {width: 100%}
-.u-section-6 input  {border-bottom: solid #979797; }
+.u-section-6 input  {border-bottom: solid #979797; color: #626262; }
 .u-section-6 .u-btn-1 {border-style: none; background-image: none; font-weight: 700; height: 52px; width: 148px; background: #FFAA00; color: #121212; padding: 17px;} 
 
 @media (max-width: 1199px){ 

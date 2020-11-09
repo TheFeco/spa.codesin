@@ -1382,7 +1382,7 @@
 .u-button-style.u-hover-none:focus,
 .u-button-style.u-active-none:active,
 .u-button-style.u-active-none.active {
-  color: inherit !important;
+  
   background-color: transparent !important;
 }
 .u-text-palette-1-base,

@@ -1052,7 +1052,7 @@ hr{
 .footer-social ul li > a:last-child{margin-right:0;}
 /* 4. home-page css */
 /* u-section-1 */
-.u-section-1 .u-group-1 {width: calc(((100% - 1140px) / 2) + 720px); min-height: 481px; margin: 66px auto 0 0 ; background: #007D80;}
+.u-section-1 .u-group-1 {width: calc(((100% - 1140px) / 2) + 720px); min-height: 481px; margin: 66px auto 0 0 ; background: rgba(0, 125, 128,1);}
 .u-section-1 .u-container-layout-1 {padding: 30px 50px 21px}
 .u-section-1 .u-image-1 {width: 60px; height: 71px; margin: 0 auto 0 30px}
 .u-section-1 .u-image-1.u-image-codetalk {width: 115px;}

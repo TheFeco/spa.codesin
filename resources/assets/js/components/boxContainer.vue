@@ -84,7 +84,7 @@ export default {
 .u-sectionBox-2 .u-image-3 {width: 24px; height: 24px; margin: 20px auto 0 30px}
 .u-sectionBox-2 .u-text-4 {margin: -25px auto 0 69px; font-size: 1rem; line-height: 24px; color: #626262;}
 .u-sectionBox-2 .u-image-4 {width: 24px; height: 24px; margin: 20px auto 0 30px}
-.u-sectionBox-2 .u-text-5 {margin: -25px auto 0 69px}
+.u-sectionBox-2 .u-text-5 {margin: -25px auto 0 69px; font-size: 1rem; line-height: 24px; color: #626262;}
 .u-sectionBox-2 .u-btn-1 {font-size: 1rem; letter-spacing: 1px; border-style: none; font-weight: 700; text-transform: none; margin: 30px auto 0 30px; padding: 0; color: #007D80 !important;}
 .u-sectionBox-2 .u-list-item-2 {background-image: none}
 .u-sectionBox-2 .u-container-layout-2 {padding: 30px 0}
