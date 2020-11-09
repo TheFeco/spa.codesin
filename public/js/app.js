@@ -60802,7 +60802,7 @@ var render = function() {
                           _c(
                             "router-link",
                             { attrs: { to: { name: "posicionamiento" } } },
-                            [_vm._v("Posicionamiento")]
+                            [_vm._v("Posicionamientos")]
                           )
                         ],
                         1
@@ -61028,7 +61028,7 @@ var render = function() {
                           _c(
                             "router-link",
                             { attrs: { to: { name: "posicionamiento" } } },
-                            [_vm._v("Posicionamiento")]
+                            [_vm._v("Posicionamientos")]
                           )
                         ],
                         1

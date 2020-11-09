@@ -48,7 +48,7 @@
                                                 <router-link :to="{name: 'noticias'}" >Noticias</router-link>
                                             </li>
                                             <li>
-                                                <router-link :to="{name: 'posicionamiento'}">Posicionamiento</router-link>
+                                                <router-link :to="{name: 'posicionamiento'}">Posicionamientos</router-link>
                                             </li>
                                         </ul>
                                     </li>
@@ -112,7 +112,7 @@
                                                 <router-link :to="{name: 'noticias'}" >Noticias</router-link>
                                             </li>
                                             <li>
-                                                <router-link :to="{name: 'posicionamiento'}">Posicionamiento</router-link>
+                                                <router-link :to="{name: 'posicionamiento'}">Posicionamientos</router-link>
                                             </li>
                                         </ul>
                                     </li>
