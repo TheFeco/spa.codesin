@@ -22,25 +22,25 @@
                                 <div class="tab-pane fade in active" id="1">
                                     <div class="row">
                                         <texbox-container :data="categoria1" v-if="categoria1.length > 0" />
-                                        <div v-else class="proximamente">Proximamente</div>
+                                        <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="2">
                                     <div class="row">
                                         <texbox-container :data="categoria2" v-if="categoria2.length > 0" />
-                                        <div v-else class="proximamente">Proximamente</div>
+                                        <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="3">
                                     <div class="row">
                                         <texbox-container :data="categoria3" v-if="categoria3.length > 0" />
-                                        <div v-else class="proximamente">Proximamente</div>
+                                        <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="4">
                                     <div class="row">
                                         <texbox-container :data="categoria4" v-if="categoria4.length > 0" />
-                                        <div v-else class="proximamente">Proximamente</div>
+                                        <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
                             </div>

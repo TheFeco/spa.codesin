@@ -53606,6 +53606,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -54514,36 +54516,41 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "row" },
-                        [
-                          _vm._m(5),
-                          _vm._v(" "),
-                          _c("zonas-area", {
-                            attrs: { zonas: _vm.zonaNorte, title: "Zona Norte" }
-                          }),
-                          _vm._v(" "),
-                          _c("zonas-area", {
-                            attrs: {
-                              zonas: _vm.zonaCentroNorte,
-                              title: "Zona Centro Norte"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("zonas-area", {
-                            attrs: {
-                              zonas: _vm.zonaCentro,
-                              title: "Zona Centro"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("zonas-area", {
-                            attrs: { zonas: _vm.zonaSur, title: "Zona Sur" }
-                          })
-                        ],
-                        1
-                      )
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "row equal" },
+                          [
+                            _c("zonas-area", {
+                              attrs: {
+                                zonas: _vm.zonaNorte,
+                                title: "Zona Norte"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("zonas-area", {
+                              attrs: {
+                                zonas: _vm.zonaCentroNorte,
+                                title: "Zona Centro Norte"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("zonas-area", {
+                              attrs: {
+                                zonas: _vm.zonaCentro,
+                                title: "Zona Centro"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("zonas-area", {
+                              attrs: { zonas: _vm.zonaSur, title: "Zona Sur" }
+                            })
+                          ],
+                          1
+                        )
+                      ])
                     ]
                   )
                 ])
@@ -58847,7 +58854,7 @@ var render = function() {
                               attrs: { data: _vm.categoria1 }
                             })
                           : _c("div", { staticClass: "proximamente" }, [
-                              _vm._v("Proximamente")
+                              _vm._v("Próximamente")
                             ])
                       ],
                       1
@@ -58868,7 +58875,7 @@ var render = function() {
                               attrs: { data: _vm.categoria2 }
                             })
                           : _c("div", { staticClass: "proximamente" }, [
-                              _vm._v("Proximamente")
+                              _vm._v("Próximamente")
                             ])
                       ],
                       1
@@ -58889,7 +58896,7 @@ var render = function() {
                               attrs: { data: _vm.categoria3 }
                             })
                           : _c("div", { staticClass: "proximamente" }, [
-                              _vm._v("Proximamente")
+                              _vm._v("Próximamente")
                             ])
                       ],
                       1
@@ -58910,7 +58917,7 @@ var render = function() {
                               attrs: { data: _vm.categoria4 }
                             })
                           : _c("div", { staticClass: "proximamente" }, [
-                              _vm._v("Proximamente")
+                              _vm._v("Próximamente")
                             ])
                       ],
                       1

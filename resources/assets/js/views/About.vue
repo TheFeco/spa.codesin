@@ -327,14 +327,16 @@
                                         <div class="titulo-staff text-center mb4">
                                             <h2>Comités Regionales de Promoción Ecónomica</h2>
                                         </div>
-                                        <!-- zona norte -->
-                                        <zonas-area :zonas="zonaNorte" :title="'Zona Norte'"/>
-                                        <!-- zona centro norte -->
-                                        <zonas-area :zonas="zonaCentroNorte" :title="'Zona Centro Norte'"/>
-                                        <!-- zona centro -->
-                                        <zonas-area :zonas="zonaCentro" :title="'Zona Centro'"/>
-                                        <!-- zona sur -->
-                                        <zonas-area :zonas="zonaSur" :title="'Zona Sur'"/>
+										<div class="row equal">
+											<!-- zona norte -->
+											<zonas-area :zonas="zonaNorte" :title="'Zona Norte'"/>
+											<!-- zona centro norte -->
+											<zonas-area :zonas="zonaCentroNorte" :title="'Zona Centro Norte'"/>
+											<!-- zona centro -->
+											<zonas-area :zonas="zonaCentro" :title="'Zona Centro'"/>
+											<!-- zona sur -->
+											<zonas-area :zonas="zonaSur" :title="'Zona Sur'"/>
+										</div>
                                     </div>
                                 </div>
                             </div>
