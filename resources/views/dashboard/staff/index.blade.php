@@ -26,7 +26,7 @@
                     <table class="display table table-striped table-bordered" id="post-table" style="width:100%" data-sortable>
                         <thead>
                             <tr>
-                                <th>position</th>
+                                <th>posición</th>
                                 <th></th>
                                 <th>Nombre</th>
                                 <th>Email</th>
