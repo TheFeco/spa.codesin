@@ -54838,7 +54838,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\n.card-e-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(4, 1fr);\n}\n.card-e-2{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 23.25rem;\n    width: 16.25rem;\n}\n.card-e-2-img { height: 16.25rem; width: 100%; margin: 0;\n}\n.card-e-2-constainer { height: 7rem; padding: 2rem 0;\n}\n@supports(object-fit: cover){\n.card-e-2-img  img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
+exports.push([module.i, "\n.municipio { position: relative; z-index: 10; cursor: pointer;\n}\na.title { cursor: pointer;\n}\n.card-e-1 {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-gap: 1rem;\n    grid-template-columns: repeat(4, 1fr);\n}\n.card-e-2{ \n    background-color: #FFF;\n    color: #4A4A4A;\n    height: 23.25rem;\n    width: 16.25rem;\n}\n.card-e-2-img { height: 16.25rem; width: 100%; margin: 0;\n}\n.card-e-2-constainer { height: 7rem; padding: 2rem 0;\n}\n@supports(object-fit: cover){\n.card-e-2-img  img{\n    height: 100%;\n    object-fit: cover;\n    object-position: center center;\n}\n}\n", ""]);
 
 // exports
 
@@ -55823,19 +55823,21 @@ var render = function() {
                     domProps: { innerHTML: _vm._s(_vm.pageInfo.body) }
                   }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "target mt-16" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "title f20 degault",
-                        attrs: {
-                          href: _vm.pageInfo.externalUrl,
-                          target: "_blank"
-                        }
-                      },
-                      [_vm._v("Ir al sitio")]
-                    )
-                  ])
+                  _vm.pageInfo.externalUrl
+                    ? _c("div", { staticClass: "target mt-16" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "title f20 default",
+                            attrs: {
+                              href: _vm.pageInfo.externalUrl,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v("Ir al sitio")]
+                        )
+                      ])
+                    : _vm._e()
                 ])
               ])
             ])

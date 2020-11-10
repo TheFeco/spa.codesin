@@ -206,8 +206,8 @@
                             <div class="inversiones-content mr-80">
                                 <h2 class="title f24 mt-80" v-text="pageInfo.title"></h2>
                                 <div class="contenedor-text t18 mt-32" v-html="pageInfo.body"></div>
-                                <div class="target mt-16">
-                                    <a v-bind:href="pageInfo.externalUrl" target="_blank" class="title f20 degault">Ir al sitio</a>
+                                <div class="target mt-16" v-if="pageInfo.externalUrl">
+                                    <a v-bind:href="pageInfo.externalUrl" target="_blank" class="title f20 default">Ir al sitio</a>
                                 </div>
                             </div>
                         </div>
@@ -273,6 +273,7 @@ export default {
 </script>
 <style>
     .municipio { position: relative; z-index: 10; cursor: pointer;}
+    a.title { cursor: pointer;}
     .card-e-1 {
         max-width: 1200px;
         margin: 0 auto;
