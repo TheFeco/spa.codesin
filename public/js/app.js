@@ -4161,8 +4161,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.mixin({
 });
 // Configuration VueAnalytics
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_analytics___default.a, {
-    //id: 'UA-53143604-17',
-    id: 'UA-182338023-1',
+    id: 'UA-53143604-17',
     router: __WEBPACK_IMPORTED_MODULE_2__routes_routes__["a" /* default */]
 });
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
