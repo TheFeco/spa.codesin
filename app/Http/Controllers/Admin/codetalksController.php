@@ -153,6 +153,7 @@ class codetalksController extends Controller
     public function destroy(Post $post)
     {
         //
+        $this->imgagesDelete($post->id, $post);
         $post->delete();
         return redirect()->route('admin.codetalks.index')->with('flash','Tu publicación a sido Eliminada');
 
@@ -211,5 +212,49 @@ class codetalksController extends Controller
             'urlspotify' => $data->urlspotify
         ]);
 
+    }
+    public function imgagesDelete($id, $data){
+
+        $postExtra = PostExtras::where('post_id',$id)->first();
+        $urlbannerHome = public_path().$postExtra->urlbannerHome;
+        $urlbannerHomeMobile = public_path().$postExtra->urlbannerHomeMobile;
+        $urlthumbnailspotify = public_path().$postExtra->urlthumbnailspotify;
+        $urlimage = public_path().$data->urlimage;
+        $bannerMobile = public_path().$data->bannerMobile;
+        $urlBanner = public_path().$data->urlBanner;
+        
+        if (file_exists($urlimage)) {
+
+            File::delete($urlimage);
+        
+        }
+        
+        if (file_exists($bannerMobile)) {
+
+            File::delete($bannerMobile);
+        
+        }
+       
+        if (file_exists($urlBanner)) {
+
+            File::delete($urlBanner);
+        
+        }
+       
+        
+        if (file_exists($urlbannerHome)) {
+            File::delete($urlbannerHome);
+        
+        }
+
+        if (file_exists($urlbannerHomeMobile)) {
+            File::delete($urlbannerHomeMobile);
+        
+        }
+
+        if (file_exists($urlthumbnailspotify)) {
+            File::delete($urlthumbnailspotify);
+     
+        }
     }
 }
