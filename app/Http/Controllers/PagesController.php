@@ -75,12 +75,12 @@ class PagesController extends Controller
         $pageinfo = Post::findOrFail(2);
         $sections = Section::first();
         $testimonios = Testimonio::orderBy('id')->get();
-        $consejos = Staff::where('departamento_id',1)->get();
-        $estatales = Staff::where('departamento_id',2)->get();
-        $zonaNorte = Staff::where('departamento_id',3)->get();
-        $zonaCentroNorte = Staff::where('departamento_id',4)->get();
-        $zonaCentro = Staff::where('departamento_id',5)->get();
-        $zonaSur = Staff::where('departamento_id',6)->get();
+        $consejos = Staff::where('departamento_id',1)->orderBy('position', 'ASC')->get();
+        $estatales = Staff::where('departamento_id',2)->orderBy('position', 'ASC')->get();
+        $zonaNorte = Staff::where('departamento_id',3)->orderBy('position', 'ASC')->get();
+        $zonaCentroNorte = Staff::where('departamento_id',4)->orderBy('position', 'ASC')->get();
+        $zonaCentro = Staff::where('departamento_id',5)->orderBy('position', 'ASC')->get();
+        $zonaSur = Staff::where('departamento_id',6)->orderBy('position', 'ASC')->get();
         if( request()->wantsJson() )
         {
             return [ 

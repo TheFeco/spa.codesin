@@ -9,7 +9,7 @@ class Staff extends Model
     //
     
     protected $table = 'personal';
-    protected $fillable = ['departamento_id','urlimg', 'name', 'urlvideo', 'email', 'job','user_id'];
+    protected $fillable = ['departamento_id', 'position','urlimg', 'name', 'urlvideo', 'email', 'job','user_id'];
 
     public function departamento (){
         return $this->belongsTo('App\Models\Departamento','departamento_id');

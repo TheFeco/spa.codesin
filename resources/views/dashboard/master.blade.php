@@ -70,6 +70,7 @@
         @include('dashboard.partials.createModal')
     </div>
     <script src="{{asset('dashboard/js/plugins/jquery-3.3.1.min.js')}}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="{{asset('dashboard/js/plugins/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/spin.min.js')}}"></script>

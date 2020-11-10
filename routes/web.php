@@ -58,6 +58,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => 'auth']
     Route::get('biblioteca/create/{id}', 'BibliotecaController@create', ['as' => 'admin'])->name('admin.biblioteca.create');
     Route::get('excel/export', 'emailExport@export', ['as' => 'admin'])->name('admin.excel.export');
 
+    Route::put('/position_update_posts','PersonalController@position_update')->name('position_update_posts');
+
 
 
 

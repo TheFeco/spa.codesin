@@ -23,10 +23,10 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="display table table-striped table-bordered" id="#post-table" style="width:100%">
+                    <table class="display table table-striped table-bordered" id="post-table" style="width:100%" data-sortable>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>position</th>
                                 <th></th>
                                 <th>Nombre</th>
                                 <th>Email</th>
@@ -35,11 +35,12 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody class="align-middle">
+                        <tbody class="align-middle" id="tablaStaff">
                             @foreach ($staffs as $staff)
-                                <tr>
-                                    <td class="align-middle">{{ $loop->index + 1 }}</td>
-                                    <th class="text-center"><a class="image-popup" href="{{ $staff->urlimg}}"><img src="{{ $staff->urlimg}}" alt="{{ $staff->name }}" class="avatar-md rounded"></a></th>
+                                <tr data-index="{{ $staff->id }}" data-position="{{ $staff->position }}">
+                                    <!-- <td class="align-middle">{{ $loop->index + 1 }}</td> -->
+                                    <td class="align-middle text-center" >{{ $staff->position }}</td>
+                                    <td class="text-center"><a class="image-popup" href="{{ $staff->urlimg}}"><img src="{{ $staff->urlimg}}" alt="{{ $staff->name }}" class="avatar-md rounded"></a></th>
                                     <td class="align-middle">{{ $staff->name }}</td>
                                     <td class="align-middle">{{ $staff->email }}</td>
                                     <td class="align-middle">{{ $staff->job }}</td>
@@ -66,9 +67,47 @@
 
 @push('script')
     <script src="{{asset('dashboard/js/plugins/datatables.min.js')}}"></script>
+    
     <script>
-        $('#post-table').DataTable({
+        $('post-table').DataTable({
         "order": [[3, "desc"]]
     }); // multi column ordering
+
+    $('#post-table #tablaStaff').sortable({
+        update: function (event, ui) {
+            $(this).children().each(function (index) {
+                if ($(this).attr('data-position') != (index+1)) {
+                    $(this).attr('data-position', (index+1)).addClass('updated');
+                }
+            });
+            saveNewPositions();
+        }
+    });
+
+    </script>
+    <script type="text/javascript">
+    function saveNewPositions() {
+        var positions = [];
+        $('.updated').each(function () {
+            positions.push([$(this).attr('data-index'), $(this).attr('data-position')]);
+            $(this).removeClass('updated');
+        });
+
+        $.ajax({
+            url: '{{ route('position_update_posts') }}',
+            method: 'PUT',
+            dataType: 'text',
+            data: {
+                updated: 1,
+                positions: positions,
+                _token: '{{csrf_token()}}'
+            }, success: function (response) {
+                console.log(response);
+                location.reload();
+            },error: function (data, textStatus, errorThrown) {
+                console.log(data);
+            },
+        });
+    }
     </script>
 @endpush

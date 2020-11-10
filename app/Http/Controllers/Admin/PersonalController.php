@@ -19,10 +19,6 @@ class PersonalController extends Controller
     public function index()
     {
         //
-
-        $staffs = Staff::orderBy('departamento_id')->get();
-        $staffs = $staffs->load('departamento');
-        return view('dashboard.staff.index', compact('staffs'));
     }
 
     /**
@@ -47,17 +43,21 @@ class PersonalController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'thumbnail' => 'image|max:4048'
 
         ]);
 
+        $maxposition = Staff::select('position')->where('departamento_id',$request->departamento_id)->max('position');
+        $maxposition = $maxposition + 1;
         $staff = Staff::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'job' => $request->get('job'),
-            'departamento_id' => $request->get('departamento_id'),
+            'position' => $maxposition ,
+            'departamento_id' =>  $request->departamento_id,
             'user_id' => Auth::id()
         ]);
 
@@ -69,7 +69,7 @@ class PersonalController extends Controller
             $staff->update(['urlimg' => $urlStaff]);
         }
 
-        return redirect()->route('admin.staff.create', $staff)->with('flash','El personal fue creado');
+        return redirect()->route('admin.staff.edit', $staff)->with('flash','El personal fue creado');
     }
 
     /**
@@ -151,5 +151,21 @@ class PersonalController extends Controller
         $staff->delete();
 
         return redirect()->route('admin.departamentos.show',[ 'departamento' => $departamento, 'staffs'=>$staffs])->with('flash','El staff eliminado');
+    }
+    public function position_update(Request $request){
+        $request->validate([
+            'positions'=>'required'
+        ]);
+        
+        foreach ($request->positions as $position){
+            $index = $position[0];
+            $newPosition = $position[1];
+            $staff = Staff::find($index);
+            $staff->position = $newPosition;
+            
+            $staff->save();
+        }
+        
+        return response()->json('success');
     }
 }

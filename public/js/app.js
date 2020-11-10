@@ -62980,7 +62980,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['staffs']
+    props: ['staffs'],
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {},
+
+    methods: {
+        getImg: function getImg(img) {
+            return img ? img : 'img/default/user.png';
+        }
+    }
 });
 
 /***/ }),
@@ -63007,7 +63017,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "card-staff-img-top",
-                    attrs: { src: staff.urlimg, alt: "" }
+                    attrs: { src: _vm.getImg(staff.urlimg), alt: "" }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-staff-body " }, [
@@ -63116,7 +63126,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['zonas', 'title']
+    props: ['zonas', 'title'],
+    methods: {
+        getImg: function getImg(img) {
+            return img ? img : 'img/default/user.png';
+        }
+    }
 });
 
 /***/ }),
@@ -63170,7 +63185,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "card-staff-img-top",
-                    attrs: { src: zona.urlimg, alt: "" }
+                    attrs: { src: _vm.getImg(zona.urlimg), alt: "" }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-staff-body " }, [

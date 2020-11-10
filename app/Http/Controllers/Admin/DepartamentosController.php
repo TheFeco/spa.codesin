@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Departamento;
+use App\Models\Staff;
 
 class DepartamentosController extends Controller
 {
@@ -48,8 +49,8 @@ class DepartamentosController extends Controller
     public function show(Departamento $departamento)
     {
         //
-        $departamento->load('staffs');
-        $staffs = $departamento->staffs;
+        $departamento;
+        $staffs = Staff::where('departamento_id', $departamento->id)->orderBy('position')->get();
         return view('dashboard.staff.index', compact('staffs', 'departamento'));
     }
 
