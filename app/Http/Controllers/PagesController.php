@@ -106,7 +106,7 @@ class PagesController extends Controller
         $proyectosAll = Post::published()->where('category_id',3);
         $proyectos = $proyectosAll->take(3);
         $politicas = Post::Published()->where('category_id',6)->take(3)->get();
-        $staff = Staff::where('departamento_id',7)->get();
+        $staff = Staff::where('departamento_id',7)->orderBy('position', 'ASC')->get();
         $znorte = Tag::where('id', 1)->with('posts')->withCount('posts')->first();
         $zcnorte = Tag::where('id', 2)->with('posts')->withCount('posts')->first();
         $zcentro = Tag::where('id', 3)->with('posts')->withCount('posts')->first();
