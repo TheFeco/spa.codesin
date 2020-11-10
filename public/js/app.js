@@ -60615,7 +60615,7 @@ var render = function() {
               [
                 _c("router-link", { attrs: { to: { name: "home" } } }, [
                   _c("img", {
-                    attrs: { src: "../img/logo/codesin - top.png", alt: "" }
+                    attrs: { src: "../images/codesin - top.png", alt: "" }
                   })
                 ])
               ],
