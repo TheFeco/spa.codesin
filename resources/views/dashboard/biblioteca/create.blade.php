@@ -43,11 +43,6 @@
                             <label for="picker2">fecha de publicación </label>
                             <input class="form-control" id="picker2" placeholder="dd-mm-yyyy" name="published_at" data-value="{{ old('published_at')}}" />
                         </div>
-                        <!-- <div class="col-md-12 form-group mb-3 {{ $errors->has('urlvideo') ? 'has-error' : ''}}" >
-                            <label for="urlvideo">Url de video de youtube</label>
-                            <input class="form-control form-control-rounded" id="urlvideo" name="urlvideo" type="text" value="{{ old('urlvideo')}}" />
-                            {!! $errors->first('urlvideo', '<span class="help-block">:message</span>') !!}
-                        </div> -->
                         <div class="col-md-12 form-group mb-3 {{ $errors->has('archivo') ? 'has-error' : ''}}">
                             <label for="archivo">Archivo </label>
                             <input type="file" name="archivo" id="archivo" data-default-file="" data-max-file-size-preview="2M" >

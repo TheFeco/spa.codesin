@@ -131,6 +131,12 @@ export default new Router({
             props: true
         },
         {
+            path: '/sinaloaennumeros/:url',
+            name: 'sinaloaennumeros_show',
+            component: require('../views/sinaloanum_show'),
+            props: true
+        },
+        {
             path: '*',
             component: require('../views/404')
         }

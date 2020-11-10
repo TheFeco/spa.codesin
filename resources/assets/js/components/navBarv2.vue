@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
-                        <div class="logo">
+                        <div class="logo2">
                             <router-link :to="{name:'home'}"><img v-bind:src="'../img/logo/codesin - top.png'" alt="" /></router-link>
                         </div>
                     </div>

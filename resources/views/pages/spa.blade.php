@@ -53,7 +53,7 @@
                         <div class="footer-up">
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="footer-logo">
-                                        <a href="/"><img src="../img/logo/codesin - top.png" alt="codesin"></a>
+                                        <a href="/"><img src="../img/logo/footer-logo.png" alt="codesin"></a>
                                     </div>
                             </div>
                             <div class="col-md-8 col-sm-6 col-xs-12">

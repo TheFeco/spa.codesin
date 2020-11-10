@@ -33,6 +33,16 @@
                                 <textarea class="textarea form-control form-control-rounded" name="body" aria-label="With textarea" style="height: 113px;">{{ old('body', $post->body)}}</textarea>
                                 {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
                             </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="archivo">Archivo en pdf</label>
+                                <input type="file" name="archivo" id="archivo" data-default-file="" data-max-file-size-preview="2M" >
+                                {!! $errors->first('archivo', '<span class="help-block">:message</span>') !!}
+                            </div>
+                            <div class="col-md-6 form-group mb-3{{ $errors->has('imgBody') ? 'has-error' : ''}}">
+                                <label for="imgBody">imagen del pdf</label>
+                                <input type="file" class="form-control banner" name="imgBody" id="imgBody" data-default-file="{{ $post->urlimage ? $post->urlimage : '' }}" data-max-file-size="2M">
+                                {!! $errors->first('thumbnailspotify', '<span class="help-block">:message</span>') !!}
+                            </div>
                         </div>
                 </div>
             </div>
@@ -51,15 +61,16 @@
                             <textarea class="form-control form-control-rounded" id="excerpt" name="excerpt" cols="10" rows="10"  >{{ old('excerpt', $post->excerpt)}}</textarea>
                             {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
-                        <input type="hidden" name="category_id" value="2">
+                        <input type="hidden" name="category_id" value="9">
                         <div class="col-md-12 form-group mb-3">
                             <div class="dropzone"></div>
                         </div>
                         <input type="hidden" name="tags" value="1" >
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary ladda-button basic-ladda-button basic-ladda-buttonsinaloaNumeros m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
-                        </div>
+                        
                     </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <button type="submit" class="btn btn-primary ladda-button basic-ladda-button basic-ladda-buttonsinaloaNumeros m-1" data-style="expand-left"><span class="ladda-label">Guardar</span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <section class="u-align-left u-clearfix u-image u-shading u-section-1" data-image-width="256" data-image-height="256" id="sec-5568" v-bind:style="{ backgroundImage: 'url(../' + image() + ')', backgroundPosition:'50% 50%', minHeight:'100vh' }" style="position: relative;">
       <div class="u-container-style u-group u-group-1">
         <div class="u-container-layout u-valign-top u-container-layout-1">
-          <img :src="flogo(info.category_id)" alt="alt" v-bind:class="'u-image u-image-default u-image-1 '+ clss(info.category_id)">
+          <img :src="flogo(logos)" alt="alt" v-bind:class="'u-image u-image-default u-image-1 '+ clss(logos)">
           <h2 class="u-custom-font u-text u-text-font u-text-1" v-text="info.title"></h2>
           <p class="u-align-left u-text u-text-2" v-text="info.excerpt"></p>
           <url-link :nombre="'codetalks_show'" :info="info" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-12 u-btn-1" >Ver Más</url-link>
@@ -15,9 +15,10 @@ export default {
     props:['info'],
     data(){
 			return{
-        // image: this.info.urlbannerHome ? this.info.urlbannerHome : '../img/banner.png',
+        // image: this.info.urlbannerHome ? this.info.urlbannerHome : '../img/banner.png', info.category_id
         logo : 'images/Codesin_hechos.svg',
         alt: '',
+        logos: 7
 			}
     },
   methods:{

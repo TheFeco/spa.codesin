@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="card mb-4">
             <div class="card-body">
                 <div class="card-title">Datos que se mostratan en el home</div>

@@ -130,6 +130,39 @@ class sinaloaNumerosController extends Controller
             $post->update(['urlBannerMobile' => $urlBanner]);
         }
 
+        if ($request->files->has('imgBody')) {
+
+            $request->validate([
+                'imgBody' => 'image' // jpeg, pnp, bmp, gif, svg
+            ]);
+            $old_image = public_path().$post->urlimage;
+            if (file_exists($old_image)) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = $post->id .'_'. time() . '.' . $request->imgBody->extension();
+            $urlBanner = '/img/sinnum/'. $filename;
+            $request->imgBody->move(public_path('img/sinnum'),$filename);
+            $post->update(['urlimage' => $urlBanner]);
+        }
+        if ($request->files->has('archivo')) {
+
+            
+            $old_image = public_path().$post->externalUrl;
+            if (file_exists($old_image)) {
+
+                File::delete($old_image);
+         
+            }
+
+            $filename = $post->id .'_'. time() . '.' . $request->archivo->extension();
+            $urlArchivo = '/file/sinmun/'. $filename;
+            $request->archivo->move(public_path('file/sinmun'),$filename);
+            $post->update(['externalUrl' => $urlArchivo]);
+        }
+
         $post->update([
             'title' => $request->get('title'),
             'body' => $request->get('body'),
@@ -152,6 +185,7 @@ class sinaloaNumerosController extends Controller
     public function destroy(Post $post)
     {
         //
+        $this->imgagesDelete($post->id, $post);
         $post->delete();
         return redirect()->route('admin.sinaloaNumeros.index')->with('flash','Tu publicación a sido Eliminada');
     }
@@ -208,6 +242,59 @@ class sinaloaNumerosController extends Controller
             'indicadorPodcast' => $data->indicadorPodcast,
             'urlspotify' => $data->urlspotify
         ]);
+
+    }
+
+    public function imgagesDelete($id, $data){
+
+        $postExtra = PostExtras::where('post_id',$id)->first();
+        $urlbannerHome = public_path().$postExtra->urlbannerHome;
+        $urlbannerHomeMobile = public_path().$postExtra->urlbannerHomeMobile;
+        $urlthumbnailspotify = public_path().$postExtra->urlthumbnailspotify;
+        $externalUrl = public_path().$data->externalUrl;
+        $urlimage = public_path().$data->urlimage;
+        $bannerMobile = public_path().$data->bannerMobile;
+        $urlBanner = public_path().$data->urlBanner;
+        
+        if (file_exists($externalUrl)) {
+
+            File::delete($externalUrl);
+        
+        }
+        
+        if (file_exists($urlimage)) {
+
+            File::delete($urlimage);
+        
+        }
+        
+        if (file_exists($bannerMobile)) {
+
+            File::delete($bannerMobile);
+        
+        }
+       
+        if (file_exists($urlBanner)) {
+
+            File::delete($urlBanner);
+        
+        }
+       
+        
+        if (file_exists($urlbannerHome)) {
+            File::delete($urlbannerHome);
+        
+        }
+
+        if (file_exists($urlbannerHomeMobile)) {
+            File::delete($urlbannerHomeMobile);
+        
+        }
+
+        if (file_exists($urlthumbnailspotify)) {
+            File::delete($urlthumbnailspotify);
+     
+        }
 
     }
 }
