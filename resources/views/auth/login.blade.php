@@ -48,11 +48,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mt-2">Ingresar</button>
                         </form>
-                        <div class="mt-3 text-center">
-                            <a class="text-muted" href="{{ url('/password/reset')}}">
-                                <u>Restablecer contraseña</u>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

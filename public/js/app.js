@@ -55090,7 +55090,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             zc: [],
             zs: [],
             windowWidth: window.innerWidth,
-            title: 'Conoce al Consejo del CIT',
+            title: 'Conoce al staff del Cit',
             mobile: 'false'
         };
     },
@@ -55878,7 +55878,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sm-12 text-center mb-60" }, [
-      _c("h2", { staticClass: "title f32" }, [_vm._v("Políticas publicas")])
+      _c("h2", { staticClass: "title f32" }, [_vm._v("Políticas públicas")])
     ])
   },
   function() {
@@ -58760,23 +58760,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             biblioteca: [],
             categoria1: [],
-            categoria2: [],
             categoria3: [],
             categoria4: [],
-            categorias: [],
             limitationList: 12
 
         };
@@ -58787,9 +58778,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         $('#lock').removeClass('hidden');
         axios.get('/api/biblioteca').then(function (res) {
             console.log(res);
-            _this.categorias = res.data.categorias;
             _this.categoria1 = res.data.categoria1;
-            _this.categoria2 = res.data.categoria2;
             _this.categoria3 = res.data.categoria3;
             _this.categoria4 = res.data.categoria4;
             $('#lock').addClass('hidden');
@@ -58825,7 +58814,7 @@ var render = function() {
                   "div",
                   {
                     staticClass: "tab-pane fade in active",
-                    attrs: { id: "1" }
+                    attrs: { id: "art" }
                   },
                   [
                     _c(
@@ -58847,28 +58836,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "tab-pane fade", attrs: { id: "2" } },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "row" },
-                      [
-                        _vm.categoria2.length > 0
-                          ? _c("texbox-container", {
-                              attrs: { data: _vm.categoria2 }
-                            })
-                          : _c("div", { staticClass: "proximamente" }, [
-                              _vm._v("Próximamente")
-                            ])
-                      ],
-                      1
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "tab-pane fade", attrs: { id: "3" } },
+                  { staticClass: "tab-pane fade", attrs: { id: "planes" } },
                   [
                     _c(
                       "div",
@@ -58889,7 +58857,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "tab-pane fade", attrs: { id: "4" } },
+                  { staticClass: "tab-pane fade", attrs: { id: "analisis" } },
                   [
                     _c(
                       "div",
@@ -58933,25 +58901,19 @@ var staticRenderFns = [
     return _c("div", { staticClass: "about-pills" }, [
       _c("ul", { staticClass: "nav nav-tabs" }, [
         _c("li", { staticClass: "active" }, [
-          _c("a", { attrs: { href: "#1", "data-toggle": "tab" } }, [
+          _c("a", { attrs: { href: "#art", "data-toggle": "tab" } }, [
             _vm._v("Artículos")
           ])
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "#2", "data-toggle": "tab" } }, [
-            _vm._v("Reportes")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#3", "data-toggle": "tab" } }, [
+          _c("a", { attrs: { href: "#planes", "data-toggle": "tab" } }, [
             _vm._v("Planes")
           ])
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "#4", "data-toggle": "tab" } }, [
+          _c("a", { attrs: { href: "#analisis", "data-toggle": "tab" } }, [
             _vm._v("Análisis")
           ])
         ])
@@ -60918,11 +60880,11 @@ var render = function() {
           _c("div", { staticClass: "col-md-2 col-sm-2" }, [
             _c(
               "div",
-              { staticClass: "logo2" },
+              { staticClass: "logo" },
               [
                 _c("router-link", { attrs: { to: { name: "home" } } }, [
                   _c("img", {
-                    attrs: { src: "../images/codesin - top.svg", alt: "" }
+                    attrs: { src: "../img/logo/codesin - top.png", alt: "" }
                   })
                 ])
               ],
@@ -62414,7 +62376,7 @@ var render = function() {
                           staticClass: "vermas hidden-sm hidden-xs",
                           attrs: { nombre: _vm.urlName, info: item }
                         },
-                        [_vm._v("Ver Más")]
+                        [_vm._v("Ver más")]
                       )
                     ],
                     1
@@ -62562,12 +62524,6 @@ exports.push([module.i, "\n.card-1 {\n    max-width: 1200px;\n    margin: 0 auto
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -63126,7 +63082,7 @@ var render = function() {
       _vm.vermas
         ? _c("div", { staticClass: "title f32 text-center" }, [
             _c("div", [
-              _vm._v(" Plan de trabajo " + _vm._s(_vm.proyectos.name))
+              _vm._v(" Agenda regional " + _vm._s(_vm.proyectos.name))
             ])
           ])
         : _c("div", { staticClass: "title f32 text-center" }, [
@@ -63178,7 +63134,7 @@ var render = function() {
                           staticClass: "vermas hidden-sm hidden-xs",
                           attrs: { proyecto: item }
                         },
-                        [_vm._v("Ver mas")]
+                        [_vm._v("Ver más")]
                       )
                     ],
                     1
@@ -63729,7 +63685,7 @@ var render = function() {
                   "u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-12 u-btn-1",
                 attrs: { nombre: "codetalks_show", info: _vm.info }
               },
-              [_vm._v("Ver Más")]
+              [_vm._v("Ver más")]
             )
           ],
           1
@@ -64115,7 +64071,7 @@ var render = function() {
                             "u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1",
                           attrs: { nombre: "codetalks_show", info: _vm.info }
                         },
-                        [_vm._v("ver más")]
+                        [_vm._v("Ver más")]
                       )
                     ],
                     1
@@ -64534,7 +64490,7 @@ var render = function() {
                             "u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1",
                           attrs: { nombre: "codetalks_show", info: _vm.info }
                         },
-                        [_vm._v("Ver Más")]
+                        [_vm._v("Ver más")]
                       )
                     ],
                     1
@@ -64819,7 +64775,7 @@ var render = function() {
                       _c(
                         "h1",
                         { staticClass: "u-custom-font u-text u-text-1" },
-                        [_vm._v("Business contact")]
+                        [_vm._v("Contacto")]
                       ),
                       _vm._v(" "),
                       _vm._m(0),
@@ -65750,7 +65706,7 @@ var render = function() {
                             staticClass: "u-btn u-button-style u-none u-btn-1",
                             attrs: { nombre: _vm.show, info: item }
                           },
-                          [_vm._v("Ver Más")]
+                          [_vm._v("Ver más")]
                         )
                       ],
                       1
@@ -65776,7 +65732,7 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "Ver " + _vm._s(_vm.limitationList == 9 ? "mas" : "menos")
+                  "Ver " + _vm._s(_vm.limitationList == 9 ? "más" : "menos")
                 )
               ]
             )

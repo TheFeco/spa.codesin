@@ -4,8 +4,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
-                        <div class="logo2">
-                            <router-link :to="{name:'home'}"><img v-bind:src="'../images/codesin - top.svg'" alt="" /></router-link>
+                        <div class="logo">
+                            <router-link :to="{name:'home'}"><img v-bind:src="'../img/logo/codesin - top.png'" alt="" /></router-link>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-10">

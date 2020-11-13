@@ -187,18 +187,15 @@ class PagesController extends Controller
 
         $categorias =  BibliotecaCategories::get();
         $categoria1 = Biblioteca::where('category_id',1)->orderBy('published_at', 'DESC')->get();
-        $categoria2 = Biblioteca::where('category_id',2)->orderBy('published_at', 'DESC')->get();
         $categoria3 = Biblioteca::where('category_id',3)->orderBy('published_at', 'DESC')->get();
         $categoria4 = Biblioteca::where('category_id',4)->orderBy('published_at', 'DESC')->get();
 
         $categoria1 = $this->formatDate($categoria1);
-        $categoria2 = $this->formatDate($categoria2);
         $categoria3 = $this->formatDate($categoria3);
         $categoria4 = $this->formatDate($categoria4);
 
         return [ 
             'categoria1' =>  $categoria1,
-            'categoria2' =>  $categoria2,
             'categoria3' =>  $categoria3,
             'categoria4' =>  $categoria4,
             'categorias' => $categorias];

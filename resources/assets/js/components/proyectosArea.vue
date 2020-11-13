@@ -2,7 +2,7 @@
     <div class="home-noticias-area mt-24">
         <div class="container">
             <div class="title f32 text-center" v-if="vermas">
-                <div > Plan de trabajo {{proyectos.name}}</div>
+                <div > Agenda regional {{proyectos.name}}</div>
             </div>
             <div class="title f32 text-center" v-else>
                 <div >Proyectos</div>
@@ -13,7 +13,7 @@
                         <div class="card-noticias-body ">
                             <h5 class="card-noticias-title"><proyecto-link :proyecto="item" v-text="item.title"></proyecto-link></h5>
                             <p class="card-noticias-text text-gray hidden-sm hidden-xs" v-text="item.excerpt"></p>
-                            <proyecto-link :proyecto="item"  class="vermas hidden-sm hidden-xs">Ver mas</proyecto-link>
+                            <proyecto-link :proyecto="item"  class="vermas hidden-sm hidden-xs">Ver más</proyecto-link>
                         </div>
                     </div>
                 </div>

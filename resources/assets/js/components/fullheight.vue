@@ -5,7 +5,7 @@
           <img :src="flogo(logos)" alt="alt" v-bind:class="'u-image u-image-default u-image-1 '+ clss(logos)">
           <h2 class="u-custom-font u-text u-text-font u-text-1" v-text="info.title"></h2>
           <p class="u-align-left u-text u-text-2" v-text="info.excerpt"></p>
-          <url-link :nombre="'codetalks_show'" :info="info" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-12 u-btn-1" >Ver Más</url-link>
+          <url-link :nombre="'codetalks_show'" :info="info" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-12 u-btn-1" >Ver más</url-link>
         </div>
       </div>
     </section>

@@ -15,12 +15,6 @@
             </div>
         </div>
     </div>
-                
-    <!-- <div class="row" v-if="vermas">
-        <div class="vertodos col-xs-12">
-            <router-link :to="{ name: 'noticias' }" >Ver todas</router-link>
-        </div>
-    </div> -->
 </template>
 <script>
 export default {

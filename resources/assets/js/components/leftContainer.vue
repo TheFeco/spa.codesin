@@ -26,7 +26,7 @@
                     </span>
                     <p class="u-text u-text-default u-text-5" v-if="info.category_id == 7">{{info.timePodcast}} {{indicador(info.indicadorPodcast)}} de podcast</p>
                   </div>
-                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >ver más</url-link>
+                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >Ver más</url-link>
                 </div>
               </div>
             </div>

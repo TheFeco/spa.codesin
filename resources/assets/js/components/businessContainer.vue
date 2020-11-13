@@ -9,7 +9,7 @@
               </div>
               <div class="u-align-left u-container-style u-grey-5 u-layout-cell u-right-cell u-size-39 u-size-xs-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h1 class="u-custom-font u-text u-text-1">Business contact</h1>
+                  <h1 class="u-custom-font u-text u-text-1">Contacto</h1>
                   <p class="u-text u-text-2">(667) 712 8232&nbsp;<br>(667) 715 1920
                   </p>
                   <span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1">

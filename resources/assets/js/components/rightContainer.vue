@@ -22,7 +22,7 @@
                     <span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-3" v-if="info.category_id == 7"><img src="images/play_circle_filled-24px.png" alt=""></span>
                     <p class="u-text u-text-default u-text-5" v-if="info.category_id == 7">{{info.timePodcast}} {{indicador(info.indicadorPodcast)}} de podcast</p>
                   </div>
-                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >Ver Más</url-link>
+                  <url-link :nombre="'codetalks_show'" :info="info" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" >Ver más</url-link>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-21 u-size-xs-60 u-image-2 hidden-sm hidden-xs" v-bind:style="{ backgroundImage: 'url(' + imageSmall() + ')', backgroundPosition:'50% 50%'}">

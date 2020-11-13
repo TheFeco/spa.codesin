@@ -15,12 +15,12 @@
                 <img src="/images/play_circle_filled-24px.png" alt="" class="u-image u-image-default u-image-4" data-image-width="24" data-image-height="24" v-if="item.category_id == 7">
                 <p class="u-text u-text-default u-text-5" v-if="item.category_id == 7">{{item.timePodcast}} {{indicador(item.indicadorPodcast)}} de podcast</p>
               </div>
-              <url-link :nombre="show" :info="item" class="u-btn u-button-style u-none u-btn-1" >Ver Más</url-link>
+              <url-link :nombre="show" :info="item" class="u-btn u-button-style u-none u-btn-1" >Ver más</url-link>
             </div>
           </div>
         </div>
         
-        <a href="#!" class="u-btn u-button-style u-none u-btn-4" @click="updateLimitation(limitationList)" v-if="!visible">Ver {{limitationList == 9 ? 'mas' : 'menos'}}</a>
+        <a href="#!" class="u-btn u-button-style u-none u-btn-4" @click="updateLimitation(limitationList)" v-if="!visible">Ver {{limitationList == 9 ? 'más' : 'menos'}}</a>
         <router-link :to="{name: url}" class="u-btn u-button-style u-none u-btn-4" v-else>Ver todas</router-link>
       </div>
     </section>

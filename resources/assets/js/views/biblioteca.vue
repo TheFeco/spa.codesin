@@ -11,33 +11,26 @@
                     <div class="container">
                         <div class="about-pills">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#1" data-toggle="tab">Artículos</a></li>
-                                <li><a href="#2" data-toggle="tab">Reportes</a></li>
-                                <li><a href="#3" data-toggle="tab">Planes</a></li>
-                                <li><a href="#4" data-toggle="tab">Análisis</a></li>
+                                <li class="active"><a href="#art" data-toggle="tab">Artículos</a></li>
+                                <li><a href="#planes" data-toggle="tab">Planes</a></li>
+                                <li><a href="#analisis" data-toggle="tab">Análisis</a></li>
                             </ul>
                         </div>
                         <div class="panel-body">
                             <div class="tab-content">
-                                <div class="tab-pane fade in active" id="1">
+                                <div class="tab-pane fade in active" id="art">
                                     <div class="row">
                                         <texbox-container :data="categoria1" v-if="categoria1.length > 0" />
                                         <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="2">
-                                    <div class="row">
-                                        <texbox-container :data="categoria2" v-if="categoria2.length > 0" />
-                                        <div v-else class="proximamente">Próximamente</div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="3">
+                                <div class="tab-pane fade" id="planes">
                                     <div class="row">
                                         <texbox-container :data="categoria3" v-if="categoria3.length > 0" />
                                         <div v-else class="proximamente">Próximamente</div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="4">
+                                <div class="tab-pane fade" id="analisis">
                                     <div class="row">
                                         <texbox-container :data="categoria4" v-if="categoria4.length > 0" />
                                         <div v-else class="proximamente">Próximamente</div>
@@ -57,10 +50,8 @@ export default {
         return {
             biblioteca: [],
             categoria1: [],
-            categoria2: [],
             categoria3: [],
             categoria4: [],
-            categorias: [],
             limitationList: 12
             
         }
@@ -70,9 +61,7 @@ export default {
         axios.get('/api/biblioteca')
 			.then((res) => {
                 console.log(res);
-                this.categorias = res.data.categorias;
                 this.categoria1 = res.data.categoria1;
-                this.categoria2 = res.data.categoria2;
                 this.categoria3 = res.data.categoria3;
                 this.categoria4 = res.data.categoria4;
                 $('#lock').addClass('hidden');

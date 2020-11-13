@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row">
                     <div class="sm-12 text-center mb-60">
-                        <h2 class="title f32">Políticas publicas</h2>
+                        <h2 class="title f32">Políticas públicas</h2>
                     </div>
                     <politicas-area :politicas="politicas" :vermas="true"></politicas-area>
                 </div>
@@ -240,7 +240,7 @@ export default {
             zc:[],
             zs:[],
             windowWidth: window.innerWidth,
-            title: 'Conoce al Consejo del CIT',
+            title: 'Conoce al staff del Cit',
             mobile: 'false'
         }
     },

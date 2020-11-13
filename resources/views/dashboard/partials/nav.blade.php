@@ -104,7 +104,6 @@
         </ul>
         <ul class="childNav" data-parent="biblioteca">
             <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>1])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Artículos</span></a></li>
-            <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>2])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Reportes</span></a></li>
             <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>3])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Planes</span></a></li>
             <li class="nav-item"><a href="{{route('admin.biblioteca.show', ['id'=>4])}}"><i class="nav-icon fas fa-file"></i><span class="item-name">Análisis</span></a></li>
         </ul>

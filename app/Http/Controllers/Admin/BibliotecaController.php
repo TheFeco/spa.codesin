@@ -127,6 +127,7 @@ class BibliotecaController extends Controller
     {
         //
         $category_id = $biblioteca->category_id;
+        $this->deleteFile($biblioteca->id, $biblioteca);
         $biblioteca->delete();
         $Posts = Biblioteca::where('category_id',$category_id)->get();
         return redirect()->route('admin.biblioteca.show',['id' => $category_id])->with('flash','Tu publicación a sido Eliminada');
@@ -154,6 +155,13 @@ class BibliotecaController extends Controller
             
             $data->archivo->move(public_path($url),$filename);
             $fileInfo->update(['urlArchivo' => $urlComplete]); 
+        }
+    }
+    public function deleteFile ($id, $data){
+        $old_archivo = public_path().$data->urlArchivo;
+        if (file_exists($old_archivo)) {
+            File::delete($old_archivo);
+        
         }
     }
 }

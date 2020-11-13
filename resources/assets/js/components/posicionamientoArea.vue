@@ -10,7 +10,7 @@
                         <div class="card-noticias-body ">
                             <h5 class="card-noticias-title"><url-link :info="item" :name="urlName" v-text="item.title"></url-link></h5>
                             <p class="card-noticias-text text-gray hidden-sm hidden-xs" v-text="item.excerpt"></p>
-                            <url-link :nombre="urlName" :info="item" class="vermas hidden-sm hidden-xs" >Ver Más</url-link>
+                            <url-link :nombre="urlName" :info="item" class="vermas hidden-sm hidden-xs" >Ver más</url-link>
                         </div>
                     </div>
                 </div>
